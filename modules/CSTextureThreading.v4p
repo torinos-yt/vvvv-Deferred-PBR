@@ -1,0 +1,85 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
+   <PATCH nodename="F:\vvvv\work\PBRRenderer\modules\CSTextureThreading.v4p" systemname="CSTextureThreading" filename="F:\vvvv\work\PBRRenderer\modules\CSTextureThreading.v4p" scrollx="705" scrolly="120">
+   <NODE systemname="Dispatcher (DX11.Drawer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Dispatcher (DX11.Drawer)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="1560" top="2835" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1560" top="2835" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Thread X" visible="1">
+   </PIN>
+   <PIN pinname="Thread Y" visible="1">
+   </PIN>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="1560" top="1500" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="8">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Vector (2d Split)" nodename="Vector (2d Split)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="1500" top="2355" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="XY" visible="1">
+   </PIN>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="ceil (Value)" filename="..\..\..\contributions\plugins\Valueceil\Valueceil.csproj" nodename="ceil (Value)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="1530" top="1920" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1530" top="1920" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input" slicecount="1" visible="1" values="1.31">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Output" dstnodeid="2" dstpinname="XY">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Output" dstnodeid="3" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="X" dstnodeid="0" dstpinname="Thread X">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Y" dstnodeid="0" dstpinname="Thread Y">
+   </LINK>
+   <NODE id="4" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Geometry Out|">
+   </PIN>
+   <BOUNDS type="Box" left="1560" top="3435" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1560" top="3435" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Geometry Out" dstnodeid="4" dstpinname="Input Node">
+   </LINK>
+   <NODE id="5" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Input">
+   </PIN>
+   <BOUNDS type="Box" left="1560" top="500" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1560" top="500" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Input">
+   </LINK>
+   <BOUNDS type="Window" left="17100" top="8160" width="3150" height="4425">
+   </BOUNDS>
+   <PACK Name="dx11" Version="1.3.1">
+   </PACK>
+   <PACK Name="vvvv-Message" Version="2.9.6">
+   </PACK>
+   <PACK Name="VVVV.Packs.Image" Version="0.2.0">
+   </PACK>
+   <PACK Name="ÎmagePack" Version="0.2.0">
+   </PACK>
+   <PACK Name="addonpack" Version="36.0.0">
+   </PACK>
+   </PATCH>

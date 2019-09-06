@@ -1,0 +1,100 @@
+Texture2D normTex : PREVIOUS;
+Texture2D depthTex;
+
+#define BLURRADIUS 3
+
+float BlurSharpeness = 1.0;
+
+float2 RTexelSize : INVTARGETSIZE;
+
+SamplerState linearSampler : IMMUTABLE
+{
+    Filter = MIN_MAG_MIP_LINEAR;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+struct psInput
+{
+	float4 p : SV_Position;
+	float2 uv : TEXCOORD0;
+};
+
+
+void FetchNormAndDepth(float2 uv, inout float3 norm, inout float depth) {
+	norm = normTex.Sample(linearSampler, uv).rgb;
+	depth = depthTex.Sample(linearSampler,uv).r;
+}
+
+float CrossBilateralWeight(float r, float d, float d0) {
+	const float BlurSigma = BLURRADIUS * 0.5;
+	const float BlurFalloff = 1 / (2 * BlurSigma * BlurSigma);
+
+    float dz = (d0 - d) * .2 * BlurSharpeness;
+	return exp2(-r * r * BlurFalloff - dz * dz);
+}
+
+void ProcessSample(float4 normz, float r, float d0, inout float3 totalNorm, inout float totalW) {
+	float w = CrossBilateralWeight(r, d0, normz.w);
+	totalW += w;
+	totalNorm += w * normz.xyz;
+}
+
+void ProcessRadius(float2 uv0, float2 deltaUV, float d0, inout float3 totalNorm, inout float totalW) {
+	float3 norm;
+	float z;
+	float2 uv;
+	float r = 1;
+
+	[unroll]
+	for (; r <= BLURRADIUS / 2; r += 1) {
+		uv = uv0 + r * deltaUV;
+		FetchNormAndDepth(uv, norm, z);
+		ProcessSample(float4(norm, z), r, d0, totalNorm, totalW);
+	}
+
+	[unroll]
+	for (; r <= BLURRADIUS; r += 2) {
+		uv = uv0 + (r + 0.5) * deltaUV;
+		FetchNormAndDepth(uv, norm, z);
+		ProcessSample(float4(norm, z), r, d0, totalNorm, totalW);
+	}
+}
+
+float4 BilateralBlur(float2 uv, float2 deltaUV){
+	float3 totalNorm;
+	float depth;
+	FetchNormAndDepth(uv, totalNorm, depth);
+	float totalW = 1;
+
+	ProcessRadius(uv, -deltaUV, depth, totalNorm, totalW);
+	ProcessRadius(uv, deltaUV, depth, totalNorm, totalW);
+
+	totalNorm /= totalW;
+	return float4(totalNorm, depth);
+}
+
+float4 PS_BlurX(psInput input) : SV_Target{
+	float2 uv = input.uv;
+	float4 norm = BilateralBlur(uv, float2(RTexelSize.x, 0));
+	return norm;
+}
+
+float4 PS_BlurY(psInput input) : SV_Target{
+	float2 uv = input.uv;
+	float4 norm = BilateralBlur(uv, float2(0, RTexelSize.y));
+	return float4(norm.xyz, 1.0);
+}
+
+technique10 Process
+{
+	pass P1<string format = "R16G16B16A16_Float";>{
+		SetPixelShader(CompileShader(ps_4_0,PS_BlurX()));
+	}
+	pass P2<string format = "R16G16B16A16_Float";>{
+		SetPixelShader(CompileShader(ps_4_0,PS_BlurY()));
+	}
+}
+
+
+

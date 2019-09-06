@@ -1,0 +1,112 @@
+//Post-processing copyright c 2019 Unity Technologies ApS
+//
+//Licensed under the Unity Companion License for Unity-dependent projects--seeUnity Companion License.
+//
+//Unless expressly provided otherwise, the Software under this license is made available strictly on an ÅgAS ISÅh BASIS WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. Please review the license for details on these and other terms and conditions.
+
+#include "../fxh/kernel.fxh"
+#define PI 3.14159265
+
+Texture2D colorTex : PREVIOUS;
+Texture2D CoCTex;
+
+float MaxCoC = .1;
+static const float weightscale = .075;
+
+float RcpAspect;
+float2 MainTex_TexelSize;
+
+SamplerState linearSampler : IMMUTABLE
+{
+    Filter = MIN_MAG_MIP_LINEAR;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+SamplerState cocSampler : IMMUTABLE
+{
+    Filter = MIN_MAG_MIP_POINT;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+float4 min1(float4 a){
+	return min(a, 1.0);
+}
+
+struct psInput
+{
+	float4 p : SV_Position;
+	float2 uv : TEXCOORD0;
+};
+
+float4 frag_Blur(psInput In) : SV_Target
+{
+    float4 samp0 = colorTex.Sample(linearSampler, In.uv);
+	float CoC0 = CoCTex.Sample(cocSampler, In.uv).r;
+	samp0.a = CoC0 * weightscale;
+
+    float4 bgAcc = 0.0; // Background: far field bokeh
+    float4 fgAcc = 0.0; // Foreground: near field bokeh
+
+	[loop]
+    for (uint si = 0; si < kSampleCount; si++)
+    {
+        float2 disp = kDiskKernel[si] * MaxCoC * weightscale;
+        float dist = length(disp);
+
+        float2 duv = float2(disp.x * RcpAspect, disp.y);
+        float4 samp = colorTex.SampleLevel(linearSampler, In.uv + duv, 0);
+    	float CoC = CoCTex.SampleLevel(cocSampler, In.uv + duv, 0).r;
+    	samp.a = CoC * weightscale;
+
+        // BG: Compare CoC of the current sample and the center sample
+        // and select smaller one.
+        float bgCoC = max(min(samp0.a, samp.a), 0.0);
+
+        // Compare the CoC to the sample distance.
+        // Add a small margin to smooth out.
+        const float margin = MainTex_TexelSize.y * 3;
+        float bgWeight = saturate((bgCoC   - dist + margin) / margin);
+        float fgWeight = saturate((-samp.a - dist + margin) / margin);
+
+        // Cut influence from focused areas because they're darkened by CoC
+        // premultiplying. This is only needed for near field.
+        fgWeight *= step(MainTex_TexelSize.y, -samp.a);
+
+        // Accumulation
+        bgAcc += float4(samp.rgb, 1.0) * bgWeight;
+        fgAcc += float4(samp.rgb, 1.0) * fgWeight;
+    }
+
+    // Get the weighted average.
+    bgAcc.rgb /= bgAcc.a + (bgAcc.a == 0.0); // zero-div guard
+    fgAcc.rgb /= fgAcc.a + (fgAcc.a == 0.0);
+
+    // BG: Calculate the alpha value only based on the center CoC.
+    // This is a rather aggressive approximation but provides stable results.
+    bgAcc.a = smoothstep(MainTex_TexelSize.y, MainTex_TexelSize.y * 2.0, samp0.a);
+
+    // FG: Normalize the total of the weights.
+    fgAcc.a *= PI / kSampleCount;
+	//bgAcc=min1(bgAcc);
+	//fgAcc=min1(fgAcc);
+    // Alpha premultiplying
+    float alpha = saturate(fgAcc.a);
+    float3 rgb = lerp(bgAcc.rgb, fgAcc.rgb, alpha);
+
+    // Combined alpha value
+    alpha = (1 - saturate(bgAcc.a)) * (1 - saturate(fgAcc.a));
+    return half4(rgb, alpha);
+}
+
+technique10 DepthBlur
+{
+	pass P0<string format = "R16G16B16A16_Float";>
+	{
+		SetPixelShader(CompileShader(ps_4_0,frag_Blur()));
+	}
+}
+
+
+

@@ -1,0 +1,79 @@
+Texture2D texture2d : PREVIOUS;
+Texture2D prevao;
+
+Texture2D velocity : METALROUGHVEL;
+
+float2 tsize : INVTARGETSIZE;
+
+float Weight<float uimin = 0.0; float uimax = .999;> = .98;
+float thresh<string uiname = "Clamp Threshold"; float uistep = .002;>;
+
+SamplerState linearSampler : IMMUTABLE
+{
+    Filter = MIN_MAG_MIP_LINEAR;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+SamplerState s_vel : IMMUTABLE
+{
+	Filter=MIN_MAG_MIP_POINT;
+	AddressU=CLAMP;
+	AddressV=CLAMP;
+	MipLODBias = 0;
+};
+
+struct psInput
+{
+	float4 p : SV_Position;
+	float2 uv : TEXCOORD0;
+};
+
+
+float4 PS(psInput input) : SV_Target
+{
+	float2 uv = input.uv;
+	float2 vel = velocity.Sample(s_vel, uv).ba;
+	vel -= .5;
+	vel.x = lerp(vel.x, 0, step(abs(vel.x), .0005));
+	vel.y = -lerp(vel.y, 0, step(abs(vel.y), .0005));
+	
+	float4 a0 = texture2d.Sample(linearSampler, input.uv + float2(tsize.x,0));
+	float4 a1 = texture2d.Sample(linearSampler, input.uv + float2(-tsize.x,0));
+	float4 a2 = texture2d.Sample(linearSampler, input.uv + float2(0,tsize.y));
+	float4 a3 = texture2d.Sample(linearSampler, input.uv + float2(0,-tsize.y));
+	float4 a4 = texture2d.Sample(linearSampler, input.uv + float2(tsize.x,tsize.y));
+	float4 a5 = texture2d.Sample(linearSampler, input.uv + float2(-tsize.x,tsize.y));
+	float4 a6 = texture2d.Sample(linearSampler, input.uv + float2(tsize.x,-tsize.y));
+	float4 a7 = texture2d.Sample(linearSampler, input.uv + float2(-tsize.x,-tsize.y));
+	
+	float4 aomin = min(min(min(a0, a1), min(a2, a3)), min(min(a4, a5), min(a6, a7)))*(1-thresh);
+	float4 aomax = max(max(max(a0, a1), max(a2, a3)), max(max(a4, a5), max(a6, a7)))*(1+thresh);
+	
+	float4 dao = texture2d.Sample(linearSampler,uv);
+	float4 ao = dao;
+	float a = dao.a;
+	
+	float4 pao = prevao.Sample(linearSampler,uv-vel);
+	float3 lum = float3(.299, .587, .144);
+	float lummin = dot(aomin, lum);
+	float lummax = dot(aomax, lum);
+	float lumpao = dot(pao, lum);
+	if(lumpao < lummin || lummax < lumpao) pao = clamp(pao, aomin, aomax);
+	if(uv.x < 0 || uv.y < 0 || uv.x > 1 || uv.y > 1) pao = ao;
+	
+	float weight = saturate(Weight * (1 - length(vel) * 70));
+	float4 filtered = lerp(ao, pao, weight);
+	return filtered * a;
+}
+
+technique10 TempNorm<bool persist = true;>
+{
+	pass P0
+	{
+		SetPixelShader(CompileShader(ps_4_0,PS()));
+	}
+}
+
+
+

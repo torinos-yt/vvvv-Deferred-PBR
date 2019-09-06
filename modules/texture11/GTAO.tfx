@@ -1,0 +1,60 @@
+#include "../fxh/ao.fxh"
+
+Texture2D AlbedoTex;
+Texture2D normalTex;
+
+struct psInput{
+	float4 p : SV_Position;
+	float2 uv : TEXCOORD0;
+};
+
+float4x4 tIV;
+
+
+float4 PS_AO(psInput input) : SV_Target{
+	float4 albedo = AlbedoTex.Sample(linearSampler, input.uv);
+	float3 normal = normalTex.Sample(linearSampler, input.uv).xyz;
+	float depth;
+	float4 GTAO = gtao(normal, input.uv, NumCircle, NumSlice, depth);
+	return float4(GTAO.xyz, Multibounce(GTAO.w, albedo.xyz));
+}
+
+float4 PS(psInput input) : SV_Target{
+	float4 albedo = AlbedoTex.Sample(linearSampler, input.uv);
+	float3 normal = normalTex.Sample(linearSampler, input.uv).xyz;
+	float depth;
+	float4 GTAO = gtao(normal, input.uv, NumCircle, NumSlice, depth);
+	return float4(Multibounce(GTAO.w, albedo.xyz), depth, 0,0);
+}
+
+float2 PS_BlurX(psInput input) : SV_Target{
+	float2 uv = input.uv;
+	float2 ao = BilateralBlur(uv, float2(RTexelSize.x, 0));
+	return ao;
+}
+
+float4 PS_BlurY(psInput input) : SV_Target{
+	float2 uv = input.uv;
+	float a = AlbedoTex.Sample(linearSampler, input.uv).a;
+	float2 ao = BilateralBlur(uv, float2(0, RTexelSize.y));
+	return float4(ao.xxx, a);
+}
+
+
+technique10 GTAO{
+	pass P0<string format = "R16G16B16A16_Float";>{
+		SetPixelShader(CompileShader(ps_4_0,PS_AO()));
+	}
+}
+
+technique10 GTAO_Blur{
+	pass P0<string format = "R16G16B16A16_Float";>{
+		SetPixelShader(CompileShader(ps_4_0,PS()));
+	}
+	pass P1<string format = "R16G16_Float";>{
+		SetPixelShader(CompileShader(ps_4_0,PS_BlurX()));
+	}
+	pass P2<string format = "R16G16B16A16_Float";>{
+		SetPixelShader(CompileShader(ps_4_0,PS_BlurY()));
+	}
+}
