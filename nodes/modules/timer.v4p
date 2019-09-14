@@ -40,7 +40,7 @@
    <PIN pinname="Y Input Value" visible="1">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="-1" top="-1" width="4870" height="4465">
+   <BOUNDS type="Window" left="13980" top="9195" width="4530" height="4995">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
    </PACK>
@@ -74,36 +74,6 @@
    </NODE>
    <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Reset">
    </LINK>
-   <NODE systemname="Add (Value)" nodename="Add (Value)" componentmode="Hidden" id="6">
-   <BOUNDS type="Node" left="360" top="2175" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname="Input 2" visible="1">
-   </PIN>
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
-   </NODE>
-   <NODE systemname="FrameDelay (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="FrameDelay (Value)" componentmode="Hidden" id="7">
-   <BOUNDS type="Node" left="390" top="2640" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="390" top="2640" width="3000" height="3000">
-   </BOUNDS>
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
-   <PIN pinname="Output 1" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="7" dstpinname="Input 1">
-   </LINK>
-   <LINK srcnodeid="7" srcpinname="Output 1" dstnodeid="6" dstpinname="Input 2">
-   <LINKPOINT x="1305" y="3165">
-   </LINKPOINT>
-   <LINKPOINT x="1485" y="2385">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="1" srcpinname="Output" dstnodeid="6" dstpinname="Input 1">
-   </LINK>
-   <LINK srcnodeid="7" srcpinname="Output 1" dstnodeid="4" dstpinname="Y Input Value">
+   <LINK srcnodeid="0" srcpinname="Output" dstnodeid="4" dstpinname="Y Input Value">
    </LINK>
    </PATCH>
