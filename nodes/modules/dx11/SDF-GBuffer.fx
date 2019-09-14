@@ -93,7 +93,7 @@ PSout PS(vs2ps In){
 	//info.rayDir = normalize(mul(normalize(mul(float4(mul(float4(rayDir, 0, 0), tPI).xy, 1, 0), tVI).xyz), tWI));
 	
 	float3 ray = 
-	info.rayDir = mul(float4(normalize(rayDirVP.xyz / rayDirVP.w), 1), tWI).xyz;
+	info.rayDir = normalize(mul(float4(normalize(rayDirVP.xyz / rayDirVP.w), 1), tWI).xyz);
 	
 
 	float3 rp = mul(float4(tVI[3].xyz, 1), tWI).xyz;
@@ -118,7 +118,7 @@ PSout PS(vs2ps In){
 			break;
 		}
 		rayPos += ray * dist * stepLength;
-		total += dist;
+		total += dist * stepLength;
 		if(total > maxdist) break;
 	}
 	
@@ -126,7 +126,7 @@ PSout PS(vs2ps In){
 	info.loop = i;
 	info.totalDistance = total;
 	info.normal = normal;
-	info.id = id;
+	info.Material = id;
 
 	float3 endPos = mul(float4(rayPos, 1), tW).xyz;
 	info.posEnd = endPos;
@@ -149,7 +149,7 @@ PSout PS(vs2ps In){
 
 			if(dist < mindist * max(total, 1)) break;
 			rayPos += ray * dist * stepLength;
-			total += dist;
+			total += dist * stepLength;
 			if(total > maxdist) break;
 		}
 	}
