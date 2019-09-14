@@ -7,10 +7,10 @@
 //float DeltaTime
 //float4 Variable : User Variable Controlled on vvvv patch
 
-float DistanceFunction(float3 p, inout float id){
+float DistanceFunction(float3 p, inout float Material){
 	//Write your own distance function!!
 	
-    return length(p) - 1.0;
+    return dSphere(p, 1.0);
 }
 
 technique11 RemoveMe{}
