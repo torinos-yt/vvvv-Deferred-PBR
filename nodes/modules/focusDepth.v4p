@@ -1,0 +1,103 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
+   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\nodes\modules\focusDepth.v4p" systemname="focusDepth" filename="F:\vvvv\work\PBRRenderer\modules\focusDepth.v4p" scrollx="0" scrolly="15">
+   <NODE id="16" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|focus point|">
+   </PIN>
+   <BOUNDS type="Box" left="4140" top="845" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4140" top="845" width="750" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="17" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Inverse Projection|">
+   </PIN>
+   <BOUNDS type="Box" left="2115" top="740" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2115" top="740" width="750" height="240">
+   </BOUNDS>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="18" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Depth">
+   </PIN>
+   <BOUNDS type="Box" left="465" top="725" width="885" height="255">
+   </BOUNDS>
+   <BOUNDS type="Node" left="465" top="725" width="750" height="240">
+   </BOUNDS>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <BOUNDS type="Window" left="4200" top="4275" width="5535" height="6285">
+   </BOUNDS>
+   <PACK Name="dx11" Version="1.3.1">
+   </PACK>
+   <PACK Name="vvvv-Message" Version="2.9.6">
+   </PACK>
+   <PACK Name="VVVV.Packs.Image" Version="0.2.0">
+   </PACK>
+   <PACK Name="ÎmagePack" Version="0.2.0">
+   </PACK>
+   <PACK Name="addonpack" Version="38.1.0">
+   </PACK>
+   <NODE systemname="FocusDepth (DX11.Effect)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\dx11\FocusDepth.fx" nodename="FocusDepth (DX11.Effect)" componentmode="Hidden" id="24">
+   <BOUNDS type="Node" left="1515" top="2670" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Geometry" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="DepthTex" visible="1">
+   </PIN>
+   <PIN pinname="tPI" visible="1">
+   </PIN>
+   <PIN pinname="focusXY" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Dispatcher (DX11.Drawer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Dispatcher (DX11.Drawer)" componentmode="Hidden" id="25">
+   <BOUNDS type="Node" left="1815" top="2115" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1815" top="2115" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="25" srcpinname="Geometry Out" dstnodeid="24" dstpinname="Geometry">
+   </LINK>
+   <LINK srcnodeid="18" srcpinname="Output Node" dstnodeid="24" dstpinname="DepthTex">
+   </LINK>
+   <LINK srcnodeid="17" srcpinname="Output Node" dstnodeid="24" dstpinname="tPI">
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="Y Output Value" dstnodeid="24" dstpinname="focusXY">
+   </LINK>
+   <NODE systemname="Renderer (DX11 Buffer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 Buffer)" componentmode="Hidden" id="26">
+   <BOUNDS type="Node" left="1200" top="3570" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1200" top="3570" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Element Count" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Stride" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Buffers" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="24" srcpinname="Layer" dstnodeid="26" dstpinname="Layer">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="29">
+   <BOUNDS type="Box" left="1215" top="4830" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1215" top="4830" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Buffers">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="26" srcpinname="Buffers" dstnodeid="29" dstpinname="Input Node">
+   </LINK>
+   </PATCH>

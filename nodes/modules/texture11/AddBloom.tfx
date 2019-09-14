@@ -1,0 +1,45 @@
+Texture2D t : PREVIOUS;
+
+Texture2D t2;
+Texture2D t3;
+Texture2D t4;
+
+float intensity <float uimin = 0.0;> = 1.0;
+float4 tint <string uiname = "Bloom Tint Color"; bool color = true;> = float4(1,1,1,1);
+
+
+SamplerState linearSampler
+{
+    Filter = MIN_MAG_MIP_LINEAR;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+struct psInput
+{
+	float4 p : SV_Position;
+	float2 uv : TEXCOORD0;
+};
+
+
+float4 PS(psInput input) : SV_Target
+{
+	float4 c1 = t.Sample(linearSampler,input.uv);
+	
+	float4 c2 = t2.Sample(linearSampler,input.uv) * intensity * tint;
+	c2 += t3.Sample(linearSampler,input.uv) * intensity * tint*2;
+	c2 += t4.Sample(linearSampler,input.uv) * intensity * tint*4;
+
+	return c1 + c2;
+}
+
+technique10 Process
+{
+	pass P0
+	{
+		SetPixelShader(CompileShader(ps_4_0,PS()));
+	}
+}
+
+
+

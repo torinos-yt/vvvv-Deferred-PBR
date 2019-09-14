@@ -1,0 +1,539 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
+   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\nodes\modules\PostEffects.v4p" systemname="PostEffects" filename="F:\vvvv\work\PBRRenderer\node\modules\PostEffects.v4p" scrollx="105" scrolly="15">
+   <NODE id="0" systemname="TemporalAA (DX11.Texture)" filename="TemporalAA (DX11.Texture).v4p" nodename="TemporalAA (DX11.Texture).v4p" componentmode="Hidden">
+   <BOUNDS type="Node" left="1533" top="2090" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="993" top="-30" width="4075" height="4240">
+   </BOUNDS>
+   <BOUNDS type="Window" left="4125" top="4920" width="9405" height="4860">
+   </BOUNDS>
+   <PIN pinname="Enabled" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Velocity Weight Factor" slicecount="1" visible="1" values="100">
+   </PIN>
+   <PIN pinname="Weight Min" slicecount="1" visible="1" values="0.850000023841858">
+   </PIN>
+   <PIN pinname="Weight Max" slicecount="1" visible="1" values="0.910000026226044">
+   </PIN>
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Resource Semantics" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Jitter SpreadXY" slicecount="2" visible="1" values="1,1">
+   </PIN>
+   </NODE>
+   <NODE systemname="MotionBlur (DX11.Texture)" filename="MotionBlur (DX11.Texture).v4p" nodename="MotionBlur (DX11.Texture).v4p" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="1545" top="5961" width="2025" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1008" top="4176" width="6160" height="3570">
+   </BOUNDS>
+   <BOUNDS type="Window" left="8730" top="7920" width="10500" height="4755">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Amount" slicecount="1" visible="1" values="1.35">
+   </PIN>
+   <PIN pinname="minvel" visible="1">
+   </PIN>
+   <PIN pinname="SampleFreq" visible="1">
+   </PIN>
+   <PIN pinname="MaxSamples" visible="1">
+   </PIN>
+   <PIN pinname="MinSamples" visible="1">
+   </PIN>
+   <PIN pinname="MaxBlur" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="2" systemname="Bloom (DX11.TextureFX)" filename="Bloom (DX11.TextureFX).v4p" nodename="Bloom (DX11.TextureFX)" componentmode="Hidden">
+   <PIN pinname="Texture Out" visible="1" slicecount="1" values="||">
+   </PIN>
+   <BOUNDS type="Node" left="1563" top="7695" width="1935" height="270">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" visible="1" values="0.49">
+   </PIN>
+   <PIN pinname="PreGamma" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Texture Size" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="DirtTexture" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Dirt Intensity" slicecount="1" values="0.43">
+   </PIN>
+   <PIN pinname="bias" slicecount="1" visible="1" values="0.5">
+   </PIN>
+   <PIN pinname="Intensity" slicecount="1" visible="1" values="0.02">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <BOUNDS type="Window" left="1005" top="2400" width="10530" height="12585">
+   </BOUNDS>
+   <PIN pinname="Bloom Tint Color" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="ColorGrading (DX11.Texture)" filename="ColorGrading (DX11.Texture).v4p" nodename="ColorGrading (DX11.Texture).v4p" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="1578" top="9037" width="2400" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1038" top="7375" width="4240" height="3325">
+   </BOUNDS>
+   <BOUNDS type="Window" left="8850" top="570" width="11865" height="14265">
+   </BOUNDS>
+   <PIN pinname="center" slicecount="1" values="0.57">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Choromatic Abberation" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Vignette" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="smooth" slicecount="1" values="0.85">
+   </PIN>
+   <PIN pinname="intensity" slicecount="1" values="0.29">
+   </PIN>
+   <PIN pinname="exposure" slicecount="1" values="0.77">
+   </PIN>
+   <PIN pinname="contrast" slicecount="1" values="1.11">
+   </PIN>
+   <PIN pinname="saturation" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Grain" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="scale" slicecount="1" values="1.35">
+   </PIN>
+   <PIN pinname="Vignette intensity" slicecount="1" values="0.13">
+   </PIN>
+   <PIN pinname="Grain intensity" slicecount="1" values="0.3">
+   </PIN>
+   <PIN pinname="ColorCorrection" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="gamma" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="ToneMap" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="amount" slicecount="1" values="0.03">
+   </PIN>
+   <PIN pinname="Technique" slicecount="1" values="Unreal">
+   </PIN>
+   <PIN pinname="EffectSetting" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE id="4" componentmode="Hidden" systemname="DepthofField (DX11.Texture)" filename="DepthofField (DX11.Texture).v4p" nodename="DepthofField (DX11.Texture)">
+   <BOUNDS type="Node" left="1533" top="4185" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Color Tex" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Depth Tex" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Projection" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Fstop" slicecount="1" visible="1" values="5.80000019073486">
+   </PIN>
+   <PIN pinname="maxCoC" slicecount="1" visible="1" values="0.310000002384186">
+   </PIN>
+   <PIN pinname="Enable" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Blur Quality" slicecount="1" visible="1" values="ULTRA">
+   </PIN>
+   <PIN pinname="Texture Size" visible="1">
+   </PIN>
+   <BOUNDS type="Window" left="7725" top="7485" width="11100" height="15375">
+   </BOUNDS>
+   <PIN pinname="World Scale" slicecount="1" visible="1" values="1000">
+   </PIN>
+   <PIN pinname="Scatter" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="autofocus" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Focus Depth" slicecount="1" visible="1" values="2">
+   </PIN>
+   <PIN pinname="Bokeh Rotation" visible="1" slicecount="1" values="60">
+   </PIN>
+   <PIN pinname="focusXY" visible="1" slicecount="2" values="0,0">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetTAA (PBRRenderer)" filename="vl\VVVV.Value.RenderSetting.vl" nodename="GetTAA (PBRRenderer)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="1668" top="1440" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Weight Min" visible="1">
+   </PIN>
+   <PIN pinname="Weight Max" visible="1">
+   </PIN>
+   <PIN pinname="Jitter SpreadXY" visible="1">
+   </PIN>
+   <PIN pinname="Velocity Weight" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetDoF (PBRRenderer)" filename="vl\VVVV.Value.RenderSetting.vl" nodename="GetDoF (PBRRenderer)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="1998" top="3270" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="F-Stop" visible="1">
+   </PIN>
+   <PIN pinname="World Scale" visible="1">
+   </PIN>
+   <PIN pinname="maxCoC" visible="1">
+   </PIN>
+   <PIN pinname="Bokeh Rotation" visible="1">
+   </PIN>
+   <PIN pinname="Auto Focus" visible="1">
+   </PIN>
+   <PIN pinname="Focus XYXY" visible="1">
+   </PIN>
+   <PIN pinname="FocusDepth" visible="1">
+   </PIN>
+   <PIN pinname="Use Scatter" visible="1">
+   </PIN>
+   <PIN pinname="DoF Quality" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Ord2Enum (Enumerations Explicit)" nodename="Ord2Enum (Enumerations Explicit)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="3138" top="3705" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Ord Value" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Enumeration" slicecount="1" values="BlurKernel">
+   </PIN>
+   <PIN pinname="Enum" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetMotionBlur (PBRRenderer)" filename="vl\VVVV.Value.RenderSetting.vl" nodename="GetMotionBlur (PBRRenderer)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="1803" top="4965" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Amount" visible="1">
+   </PIN>
+   <PIN pinname="minVel" visible="1">
+   </PIN>
+   <PIN pinname="Sample Freq" visible="1">
+   </PIN>
+   <PIN pinname="Max Sample" visible="1">
+   </PIN>
+   <PIN pinname="Min Sample" visible="1">
+   </PIN>
+   <PIN pinname="Max Blur" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetBloom (PBRRenderer)" filename="vl\VVVV.Value.RenderSetting.vl" nodename="GetBloom (PBRRenderer)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="2193" top="6990" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Bias" visible="1">
+   </PIN>
+   <PIN pinname="Width" visible="1">
+   </PIN>
+   <PIN pinname="Intensity" visible="1">
+   </PIN>
+   <PIN pinname="Bloom Timt" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Texture Out" dstnodeid="1" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Amount" dstnodeid="1" dstpinname="Amount">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="minVel" dstnodeid="1" dstpinname="minvel">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Sample Freq" dstnodeid="1" dstpinname="SampleFreq">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Max Sample" dstnodeid="1" dstpinname="MaxSamples">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Min Sample" dstnodeid="1" dstpinname="MinSamples">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Max Blur" dstnodeid="1" dstpinname="MaxBlur">
+   </LINK>
+   <NODE id="10" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="velTex">
+   </PIN>
+   <BOUNDS type="Box" left="4515" top="455" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4515" top="455" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Output Node" dstnodeid="1" dstpinname="velTex">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Texture Out" dstnodeid="2" dstpinname="Texture In">
+   </LINK>
+   <NODE id="12" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Texture Size|">
+   </PIN>
+   <BOUNDS type="Box" left="465" top="425" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="465" top="425" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="2" dstpinname="Texture Size" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINKPOINT x="510" y="4300">
+   </LINKPOINT>
+   <LINKPOINT x="1725" y="4055">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Bias" dstnodeid="2" dstpinname="bias">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Width" dstnodeid="2" dstpinname="Width">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Intensity" dstnodeid="2" dstpinname="Intensity">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Bloom Timt" dstnodeid="2" dstpinname="Bloom Tint Color">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Texture Out" dstnodeid="3" dstpinname="Texture In">
+   </LINK>
+   <NODE id="14" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="EffectSetting">
+   </PIN>
+   <BOUNDS type="Box" left="8625" top="455" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="8625" top="455" width="750" height="240">
+   </BOUNDS>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="14" srcpinname="Output Node" dstnodeid="3" dstpinname="EffectSetting" hiddenwhenlocked="1">
+   </LINK>
+   <NODE id="16" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Texture Out|">
+   </PIN>
+   <BOUNDS type="Box" left="1563" top="9522" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1563" top="9522" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="Texture Out" dstnodeid="16" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Texture Out" dstnodeid="4" dstpinname="Color Tex">
+   </LINK>
+   <NODE id="17" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Depth Tex|">
+   </PIN>
+   <BOUNDS type="Box" left="5415" top="455" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5415" top="455" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="Output Node" dstnodeid="4" dstpinname="Depth Tex">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Y Output Value" dstnodeid="4" dstpinname="Texture Size" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINKPOINT x="510" y="2420">
+   </LINKPOINT>
+   <LINKPOINT x="1860" y="2425">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="F-Stop" dstnodeid="4" dstpinname="Fstop">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="World Scale" dstnodeid="4" dstpinname="World Scale">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="maxCoC" dstnodeid="4" dstpinname="maxCoC">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Bokeh Rotation" dstnodeid="4" dstpinname="Bokeh Rotation">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Auto Focus" dstnodeid="4" dstpinname="autofocus">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Focus XYXY" dstnodeid="4" dstpinname="focusXY">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="FocusDepth" dstnodeid="4" dstpinname="Focus Depth">
+   </LINK>
+   <NODE id="18" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Projection">
+   </PIN>
+   <BOUNDS type="Box" left="6615" top="440" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6615" top="440" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Output Node" dstnodeid="4" dstpinname="Projection">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Enum" dstnodeid="4" dstpinname="Blur Quality">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Use Scatter" dstnodeid="4" dstpinname="Scatter">
+   </LINK>
+   <NODE id="20" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Texture In|">
+   </PIN>
+   <BOUNDS type="Box" left="1545" top="380" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1545" top="380" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="20" srcpinname="Output Node" dstnodeid="0" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Weight Min" dstnodeid="0" dstpinname="Weight Min">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Weight Max" dstnodeid="0" dstpinname="Weight Max">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Jitter SpreadXY" dstnodeid="0" dstpinname="Jitter SpreadXY">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Velocity Weight" dstnodeid="0" dstpinname="Velocity Weight Factor">
+   </LINK>
+   <NODE id="21" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Resource Semantics|">
+   </PIN>
+   <BOUNDS type="Box" left="2805" top="410" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2805" top="410" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="21" srcpinname="Output Node" dstnodeid="0" dstpinname="Resource Semantics">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Output Node" dstnodeid="9" dstpinname="Input" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Output Node" dstnodeid="8" dstpinname="Input" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Output Node" dstnodeid="5" dstpinname="Input" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Output Node" dstnodeid="6" dstpinname="Input" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="DoF Quality" dstnodeid="7" dstpinname="Ord Value">
+   </LINK>
+   <BOUNDS type="Window" left="1035" top="2385" width="12465" height="10965">
+   </BOUNDS>
+   <PACK Name="dx11" Version="1.3.1">
+   </PACK>
+   <PACK Name="vvvv-Message" Version="2.9.6">
+   </PACK>
+   <PACK Name="VVVV.Packs.Image" Version="0.2.0">
+   </PACK>
+   <PACK Name="ÎmagePack" Version="0.2.0">
+   </PACK>
+   <PACK Name="addonpack" Version="38.1.0">
+   </PACK>
+   <NODE systemname="GetEffect (PBRRenderer)" filename="vl\VVVV.Value.RenderSetting.vl" nodename="GetEffect (PBRRenderer)" componentmode="Hidden" id="23">
+   <BOUNDS type="Node" left="8625" top="975" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Use Bloom" visible="1">
+   </PIN>
+   <PIN pinname="Use Motion Blur" visible="1">
+   </PIN>
+   <PIN pinname="Use DoF" visible="1">
+   </PIN>
+   <PIN pinname="Use TAA" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="14" srcpinname="Output Node" dstnodeid="23" dstpinname="Input">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="25">
+   <BOUNDS type="Node" left="11205" top="690" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="11205" top="690" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Enable">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="26">
+   <BOUNDS type="Node" left="8310" top="1755" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="23" srcpinname="Use TAA" dstnodeid="26" dstpinname="Input 1" hiddenwhenlocked="1">
+   </LINK>
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="27">
+   <BOUNDS type="Node" left="8745" top="2205" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="28">
+   <BOUNDS type="Node" left="9285" top="2700" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="29">
+   <BOUNDS type="Node" left="9810" top="3105" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="23" srcpinname="Use DoF" dstnodeid="27" dstpinname="Input 1" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="23" srcpinname="Use Motion Blur" dstnodeid="28" dstpinname="Input 1" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="23" srcpinname="Use Bloom" dstnodeid="29" dstpinname="Input 1" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="25" srcpinname="Y Output Value" dstnodeid="29" dstpinname="Input 2" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="25" srcpinname="Y Output Value" dstnodeid="28" dstpinname="Input 2" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="25" srcpinname="Y Output Value" dstnodeid="27" dstpinname="Input 2" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="25" srcpinname="Y Output Value" dstnodeid="26" dstpinname="Input 2" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="25" srcpinname="Y Output Value" dstnodeid="3" dstpinname="Enabled" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="29" srcpinname="Output" dstnodeid="2" dstpinname="Enabled" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="28" srcpinname="Output" dstnodeid="1" dstpinname="Enabled" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="27" srcpinname="Output" dstnodeid="4" dstpinname="Enable" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="26" srcpinname="Output" dstnodeid="0" dstpinname="Enabled" hiddenwhenlocked="1">
+   </LINK>
+   <NODE systemname="CreateEnum (Enumerations)" nodename="CreateEnum (Enumerations)" componentmode="Hidden" id="31">
+   <BOUNDS type="Node" left="14895" top="7755" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Enum Name" slicecount="1" values="BlurKernel">
+   </PIN>
+   <PIN pinname="Strings" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="30" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="14880" top="6165" width="1155" height="1320">
+   </BOUNDS>
+   <BOUNDS type="Node" left="14880" top="6165" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="5" visible="1" values="SMALL,MEDIUM,LARGE,|VERYLARGE&cr;&lf;|,ULTRA">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="Multiline">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="5">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="30" srcpinname="Output String" dstnodeid="31" dstpinname="Strings">
+   </LINK>
+   </PATCH>

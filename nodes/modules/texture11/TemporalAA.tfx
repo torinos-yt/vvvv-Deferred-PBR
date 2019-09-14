@@ -1,0 +1,144 @@
+Texture2D InTex : PREVIOUS;
+Texture2D pTex;
+
+Texture2D velocity : METALROUGHVEL;
+Texture2D depth : DEPTH;
+
+float2 tsize : INVTARGETSIZE;
+float weightmin = .85;
+float weightmax= .92;
+
+float2 jitter;
+
+float velweight<string uiname = "Velocity Weight Factor";> = 250;
+
+SamplerState linearSampler : IMMUTABLE
+{
+    Filter = MIN_MAG_MIP_LINEAR;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+SamplerState pointSampler : IMMUTABLE
+{
+	Filter=MIN_MAG_MIP_POINT;
+	AddressU=CLAMP;
+	AddressV=CLAMP;
+};
+
+SamplerState s_vel : IMMUTABLE
+{
+	Filter=MIN_MAG_MIP_POINT;
+	AddressU=CLAMP;
+	AddressV=CLAMP;
+	MipLODBias = 0;
+};
+
+struct psInput
+{
+	float4 p : SV_Position;
+	float2 uv : TEXCOORD0;
+};
+
+//https://gpuopen.com/optimized-reversible-tonemapper-for-resolve/
+float3 Tonemap(float3 c){
+	return c * rcp(max(max(c.x, c.y), c.z) + 1.0);
+}
+
+float3 TonemapInvert(float3 c){
+	return c * rcp(1.0 - max(max(c.x, c.y), c.z));
+}
+
+float2 GetClosestFragment(float2 uv){
+	float Depth = depth.Sample(pointSampler, uv).r;
+	
+	float4 neighbours = float4(
+		depth.Sample(pointSampler, uv + float2(-1,-1) * tsize).r,
+		depth.Sample(pointSampler, uv + float2( 1,-1) * tsize).r,
+		depth.Sample(pointSampler, uv + float2(-1, 1) * tsize).r,
+		depth.Sample(pointSampler, uv + float2( 1, 1) * tsize).r
+	);
+	
+	float3 closest = float3(0,0, Depth);
+	
+	closest = lerp(closest, float3(-1.0, -1.0, neighbours.x), step(neighbours.x, closest.z));
+	closest = lerp(closest, float3( 1.0, -1.0, neighbours.y), step(neighbours.y, closest.z));
+	closest = lerp(closest, float3(-1.0,  1.0, neighbours.z), step(neighbours.z, closest.z));
+	closest = lerp(closest, float3( 1.0,  1.0, neighbours.w), step(neighbours.w, closest.z));
+	
+	return uv + closest.xy * tsize;
+}
+
+float3 ClipToAABB(float3 color, float3 minimum, float3 maximum){
+	float3 center = .5 * (maximum + minimum);
+	float3 extents = .5 * (maximum - minimum);
+	
+	float3 offset = color - center;
+	
+	float3 ts = abs(extents) / max(abs(offset), 1e-4);
+	float t = saturate(min(min(ts.x, ts.y), ts.z));
+	
+	return center + offset * t;
+}
+
+float4 PS(psInput input) : SV_Target{
+	float2 uv = input.uv;
+	float2 closest = GetClosestFragment(uv);
+	
+	float2 vel = velocity.Sample(s_vel, closest).ba;
+	vel -= .5;
+	vel.x = lerp(vel.x, 0, step(abs(vel.x), .0005));
+	vel.y = -lerp(vel.y, 0, step(abs(vel.y), .0005));
+	
+	uv -= ((jitter*.5)-.5) * tsize;
+	
+	float3 c0 = InTex.Sample(linearSampler, uv).rgb;
+	float3 prevcolor = pTex.Sample(linearSampler, uv - vel).rgb;
+	
+	float3 c1 = InTex.Sample(linearSampler, uv + float2(-.75, -.75) * tsize).rgb;
+	float3 c2 = InTex.Sample(linearSampler, uv + float2(.75, .75) * tsize).rgb;
+	float3 c3 = InTex.Sample(linearSampler, uv + float2(.75, -.75) * tsize).rgb;
+    float3 c4 = InTex.Sample(linearSampler, uv + float2(-.75, .75) * tsize).rgb;
+    float3 center = (c1 + c2 + c3 + c4) * 0.25;
+    c0 += (c0 - center) * 5;
+	
+	float3 corner = 4.0 * (c1 + c2) - 2.0 * c0;
+	
+	c0 = clamp(c0, 0.0, 65472.0);
+	float3 ave = Tonemap((corner + c0) / 7.0);
+	
+	c0 = Tonemap(c0);
+	c1 = Tonemap(c1);
+	c2 = Tonemap(c2);
+
+	float3 lumcoeff = float3(.299, .584, .144);
+	float clum = dot(c0, lumcoeff);
+	float avelum = dot(ave, lumcoeff);
+	float nudge = lerp(4.0, .25, saturate(length(vel) * velweight)) * abs(avelum - clum);
+	
+	float3 minimum = min(c1, c2) - nudge;
+	float3 maximum = max(c1, c2) + nudge;
+	
+	prevcolor = ClipToAABB(Tonemap(prevcolor), minimum, maximum);
+	
+	float prevlum = dot(prevcolor, lumcoeff);
+	float diff = abs(clum - prevlum) / max(max(clum, prevlum), .2);
+	float weight = 1.0 - diff;
+	weight = lerp(weightmax, weightmin, weight * weight);
+	
+	c0 = TonemapInvert(lerp(c0, prevcolor, weight));
+	c0 = clamp(c0, 0.0, 65472.0);
+
+	return float4(c0, 1);
+}
+
+technique10 TAA
+{
+	pass P0
+	{
+		SetPixelShader(CompileShader(ps_4_0,PS()));
+	}
+}
+
+
+

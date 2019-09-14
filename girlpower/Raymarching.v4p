@@ -1,0 +1,471 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
+   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\girlpower\Raymarching.v4p" systemname="Raymarching" filename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\girlpower\Raymarching.v4p">
+   <BOUNDS type="Window" left="0" top="0" width="8535" height="10665">
+   </BOUNDS>
+   <PACK Name="dx11" Version="1.3.1">
+   </PACK>
+   <PACK Name="vvvv-Message" Version="2.9.6">
+   </PACK>
+   <PACK Name="VVVV.Packs.Image" Version="0.2.0">
+   </PACK>
+   <PACK Name="ÎmagePack" Version="0.2.0">
+   </PACK>
+   <PACK Name="addonpack" Version="38.1.0">
+   </PACK>
+   <NODE systemname="RenderGBuffer (Dx11.Texture)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\RenderGBuffer (Dx11.Texture).v4p" nodename="RenderGBuffer (Dx11.Texture)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="2910" top="7545" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="ShadowLayer In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture SizeXY" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="GBuffer Out" visible="1">
+   </PIN>
+   <PIN pinname="Sahdow Map" visible="1">
+   </PIN>
+   <PIN pinname="Light Buffer" visible="1">
+   </PIN>
+   <PIN pinname="LightData" visible="1">
+   </PIN>
+   <PIN pinname="Force Light Update" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="ShadowMap SizeXY" slicecount="2" values="512,512">
+   </PIN>
+   <PIN pinname="Shadow Blur Width" slicecount="1" values="0.04">
+   </PIN>
+   <BOUNDS type="Window" left="0" top="3435" width="18240" height="11385">
+   </BOUNDS>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="2">
+   <BOUNDS type="Box" left="1500" top="6870" width="795" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1500" top="6870" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="1000,1080">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Texture SizeXY">
+   </LINK>
+   <NODE systemname="Camera (Transform Orbit)" filename="%VVVV%\lib\packs\VL.EditingFramework.0.94.50-gf563f1b382\vvvv\nodes\modules\Camera (Transform Orbit).v4p" nodename="Camera (Transform Orbit)" componentmode="Hidden" id="3">
+   <BOUNDS type="Node" left="4920" top="5280" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="Reset" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Near Plane" slicecount="1" values="0.001">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="3" srcpinname="View" dstnodeid="1" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Projection" dstnodeid="1" dstpinname="Projection">
+   </LINK>
+   <NODE systemname="DefferdRendering (DX11.Layer)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\DefferdRendering (DX11.Layer).v4p" nodename="DefferdRendering (DX11.Layer)" componentmode="Hidden" id="4">
+   <BOUNDS type="Node" left="2610" top="8205" width="3105" height="270">
+   </BOUNDS>
+   <PIN pinname="GBuffer" visible="1">
+   </PIN>
+   <PIN pinname="Shadow Map" visible="1">
+   </PIN>
+   <PIN pinname="light Buffer" visible="1">
+   </PIN>
+   <PIN pinname="View" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   <PIN pinname="EffectSetting" visible="1">
+   </PIN>
+   <PIN pinname="Resolution" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Debug" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Debug Mode" slicecount="1" values="BentNormal">
+   </PIN>
+   <PIN pinname="Diffuse Environment Map" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Specular Environment Map" visible="1" slicecount="1" values="||">
+   </PIN>
+   <BOUNDS type="Window" left="2730" top="435" width="19680" height="14100">
+   </BOUNDS>
+   <PIN pinname="IBL intensity" slicecount="3" visible="1" values="2.04,2.04,2.04">
+   </PIN>
+   <PIN pinname="UseLight" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Emv Scroll" slicecount="1" values="0.65">
+   </PIN>
+   <PIN pinname="LightBleedingLimit" slicecount="1" values="0.82">
+   </PIN>
+   <PIN pinname="Render Environment" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="GBuffer Out" dstnodeid="4" dstpinname="GBuffer">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Sahdow Map" dstnodeid="4" dstpinname="Shadow Map">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Light Buffer" dstnodeid="4" dstpinname="light Buffer">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="View" dstnodeid="4" dstpinname="View">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Projection" dstnodeid="4" dstpinname="Projection">
+   </LINK>
+   <NODE systemname="EffectSetting (PBREffect)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\EffectSetting (PBREffect).v4p" nodename="EffectSetting (PBREffect)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="5355" top="7815" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Use Bloom" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Use DoF" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Use AO" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Use TAA" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Use Motion Blur" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Use Color Correction" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Use Vignette" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Use Choromatic Abberation" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Use Grain" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Use Bent Normal" slicecount="1" values="1">
+   </PIN>
+   <BOUNDS type="Window" left="2475" top="3330" width="21030" height="10635">
+   </BOUNDS>
+   <PIN pinname="Use Tonemap" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Half Res AO" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Intensity" slicecount="1" values="0.31">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="0.56">
+   </PIN>
+   <PIN pinname="Threshold Bias" slicecount="1" values="-0.5">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Output" dstnodeid="4" dstpinname="EffectSetting">
+   </LINK>
+   <NODE systemname="LightStruct (LightData)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\LightStruct (LightData).v4p" nodename="LightStruct (LightData)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="4650" top="3795" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Light Data" visible="1">
+   </PIN>
+   <PIN pinname="Light Intensity" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Position" visible="1">
+   </PIN>
+   <PIN pinname="FOV" slicecount="1" values="60">
+   </PIN>
+   <PIN pinname="Ambient" slicecount="1" values="|0.14816,0.14937,0.19648,1.00000|">
+   </PIN>
+   <PIN pinname="Lookat" slicecount="3" values="0,0,0">
+   </PIN>
+   <PIN pinname="Diffuse" slicecount="1" values="|0.99703,1.00000,0.99628,1.00000|">
+   </PIN>
+   <BOUNDS type="Window" left="6000" top="2805" width="8730" height="10335">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Light Data" dstnodeid="1" dstpinname="LightData">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Y Output Value" dstnodeid="4" dstpinname="Resolution">
+   </LINK>
+   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="8" stayontop="0">
+   <BOUNDS type="Node" left="2625" top="8940" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2625" top="8940" width="6000" height="4500">
+   </BOUNDS>
+   <BOUNDS type="Window" left="8460" top="0" width="10335" height="10650">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Texture Out" dstnodeid="8" dstpinname="Texture In">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="11">
+   <BOUNDS type="Box" left="4650" top="2865" width="795" height="720">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4650" top="2865" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="-1.17,0.94,0.83">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Position">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="Y Output Value" dstnodeid="7" dstpinname="Position">
+   </LINK>
+   <NODE systemname="FileTexture (DX11 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d)" componentmode="Hidden" id="14">
+   <BOUNDS type="Node" left="4440" top="6795" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4440" top="6795" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Filename" slicecount="1" values="..\src\HDRI\leadenhall_marketDiffuseHDR.dds">
+   </PIN>
+   <PIN pinname="Reload" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="14" srcpinname="Texture Out" dstnodeid="4" dstpinname="Diffuse Environment Map">
+   </LINK>
+   <NODE systemname="FileTexture (DX11 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d)" componentmode="Hidden" id="15">
+   <BOUNDS type="Node" left="4755" top="7290" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4755" top="7290" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Filename" slicecount="1" values="..\src\HDRI\leadenhall_marketSpecularHDR.dds">
+   </PIN>
+   <PIN pinname="Reload" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="15" srcpinname="Texture Out" dstnodeid="4" dstpinname="Specular Environment Map">
+   </LINK>
+   <NODE systemname="DynamicTexture (DX11.Texture 2d Color)" nodename="DynamicTexture (DX11.Texture 2d Color)" componentmode="Hidden" id="34" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll">
+   <BOUNDS type="Node" left="2715" top="3990" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Data" slicecount="1" values="|0.29657,0.29657,0.29657,1.00000|">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="DynamicTexture (DX11.Texture 2d Color)" nodename="DynamicTexture (DX11.Texture 2d Color)" componentmode="Hidden" id="36" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll">
+   <BOUNDS type="Node" left="2580" top="3180" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Data" slicecount="1" values="|0.99815,0.77567,0.57539,1.00000|">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Apply" slicecount="1" visible="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="MyDistanceFunction (DX11.Effect)" filename="%VVVV%\packs\PBRRenderer\girlpower\dx11\MyDistanceFunction.fx" nodename="MyDistanceFunction (DX11.Effect)" componentmode="Hidden" id="54">
+   <BOUNDS type="Node" left="120" top="1665" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Technique" slicecount="1" values="RemoveMe">
+   </PIN>
+   <PIN pinname="Shader Path" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="a" slicecount="1" values="0.94">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="MyPostFunction (DX11.Effect)" filename="%VVVV%\packs\PBRRenderer\girlpower\dx11\MyPostFunction.fx" nodename="MyPostFunction (DX11.Effect)" componentmode="Hidden" id="56">
+   <BOUNDS type="Node" left="300" top="1020" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Shader Path" visible="1" pintype="Output">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="58">
+   <BOUNDS type="Node" left="2955" top="1260" width="2355" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2955" top="1260" width="4560" height="480">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;- Write your original function|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="13">
+   </PIN>
+   </NODE>
+   <NODE systemname="Translate (Transform)" nodename="Translate (Transform)" componentmode="Hidden" id="71">
+   <BOUNDS type="Node" left="870" top="3315" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="61" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="60">
+   </PIN>
+   <BOUNDS type="Box" left="6735" top="2550" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6735" top="2550" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="-6" systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden">
+   <BOUNDS type="Node" left="6750" top="3105" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Maximum Foreground FPS" visible="1">
+   </PIN>
+   <PIN pinname="Maximum Background FPS" visible="1" slicecount="1" values="30">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="61" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum Foreground FPS">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="74">
+   <BOUNDS type="Box" left="6390" top="6495" width="795" height="720">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6390" top="6495" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0.48,0.14,0.5">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="74" srcpinname="Y Output Value" dstnodeid="4" dstpinname="IBL intensity">
+   </LINK>
+   <NODE systemname="DynamicTexture (DX11.Texture 2d Color)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicTexture (DX11.Texture 2d Color)" componentmode="Hidden" id="81">
+   <BOUNDS type="Node" left="2895" top="4965" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2895" top="4965" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Data" slicecount="1" values="|0.51344,0.50773,0.51246,1.00000|">
+   </PIN>
+   </NODE>
+   <NODE systemname="Scale (Transform Vector)" nodename="Scale (Transform Vector)" componentmode="Hidden" id="84">
+   <BOUNDS type="Node" left="1005" top="4020" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" slicecount="3" values="0.1,0.1,0.1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="71" srcpinname="Transform Out" dstnodeid="84" dstpinname="Transform In">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="86">
+   <BOUNDS type="Box" left="3660" top="6120" width="285" height="255">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3660" top="6120" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Shader Valid|">
+   </PIN>
+   </NODE>
+   <NODE systemname="SDF-GBuffer (DX11.Texture)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\SDF-GBuffer (DX11.Texture).v4p" nodename="SDF-GBuffer (DX11.Texture)" componentmode="Hidden" id="19">
+   <BOUNDS type="Node" left="2085" top="5685" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="1140" top="2490" width="21780" height="11505">
+   </BOUNDS>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <PIN pinname="ShadowLayer Out" visible="1">
+   </PIN>
+   <PIN pinname="IsBump" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="BumpMap Strength" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Reflectance" slicecount="1" values="0.71">
+   </PIN>
+   <PIN pinname="Roughness Map" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Metalic Map" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Iteration" slicecount="1" values="128">
+   </PIN>
+   <PIN pinname="mindist" slicecount="1" values="0.0005">
+   </PIN>
+   <PIN pinname="Shadow mindist" slicecount="1" values="0.0067">
+   </PIN>
+   <PIN pinname="Distance Function" visible="1" slicecount="1" values="..\nodes\modules\">
+   </PIN>
+   <PIN pinname="Post Function" visible="1">
+   </PIN>
+   <PIN pinname="Technique Valid" visible="1">
+   </PIN>
+   <PIN pinname="Shadow Iteration" slicecount="1" values="60">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Emission Stlength" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="MotionVector Iteration" slicecount="1" values="32">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="34" srcpinname="Texture Out" dstnodeid="19" dstpinname="Roughness Map">
+   </LINK>
+   <LINK srcnodeid="36" srcpinname="Texture Out" dstnodeid="19" dstpinname="Texture">
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="Layer Out" dstnodeid="1" dstpinname="Layer In" linkstyle="Bezier">
+   <LINKPOINT x="2150" y="6733">
+   </LINKPOINT>
+   <LINKPOINT x="3145" y="6753">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="ShadowLayer Out" dstnodeid="1" dstpinname="ShadowLayer In" linkstyle="Bezier">
+   <LINKPOINT x="2915" y="6740">
+   </LINKPOINT>
+   <LINKPOINT x="3415" y="6760">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="54" srcpinname="Shader Path" dstnodeid="19" dstpinname="Distance Function">
+   </LINK>
+   <LINK srcnodeid="56" srcpinname="Shader Path" dstnodeid="19" dstpinname="Post Function">
+   </LINK>
+   <LINK srcnodeid="81" srcpinname="Texture Out" dstnodeid="19" dstpinname="Metalic Map">
+   </LINK>
+   <LINK srcnodeid="84" srcpinname="Transform Out" dstnodeid="19" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="Shader Valid" dstnodeid="86" dstpinname="Y Input Value">
+   </LINK>
+   </PATCH>

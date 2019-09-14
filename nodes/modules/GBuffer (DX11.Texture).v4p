@@ -1,0 +1,1091 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
+   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\nodes\modules\GBuffer (DX11.Texture).v4p" systemname="GBuffer (DX11.Texture)" filename="F:\vvvv\contributions\modules\GBuffer (DX11.Texture).v4p" scrollx="45" scrolly="0">
+   <NODE id="10" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Geometry">
+   </PIN>
+   <BOUNDS type="Box" left="2265" top="410" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2265" top="410" width="750" height="240">
+   </BOUNDS>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="11" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Transform In|">
+   </PIN>
+   <BOUNDS type="Box" left="3165" top="650" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3165" top="650" width="750" height="240">
+   </BOUNDS>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="12" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Texture">
+   </PIN>
+   <BOUNDS type="Box" left="4335" top="305" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4335" top="305" width="750" height="240">
+   </BOUNDS>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <BOUNDS type="Window" left="0" top="1635" width="20310" height="11130">
+   </BOUNDS>
+   <PACK Name="dx11" Version="1.3.1">
+   </PACK>
+   <PACK Name="vvvv-Message" Version="2.9.6">
+   </PACK>
+   <PACK Name="VVVV.Packs" Version="0.2.0">
+   </PACK>
+   <PACK Name="ÎmagePack" Version="0.2.0">
+   </PACK>
+   <PACK Name="addonpack" Version="38.1.0">
+   </PACK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="14">
+   <BOUNDS type="Box" left="1350" top="525" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1350" top="525" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Render State|">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="16">
+   <BOUNDS type="Box" left="17415" top="645" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="17415" top="645" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="31">
+   <BOUNDS type="Node" left="225" top="6930" width="1215" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="225" top="6930" width="4065" height="1275">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|Tex0 : Albedo&cr;&lf;Tex1 : rgb:WorldNormal a:Reflectance&cr;&lf;Tex2 : r:Metalic a:Roughness ba:Velocity&cr;&lf;Tex3 : WorldPosition|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Size" slicecount="1" values="10">
+   </PIN>
+   <PIN pinname="Font" slicecount="1" values="|Lucida Sans Unicode|">
+   </PIN>
+   </NODE>
+   <NODE systemname="FrameDelay (Transform)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="FrameDelay (Transform)" componentmode="Hidden" id="33">
+   <BOUNDS type="Node" left="5250" top="4350" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5250" top="4350" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="Output Node" dstnodeid="33" dstpinname="Input 1" hiddenwhenlocked="0" linkstyle="Bezier">
+   <LINKPOINT x="3225" y="2618">
+   </LINKPOINT>
+   <LINKPOINT x="5250" y="2618">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="42">
+   <BOUNDS type="Box" left="7800" top="330" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7800" top="330" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="IsBump">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="43">
+   <BOUNDS type="Box" left="7080" top="990" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7080" top="990" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Normal Texture|">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="49">
+   <BOUNDS type="Box" left="11895" top="360" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="11895" top="360" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Texture Transform|">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="51">
+   <BOUNDS type="Box" left="8730" top="345" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="8730" top="345" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|BumpMap Strength|">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="54">
+   <BOUNDS type="Box" left="5010" top="765" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5010" top="765" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Roughness Map|">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="55">
+   <BOUNDS type="Box" left="5865" top="315" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5865" top="315" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Metalic Map|">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Validator (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Validator (DX11.Layer)" componentmode="Hidden" id="57">
+   <BOUNDS type="Node" left="4413" top="7974" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4413" top="7974" width="2400" height="2400">
+   </BOUNDS>
+   <PIN pinname="Layer In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <PIN pinname="Validators" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="59">
+   <BOUNDS type="Box" left="12720" top="801" width="792" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="12720" top="801" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Validators">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="59" srcpinname="Output Node" dstnodeid="57" dstpinname="Validators" linkstyle="Bezier">
+   <LINKPOINT x="12720" y="4263">
+   </LINKPOINT>
+   <LINKPOINT x="4800" y="4723">
+   </LINKPOINT>
+   </LINK>
+   <PACK Name="VVVV.Packs.Image" Version="0.2.0">
+   </PACK>
+   <PACK Name="dx11.particles" Version="1.0.6">
+   </PACK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="65">
+   <BOUNDS type="Box" left="4410" top="8460" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4410" top="8460" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Layer Out|">
+   </PIN>
+   <PIN pinname="Input Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="I (Spreads)" nodename="I (Spreads)" componentmode="Hidden" id="83">
+   <BOUNDS type="Node" left="11250" top="5185" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname=".. To [" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="79" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="13980" top="3670" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="13980" top="3670" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.01">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="shadowThreshold">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="78" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="14610" top="4255" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="14610" top="4255" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.02">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="bias">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="77" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="15165" top="4870" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="15165" top="4870" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.02">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="slopeScaledBias">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="76" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="16335" top="5305" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="16335" top="5305" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.09">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="depthBiasClamp">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
+   </PIN>
+   </NODE>
+   <NODE systemname="Select (Node)" filename="%VVVV%\lib\nodes\modules\Node\Select (Node).v4p" nodename="Select (Node)" componentmode="Hidden" id="68">
+   <BOUNDS type="Node" left="10125" top="5290" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Select" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Select (Node)" filename="%VVVV%\lib\nodes\modules\Node\Select (Node).v4p" nodename="Select (Node)" componentmode="Hidden" id="67">
+   <BOUNDS type="Node" left="10290" top="4870" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Select" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Output Node" dstnodeid="68" dstpinname="Input" hiddenwhenlocked="0" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Output Node" dstnodeid="67" dstpinname="Input" hiddenwhenlocked="0" linkstyle="PolyLine">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="84">
+   <BOUNDS type="Box" left="9810" top="8385" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9810" top="8385" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|ShadowLayer Out|">
+   </PIN>
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="57" srcpinname="Layer Out" dstnodeid="65" dstpinname="Input Node">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="112">
+   <BOUNDS type="Box" left="10395" top="720" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="10395" top="720" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Emission Stlength|">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="Input">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="113">
+   <BOUNDS type="Box" left="9315" top="750" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9315" top="750" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Emission Map|">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Add (String)" nodename="Add (String)" componentmode="Hidden" id="132">
+   <BOUNDS type="Node" left="13605" top="2460" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" slicecount="1" values="USECOLOR=">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AsString (Value)" nodename="AsString (Value)" componentmode="Hidden" id="133">
+   <BOUNDS type="Node" left="13800" top="1395" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="SubType" slicecount="1" values="|Integer (MinInt .. MaxInt)|">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="133" srcpinname="Output" dstnodeid="132" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="134">
+   <BOUNDS type="Node" left="13800" top="465" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="13800" top="465" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Use Vertex Color|">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="134" srcpinname="Y Output Value" dstnodeid="133" dstpinname="Input">
+   </LINK>
+   <NODE systemname="ShadowMap (DX11.Effect)" filename="dx11\ShadowMap.fx" nodename="ShadowMap (DX11.Effect)" componentmode="Hidden" id="80">
+   <BOUNDS type="Node" left="9810" top="6730" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="vpindex" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Geometry" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="lights" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="depthBiasClamp" slicecount="1" visible="1" values="0.09">
+   </PIN>
+   <PIN pinname="slopeScaledBias" slicecount="1" visible="1" values="0.02">
+   </PIN>
+   <PIN pinname="bias" slicecount="1" visible="1" values="0.02">
+   </PIN>
+   <PIN pinname="shadowThreshold" slicecount="1" visible="1" values="1.01">
+   </PIN>
+   <PIN pinname="Enabled" visible="1" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="83" srcpinname="Output" dstnodeid="80" dstpinname="vpindex">
+   </LINK>
+   <LINK srcnodeid="79" srcpinname="Y Output Value" dstnodeid="80" dstpinname="shadowThreshold" linkstyle="Bezier">
+   <LINKPOINT x="13980" y="5310">
+   </LINKPOINT>
+   <LINKPOINT x="10500" y="5310">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="78" srcpinname="Y Output Value" dstnodeid="80" dstpinname="bias" linkstyle="Bezier">
+   <LINKPOINT x="14610" y="5603">
+   </LINKPOINT>
+   <LINKPOINT x="10665" y="5603">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="77" srcpinname="Y Output Value" dstnodeid="80" dstpinname="slopeScaledBias" linkstyle="Bezier">
+   <LINKPOINT x="15165" y="5910">
+   </LINKPOINT>
+   <LINKPOINT x="10815" y="5910">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="76" srcpinname="Y Output Value" dstnodeid="80" dstpinname="depthBiasClamp" linkstyle="Bezier">
+   <LINKPOINT x="16335" y="6128">
+   </LINKPOINT>
+   <LINKPOINT x="10980" y="6128">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="68" srcpinname="Output" dstnodeid="80" dstpinname="Geometry">
+   </LINK>
+   <LINK srcnodeid="67" srcpinname="Output" dstnodeid="80" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="Y Output Value" dstnodeid="80" dstpinname="Enabled" linkstyle="Bezier">
+   <LINKPOINT x="17415" y="3915">
+   </LINKPOINT>
+   <LINKPOINT x="11610" y="3915">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="80" srcpinname="Layer" dstnodeid="84" dstpinname="Input Node">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="135">
+   <BOUNDS type="Box" left="6615" top="570" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6615" top="570" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.25">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Reflectance">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="UDP (Network Server)" nodename="UDP (Network Server)" componentmode="Hidden" id="136">
+   <BOUNDS type="Node" left="11445" top="3315" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Local Port" slicecount="1" values="6517">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AsValue (Raw)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="AsValue (Raw)" componentmode="Hidden" id="137">
+   <BOUNDS type="Node" left="11445" top="3735" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="11445" top="3735" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Format" slicecount="1" values="Single">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="136" srcpinname="Output" dstnodeid="137" dstpinname="Input">
+   </LINK>
+   <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="138">
+   <BOUNDS type="Node" left="11445" top="4185" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="137" srcpinname="Output" dstnodeid="138" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="138" srcpinname="Output" dstnodeid="83" dstpinname=".. To [" linkstyle="Bezier">
+   <LINKPOINT x="11475" y="4823">
+   </LINKPOINT>
+   <LINKPOINT x="11475" y="4823">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="138" srcpinname="Output" dstnodeid="67" dstpinname="Select" linkstyle="Bezier">
+   <LINKPOINT x="11445" y="4643">
+   </LINKPOINT>
+   <LINKPOINT x="11025" y="4643">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="138" srcpinname="Output" dstnodeid="68" dstpinname="Select" linkstyle="Bezier">
+   <LINKPOINT x="11430" y="4860">
+   </LINKPOINT>
+   <LINKPOINT x="10860" y="4860">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="GetVertexData (DX11.GeomFX)" filename="%VVVV%\packs\InstanceNoodles\nodes\modules\DX11.GeomFX\GetVertexData (DX11.GeomFX)\GetVertexData (DX11.GeomFX).v4p" nodename="GetVertexData (DX11.GeomFX)" componentmode="Hidden" id="139">
+   <BOUNDS type="Node" left="8130" top="4590" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Geometry In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Geometry Out" visible="1">
+   </PIN>
+   <PIN pinname="Normals Enabled" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="UV Enabled" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Position 3D Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Vertex Count" visible="1">
+   </PIN>
+   <PIN pinname="Pos Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Output Node" dstnodeid="139" dstpinname="Geometry In">
+   </LINK>
+   <NODE systemname="Switch (Node Input)" nodename="Switch (Node Input)" componentmode="Hidden" id="140">
+   <BOUNDS type="Node" left="4860" top="6105" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Output Node" dstnodeid="140" dstpinname="Input 1" linkstyle="Bezier">
+   <LINKPOINT x="2330" y="2895">
+   </LINKPOINT>
+   <LINKPOINT x="5095" y="3825">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="139" srcpinname="Geometry Out" dstnodeid="140" dstpinname="Input 2" linkstyle="Bezier">
+   <LINKPOINT x="8145" y="5475">
+   </LINKPOINT>
+   <LINKPOINT x="5400" y="5460">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="141">
+   <BOUNDS type="Box" left="14625" top="450" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="14625" top="450" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Use Vertexx Velocity|">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="141" srcpinname="Y Output Value" dstnodeid="140" dstpinname="Switch" linkstyle="Bezier">
+   <LINKPOINT x="14630" y="3038">
+   </LINKPOINT>
+   <LINKPOINT x="4915" y="3968">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="FrameDelay (3d Buffer)" filename="%VVVV%\packs\InstanceNoodles\nodes\modules\Compute\3D Buffer\FrameDelay (3D Buffer)\FrameDelay (3D Buffer).v4p" nodename="FrameDelay (3d Buffer)" componentmode="Hidden" id="142">
+   <BOUNDS type="Node" left="8220" top="5370" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="3D Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="139" srcpinname="Position 3D Buffer" dstnodeid="142" dstpinname="3D Buffer" linkstyle="Bezier">
+   <LINKPOINT x="8350" y="5133">
+   </LINKPOINT>
+   <LINKPOINT x="8300" y="5098">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="139" srcpinname="Vertex Count" dstnodeid="142" dstpinname="Spread Count">
+   </LINK>
+   <LINK srcnodeid="141" srcpinname="Y Output Value" dstnodeid="139" dstpinname="Pos Enabled">
+   </LINK>
+   <NODE systemname="Info (DX11.Texture 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Info (DX11.Texture 2d)" componentmode="Hidden" id="144">
+   <BOUNDS type="Node" left="5610" top="1335" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5610" top="1335" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Width" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="55" srcpinname="Output Node" dstnodeid="144" dstpinname="Texture In">
+   </LINK>
+   <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="145">
+   <BOUNDS type="Node" left="5625" top="1875" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Is NIL" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="144" srcpinname="Width" dstnodeid="145" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Switch (Node Input)" nodename="Switch (Node Input)" componentmode="Hidden" id="146">
+   <BOUNDS type="Node" left="6495" top="2490" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="145" srcpinname="Is NIL" dstnodeid="146" dstpinname="Switch">
+   </LINK>
+   <LINK srcnodeid="55" srcpinname="Output Node" dstnodeid="146" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="DynamicTexture (DX11.Texture 2d Color)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="DynamicTexture (DX11.Texture 2d Color)" componentmode="Hidden" id="147">
+   <BOUNDS type="Node" left="6945" top="1860" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6945" top="1860" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Data" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="147" srcpinname="Texture Out" dstnodeid="146" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="ShaderWatcher (DX11 Shader)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\ShaderWatcher (DX11 Shader).v4p" nodename="ShaderWatcher (DX11 Shader)" componentmode="Hidden" id="148">
+   <BOUNDS type="Node" left="825" top="3885" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="File Path" visible="1">
+   </PIN>
+   <PIN pinname="Shader Content" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="EQ (String)" nodename="EQ (String)" componentmode="Hidden" id="149">
+   <BOUNDS type="Node" left="255" top="2445" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Switch (String Input)" nodename="Switch (String Input)" componentmode="Hidden" id="150">
+   <BOUNDS type="Node" left="840" top="3300" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="150" srcpinname="Output" dstnodeid="148" dstpinname="File Path">
+   </LINK>
+   <LINK srcnodeid="149" srcpinname="Output" dstnodeid="150" dstpinname="Switch">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="151">
+   <BOUNDS type="Box" left="270" top="585" width="525" height="255">
+   </BOUNDS>
+   <BOUNDS type="Node" left="270" top="585" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="Multiline">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Post Function|">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="151" srcpinname="Output String" dstnodeid="149" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="POST_Template (DX11.Effect)" filename="%VVVV%\packs\PBRRenderer\nodes\dx11\POST_Template.fx" nodename="POST_Template (DX11.Effect)" componentmode="Hidden" id="152">
+   <BOUNDS type="Node" left="765" top="2430" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Shader Path" visible="1" pintype="Output">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="152" srcpinname="Shader Path" dstnodeid="150" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="151" srcpinname="Output String" dstnodeid="150" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="ShaderWatcher (DX11 Shader)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\ShaderWatcher (DX11 Shader).v4p" nodename="ShaderWatcher (DX11 Shader)" componentmode="Hidden" id="153">
+   <BOUNDS type="Node" left="2610" top="3825" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="File Path" visible="1">
+   </PIN>
+   <PIN pinname="Shader Content" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="154">
+   <BOUNDS type="Box" left="2610" top="3405" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2610" top="3405" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="1" values="dx11\RenderG-Buffer.fx">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="text">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="|All Files (*.*)||*.*|">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="Filename">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="154" srcpinname="Output String" dstnodeid="153" dstpinname="File Path">
+   </LINK>
+   <NODE systemname="Add (String)" nodename="Add (String)" componentmode="Hidden" id="155">
+   <BOUNDS type="Node" left="2250" top="5820" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input 3" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="148" srcpinname="Shader Content" dstnodeid="155" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="153" srcpinname="Shader Content" dstnodeid="155" dstpinname="Input 3">
+   </LINK>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="159">
+   <BOUNDS type="Node" left="1170" top="5385" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1170" top="5385" width="600" height="240">
+   </BOUNDS>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   <PIN pinname="Input String" slicecount="1" values="|#include &lt;packs\PBRRenderer\nodes\modules\fxh\GBuffer_Common.fxh&gt;&cr;&lf;|">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="159" srcpinname="Output String" dstnodeid="155" dstpinname="Input 1">
+   </LINK>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="161">
+   <BOUNDS type="Box" left="15780" top="675" width="1590" height="270">
+   </BOUNDS>
+   <BOUNDS type="Node" left="15780" top="675" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="GBufferNoTangent">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="GBuffer">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Technique">
+   </PIN>
+   </NODE>
+   <NODE systemname="timer" filename="%VVVV%\packs\PBRRenderer\nodes\modules\timer.v4p" nodename="%VVVV%\packs\PBRRenderer\nodes\modules\timer.v4p" componentmode="Hidden" id="162">
+   <BOUNDS type="Node" left="5565" top="6195" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Time" visible="1">
+   </PIN>
+   <PIN pinname="DeltaTime" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Shader (DX11.Effect Fieldtrip String)" filename="%VVVV%\packs\FieldTrip\nodes\plugins\FieldTripHelpers.dll" nodename="Shader (DX11.Effect Fieldtrip String)" componentmode="Hidden" id="160">
+   <BOUNDS type="Node" left="4425" top="6780" width="5025" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4425" top="6780" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="ShaderCode" visible="1">
+   </PIN>
+   <PIN pinname="ConfigShader" slicecount="1" values="|#include &lt;packs\PBRRenderer\nodes\modules\fxh\GBuffer_Common.fxh&gt;&cr;&lf;#ifndef GBUFFERCOMMON&cr;&lf;&tab;#include &lt;packs\PBRRenderer\nodes\modules\fxh\GBuffer_Common.fxh&gt;&cr;&lf;#endif&cr;&lf;//Available Uniform Parameters&cr;&lf;//&cr;&lf;//float Time&cr;&lf;//float DeltaTime&cr;&lf;//float4 Variable : User Variable Controlled on vvvv patch&cr;&lf;&cr;&lf;//Available Matelial Data&cr;&lf;//float4 colorTex(float2 uv)&cr;&lf;//float metalTex(float2 uv)&cr;&lf;//float roughTex(float2 uv)&cr;&lf;//float3 emissionTex(float2 uv)&cr;&lf;//float Reflectance;&cr;&lf;&cr;&lf;//struct Light{&cr;&lf;//&tab;float3 pos;&cr;&lf;//&tab;float3 amb;&cr;&lf;//&tab;float3 diff;&cr;&lf;//&tab;float4x4 VP;&cr;&lf;//};&cr;&lf;//StructuredBuffer&lt;Light&gt; lights : Light List;&cr;&lf;&cr;&lf;//Input Data Struct&cr;&lf;//struct Info{&cr;&lf;//&tab;float3 Pos;&cr;&lf;//  float2 posScreen;&cr;&lf;//&tab;float3 camPos;&cr;&lf;//&tab;float3 Normal;&cr;&lf;//  float2 uv;&cr;&lf;//  float2 Velocity;&cr;&lf;//  float3 vertexColor; : if vertex color is none : vertexColor = 1.0;&cr;&lf;//};&cr;&lf;&cr;&lf;//Output Data Struct&cr;&lf;//struct OutputData{&cr;&lf;//&tab;float3 Albedo;&cr;&lf;//&tab;float3 Emission;&cr;&lf;//&tab;float Metalness;&cr;&lf;//&tab;float Roughness;&cr;&lf;//&tab;float Reflectance;&cr;&lf;//&tab;&cr;&lf;//&tab;float2 uv; : Already Set Model Texture Coordinate&lf;//};&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;void PostFunction(Info i, inout OutputData o){&cr;&lf;&tab;//Write your own post function!!&cr;&lf;&cr;&lf;&tab;o.Albedo = colorTex(i.uv).rgb * i.vertexColor;&cr;&lf;&tab;o.Emission = emissionTex(i.uv);&cr;&lf;&tab;o.Metalness = metalTex(i.uv);&cr;&lf;&tab;o.Roughness = roughTex(i.uv);&cr;&lf;&tab;o.Reflectance = Reflectance;&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;StructuredBuffer&lt;float3&gt; prevPos;&cr;&lf;bool vvel = false;&cr;&lf;&cr;&lf;bool IsBump = true;&cr;&lf;float bumps&lt;string uiname = &quot;BumpMap Strength&quot;; float uimin = 0.0; float uimax = 5.0;&gt; = 1;&cr;&lf;&cr;&lf;float emit &lt;string uiname = &quot;Emission Stlength&quot;;&gt; = 1.0;&cr;&lf;&cr;&lf;SamplerState linearSampler : IMMUTABLE&cr;&lf;{&cr;&lf;&tab;Filter = MIN_MAG_MIP_LINEAR;&cr;&lf;&tab;AddressU = Wrap;&cr;&lf;&tab;AddressV = Wrap;&cr;&lf;};&cr;&lf; &cr;&lf;cbuffer cbPerDraw : register( b0 )&cr;&lf;{&cr;&lf;&tab;float4x4 tVP : VIEWPROJECTION;&tab;&cr;&lf;&tab;float4x4 tV : VIEW;&cr;&lf;&tab;float4x4 tVI : VIEWINVERSE;&cr;&lf;&tab;float4x4 ptVP : PREVIOUSVIEWPROJECTION;&cr;&lf;};&cr;&lf;&cr;&lf;cbuffer cbPerObj : register( b1 )&cr;&lf;{&cr;&lf;&tab;float4x4 tW : WORLD;&cr;&lf;&tab;float4x4 tWIT: WORLDLAYERINVERSETRANSPOSE;&cr;&lf;&tab;float4x4 ptW;&cr;&lf;&tab;float4x4 texW;&cr;&lf;};&cr;&lf;&cr;&lf;struct VS_IN&cr;&lf;{&cr;&lf;&tab;float4 PosO : POSITION;&cr;&lf;&tab;float4 TexCd : TEXCOORD0;&cr;&lf;&tab;float3 Norm : NORMAL;&cr;&lf;&tab;float3 tangent : TANGENT;&cr;&lf;&tab;uint vid : SV_VertexID;&cr;&lf;&tab;#if USECOLOR&cr;&lf;&tab;&tab;float3 color : COLOR;&cr;&lf;&tab;#endif&cr;&lf;};&cr;&lf;&cr;&lf;struct VS_INTNB&cr;&lf;{&cr;&lf;&tab;float4 PosO : POSITION;&cr;&lf;&tab;float4 TexCd : TEXCOORD0;&cr;&lf;&tab;float3 Norm : NORMAL;&cr;&lf;&tab;uint vid : SV_VertexID;&cr;&lf;&tab;#if USECOLOR&cr;&lf;&tab;&tab;float3 color : COLOR;&cr;&lf;&tab;#endif&cr;&lf;};&cr;&lf;&cr;&lf;struct vs2ps&cr;&lf;{&cr;&lf;&tab;float4 PosWVP: SV_Position;&cr;&lf;&tab;float4 PosW : TEXCOORD1;&cr;&lf;&tab;float4 velocity : TEXCOORD2;&cr;&lf;&tab;float4 uv: TEXCOORD0;&cr;&lf;&tab;float3 tangent : TEXCOORD3;&cr;&lf;&tab;float3 NormW : NORMAL;&cr;&lf;&tab;#if USECOLOR&cr;&lf;&tab;&tab;float3 color : COLOR;&cr;&lf;&tab;#endif&cr;&lf;};&cr;&lf;&cr;&lf;struct vs2pstnb&cr;&lf;{&cr;&lf;&tab;float4 PosWVP: SV_Position;&cr;&lf;&tab;float4 PosW : TEXCOORD1;&cr;&lf;&tab;float4 velocity : TEXCOORD2;&cr;&lf;&tab;float4 uv: TEXCOORD0;&cr;&lf;&tab;float3 NormW : NORMAL;&cr;&lf;&tab;#if USECOLOR&cr;&lf;&tab;&tab;float3 color : COLOR;&cr;&lf;&tab;#endif&cr;&lf;};&cr;&lf;&cr;&lf;struct PSout{&cr;&lf;&tab;float4 color : SV_Target0;&cr;&lf;&tab;float4 normal : SV_Target1;&cr;&lf;&tab;float4 MRVel : SV_Target2;&cr;&lf;&tab;float3 position : SV_Target3;&cr;&lf;};&cr;&lf;&cr;&lf;vs2ps VS(VS_IN input)&cr;&lf;{&cr;&lf;&tab;vs2ps output;&cr;&lf;&tab;output.PosWVP  = mul(input.PosO,mul(tW,tVP));&cr;&lf;&tab;float4 PosW = mul(input.PosO, tW);&cr;&lf;&tab;&cr;&lf;&tab;float4 velpos = lerp(input.PosO, float4(prevPos[input.vid], 1), vvel);&cr;&lf;&tab;float4 velocity = mul(velpos, ptW);&cr;&lf;&tab;output.PosW = PosW;&cr;&lf;&tab;&cr;&lf;&tab;float4 posV = mul(PosW, tVP);&cr;&lf;&tab;float4 vel = mul(velocity, ptVP);&cr;&lf;&tab;output.velocity = vel;&cr;&lf;&tab;&cr;&lf;&tab;output.uv = mul(input.TexCd, texW);;&cr;&lf;&tab;output.NormW = normalize(mul(input.Norm, (float3x3)tWIT));&cr;&lf;&tab;output.tangent = normalize(mul(input.tangent, (float3x3)tW).xyz);&cr;&lf;&tab;#if USECOLOR&cr;&lf;&tab;&tab;output.color =  input.color;&cr;&lf;&tab;#endif&cr;&lf;&tab;return output;&cr;&lf;}&cr;&lf;&cr;&lf;vs2pstnb VS_TNB(VS_INTNB input)&cr;&lf;{&cr;&lf;&tab;vs2pstnb output;&cr;&lf;&tab;output.PosWVP  = mul(input.PosO,mul(tW,tVP));&cr;&lf;&tab;float4 PosW = mul(input.PosO, tW);&cr;&lf;&tab;&cr;&lf;&tab;float4 velpos = lerp(input.PosO, float4(prevPos[input.vid], 1), vvel);&cr;&lf;&tab;float4 velocity = mul(velpos, ptW);&cr;&lf;&tab;output.PosW = PosW;&cr;&lf;&tab;&cr;&lf;&tab;float4 posV = mul(PosW, tVP);&cr;&lf;&tab;float4 vel = mul(velocity, ptVP);&cr;&lf;&tab;output.velocity = vel;&cr;&lf;&tab;&cr;&lf;&tab;output.uv = mul(input.TexCd, texW);&cr;&lf;&tab;output.NormW = normalize(mul(input.Norm, (float3x3)tWIT));&cr;&lf;&tab;#if USECOLOR&cr;&lf;&tab;&tab;output.color =  input.color;&cr;&lf;&tab;#endif&cr;&lf;&tab;return output;&cr;&lf;}&cr;&lf;&cr;&lf;PSout PS(vs2ps In){&cr;&lf;&tab;&cr;&lf;&tab;PSout gbuffer;&cr;&lf;&tab;Info info = (Info)0;&cr;&lf;&tab;OutputData o = (OutputData)0;&cr;&lf;&tab;&cr;&lf;&tab;float4 posvp = mul(In.PosW, tVP);&cr;&lf;&tab;float2 possc = In.PosWVP.xy / In.PosWVP.w;&cr;&lf;&tab;float2 velxy = possc - (In.velocity / In.velocity.w).xy;&cr;&lf;&tab;velxy *= .5;&cr;&lf;&tab;velxy += .5;&cr;&lf;&tab;&cr;&lf;&tab;info.Pos = In.PosW.xyz;&cr;&lf;&tab;info.posScreen = possc;&cr;&lf;&tab;info.camPos = tVI[3].xyz;&cr;&lf;&tab;info.Normal = In.NormW;&cr;&lf;&tab;info.uv = o.uv = In.uv.xy;&cr;&lf;&tab;info.Velocity = velxy * 2 - 1;&cr;&lf;&tab;info.vertexColor = float3(1,1,1);&cr;&lf;&tab;#if USECOLOR&cr;&lf;&tab;&tab;info.vertexColor = In.color;&cr;&lf;&tab;#endif&cr;&lf;&tab;&cr;&lf;&tab;PostFunction(info, o);&cr;&lf;&tab;&cr;&lf;&tab;float3 emissive = o.Emission * emit;&cr;&lf;&tab;gbuffer.color = float4(o.Albedo + emissive, 1);&cr;&lf;&tab;float4 norm = float4(In.NormW, o.Reflectance);&cr;&lf;&tab;gbuffer.normal = norm;&cr;&lf;&tab;&cr;&lf;&tab;gbuffer.MRVel = float4(o.Metalness, o.Roughness, velxy);&cr;&lf;&tab;gbuffer.position = In.PosW.xyz;&cr;&lf;&tab;&cr;&lf;&tab;if(IsBump){&cr;&lf;&tab;&tab;float3 bnormal = normalize(cross(In.NormW, In.tangent));&cr;&lf;&tab;&tab;float3 nmap = BumpTex.Sample(linearSampler, o.uv).xyz;&cr;&lf;&tab;&tab;nmap = nmap * 2.0 - 1.0;&cr;&lf;&tab;&tab;gbuffer.normal = float4(normalize(norm.xyz + (nmap.x * In.tangent + nmap.y * bnormal) * bumps), o.Reflectance);&cr;&lf;&tab;}&cr;&lf;&tab;return gbuffer;&cr;&lf;}&cr;&lf;&cr;&lf;PSout PS_TNB(vs2pstnb In){&cr;&lf;&tab;PSout gbuffer;&cr;&lf;&tab;Info info = (Info)0;&cr;&lf;&tab;OutputData o = (OutputData)0;&cr;&lf;&tab;&cr;&lf;&tab;float4 posvp = mul(In.PosW, tVP);&cr;&lf;&tab;float2 possc = posvp.xy / posvp.w;&cr;&lf;&tab;float2 velxy = possc - (In.velocity / In.velocity.w).xy;&cr;&lf;&tab;velxy *= .5;&cr;&lf;&tab;velxy += .5;&cr;&lf;&tab;&cr;&lf;&tab;info.Pos = In.PosW.xyz;&cr;&lf;&tab;info.posScreen = possc;&cr;&lf;&tab;info.camPos = tVI[3].xyz;&cr;&lf;&tab;info.Normal = In.NormW;&cr;&lf;&tab;info.uv = o.uv = In.uv.xy;&cr;&lf;&tab;info.Velocity = velxy * 2 - 1;&cr;&lf;&tab;info.vertexColor = float3(1,1,1);&cr;&lf;&tab;#if USECOLOR&cr;&lf;&tab;&tab;info.vertexColor = In.color;&cr;&lf;&tab;#endif&cr;&lf;&tab;&cr;&lf;&tab;PostFunction(info, o);&cr;&lf;&tab;&cr;&lf;&tab;float3 emissive = o.Emission * emit;&cr;&lf;&tab;gbuffer.color = float4(o.Albedo + emissive, 1);&cr;&lf;&tab;float4 norm = float4(In.NormW, o.Reflectance);&cr;&lf;&tab;gbuffer.normal = norm;&cr;&lf;&tab;&cr;&lf;&tab;gbuffer.MRVel = float4(o.Metalness, o.Roughness, velxy);&cr;&lf;&tab;gbuffer.position = In.PosW.xyz;&cr;&lf;&tab;&cr;&lf;&tab;if(IsBump){&cr;&lf;&tab;&tab;float3 p_dx = ddx(In.PosW.xyz);&cr;&lf;&tab;&tab;float3 p_dy = ddy(In.PosW.xyz);&cr;&lf;&cr;&lf;&tab;&tab;float2 tc_dx = ddx(o.uv);&cr;&lf;&tab;&tab;float2 tc_dy = ddy(o.uv);&cr;&lf;&cr;&lf;&tab;&tab;float3 t = normalize( tc_dy.y * p_dx - tc_dx.y * p_dy );&cr;&lf;&tab;&tab;float3 b = normalize( tc_dy.x * p_dx - tc_dx.x * p_dy ); &cr;&lf;&cr;&lf;&tab;&tab;float3 n = normalize(In.NormW);&cr;&lf;&tab;&tab;float3 x = cross(n, t);&cr;&lf;&tab;&tab;t = cross(x, n);&cr;&lf;&tab;&tab;t = normalize(t);&cr;&lf;&cr;&lf;&tab;&tab;x = cross(b, n);&cr;&lf;&tab;&tab;b = cross(n, x);&cr;&lf;&tab;&tab;b = normalize(b);&cr;&lf;&tab;&tab;&cr;&lf;&tab;&tab;float3 nmap = BumpTex.Sample(linearSampler, o.uv).xyz;&cr;&lf;&tab;&tab;nmap = nmap * 2.0 - 1.0;&cr;&lf;&tab;&tab;gbuffer.normal = float4(normalize(norm.xyz + (nmap.x * t + nmap.y * b) * bumps), o.Reflectance);&cr;&lf;&tab;}&cr;&lf;&tab;return gbuffer;&cr;&lf;}&cr;&lf;&cr;&lf;technique10 GBuffer&cr;&lf;{&cr;&lf;&tab;pass P0&cr;&lf;&tab;{&cr;&lf;&tab;&tab;SetVertexShader( CompileShader( vs_4_0, VS() ) );&cr;&lf;&tab;&tab;SetPixelShader( CompileShader( ps_4_0, PS() ) );&cr;&lf;&tab;}&cr;&lf;}&cr;&lf;&cr;&lf;technique10 GBufferNoTangent&cr;&lf;{&cr;&lf;&tab;pass P0&cr;&lf;&tab;{&cr;&lf;&tab;&tab;SetVertexShader( CompileShader( vs_4_0, VS_TNB() ) );&cr;&lf;&tab;&tab;SetPixelShader( CompileShader( ps_4_0, PS_TNB() ) );&cr;&lf;&tab;}&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;|">
+   </PIN>
+   <PIN pinname="ConfigDefines" slicecount="1" values="USECOLOR=0">
+   </PIN>
+   <PIN pinname="Technique" visible="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Geometry" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="Time" visible="1">
+   </PIN>
+   <PIN pinname="DeltaTime" visible="1">
+   </PIN>
+   <PIN pinname="Reflectance" visible="1">
+   </PIN>
+   <PIN pinname="vvel" visible="1">
+   </PIN>
+   <PIN pinname="IsBump" visible="1">
+   </PIN>
+   <PIN pinname="BumpMap Strength" visible="1">
+   </PIN>
+   <PIN pinname="Emission Stlength" visible="1">
+   </PIN>
+   <PIN pinname="ptW" visible="1">
+   </PIN>
+   <PIN pinname="texW" visible="1">
+   </PIN>
+   <PIN pinname="Texture" visible="1">
+   </PIN>
+   <PIN pinname="Bump Texture" visible="1">
+   </PIN>
+   <PIN pinname="Metalness Map" visible="1">
+   </PIN>
+   <PIN pinname="Roughness Map" visible="1">
+   </PIN>
+   <PIN pinname="Emission Map" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="prevPos" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="Defines" visible="1" pintype="Input" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Compiled" visible="1">
+   </PIN>
+   <PIN pinname="Technique Valid" visible="1">
+   </PIN>
+   <PIN pinname="VariableXYZW" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="155" srcpinname="Output" dstnodeid="160" dstpinname="ShaderCode" linkstyle="Bezier">
+   <LINKPOINT x="2310" y="6420">
+   </LINKPOINT>
+   <LINKPOINT x="4890" y="6420">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="161" srcpinname="Output Enum" dstnodeid="160" dstpinname="Technique" linkstyle="Bezier">
+   <LINKPOINT x="15780" y="3840">
+   </LINKPOINT>
+   <LINKPOINT x="9030" y="3840">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Output Node" dstnodeid="160" dstpinname="Render State" linkstyle="Bezier">
+   <LINKPOINT x="1410" y="3765">
+   </LINKPOINT>
+   <LINKPOINT x="4635" y="3765">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="140" srcpinname="Output" dstnodeid="160" dstpinname="Geometry">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Output Node" dstnodeid="160" dstpinname="Transform In" linkstyle="Bezier">
+   <LINKPOINT x="3210" y="3833">
+   </LINKPOINT>
+   <LINKPOINT x="5475" y="3833">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="162" srcpinname="Time" dstnodeid="160" dstpinname="Time">
+   </LINK>
+   <LINK srcnodeid="162" srcpinname="DeltaTime" dstnodeid="160" dstpinname="DeltaTime">
+   </LINK>
+   <LINK srcnodeid="135" srcpinname="Y Output Value" dstnodeid="160" dstpinname="Reflectance" linkstyle="Bezier">
+   <LINKPOINT x="6630" y="3788">
+   </LINKPOINT>
+   <LINKPOINT x="6315" y="3788">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="141" srcpinname="Y Output Value" dstnodeid="160" dstpinname="vvel" linkstyle="Bezier">
+   <LINKPOINT x="14625" y="3840">
+   </LINKPOINT>
+   <LINKPOINT x="6555" y="3840">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="160" dstpinname="IsBump" linkstyle="Bezier">
+   <LINKPOINT x="7815" y="3780">
+   </LINKPOINT>
+   <LINKPOINT x="6735" y="3780">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="51" srcpinname="Y Output Value" dstnodeid="160" dstpinname="BumpMap Strength" linkstyle="Bezier">
+   <LINKPOINT x="8745" y="3683">
+   </LINKPOINT>
+   <LINKPOINT x="6930" y="3683">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="112" srcpinname="Y Output Value" dstnodeid="160" dstpinname="Emission Stlength" linkstyle="Bezier">
+   <LINKPOINT x="10395" y="3863">
+   </LINKPOINT>
+   <LINKPOINT x="7155" y="3863">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="33" srcpinname="Output 1" dstnodeid="160" dstpinname="ptW" linkstyle="Bezier">
+   <LINKPOINT x="5310" y="5693">
+   </LINKPOINT>
+   <LINKPOINT x="7320" y="5693">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="49" srcpinname="Output Node" dstnodeid="160" dstpinname="texW" linkstyle="Bezier">
+   <LINKPOINT x="11880" y="3683">
+   </LINKPOINT>
+   <LINKPOINT x="7590" y="3683">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Output Node" dstnodeid="160" dstpinname="Texture">
+   </LINK>
+   <LINK srcnodeid="43" srcpinname="Output Node" dstnodeid="160" dstpinname="Bump Texture" linkstyle="Bezier">
+   <LINKPOINT x="7110" y="4005">
+   </LINKPOINT>
+   <LINKPOINT x="7950" y="4005">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="146" srcpinname="Output" dstnodeid="160" dstpinname="Metalness Map" linkstyle="Bezier">
+   <LINKPOINT x="6540" y="4763">
+   </LINKPOINT>
+   <LINKPOINT x="8160" y="4763">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="54" srcpinname="Output Node" dstnodeid="160" dstpinname="Roughness Map" linkstyle="Bezier">
+   <LINKPOINT x="5070" y="3893">
+   </LINKPOINT>
+   <LINKPOINT x="8355" y="3893">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="113" srcpinname="Output Node" dstnodeid="160" dstpinname="Emission Map" linkstyle="Bezier">
+   <LINKPOINT x="9330" y="3870">
+   </LINKPOINT>
+   <LINKPOINT x="8595" y="3870">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="142" srcpinname="3D Buffer" dstnodeid="160" dstpinname="prevPos" linkstyle="Bezier">
+   <LINKPOINT x="8265" y="6210">
+   </LINKPOINT>
+   <LINKPOINT x="8790" y="6210">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="Y Output Value" dstnodeid="160" dstpinname="Enabled" linkstyle="Bezier">
+   <LINKPOINT x="17415" y="3938">
+   </LINKPOINT>
+   <LINKPOINT x="9240" y="3938">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="132" srcpinname="Output" dstnodeid="160" dstpinname="Defines" linkstyle="Bezier">
+   <LINKPOINT x="13605" y="4733">
+   </LINKPOINT>
+   <LINKPOINT x="9450" y="4733">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="160" srcpinname="Layer" dstnodeid="57" dstpinname="Layer In">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="164">
+   <BOUNDS type="Box" left="14430" top="8400" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="14430" top="8400" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Technique Valid|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="160" srcpinname="Technique Valid" dstnodeid="164" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="165">
+   <BOUNDS type="Box" left="10815" top="870" width="795" height="960">
+   </BOUNDS>
+   <BOUNDS type="Node" left="10815" top="870" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="0,0,0,0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="VariableXYZW">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="165" srcpinname="Y Output Value" dstnodeid="160" dstpinname="VariableXYZW" linkstyle="Bezier">
+   <LINKPOINT x="10800" y="4298">
+   </LINKPOINT>
+   <LINKPOINT x="6135" y="4298">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="166">
+   <BOUNDS type="Node" left="270" top="8295" width="1485" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="270" top="8295" width="4005" height="2055">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|System inspired by&cr;&lf;&cr;&lf;FieldTrip by  everyoneishappy&cr;&lf;https://vvvv.org/contribution/fieldtrip&cr;&lf;https://github.com/everyoneishappy/FieldTrip&cr;&lf;&cr;&lf;uRaymarching by hecomi&cr;&lf;https://github.com/hecomi/uRaymarching&cr;&lf;http://tips.hecomi.com/entry/2016/10/11/225541|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   </PATCH>

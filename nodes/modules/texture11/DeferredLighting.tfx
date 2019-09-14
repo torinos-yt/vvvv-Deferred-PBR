@@ -1,0 +1,239 @@
+Texture2D albtex : ALBEDO;
+Texture2D ntex : NORMAL;
+Texture2D postex : POSITION;
+Texture2D specroug : METALROUGHVEL;
+Texture2DArray shadowmap<string uiname = "Shadow Map";>;
+Texture2D brdfLUT;
+TextureCube EnvMap<string uiname = "Specular Environment Map";>;
+TextureCube EnvMapDiff<string uiname = "Diffuse Environment Map";>;
+
+Texture2D aoTex;
+Texture2D bentnorm;
+Texture2D thickness;
+bool bent<string uiname = "Use Bent Normal";> = 1;
+
+bool UseLight = 1;
+bool sky<string uiname ="Render Environment";> = 1;
+float4x4 tIV;
+float4x4 tIP;
+
+#define PI 3.14159265359
+
+#define minVariance 0.0
+
+SamplerState linearSampler : IMMUTABLE{
+	Filter = MIN_MAG_MIP_LINEAR;
+	AddressU = Clamp;
+	AddressV = Clamp;
+};
+
+SamplerState pointSampler : IMMUTABLE{
+	Filter = MIN_MAG_MIP_POINT;
+	AddressU = Clamp;
+	AddressV = Clamp;
+};
+
+SamplerState shadowSampler : immutable{
+	Filter = MIN_MAG_MIP_LINEAR;
+	AddressU = BORDER;
+	AddressV = BORDER;
+	AddressW = BORDER;
+	BorderColor = float4(1,1,1,0);
+
+};
+
+struct Light{
+	float3 pos;
+	float3 amb;
+	float3 diff;
+	float4x4 VP;
+};
+
+static const float3 F = .04;
+
+float LightBleedingLimit = .9;
+float3 campos;
+StructuredBuffer<Light> lights;
+uint lightCount : SIZEOF <string ref = "lights";>;
+
+float3 iblint<string uiname = "IBL intensity"; float uimin = 0.0;> = 1;
+float4x4 tEmv<string uiname = "Emvironment Transform";>;
+
+float linstep(float mini, float maxi, float v){
+	return clamp((v - mini) / (maxi - mini), 0, 1);
+}
+
+float ReduceLightBleeding(float p_max, float Amount){
+	return linstep(Amount, 1, p_max);
+}
+
+float ChebyshevUpperBound(float2 Moments, float t, float LightBleedingLimit){
+	float p = (t <= Moments.x);
+	
+	float Variance = Moments.y - (Moments.x * Moments.x);
+	Variance = max(Variance, minVariance);
+	
+	float d = t - Moments.x;
+	float p_max = Variance / (Variance + d * d);
+	p_max = ReduceLightBleeding(p_max, LightBleedingLimit);
+	
+	return max(p, p_max);
+}
+
+float ShadowContribution(float3 LightCd, float LightDist, int i, float LightBleedingLimit){
+	float2 Moments = shadowmap.SampleLevel(shadowSampler, float3(LightCd.xy, i), 0).xy;
+	return ChebyshevUpperBound(Moments, LightDist, LightBleedingLimit);
+}
+
+float3 fresnelSphericalGaussian(float dotVH, float3 F0){
+	return F0 + (1 - F0) * exp2((-5.55473 * dotVH - 6.98316) * dotVH);
+}  
+
+float3 fresnelSchlickRoughness(float dotVH, float3 F0, float roughness){
+    return F0 + (max(float3(1.0 - roughness,1.0 - roughness,1.0 - roughness), F0) - F0) * exp2((-5.55473 * dotVH - 6.98316) * dotVH);
+}   
+
+float sqr(float x) { return x*x; }
+
+float D_GGX(float3 N, float3 H, float alpha){
+	float cosThetaM = dot(N, H);
+	float CosSquared = cosThetaM*cosThetaM;
+	float TanSquared = (1-CosSquared)/CosSquared;
+	return (1.0/PI) * sqr(alpha/(CosSquared * (alpha*alpha + TanSquared)));
+}
+
+float GeometrySchlickGGX(float NdotV, float roughness){
+	float r = (roughness + 1.0);
+	float k = (r*r) / 8.0;
+
+	float nom   = NdotV;
+	float denom = NdotV * (1.0 - k) + k;
+	
+	return nom / denom;
+}
+
+float GeometrySmith(float3 N, float3 V, float3 L, float roughness){
+	float dotNV = max(dot(N, V), 0.0);
+	float dotNL = max(dot(N, L), 0.0);
+	float ggx2  = GeometrySchlickGGX(dotNV, roughness);
+	float ggx1  = GeometrySchlickGGX(dotNL, roughness);
+	
+	return ggx1 * ggx2;
+}
+
+float3 CookTorrance(float3 V, float3 L, float3 N, float3 H, float roughness, 
+					float3 albedo, float3 ambient,float3 ldiff, float shadow,
+					float att, float3 F0, float metalic){
+	float3 f = fresnelSphericalGaussian(max(dot(V, H), 0.0), F0);
+	float d = D_GGX(N, H, sqr(roughness));
+	float g = GeometrySmith(N, V, L, roughness);
+	float3 kS = f;
+	float3 kD = 1 - kS;
+	kD *= 1 - metalic;
+	float3 nominator  = d * g * f;
+	float denominator = 4 * max(dot(N, V), 0.0) * max(dot(N, L), 0.0) + 0.0001; 
+	float3 spe = nominator / denominator;	
+	float3 light = ldiff * shadow * att;
+	float3 dif = kD * albedo * (1.0 / PI);
+	float ndl = max(dot(N, L), 0.0);
+
+	return (dif + spe) * light * ndl + ambient * albedo;
+}
+
+float3 ApproximateSpecularIBL( float3 F0 , float Roughness , float3 N, float3 V ){
+	float3 PrefilteredColor = float3(0,0,0);
+	float3 refl = mul(-normalize(reflect(V, N)), (float3x3)tEmv);
+	PrefilteredColor = max(EnvMap.SampleLevel(linearSampler, refl, Roughness * 12), 0).rgb;
+	float2 EnvBRDF  = brdfLUT.Sample(linearSampler, float2(dot(N, V),1-sqrt(Roughness))).rg;
+	return PrefilteredColor * ( F0 * EnvBRDF.x + EnvBRDF.y );
+}
+
+float3 DiffuseIBL(float3 albedo, float3 N){
+	float3 Irradiance = max(EnvMapDiff.Sample(linearSampler, mul(N, (float3x3)tEmv)),0).xyz/PI*2.0;
+	return Irradiance * albedo;
+}
+
+struct psInput{
+	float4 p : SV_Position;
+	float2 uv : TEXCOORD0;
+};
+
+float4 PS(psInput input) : SV_Target{
+	float3 pos = float3(postex.Sample(linearSampler, input.uv).rgb);
+	float4 N = ntex.Sample(pointSampler, input.uv);
+	float3 V = normalize(campos - pos);
+	float4 albedo = albtex.Sample(linearSampler,input.uv);
+	float Metalic = specroug.Sample(linearSampler, input.uv).r;
+	float Roughness = specroug.Sample(linearSampler, input.uv).g;
+	float Reflectance = N.a;
+	Roughness = clamp(Roughness * Roughness, .045, 1.0);
+	albedo.xyz = max(albedo.xyz, .025);
+	
+	float3 emissive = max(albedo.xyz - 1, 0);
+	
+	float ao = aoTex.Sample(linearSampler, input.uv).r;
+	float3 env = 0;
+	if(sky){
+		float2 uvs = mul(float4((input.uv * 2 - 1) * float2(1,-1),0,0), tIP).xy;
+		env = max(EnvMap.SampleLevel(linearSampler, mul(mul(float3(uvs,1), (float3x3)tIV), (float3x3)tEmv), 1),0).xyz*iblint.z;	
+	}
+	
+	float3 F0 = .16 * Reflectance * Reflectance * (1.0 - Metalic) + albedo.rgb * Metalic;
+	float3 kS = fresnelSchlickRoughness(max(dot(normalize(V+N.xyz), V), 0.0), F0, Roughness);
+	float3 kD = 1 - kS;
+	kD *= 1 - Metalic;
+
+	float3 lighting = float3(0,0,0);
+		
+	uint lightNum = lightCount * UseLight;
+	for(uint i = 0; i < lightNum; i++){
+		//float4 alb = albedo * float4(lights[i].diff, 1);
+		float3 L = normalize(lights[i].pos - pos);
+		float3 H = normalize(V + L);
+		
+		//LightCoord
+		float LightDist = length(lights[i].pos - pos);
+		float4 Vpos = mul(float4(pos, 1), lights[i].VP);
+		float3 LightCd = 0;
+		LightCd.x =  Vpos.x / Vpos.w / 2.0f + 0.5f;
+		LightCd.y = -Vpos.y / Vpos.w / 2.0f + 0.5f;
+		LightCd.z =  Vpos.z / Vpos.w / 2.0f + 0.5f;
+		
+		float attenuation = 1/ LightDist;
+		
+		float shadow = ShadowContribution(LightCd, LightDist, i, LightBleedingLimit);
+	
+		lighting += CookTorrance(V, L, N.xyz, H, Roughness, albedo.xyz, lights[i].amb*lerp(albedo.xyz*.25, 1, ao), lights[i].diff*lerp(albedo.xyz, 1, ao), shadow, attenuation, F0, Metalic);
+		
+	}
+	
+	float3 bentN = bentnorm.Sample(linearSampler, input.uv).rgb;
+	bentN = lerp(N.xyz, bentN, bent);
+	
+	float3 IBL = DiffuseIBL(albedo.xyz, bentN);
+	IBL = (kD * IBL * iblint.x + ApproximateSpecularIBL(F0, Roughness, N.xyz, V) * iblint.y);
+	
+	lighting += IBL * lerp(albedo.xyz*.25, 1, ao);
+	lighting = min(lighting, 100) * albedo.a + emissive;
+	
+	lighting = lerp(env.xyz, lighting, albedo.a);
+	
+	return float4(lighting, albedo.a);
+
+}
+
+
+
+
+
+technique10 SpotLighting
+{
+	pass P0<string format="R16G16B16A16_Float";>
+	{
+		SetPixelShader( CompileShader( ps_5_0, PS() ) );
+	}
+}
+
+
+
+

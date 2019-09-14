@@ -1,0 +1,455 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
+   <PATCH nodename="F:\vvvv\work\PBRRenderer\node\modules\ColorGrading (DX11.Texture).v4p" systemname="ColorGrading (DX11.Texture)" filename="F:\vvvv\work\PBRRenderer\modules\ColorGrading (DX11.Texture).v4p" scrollx="30" scrolly="-360">
+   <NODE id="2" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Texture In|">
+   </PIN>
+   <BOUNDS type="Box" left="540" top="485" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="540" top="485" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <NODE id="3" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Texture Out|">
+   </PIN>
+   <BOUNDS type="Box" left="870" top="13095" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="870" top="13095" width="750" height="240">
+   </BOUNDS>
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <BOUNDS type="Window" left="8850" top="570" width="11865" height="14265">
+   </BOUNDS>
+   <PACK Name="dx11" Version="1.3.1">
+   </PACK>
+   <PACK Name="vvvv-Message" Version="2.9.6">
+   </PACK>
+   <PACK Name="VVVV.Packs.Image" Version="0.2.0">
+   </PACK>
+   <PACK Name="ÎmagePack" Version="0.2.0">
+   </PACK>
+   <PACK Name="addonpack" Version="38.1.0">
+   </PACK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="4">
+   <BOUNDS type="Box" left="9435" top="675" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9435" top="675" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="6990" top="2070" width="465" height="270">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="5" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="8145" top="3375" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="7" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="11">
+   <BOUNDS type="Node" left="7530" top="2610" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="11" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="Integrate (Differential)" nodename="Integrate (Differential)" componentmode="Hidden" id="27">
+   <BOUNDS type="Node" left="1800" top="11670" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   <PIN pinname="Position In" slicecount="1" values="2.5">
+   </PIN>
+   <PIN pinname="Reset" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="ChoromaticAbberation (DX11.TextureFX)" filename="..\..\PBRRendere\texture11\ChoromaticAbberation.tfx" nodename="ChoromaticAbberation (DX11.TextureFX)" componentmode="Hidden" id="31">
+   <BOUNDS type="Node" left="855" top="8940" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="amount" slicecount="1" visible="1" values="0.15">
+   </PIN>
+   </NODE>
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="33">
+   <BOUNDS type="Node" left="9225" top="5025" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="33" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="35">
+   <BOUNDS type="Node" left="8610" top="4410" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="35" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="35" srcpinname="Output" dstnodeid="31" dstpinname="Enabled" hiddenwhenlocked="1">
+   </LINK>
+   <NODE systemname="HDRToneMapping (DX11.TextureFX)" filename="texture11\HDRToneMapping.tfx" nodename="HDRToneMapping (DX11.TextureFX)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="855" top="1770" width="2535" height="270">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="exposure" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="Query" visible="1">
+   </PIN>
+   <PIN pinname="Technique" slicecount="1" visible="1" values="Unreal">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="0" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Output" dstnodeid="0" dstpinname="Enabled" hiddenwhenlocked="1">
+   </LINK>
+   <NODE systemname="ColorCorrection (DX11.TextureFX)" filename="texture11\ColorCorrection.tfx" nodename="ColorCorrection (DX11.TextureFX)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="840" top="4050" width="1950" height="270">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="gamma" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="brightness" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="contrast" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="saturation" slicecount="1" visible="1" values="-0.02">
+   </PIN>
+   <PIN pinname="hue" slicecount="1" visible="1" values="0.03">
+   </PIN>
+   <PIN pinname="Query" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="Output" dstnodeid="9" dstpinname="Enabled" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Texture Out" dstnodeid="9" dstpinname="Texture In">
+   </LINK>
+   <NODE systemname="Vignette (DX11.TextureFX)" filename="texture11\Vignette.tfx" nodename="Vignette (DX11.TextureFX)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="870" top="6915" width="2595" height="270">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="smooth" slicecount="1" visible="1" values="1.37">
+   </PIN>
+   <PIN pinname="center" slicecount="1" visible="1" values="0.63">
+   </PIN>
+   <PIN pinname="Texture In" visible="1">
+   </PIN>
+   <PIN pinname="intensity" slicecount="1" visible="1" values="0.35">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Query" visible="1">
+   </PIN>
+   <PIN pinname="Use Default Size" visible="-1" pintype="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Default SizeXY" visible="-1" pintype="Input" slicecount="2" values="256,256">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Output" dstnodeid="1" dstpinname="Enabled" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Texture Out" dstnodeid="31" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Texture Out" dstnodeid="1" dstpinname="Texture In">
+   </LINK>
+   <NODE systemname="Grain (DX11.TextureFX)" filename="texture11\Grain.tfx" nodename="Grain (DX11.TextureFX)" componentmode="Hidden" id="24">
+   <BOUNDS type="Node" left="1320" top="12060" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="paramXY" slicecount="2" visible="1" values="0.0001,0.0001">
+   </PIN>
+   <PIN pinname="intensity" slicecount="1" visible="1" values="-1.13">
+   </PIN>
+   <PIN pinname="phase" slicecount="1" values="0.45">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="frame" visible="1">
+   </PIN>
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Query" visible="1">
+   </PIN>
+   <PIN pinname="Use Default Size" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Default SizeXY" slicecount="2" values="1024,1024">
+   </PIN>
+   <PIN pinname="scale" slicecount="1" visible="1" values="1.68">
+   </PIN>
+   <PIN pinname="mult" slicecount="1" values="8.67">
+   </PIN>
+   <PIN pinname="multScale" slicecount="1" values="2.5">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="27" srcpinname="Position Out" dstnodeid="24" dstpinname="frame">
+   </LINK>
+   <LINK srcnodeid="33" srcpinname="Output" dstnodeid="24" dstpinname="Enabled" hiddenwhenlocked="1">
+   </LINK>
+   <NODE systemname="GrainComp (DX11.TextureFX)" filename="texture11\GrainComp.tfx" nodename="GrainComp (DX11.TextureFX)" componentmode="Hidden" id="43">
+   <BOUNDS type="Node" left="855" top="12600" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1">
+   </PIN>
+   <PIN pinname="Grain" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="intensity" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="31" srcpinname="Texture Out" dstnodeid="43" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="43" srcpinname="Texture Out" dstnodeid="3" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="24" srcpinname="Texture Out" dstnodeid="43" dstpinname="Grain">
+   </LINK>
+   <NODE systemname="IOBox (Node)" nodename="IOBox (Node)" componentmode="InABox" id="45">
+   <BOUNDS type="Node" left="6345" top="315" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6345" top="315" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="EffectSetting">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetGrading (PBRRenderer)" filename="vl\VVVV.Value.RenderSetting.vl" nodename="GetGrading (PBRRenderer)" componentmode="Hidden" id="46">
+   <BOUNDS type="Node" left="7545" top="990" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Use Tonemap" visible="1">
+   </PIN>
+   <PIN pinname="Use Color Correction" visible="1">
+   </PIN>
+   <PIN pinname="Use Vignette" visible="1">
+   </PIN>
+   <PIN pinname="Use Choromatic Abberation" visible="1">
+   </PIN>
+   <PIN pinname="Use Grain" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="45" srcpinname="Output Node" dstnodeid="46" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="46" srcpinname="Use Tonemap" dstnodeid="5" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="46" srcpinname="Use Color Correction" dstnodeid="11" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="46" srcpinname="Use Vignette" dstnodeid="7" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="46" srcpinname="Use Choromatic Abberation" dstnodeid="35" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="46" srcpinname="Use Grain" dstnodeid="33" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="GetTonemap (PBRRenderer)" filename="vl\VVVV.Value.RenderSetting.vl" nodename="GetTonemap (PBRRenderer)" componentmode="Hidden" id="47">
+   <BOUNDS type="Node" left="2355" top="885" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Use Tonemap" visible="1">
+   </PIN>
+   <PIN pinname="Exposure" visible="1">
+   </PIN>
+   <PIN pinname="Technique" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="45" srcpinname="Output Node" dstnodeid="47" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="6345" y="705">
+   </LINKPOINT>
+   <LINKPOINT x="2415" y="705">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Ord2Enum (Enumerations Explicit)" nodename="Ord2Enum (Enumerations Explicit)" componentmode="Hidden" id="48">
+   <BOUNDS type="Node" left="3465" top="1275" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Ord Value" visible="1">
+   </PIN>
+   <PIN pinname="Enum" visible="1">
+   </PIN>
+   <PIN pinname="Enumeration" slicecount="1" values="TonemapTechnique">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="47" srcpinname="Exposure" dstnodeid="0" dstpinname="exposure">
+   </LINK>
+   <LINK srcnodeid="47" srcpinname="Technique" dstnodeid="48" dstpinname="Ord Value">
+   </LINK>
+   <LINK srcnodeid="48" srcpinname="Enum" dstnodeid="0" dstpinname="Technique">
+   </LINK>
+   <NODE systemname="CreateEnum (Enumerations)" nodename="CreateEnum (Enumerations)" componentmode="Hidden" id="50">
+   <BOUNDS type="Node" left="18630" top="9210" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Enum Name" slicecount="1" values="TonemapTechnique">
+   </PIN>
+   <PIN pinname="Strings" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="49" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="18630" top="8235" width="900" height="825">
+   </BOUNDS>
+   <BOUNDS type="Node" left="18630" top="8235" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="4" visible="1" values="ACES,Rainhard,ALU,Unreal">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="Multiline">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="49" srcpinname="Output String" dstnodeid="50" dstpinname="Strings">
+   </LINK>
+   <NODE systemname="GetCC (PBRRenderer)" filename="vl\VVVV.Value.RenderSetting.vl" nodename="GetCC (PBRRenderer)" componentmode="Hidden" id="51">
+   <BOUNDS type="Node" left="1545" top="3420" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Contrast" visible="1">
+   </PIN>
+   <PIN pinname="Gamma" visible="1">
+   </PIN>
+   <PIN pinname="Saturation" visible="1">
+   </PIN>
+   <PIN pinname="Hue" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="45" srcpinname="Output Node" dstnodeid="51" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="6345" y="1973">
+   </LINKPOINT>
+   <LINKPOINT x="1605" y="1973">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="51" srcpinname="Contrast" dstnodeid="9" dstpinname="contrast">
+   </LINK>
+   <LINK srcnodeid="51" srcpinname="Gamma" dstnodeid="9" dstpinname="gamma">
+   </LINK>
+   <LINK srcnodeid="51" srcpinname="Saturation" dstnodeid="9" dstpinname="saturation">
+   </LINK>
+   <LINK srcnodeid="51" srcpinname="Hue" dstnodeid="9" dstpinname="hue">
+   </LINK>
+   <NODE systemname="GetVignette (PBRRenderer)" filename="vl\VVVV.Value.RenderSetting.vl" nodename="GetVignette (PBRRenderer)" componentmode="Hidden" id="52">
+   <BOUNDS type="Node" left="1365" top="6270" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Center" visible="1">
+   </PIN>
+   <PIN pinname="Smooth" visible="1">
+   </PIN>
+   <PIN pinname="Intensity" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="45" srcpinname="Output Node" dstnodeid="52" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="6330" y="3405">
+   </LINKPOINT>
+   <LINKPOINT x="1425" y="3405">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="52" srcpinname="Center" dstnodeid="1" dstpinname="center">
+   </LINK>
+   <LINK srcnodeid="52" srcpinname="Smooth" dstnodeid="1" dstpinname="smooth">
+   </LINK>
+   <LINK srcnodeid="52" srcpinname="Intensity" dstnodeid="1" dstpinname="intensity">
+   </LINK>
+   <NODE systemname="GetChromatic (PBRRenderer)" filename="vl\VVVV.Value.RenderSetting.vl" nodename="GetChromatic (PBRRenderer)" componentmode="Hidden" id="53">
+   <BOUNDS type="Node" left="1875" top="8490" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="amount" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="45" srcpinname="Output Node" dstnodeid="53" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="6345" y="4523">
+   </LINKPOINT>
+   <LINKPOINT x="1920" y="4523">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="53" srcpinname="amount" dstnodeid="31" dstpinname="amount">
+   </LINK>
+   <NODE systemname="GetGrain (PBRRenderer)" filename="vl\VVVV.Value.RenderSetting.vl" nodename="GetGrain (PBRRenderer)" componentmode="Hidden" id="54">
+   <BOUNDS type="Node" left="1380" top="10500" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Scale" visible="1">
+   </PIN>
+   <PIN pinname="intensity" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="45" srcpinname="Output Node" dstnodeid="54" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="6345" y="5528">
+   </LINKPOINT>
+   <LINKPOINT x="1410" y="5528">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="54" srcpinname="Scale" dstnodeid="24" dstpinname="scale">
+   </LINK>
+   <LINK srcnodeid="54" srcpinname="intensity" dstnodeid="43" dstpinname="intensity">
+   </LINK>
+   </PATCH>
