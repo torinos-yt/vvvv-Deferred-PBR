@@ -6,7 +6,7 @@
 //float DeltaTime
 //float4 Variable : User Variable Controlled on vvvv patch
 
-float DistanceFunction(float3 p, inout float id){
+float DistanceFunction(float3 p, inout float Material){
 	//Write your own distance function!!
 	
     //return dMenger(p, 1, 2.65);

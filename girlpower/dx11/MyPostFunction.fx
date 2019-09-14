@@ -30,6 +30,7 @@
 //	float3 rayDir;
 //	int maxLoop;
 //	int loop;
+//  float Material;
 //	float3 posEnd;
 //	float totalDistance;
 //	float depth;
@@ -82,7 +83,7 @@ void PostFunction(Info i, inout OutputData o){
 	float3 p = i.posEnd;
 	float edge = calcEdge(p);
 	o.Albedo = colorTex(o.uv).rgb * lerp(1, i.normal, .6);
-	o.Emission = edge * pow(abs(sin(p + Time*50)), 8);
+	o.Emission = edge * pow(abs(sin(p + Time*.8)), 8);
 	o.Metalness = metalTex(o.uv);
 	o.Roughness = edge+roughTex(o.uv)*.8;
 	o.Reflectance = Reflectance;

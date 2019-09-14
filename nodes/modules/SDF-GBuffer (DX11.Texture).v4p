@@ -275,7 +275,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="12510" top="1080" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="4">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -451,7 +451,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="15300" top="690" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="32">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="128">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -501,7 +501,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="16290" top="900" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="32">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="60">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -549,7 +549,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="15330" top="1350" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.0004">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.0005">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -879,7 +879,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="17340" top="1800" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="16">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="32">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1047,15 +1047,15 @@
    <LINK srcnodeid="190" srcpinname="Shader Path" dstnodeid="184" dstpinname="Input 2">
    </LINK>
    <NODE systemname="Shader (DX11.Effect Fieldtrip String)" filename="%VVVV%\packs\FieldTrip\nodes\plugins\FieldTripHelpers.dll" nodename="Shader (DX11.Effect Fieldtrip String)" componentmode="Hidden" id="219">
-   <BOUNDS type="Node" left="11880" top="7935" width="3930" height="270">
+   <BOUNDS type="Node" left="11865" top="7980" width="3930" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="11880" top="7935" width="3000" height="3000">
+   <BOUNDS type="Box" left="11865" top="7980" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="ShaderCode" visible="1">
    </PIN>
-   <PIN pinname="ConfigShader" slicecount="1" values="|#ifndef RAYMARCHCOMMON&cr;&lf;&tab;#include &lt;packs\PBRRenderer\nodes\modules\fxh\Raymarch_Common.fxh&gt;&cr;&lf;#endif&cr;&lf;&cr;&lf;float DistanceFunction(float3 p, inout float Material){&cr;&lf;&tab;float str = 2;&cr;&lf;&tab;float f = 7;&cr;&lf;&tab;&cr;&lf;&tab;float3 noisepos = float3(noise(p + Time*0.5)*str, noise(p+sin( Time * .1))*str, noise(p * .3)*str);&cr;&lf;    return dBox(p, .6) - .1;&cr;&lf;}&cr;&lf;&cr;&lf;#if !defined(ITE)&cr;&lf;#define ITE 32&cr;&lf;#endif&cr;&lf;&cr;&lf;Texture2D texture2d &lt;string uiname=&quot;Texture&quot;;&gt;;&cr;&lf;&cr;&lf;#define depthOffset 0.0001&cr;&lf;#define EPS 0.0001&cr;&lf;float mindist&lt;float uistep = .001;&gt; = .01;&cr;&lf;&cr;&lf;float  shadowThreshold = 1.0f; &cr;&lf;float  bias&tab;&tab;&tab;   = 0.01f; &cr;&lf;float  slopeScaledBias = 0.01f; &cr;&lf;float  depthBiasClamp  = 0.1f;&cr;&lf;&cr;&lf;float stepLength = 1.0;&cr;&lf;&cr;&lf;SamplerState linearSampler : IMMUTABLE&cr;&lf;{&cr;&lf;&tab;Filter = MIN_MAG_MIP_LINEAR;&cr;&lf;&tab;AddressU = Clamp;&cr;&lf;&tab;AddressV = Clamp;&cr;&lf;};&cr;&lf;&cr;&lf;StructuredBuffer&lt;float4x4&gt; tVPI : LIGHTVIEWPROJECTIONINVERSE;&cr;&lf;int vpindex;&cr;&lf; &cr;&lf;cbuffer cbPerDraw : register( b0 )&cr;&lf;{&cr;&lf;&tab;float4x4 tV : LAYERVIEW;&cr;&lf;&tab;float4x4 tVP : LAYERVIEWPROJECTION;&tab;&cr;&lf;};&cr;&lf;&cr;&lf;cbuffer cbPerObj : register( b1 )&cr;&lf;{&cr;&lf;&tab;float4x4 tW : WORLD;&cr;&lf;&tab;float4x4 tWI : WORLDINVERSE;&cr;&lf;};&cr;&lf;&cr;&lf;&cr;&lf;struct VS_IN&cr;&lf;{&cr;&lf;&tab;float4 PosO : POSITION;&cr;&lf;&tab;float2 uv : TEXCOORD0;&cr;&lf;&cr;&lf;};&cr;&lf;&cr;&lf;struct vs2ps&cr;&lf;{&cr;&lf;&tab;float4 PosWVP : SV_Position;&cr;&lf;&tab;float2 uv : TECXOORD0;&cr;&lf;};&cr;&lf;&cr;&lf;vs2ps VS(VS_IN input)&cr;&lf;{&cr;&lf;&tab;vs2ps output;&cr;&lf;&tab;output.PosWVP = input.PosO;&cr;&lf;&tab;output.uv = input.uv;&cr;&lf;&tab;return output;&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;float2 PS(vs2ps In): SV_Target&cr;&lf;{&cr;&lf;&tab;float3 rayPos = mul(float4(lights[vpindex].pos, 1), tWI);&cr;&lf;&tab;&cr;&lf;&tab;float2 rayDir = (In.uv * 2 - 1) * float2(1, -1);&cr;&lf;&tab;float4 rs =  mul(float4(rayDir, 1, 1), tVPI[vpindex]);&cr;&lf;&tab;float3 ray = normalize(mul(normalize(rs.xyz / rs.w), tWI));&cr;&lf;&tab;&cr;&lf;&tab;float maxdist = 50;&cr;&lf;&tab;float3 normal = 0;&cr;&lf;&tab;float alpha = 0;&cr;&lf;&tab;&cr;&lf;&tab;float dist = 0;&cr;&lf;&tab;float total = 0;&cr;&lf;&cr;&lf;&tab;float id = 0;&cr;&lf;&tab;for(int i = 0; i &lt; ITE; i++){&cr;&lf;&tab;&tab;dist = DistanceFunction(rayPos, id);&cr;&lf;&tab;&tab;&cr;&lf;&tab;&tab;if(dist &lt; mindist * max(total, 1)){ &cr;&lf;&tab;&tab;&tab;alpha = 1;&cr;&lf;&tab;&tab;&tab;&cr;&lf;&tab;&tab;&tab;break;&cr;&lf;&tab;&tab;}&cr;&lf;&tab;&tab;rayPos += ray * dist * stepLength;&cr;&lf;&tab;&tab;total += dist;&cr;&lf;&tab;&tab;if(total &gt; maxdist) break;&cr;&lf;&tab;}&cr;&lf;&tab;float2 col = 0;&cr;&lf;&tab;float ldist = distance(lights[vpindex].pos, mul(float4(rayPos, 1), tW).xyz) + depthOffset;&cr;&lf;&tab;float  maxDepthSlope = max( abs( ddx( ldist ) ), abs( ddy( ldist ) ) );&cr;&lf;&tab;&cr;&lf;&tab;float  shadowBias = bias + slopeScaledBias * maxDepthSlope;&cr;&lf;&tab;shadowBias = min( shadowBias, depthBiasClamp );&cr;&lf;&tab;&cr;&lf;&tab;col.r = ldist - shadowBias;&cr;&lf;&tab;col.g = ldist * ldist;&cr;&lf;&tab;return col * alpha;&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;technique10 Constant&cr;&lf;{&cr;&lf;&tab;pass P0&cr;&lf;&tab;{&cr;&lf;&tab;&tab;SetVertexShader( CompileShader( vs_4_0, VS() ) );&cr;&lf;&tab;&tab;SetPixelShader( CompileShader( ps_4_0, PS() ) );&cr;&lf;&tab;}&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;|">
+   <PIN pinname="ConfigShader" slicecount="1" values="|#ifndef RAYMARCHCOMMON&cr;&lf;#include &lt;packs\PBRRenderer\nodes\modules\fxh\Raymarch_Common.fxh&gt;&cr;&lf;#endif&cr;&lf;//Available Uniform Parameters&cr;&lf;//float Time&cr;&lf;//float DeltaTime&cr;&lf;//float4 Variable : User Variable Controlled on vvvv patch&cr;&lf;&cr;&lf;float DistanceFunction(float3 p, inout float Material){&cr;&lf;&tab;//Write your own distance function!!&cr;&lf;&tab;&cr;&lf;    //return dMenger(p, 1, 2.65);&cr;&lf;&tab;return dMandelbox(p, 2.595, 12);&cr;&lf;}&cr;&lf;&cr;&lf;#if !defined(ITE)&cr;&lf;#define ITE 32&cr;&lf;#endif&cr;&lf;&cr;&lf;Texture2D texture2d &lt;string uiname=&quot;Texture&quot;;&gt;;&cr;&lf;&cr;&lf;#define depthOffset 0.0001&cr;&lf;#define EPS 0.0001&cr;&lf;float mindist&lt;float uistep = .001;&gt; = .01;&cr;&lf;&cr;&lf;float  shadowThreshold = 1.0f; &cr;&lf;float  bias&tab;&tab;&tab;   = 0.01f; &cr;&lf;float  slopeScaledBias = 0.01f; &cr;&lf;float  depthBiasClamp  = 0.1f;&cr;&lf;&cr;&lf;float stepLength = 1.0;&cr;&lf;&cr;&lf;SamplerState linearSampler : IMMUTABLE&cr;&lf;{&cr;&lf;&tab;Filter = MIN_MAG_MIP_LINEAR;&cr;&lf;&tab;AddressU = Clamp;&cr;&lf;&tab;AddressV = Clamp;&cr;&lf;};&cr;&lf;&cr;&lf;StructuredBuffer&lt;float4x4&gt; tVPI : LIGHTVIEWPROJECTIONINVERSE;&cr;&lf;int vpindex;&cr;&lf; &cr;&lf;cbuffer cbPerDraw : register( b0 )&cr;&lf;{&cr;&lf;&tab;float4x4 tV : LAYERVIEW;&cr;&lf;&tab;float4x4 tVP : LAYERVIEWPROJECTION;&tab;&cr;&lf;};&cr;&lf;&cr;&lf;cbuffer cbPerObj : register( b1 )&cr;&lf;{&cr;&lf;&tab;float4x4 tW : WORLD;&cr;&lf;&tab;float4x4 tWI : WORLDINVERSE;&cr;&lf;};&cr;&lf;&cr;&lf;&cr;&lf;struct VS_IN&cr;&lf;{&cr;&lf;&tab;float4 PosO : POSITION;&cr;&lf;&tab;float2 uv : TEXCOORD0;&cr;&lf;&cr;&lf;};&cr;&lf;&cr;&lf;struct vs2ps&cr;&lf;{&cr;&lf;&tab;float4 PosWVP : SV_Position;&cr;&lf;&tab;float2 uv : TECXOORD0;&cr;&lf;};&cr;&lf;&cr;&lf;vs2ps VS(VS_IN input)&cr;&lf;{&cr;&lf;&tab;vs2ps output;&cr;&lf;&tab;output.PosWVP = input.PosO;&cr;&lf;&tab;output.uv = input.uv;&cr;&lf;&tab;return output;&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;float2 PS(vs2ps In): SV_Target&cr;&lf;{&cr;&lf;&tab;float3 rayPos = mul(float4(lights[vpindex].pos, 1), tWI);&cr;&lf;&tab;&cr;&lf;&tab;float2 rayDir = (In.uv * 2 - 1) * float2(1, -1);&cr;&lf;&tab;float4 rs =  mul(float4(rayDir, 1, 1), tVPI[vpindex]);&cr;&lf;&tab;float3 ray = normalize(mul(normalize(rs.xyz / rs.w), tWI));&cr;&lf;&tab;&cr;&lf;&tab;float maxdist = 50;&cr;&lf;&tab;float3 normal = 0;&cr;&lf;&tab;float alpha = 0;&cr;&lf;&tab;&cr;&lf;&tab;float dist = 0;&cr;&lf;&tab;float total = 0;&cr;&lf;&cr;&lf;&tab;float id = 0;&cr;&lf;&tab;for(int i = 0; i &lt; ITE; i++){&cr;&lf;&tab;&tab;dist = DistanceFunction(rayPos, id);&cr;&lf;&tab;&tab;&cr;&lf;&tab;&tab;if(dist &lt; mindist * max(total, 1)){ &cr;&lf;&tab;&tab;&tab;alpha = 1;&cr;&lf;&tab;&tab;&tab;&cr;&lf;&tab;&tab;&tab;break;&cr;&lf;&tab;&tab;}&cr;&lf;&tab;&tab;rayPos += ray * dist * stepLength;&cr;&lf;&tab;&tab;total += dist;&cr;&lf;&tab;&tab;if(total &gt; maxdist) break;&cr;&lf;&tab;}&cr;&lf;&tab;float2 col = 0;&cr;&lf;&tab;float ldist = distance(lights[vpindex].pos, mul(float4(rayPos, 1), tW).xyz) + depthOffset;&cr;&lf;&tab;float  maxDepthSlope = max( abs( ddx( ldist ) ), abs( ddy( ldist ) ) );&cr;&lf;&tab;&cr;&lf;&tab;float  shadowBias = bias + slopeScaledBias * maxDepthSlope;&cr;&lf;&tab;shadowBias = min( shadowBias, depthBiasClamp );&cr;&lf;&tab;&cr;&lf;&tab;col.r = ldist - shadowBias;&cr;&lf;&tab;col.g = ldist * ldist;&cr;&lf;&tab;return col * alpha;&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;technique10 Constant&cr;&lf;{&cr;&lf;&tab;pass P0&cr;&lf;&tab;{&cr;&lf;&tab;&tab;SetVertexShader( CompileShader( vs_4_0, VS() ) );&cr;&lf;&tab;&tab;SetPixelShader( CompileShader( ps_4_0, PS() ) );&cr;&lf;&tab;}&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;|">
    </PIN>
-   <PIN pinname="ConfigDefines" slicecount="1" values="ITE=32">
+   <PIN pinname="ConfigDefines" slicecount="1" values="ITE=60">
    </PIN>
    <PIN pinname="Geometry" visible="1">
    </PIN>
@@ -1095,63 +1095,63 @@
    <LINK srcnodeid="83" srcpinname="Output" dstnodeid="219" dstpinname="vpindex">
    </LINK>
    <LINK srcnodeid="79" srcpinname="Y Output Value" dstnodeid="219" dstpinname="shadowThreshold" linkstyle="Bezier">
-   <LINKPOINT x="16855" y="5985">
+   <LINKPOINT x="16850" y="6000">
    </LINKPOINT>
-   <LINKPOINT x="13790" y="6000">
+   <LINKPOINT x="13780" y="6030">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="78" srcpinname="Y Output Value" dstnodeid="219" dstpinname="bias" linkstyle="Bezier">
-   <LINKPOINT x="17290" y="6225">
+   <LINKPOINT x="17285" y="6240">
    </LINKPOINT>
-   <LINKPOINT x="13940" y="6240">
+   <LINKPOINT x="13930" y="6270">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="77" srcpinname="Y Output Value" dstnodeid="219" dstpinname="slopeScaledBias" linkstyle="Bezier">
-   <LINKPOINT x="17635" y="6615">
+   <LINKPOINT x="17630" y="6630">
    </LINKPOINT>
-   <LINKPOINT x="14090" y="6630">
+   <LINKPOINT x="14080" y="6660">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="76" srcpinname="Y Output Value" dstnodeid="219" dstpinname="depthBiasClamp" linkstyle="Bezier">
-   <LINKPOINT x="18385" y="6780">
+   <LINKPOINT x="18380" y="6795">
    </LINKPOINT>
-   <LINKPOINT x="14255" y="6795">
+   <LINKPOINT x="14245" y="6825">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="161" srcpinname="Y Output Value" dstnodeid="219" dstpinname="mindist" linkstyle="Bezier">
-   <LINKPOINT x="16645" y="4808">
+   <LINKPOINT x="16640" y="4823">
    </LINKPOINT>
-   <LINKPOINT x="13610" y="4823">
+   <LINKPOINT x="13600" y="4853">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="219" srcpinname="Layer" dstnodeid="84" dstpinname="Input Node">
    </LINK>
    <LINK srcnodeid="16" srcpinname="Y Output Value" dstnodeid="219" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="20635" y="4688">
+   <LINKPOINT x="20630" y="4703">
    </LINKPOINT>
-   <LINKPOINT x="15635" y="4703">
+   <LINKPOINT x="15625" y="4733">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="219" srcpinname="Technique Valid" dstnodeid="220" dstpinname="Input 2" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="14825" y="8708">
+   <LINKPOINT x="14815" y="8738">
    </LINKPOINT>
-   <LINKPOINT x="18610" y="8693">
+   <LINKPOINT x="18605" y="8708">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="158" srcpinname="Output" dstnodeid="219" dstpinname="Defines">
    </LINK>
    <NODE id="229" systemname="Shader (DX11.Effect Fieldtrip String)" filename="%VVVV%\packs\FieldTrip\nodes\plugins\FieldTripHelpers.dll" nodename="Shader (DX11.Effect Fieldtrip String)" componentmode="Hidden">
-   <BOUNDS type="Node" left="4350" top="6885" width="7035" height="270">
+   <BOUNDS type="Node" left="4350" top="6870" width="7035" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="4350" top="6885" width="3000" height="3000">
+   <BOUNDS type="Box" left="4350" top="6870" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="IncludePath" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="ShaderCode" visible="1">
    </PIN>
-   <PIN pinname="ConfigShader" slicecount="1" values="|#include &lt;packs\PBRRenderer\nodes\modules\fxh\Raymarch_Common.fxh&gt;&cr;&lf;#ifndef RAYMARCHCOMMON&cr;&lf;&tab;#include &lt;packs\PBRRenderer\nodes\modules\fxh\Raymarch_Common.fxh&gt;&cr;&lf;#endif&cr;&lf;&cr;&lf;float DistanceFunction(float3 p, inout float Material){&cr;&lf;&tab;float str = 2;&cr;&lf;&tab;float f = 7;&cr;&lf;&tab;&cr;&lf;&tab;float3 noisepos = float3(noise(p + Time*0.5)*str, noise(p+sin( Time * .1))*str, noise(p * .3)*str);&cr;&lf;    return dBox(p, .6) - .1;&cr;&lf;}&cr;&lf;&cr;&lf;#ifndef RAYMARCHCOMMON&cr;&lf;&tab;#include &lt;packs\PBRRenderer\nodes\modules\fxh\Raymarch_Common.fxh&gt;&cr;&lf;&tab;#define DistanceFunction&cr;&lf;#endif&cr;&lf;//Available Uniform Parameters&cr;&lf;//&cr;&lf;//float Time&cr;&lf;//float DeltaTime&cr;&lf;//float4 Variable : User Variable Controlled on vvvv patch&cr;&lf;&cr;&lf;//Available Matelial Data&cr;&lf;//float4 colorTex(float2 uv)&cr;&lf;//float metalTex(float2 uv)&cr;&lf;//float roughTex(float2 uv)&cr;&lf;//float3 emissionTex(float2 uv)&cr;&lf;//float Reflectance;&cr;&lf;&cr;&lf;//struct Light{&cr;&lf;//&tab;float3 pos;&cr;&lf;//&tab;float3 amb;&cr;&lf;//&tab;float3 diff;&cr;&lf;//&tab;float4x4 VP;&cr;&lf;//};&cr;&lf;//StructuredBuffer&lt;Light&gt; lights : Light List;&cr;&lf;&cr;&lf;//Input Data Struct&cr;&lf;//struct Info{&cr;&lf;//&tab;float3 posOrigin;&cr;&lf;//&tab;float3 rayDir;&cr;&lf;//&tab;int maxLoop;&cr;&lf;//&tab;int loop;&cr;&lf;//&tab;float3 posEnd;&cr;&lf;//&tab;float totalDistance;&cr;&lf;//&tab;float depth;&cr;&lf;//&tab;float3 normal;&lf;//};&cr;&lf;&cr;&lf;//Output Data Struct&cr;&lf;//struct OutputData{&cr;&lf;//&tab;float3 Albedo;&cr;&lf;//&tab;float3 Emission;&cr;&lf;//&tab;float Metalness;&cr;&lf;//&tab;float Roughness;&cr;&lf;//&tab;float Reflectance;&cr;&lf;//&tab;&cr;&lf;//&tab;//If you want using Texturing, BumpMapping...&cr;&lf;//&tab;//Calc and output good uv coordinate.&cr;&lf;//&tab;float2 uv;&lf;//};&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;void PostFunction(Info i, inout OutputData o){&cr;&lf;&tab;//Write your own post function!!&cr;&lf;&tab;&cr;&lf;&tab;o.uv = 0;&cr;&lf;&tab;o.Albedo = colorTex(o.uv).rgb;&cr;&lf;&tab;o.Emission = emissionTex(o.uv);&cr;&lf;&tab;o.Metalness = metalTex(o.uv);&cr;&lf;&tab;o.Roughness = roughTex(o.uv);&cr;&lf;&tab;o.Reflectance = Reflectance;&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;#if !defined(ITE)&cr;&lf;#define ITE 32&cr;&lf;#endif&cr;&lf;&cr;&lf;#if !defined(VEC_ITE)&cr;&lf;#define VEC_ITE 32&cr;&lf;#endif&cr;&lf;&cr;&lf;#define EPS 0.0003&cr;&lf;float mindist&lt;float uistep = .0001;&gt; = .0001;&cr;&lf;&cr;&lf;bool IsBump = true;&cr;&lf;float bumps&lt;string uiname = &quot;BumpMap Strength&quot;; float uimin = 0.0; float uimax = 5.0;&gt; = 1;&cr;&lf;&cr;&lf;float emit &lt;string uiname = &quot;Emission Stlength&quot;;&gt; = 1.0;&cr;&lf;float stepLength&lt;string uiname = &quot;StepLength&quot;;&gt; = 1.0;&cr;&lf;&cr;&lf;SamplerState linearSampler : IMMUTABLE&cr;&lf;{&cr;&lf;&tab;Filter = MIN_MAG_MIP_LINEAR;&cr;&lf;&tab;AddressU = Wrap;&cr;&lf;&tab;AddressV = Wrap;&cr;&lf;};&cr;&lf;&cr;&lf;cbuffer cbPerDraw : register( b0 )&cr;&lf;{&cr;&lf;&tab;float4x4 tVP : VIEWPROJECTION;&tab;&cr;&lf;&tab;float4x4 tVPI : VIEWPROJECTIONINVERSE;&cr;&lf;&tab;float4x4 tV : VIEW;&cr;&lf;&tab;float4x4 tP : PROJECTION;&cr;&lf;&tab;float4x4 tPI : PROJECTIONINVERSE;&cr;&lf;&tab;float4x4 tVI : VIEWINVERSE;&cr;&lf;&tab;float4x4 ptVP : PREVIOUSVIEWPROJECTION;&cr;&lf;&tab;float4x4 ptVPI : PREVIOUSVIEWPROJECTIONINVERSE;&cr;&lf;};&cr;&lf;&cr;&lf;cbuffer cbPerObj : register( b1 )&cr;&lf;{&cr;&lf;&tab;float4x4 tW : WORLD;&cr;&lf;&tab;float4x4 tWI : WORLDINVERSE;&cr;&lf;&tab;float4x4 ptW;&cr;&lf;};&cr;&lf;&cr;&lf;struct VS_IN&cr;&lf;{&cr;&lf;&tab;float4 PosO : POSITION;&cr;&lf;&tab;float4 TexCd : TEXCOORD0;&cr;&lf;};&cr;&lf;struct vs2ps&cr;&lf;{&cr;&lf;&tab;float4 Pos: SV_Position;&cr;&lf;&tab;float2 uv: TEXCOORD0;&cr;&lf;};&cr;&lf;&cr;&lf;struct PSout{&cr;&lf;&tab;float4 color : SV_Target0;&cr;&lf;&tab;float4 normal : SV_Target1;&cr;&lf;&tab;float4 MRVel : SV_Target2;&cr;&lf;&tab;float3 position : SV_Target3;&cr;&lf;&tab;float depth : SV_Depth;&cr;&lf;};&cr;&lf;&cr;&lf;&cr;&lf;float3 getNormal(float3 p) {&cr;&lf;    float2 e = float2(1.0, -1.0) * EPS;&cr;&lf;&tab;float d = 0;&cr;&lf;    return normalize(&cr;&lf;        e.xyy * DistanceFunction(p + e.xyy, d) +&cr;&lf;        e.yxy * DistanceFunction(p + e.yxy, d) +&cr;&lf;        e.yyx * DistanceFunction(p + e.yyx, d) +&cr;&lf;        e.xxx * DistanceFunction(p + e.xxx, d)&cr;&lf;    );&cr;&lf;}&cr;&lf;&cr;&lf;vs2ps VS(VS_IN input)&cr;&lf;{&cr;&lf;&tab;vs2ps output;&cr;&lf;&tab;output.Pos  = input.PosO;&cr;&lf;&tab;output.uv = input.TexCd.xy;&cr;&lf;&tab;return output;&cr;&lf;}&cr;&lf;&cr;&lf;PSout PS(vs2ps In){&cr;&lf;&tab;PSout gbuffer;&cr;&lf;&tab;Info info = (Info)0;&cr;&lf;&tab;OutputData o = (OutputData)0;&cr;&lf;&cr;&lf;&tab;float2 u = mul(float4(In.uv, 1, 1), texW).xy;&cr;&lf;&tab;&cr;&lf;&tab;float2 rayDir = (In.uv * 2 - 1) * float2(1, -1);&cr;&lf;&tab;float4 rayDirVP = mul(float4(rayDir, 1, 1), tVPI);&cr;&lf;&tab;//float3 ray = &cr;&lf;&tab;//info.rayDir = normalize(mul(normalize(mul(float4(mul(float4(rayDir, 0, 0), tPI).xy, 1, 0), tVI).xyz), tWI));&cr;&lf;&tab;&cr;&lf;&tab;float3 ray = &cr;&lf;&tab;info.rayDir = mul(float4(normalize(rayDirVP.xyz / rayDirVP.w), 1), tWI).xyz;&cr;&lf;&tab;&cr;&lf;&cr;&lf;&tab;float3 rp = mul(float4(tVI[3].xyz, 1), tWI).xyz;&cr;&lf;&tab;float3 rayPos = rp;&cr;&lf;&tab;info.posOrigin = tVI[3].xyz;&cr;&lf;&cr;&lf;&tab;float maxdist = -(tP[3].z / (tP[2].z - 1));&cr;&lf;&tab;&cr;&lf;&tab;float3 normal = 0;&cr;&lf;&tab;bool hit = false;&cr;&lf;&tab;float dist = 0;&cr;&lf;&tab;float total = 0;&cr;&lf;&tab;float id = 0;&cr;&lf;&tab;for(int i = 0; i &lt; ITE; i++){&cr;&lf;&tab;&tab;dist = DistanceFunction(rayPos, id);&cr;&lf;&tab;&tab;&cr;&lf;&tab;&tab;if(dist &lt; mindist * max(total, 1)){ &cr;&lf;&tab;&tab;&tab;normal = normalize(max(min(getNormal(rayPos), 1), -1));&cr;&lf;&tab;&tab;&tab;normal = normalize(mul(normal, (float3x3)tW));&cr;&lf;&tab;&tab;&tab;hit = true;&cr;&lf;&cr;&lf;&tab;&tab;&tab;break;&cr;&lf;&tab;&tab;}&cr;&lf;&tab;&tab;rayPos += ray * dist * stepLength;&cr;&lf;&tab;&tab;total += dist;&cr;&lf;&tab;&tab;if(total &gt; maxdist) break;&cr;&lf;&tab;}&cr;&lf;&tab;&cr;&lf;&tab;info.maxLoop = ITE;&cr;&lf;&tab;info.loop = i;&cr;&lf;&tab;info.totalDistance = total;&cr;&lf;&tab;info.normal = normal;&cr;&lf;&tab;info.id = id;&cr;&lf;&cr;&lf;&tab;float3 endPos = mul(float4(rayPos, 1), tW).xyz;&cr;&lf;&tab;info.posEnd = endPos;&cr;&lf;&tab;float4 possc = mul(float4(endPos, 1), tVP);&cr;&lf;&tab;gbuffer.depth = &cr;&lf;&tab;info.depth = possc.z / possc.w;&cr;&lf;&tab;&cr;&lf;&tab;PostFunction(info, o);&cr;&lf;&tab;&cr;&lf;&tab;gbuffer.color = float4((o.Albedo + o.Emission * emit) * hit, hit);&cr;&lf;&tab;gbuffer.normal = float4(normal, o.Reflectance) * hit;&cr;&lf;&tab;gbuffer.position = endPos * hit;&cr;&lf;&cr;&lf;&tab;if(hit){&cr;&lf;&tab;&tab;rayPos = rp;&cr;&lf;&tab;&tab;total = dist = 0;&cr;&lf;&tab;&tab;float dumm = 0;&cr;&lf;&tab;&tab;for(i = 0; i &lt; VEC_ITE; i++){&cr;&lf;&tab;&tab;&tab;dist = DistanceFunction(rayPos, dumm);&cr;&lf;&cr;&lf;&tab;&tab;&tab;if(dist &lt; mindist * max(total, 1)) break;&cr;&lf;&tab;&tab;&tab;rayPos += ray * dist * stepLength;&cr;&lf;&tab;&tab;&tab;total += dist;&cr;&lf;&tab;&tab;&tab;if(total &gt; maxdist) break;&cr;&lf;&tab;&tab;}&cr;&lf;&tab;}&cr;&lf;&tab;float4 prevPosVP = mul(float4(mul(float4(rayPos, 1), ptW).xyz, 1), ptVP);&cr;&lf;&tab;float2 prevpossc = prevPosVP.xy / prevPosVP.w;&cr;&lf;&tab;float2 velxy = (possc.xy / possc.w) - prevpossc;&cr;&lf;&tab;velxy *= .5;&cr;&lf;&tab;velxy += .5;&cr;&lf;&tab;&cr;&lf;&tab;gbuffer.MRVel = float4(o.Metalness, o.Roughness, velxy) * hit;&cr;&lf;&tab;&cr;&lf;&tab;if(IsBump){&cr;&lf;&tab;&tab;float3 p_dx = ddx(gbuffer.position);&cr;&lf;&tab;&tab;float3 p_dy = ddy(gbuffer.position);&cr;&lf;&cr;&lf;&tab;&tab;float2 tc_dx = ddx(o.uv);&cr;&lf;&tab;&tab;float2 tc_dy = ddy(o.uv);&cr;&lf;&cr;&lf;&tab;&tab;float3 t = normalize( tc_dy.y * p_dx - tc_dx.y * p_dy );&cr;&lf;&tab;&tab;float3 b = normalize( tc_dy.x * p_dx - tc_dx.x * p_dy ); &cr;&lf;&cr;&lf;&tab;&tab;float3 n = normalize(normal);&cr;&lf;&tab;&tab;float3 x = cross(n, t);&cr;&lf;&tab;&tab;t = cross(x, n);&cr;&lf;&tab;&tab;t = normalize(t);&cr;&lf;&cr;&lf;&tab;&tab;x = cross(b, n);&cr;&lf;&tab;&tab;b = cross(n, x);&cr;&lf;&tab;&tab;b = normalize(b);&cr;&lf;&tab;&tab;&cr;&lf;&tab;&tab;float3 nmap = BumpTex.Sample(linearSampler, o.uv).xyz;&cr;&lf;&tab;&tab;nmap = nmap * 2.0 - 1.0;&cr;&lf;&tab;&tab;gbuffer.normal = float4(normalize(gbuffer.normal.xyz + (nmap.x * t + nmap.y * b) * bumps), o.Reflectance) * hit;&cr;&lf;&tab;}&cr;&lf;&tab;return gbuffer;&cr;&lf;}&cr;&lf;&cr;&lf;technique10 GBuffer&cr;&lf;{&cr;&lf;&tab;pass P0&cr;&lf;&tab;{&cr;&lf;&tab;&tab;SetVertexShader( CompileShader( vs_4_0, VS() ) );&cr;&lf;&tab;&tab;SetPixelShader( CompileShader( ps_4_0, PS() ) );&cr;&lf;&tab;}&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;|">
+   <PIN pinname="ConfigShader" slicecount="1" values="|#include &lt;packs\PBRRenderer\nodes\modules\fxh\Raymarch_Common.fxh&gt;&cr;&lf;#ifndef RAYMARCHCOMMON&cr;&lf;#include &lt;packs\PBRRenderer\nodes\modules\fxh\Raymarch_Common.fxh&gt;&cr;&lf;#endif&cr;&lf;//Available Uniform Parameters&cr;&lf;//float Time&cr;&lf;//float DeltaTime&cr;&lf;//float4 Variable : User Variable Controlled on vvvv patch&cr;&lf;&cr;&lf;float DistanceFunction(float3 p, inout float Material){&cr;&lf;&tab;//Write your own distance function!!&cr;&lf;&tab;&cr;&lf;    //return dMenger(p, 1, 2.65);&cr;&lf;&tab;return dMandelbox(p, 2.595, 12);&cr;&lf;}&cr;&lf;&cr;&lf;#ifndef RAYMARCHCOMMON&cr;&lf;&tab;#include &lt;packs\PBRRenderer\nodes\modules\fxh\Raymarch_Common.fxh&gt;&cr;&lf;&tab;#define DistanceFunction&cr;&lf;#endif&cr;&lf;//Available Uniform Parameters&cr;&lf;//&cr;&lf;//float Time&cr;&lf;//float DeltaTime&cr;&lf;//float4x4 texW : Texture Transform&cr;&lf;//float4 Variable : User Variable Controlled on vvvv patch&cr;&lf;&cr;&lf;//Available Matelial Data&cr;&lf;//float4 colorTex(float2 uv)&cr;&lf;//float metalTex(float2 uv)&cr;&lf;//float roughTex(float2 uv)&cr;&lf;//float3 emissionTex(float2 uv)&cr;&lf;//float Reflectance;&cr;&lf;&cr;&lf;//struct Light{&cr;&lf;//&tab;float3 pos;&cr;&lf;//&tab;float3 amb;&cr;&lf;//&tab;float3 diff;&cr;&lf;//&tab;float4x4 VP;&cr;&lf;//};&cr;&lf;//StructuredBuffer&lt;Light&gt; lights : Light List;&cr;&lf;&cr;&lf;//Input Data Struct&cr;&lf;//struct Info{&cr;&lf;//&tab;float3 posOrigin;&cr;&lf;//&tab;float3 rayDir;&cr;&lf;//&tab;int maxLoop;&cr;&lf;//&tab;int loop;&cr;&lf;//  float Material;&cr;&lf;//&tab;float3 posEnd;&cr;&lf;//&tab;float totalDistance;&cr;&lf;//&tab;float depth;&cr;&lf;//&tab;float3 normal;&lf;//};&cr;&lf;&cr;&lf;//Output Data Struct&cr;&lf;//struct OutputData{&cr;&lf;//&tab;float3 Albedo;&cr;&lf;//&tab;float3 Emission;&cr;&lf;//&tab;float Metalness;&cr;&lf;//&tab;float Roughness;&cr;&lf;//&tab;float Reflectance;&cr;&lf;//&tab;&cr;&lf;//&tab;//If you want using Texturing, BumpMapping...&cr;&lf;//&tab;//Calc and output good uv coordinate.&cr;&lf;//&tab;float2 uv;&lf;//};&cr;&lf;float calcEdge(float3 p) {&cr;&lf;    float edge = 0.0;&cr;&lf;    float2 e = float2(.04, 0);&cr;&lf;&tab;float dum = 0;&cr;&lf;&cr;&lf;    // Take some distance function measurements from either side of the hit point on all three axes.&cr;&lf;&tab;float d1 = DistanceFunction(p + e.xyy, dum), d2 = DistanceFunction(p - e.xyy, dum);&cr;&lf;&tab;float d3 = DistanceFunction(p + e.yxy, dum), d4 = DistanceFunction(p - e.yxy, dum);&cr;&lf;&tab;float d5 = DistanceFunction(p + e.yyx, dum), d6 = DistanceFunction(p - e.yyx, dum);&cr;&lf;&tab;float d = DistanceFunction(p, dum)*2.;&tab;// The hit point itself - Doubled to cut down on calculations. See below.&cr;&lf;&cr;&lf;    // Edges - Take a geometry measurement from either side of the hit point. Average them, then see how&cr;&lf;    // much the value differs from the hit point itself. Do this for X, Y and Z directions. Here, the sum&cr;&lf;    // is used for the overall difference, but there are other ways. Note that it&apos;s mainly sharp surface&cr;&lf;    // curves that register a discernible difference.&cr;&lf;    edge = abs(d1 + d2 - d) + abs(d3 + d4 - d) + abs(d5 + d6 - d);&cr;&lf;    //edge = max(max(abs(d1 + d2 - d), abs(d3 + d4 - d)), abs(d5 + d6 - d)); // Etc.&cr;&lf;&cr;&lf;    // Once you have an edge value, it needs to normalized, and smoothed if possible. How you&cr;&lf;    // do that is up to you. This is what I came up with for now, but I might tweak it later.&cr;&lf;    edge = smoothstep(0., 1., sqrt(edge/e.x*2.));&cr;&lf;&cr;&lf;    // Return the normal.&cr;&lf;    // Standard, normalized gradient mearsurement.&cr;&lf;    return edge;&cr;&lf;}&cr;&lf;&cr;&lf;void PostFunction(Info i, inout OutputData o){&cr;&lf;&tab;//Write your own post function!!&cr;&lf;&tab;&cr;&lf;&tab;o.uv = 0;&cr;&lf;&tab;float3 p = i.posEnd;&cr;&lf;&tab;float edge = calcEdge(p);&cr;&lf;&tab;o.Albedo = colorTex(o.uv).rgb * lerp(1, i.normal, .6);&cr;&lf;&tab;o.Emission = edge * pow(abs(sin(p + Time*.8)), 8);&cr;&lf;&tab;o.Metalness = metalTex(o.uv);&cr;&lf;&tab;o.Roughness = edge+roughTex(o.uv)*.8;&cr;&lf;&tab;o.Reflectance = Reflectance;&cr;&lf;}&cr;&lf;&cr;&lf;#if !defined(ITE)&cr;&lf;#define ITE 32&cr;&lf;#endif&cr;&lf;&cr;&lf;#if !defined(VEC_ITE)&cr;&lf;#define VEC_ITE 32&cr;&lf;#endif&cr;&lf;&cr;&lf;#define EPS 0.0003&cr;&lf;float mindist&lt;float uistep = .0001;&gt; = .0001;&cr;&lf;&cr;&lf;bool IsBump = true;&cr;&lf;float bumps&lt;string uiname = &quot;BumpMap Strength&quot;; float uimin = 0.0; float uimax = 5.0;&gt; = 1;&cr;&lf;&cr;&lf;float emit &lt;string uiname = &quot;Emission Stlength&quot;;&gt; = 1.0;&cr;&lf;float stepLength&lt;string uiname = &quot;StepLength&quot;;&gt; = 1.0;&cr;&lf;&cr;&lf;SamplerState linearSampler : IMMUTABLE&cr;&lf;{&cr;&lf;&tab;Filter = MIN_MAG_MIP_LINEAR;&cr;&lf;&tab;AddressU = Wrap;&cr;&lf;&tab;AddressV = Wrap;&cr;&lf;};&cr;&lf;&cr;&lf;cbuffer cbPerDraw : register( b0 )&cr;&lf;{&cr;&lf;&tab;float4x4 tVP : VIEWPROJECTION;&tab;&cr;&lf;&tab;float4x4 tVPI : VIEWPROJECTIONINVERSE;&cr;&lf;&tab;float4x4 tV : VIEW;&cr;&lf;&tab;float4x4 tP : PROJECTION;&cr;&lf;&tab;float4x4 tPI : PROJECTIONINVERSE;&cr;&lf;&tab;float4x4 tVI : VIEWINVERSE;&cr;&lf;&tab;float4x4 ptVP : PREVIOUSVIEWPROJECTION;&cr;&lf;&tab;float4x4 ptVPI : PREVIOUSVIEWPROJECTIONINVERSE;&cr;&lf;};&cr;&lf;&cr;&lf;cbuffer cbPerObj : register( b1 )&cr;&lf;{&cr;&lf;&tab;float4x4 tW : WORLD;&cr;&lf;&tab;float4x4 tWI : WORLDINVERSE;&cr;&lf;&tab;float4x4 ptW;&cr;&lf;};&cr;&lf;&cr;&lf;struct VS_IN&cr;&lf;{&cr;&lf;&tab;float4 PosO : POSITION;&cr;&lf;&tab;float4 TexCd : TEXCOORD0;&cr;&lf;};&cr;&lf;struct vs2ps&cr;&lf;{&cr;&lf;&tab;float4 Pos: SV_Position;&cr;&lf;&tab;float2 uv: TEXCOORD0;&cr;&lf;};&cr;&lf;&cr;&lf;struct PSout{&cr;&lf;&tab;float4 color : SV_Target0;&cr;&lf;&tab;float4 normal : SV_Target1;&cr;&lf;&tab;float4 MRVel : SV_Target2;&cr;&lf;&tab;float3 position : SV_Target3;&cr;&lf;&tab;float depth : SV_Depth;&cr;&lf;};&cr;&lf;&cr;&lf;&cr;&lf;float3 getNormal(float3 p) {&cr;&lf;    float2 e = float2(1.0, -1.0) * EPS;&cr;&lf;&tab;float d = 0;&cr;&lf;    return normalize(&cr;&lf;        e.xyy * DistanceFunction(p + e.xyy, d) +&cr;&lf;        e.yxy * DistanceFunction(p + e.yxy, d) +&cr;&lf;        e.yyx * DistanceFunction(p + e.yyx, d) +&cr;&lf;        e.xxx * DistanceFunction(p + e.xxx, d)&cr;&lf;    );&cr;&lf;}&cr;&lf;&cr;&lf;vs2ps VS(VS_IN input)&cr;&lf;{&cr;&lf;&tab;vs2ps output;&cr;&lf;&tab;output.Pos  = input.PosO;&cr;&lf;&tab;output.uv = input.TexCd.xy;&cr;&lf;&tab;return output;&cr;&lf;}&cr;&lf;&cr;&lf;PSout PS(vs2ps In){&cr;&lf;&tab;PSout gbuffer;&cr;&lf;&tab;Info info = (Info)0;&cr;&lf;&tab;OutputData o = (OutputData)0;&cr;&lf;&cr;&lf;&tab;float2 u = mul(float4(In.uv, 1, 1), texW).xy;&cr;&lf;&tab;&cr;&lf;&tab;float2 rayDir = (In.uv * 2 - 1) * float2(1, -1);&cr;&lf;&tab;float4 rayDirVP = mul(float4(rayDir, 1, 1), tVPI);&cr;&lf;&tab;//float3 ray = &cr;&lf;&tab;//info.rayDir = normalize(mul(normalize(mul(float4(mul(float4(rayDir, 0, 0), tPI).xy, 1, 0), tVI).xyz), tWI));&cr;&lf;&tab;&cr;&lf;&tab;float3 ray = &cr;&lf;&tab;info.rayDir = normalize(mul(float4(normalize(rayDirVP.xyz / rayDirVP.w), 1), tWI).xyz);&cr;&lf;&tab;&cr;&lf;&cr;&lf;&tab;float3 rp = mul(float4(tVI[3].xyz, 1), tWI).xyz;&cr;&lf;&tab;float3 rayPos = rp;&cr;&lf;&tab;info.posOrigin = tVI[3].xyz;&cr;&lf;&cr;&lf;&tab;float maxdist = -(tP[3].z / (tP[2].z - 1));&cr;&lf;&tab;&cr;&lf;&tab;float3 normal = 0;&cr;&lf;&tab;bool hit = false;&cr;&lf;&tab;float dist = 0;&cr;&lf;&tab;float total = 0;&cr;&lf;&tab;float id = 0;&cr;&lf;&tab;for(int i = 0; i &lt; ITE; i++){&cr;&lf;&tab;&tab;dist = DistanceFunction(rayPos, id);&cr;&lf;&tab;&tab;&cr;&lf;&tab;&tab;if(dist &lt; mindist * max(total, 1)){ &cr;&lf;&tab;&tab;&tab;normal = normalize(max(min(getNormal(rayPos), 1), -1));&cr;&lf;&tab;&tab;&tab;normal = normalize(mul(normal, (float3x3)tW));&cr;&lf;&tab;&tab;&tab;hit = true;&cr;&lf;&cr;&lf;&tab;&tab;&tab;break;&cr;&lf;&tab;&tab;}&cr;&lf;&tab;&tab;rayPos += ray * dist * stepLength;&cr;&lf;&tab;&tab;total += dist * stepLength;&cr;&lf;&tab;&tab;if(total &gt; maxdist) break;&cr;&lf;&tab;}&cr;&lf;&tab;&cr;&lf;&tab;info.maxLoop = ITE;&cr;&lf;&tab;info.loop = i;&cr;&lf;&tab;info.totalDistance = total;&cr;&lf;&tab;info.normal = normal;&cr;&lf;&tab;info.id = id;&cr;&lf;&cr;&lf;&tab;float3 endPos = mul(float4(rayPos, 1), tW).xyz;&cr;&lf;&tab;info.posEnd = endPos;&cr;&lf;&tab;float4 possc = mul(float4(endPos, 1), tVP);&cr;&lf;&tab;gbuffer.depth = &cr;&lf;&tab;info.depth = possc.z / possc.w;&cr;&lf;&tab;&cr;&lf;&tab;PostFunction(info, o);&cr;&lf;&tab;&cr;&lf;&tab;gbuffer.color = float4((o.Albedo + o.Emission * emit) * hit, hit);&cr;&lf;&tab;gbuffer.normal = float4(normal, o.Reflectance) * hit;&cr;&lf;&tab;gbuffer.position = endPos * hit;&cr;&lf;&cr;&lf;&tab;if(hit){&cr;&lf;&tab;&tab;rayPos = rp;&cr;&lf;&tab;&tab;total = dist = 0;&cr;&lf;&tab;&tab;float dumm = 0;&cr;&lf;&tab;&tab;for(i = 0; i &lt; VEC_ITE; i++){&cr;&lf;&tab;&tab;&tab;dist = DistanceFunction(rayPos, dumm);&cr;&lf;&cr;&lf;&tab;&tab;&tab;if(dist &lt; mindist * max(total, 1)) break;&cr;&lf;&tab;&tab;&tab;rayPos += ray * dist * stepLength;&cr;&lf;&tab;&tab;&tab;total += dist * stepLength;&cr;&lf;&tab;&tab;&tab;if(total &gt; maxdist) break;&cr;&lf;&tab;&tab;}&cr;&lf;&tab;}&cr;&lf;&tab;float4 prevPosVP = mul(float4(mul(float4(rayPos, 1), ptW).xyz, 1), ptVP);&cr;&lf;&tab;float2 prevpossc = prevPosVP.xy / prevPosVP.w;&cr;&lf;&tab;float2 velxy = (possc.xy / possc.w) - prevpossc;&cr;&lf;&tab;velxy *= .5;&cr;&lf;&tab;velxy += .5;&cr;&lf;&tab;&cr;&lf;&tab;gbuffer.MRVel = float4(o.Metalness, o.Roughness, velxy) * hit;&cr;&lf;&tab;&cr;&lf;&tab;if(IsBump){&cr;&lf;&tab;&tab;float3 p_dx = ddx(gbuffer.position);&cr;&lf;&tab;&tab;float3 p_dy = ddy(gbuffer.position);&cr;&lf;&cr;&lf;&tab;&tab;float2 tc_dx = ddx(o.uv);&cr;&lf;&tab;&tab;float2 tc_dy = ddy(o.uv);&cr;&lf;&cr;&lf;&tab;&tab;float3 t = normalize( tc_dy.y * p_dx - tc_dx.y * p_dy );&cr;&lf;&tab;&tab;float3 b = normalize( tc_dy.x * p_dx - tc_dx.x * p_dy ); &cr;&lf;&cr;&lf;&tab;&tab;float3 n = normalize(normal);&cr;&lf;&tab;&tab;float3 x = cross(n, t);&cr;&lf;&tab;&tab;t = cross(x, n);&cr;&lf;&tab;&tab;t = normalize(t);&cr;&lf;&cr;&lf;&tab;&tab;x = cross(b, n);&cr;&lf;&tab;&tab;b = cross(n, x);&cr;&lf;&tab;&tab;b = normalize(b);&cr;&lf;&tab;&tab;&cr;&lf;&tab;&tab;float3 nmap = BumpTex.Sample(linearSampler, o.uv).xyz;&cr;&lf;&tab;&tab;nmap = nmap * 2.0 - 1.0;&cr;&lf;&tab;&tab;gbuffer.normal = float4(normalize(gbuffer.normal.xyz + (nmap.x * t + nmap.y * b) * bumps), o.Reflectance) * hit;&cr;&lf;&tab;}&cr;&lf;&tab;return gbuffer;&cr;&lf;}&cr;&lf;&cr;&lf;technique10 GBuffer&cr;&lf;{&cr;&lf;&tab;pass P0&cr;&lf;&tab;{&cr;&lf;&tab;&tab;SetVertexShader( CompileShader( vs_4_0, VS() ) );&cr;&lf;&tab;&tab;SetPixelShader( CompileShader( ps_4_0, PS() ) );&cr;&lf;&tab;}&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;|">
    </PIN>
-   <PIN pinname="ConfigDefines" slicecount="1" values="|ITE=32,VEC_ITE=16|">
+   <PIN pinname="ConfigDefines" slicecount="1" values="|ITE=128,VEC_ITE=32|">
    </PIN>
    <PIN pinname="Time" visible="1" slicecount="1" values="0">
    </PIN>
@@ -1205,17 +1205,17 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="230" srcpinname="Output Node" dstnodeid="229" dstpinname="texW" linkstyle="Bezier">
-   <LINKPOINT x="14295" y="4065">
+   <LINKPOINT x="14295" y="4060">
    </LINKPOINT>
-   <LINKPOINT x="7470" y="4065">
+   <LINKPOINT x="7470" y="4055">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="225" srcpinname="Output" dstnodeid="229" dstpinname="Defines">
    </LINK>
    <LINK srcnodeid="16" srcpinname="Y Output Value" dstnodeid="229" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="20640" y="4150">
+   <LINKPOINT x="20640" y="4145">
    </LINKPOINT>
-   <LINKPOINT x="11070" y="4190">
+   <LINKPOINT x="11070" y="4180">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="11" srcpinname="Output Node" dstnodeid="229" dstpinname="Transform In">
@@ -1225,57 +1225,57 @@
    <LINK srcnodeid="229" srcpinname="Layer" dstnodeid="65" dstpinname="Input Node">
    </LINK>
    <LINK srcnodeid="113" srcpinname="Output Node" dstnodeid="229" dstpinname="Emission Map" linkstyle="Bezier">
-   <LINKPOINT x="11310" y="4145">
+   <LINKPOINT x="11310" y="4140">
    </LINKPOINT>
-   <LINKPOINT x="10410" y="4150">
+   <LINKPOINT x="10410" y="4140">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="228" srcpinname="Output Node" dstnodeid="229" dstpinname="Roughness Map" linkstyle="Bezier">
-   <LINKPOINT x="7275" y="3845">
+   <LINKPOINT x="7275" y="3840">
    </LINKPOINT>
-   <LINKPOINT x="10065" y="3850">
+   <LINKPOINT x="10065" y="3840">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="146" srcpinname="Output" dstnodeid="229" dstpinname="Metalness Map" linkstyle="Bezier">
-   <LINKPOINT x="8565" y="4865">
+   <LINKPOINT x="8565" y="4860">
    </LINKPOINT>
-   <LINKPOINT x="9750" y="4870">
+   <LINKPOINT x="9750" y="4860">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="43" srcpinname="Output Node" dstnodeid="229" dstpinname="Bump Texture" linkstyle="Bezier">
-   <LINKPOINT x="9225" y="4213">
+   <LINKPOINT x="9225" y="4208">
    </LINKPOINT>
-   <LINKPOINT x="9435" y="4218">
+   <LINKPOINT x="9435" y="4208">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="227" srcpinname="Output Node" dstnodeid="229" dstpinname="Texture" linkstyle="Bezier">
-   <LINKPOINT x="6555" y="4190">
+   <LINKPOINT x="6555" y="4185">
    </LINKPOINT>
-   <LINKPOINT x="9120" y="4195">
+   <LINKPOINT x="9120" y="4185">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="112" srcpinname="Y Output Value" dstnodeid="229" dstpinname="Emission Stlength" linkstyle="Bezier">
-   <LINKPOINT x="12495" y="4093">
+   <LINKPOINT x="12495" y="4088">
    </LINKPOINT>
-   <LINKPOINT x="8535" y="4098">
+   <LINKPOINT x="8535" y="4088">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="51" srcpinname="Y Output Value" dstnodeid="229" dstpinname="BumpMap Strength" linkstyle="Bezier">
-   <LINKPOINT x="10740" y="3905">
+   <LINKPOINT x="10740" y="3900">
    </LINKPOINT>
-   <LINKPOINT x="8190" y="3910">
+   <LINKPOINT x="8190" y="3900">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="229" dstpinname="IsBump" linkstyle="Bezier">
-   <LINKPOINT x="10035" y="3943">
+   <LINKPOINT x="10035" y="3938">
    </LINKPOINT>
-   <LINKPOINT x="7875" y="3948">
+   <LINKPOINT x="7875" y="3938">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="162" srcpinname="Y Output Value" dstnodeid="229" dstpinname="mindist" linkstyle="Bezier">
-   <LINKPOINT x="15330" y="4220">
+   <LINKPOINT x="15330" y="4215">
    </LINKPOINT>
-   <LINKPOINT x="7575" y="4225">
+   <LINKPOINT x="7575" y="4215">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="135" srcpinname="Y Output Value" dstnodeid="229" dstpinname="Reflectance" linkstyle="Bezier">
@@ -1285,27 +1285,27 @@
    <LINK srcnodeid="181" srcpinname="Time" dstnodeid="229" dstpinname="Time">
    </LINK>
    <LINK srcnodeid="192" srcpinname="Output" dstnodeid="229" dstpinname="ShaderCode" linkstyle="Bezier">
-   <LINKPOINT x="2865" y="5990">
+   <LINKPOINT x="2865" y="5985">
    </LINKPOINT>
-   <LINKPOINT x="5250" y="5995">
+   <LINKPOINT x="5250" y="5985">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="229" srcpinname="Technique Valid" dstnodeid="220" dstpinname="Input 1" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="9645" y="8195">
+   <LINKPOINT x="9645" y="8185">
    </LINKPOINT>
-   <LINKPOINT x="18195" y="8155">
+   <LINKPOINT x="18195" y="8150">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="231" srcpinname="Y Output Value" dstnodeid="229" dstpinname="VariableXYZW" linkstyle="Bezier">
-   <LINKPOINT x="13665" y="4280">
+   <LINKPOINT x="13665" y="4275">
    </LINKPOINT>
-   <LINKPOINT x="6840" y="4285">
+   <LINKPOINT x="6840" y="4275">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="33" srcpinname="Output 1" dstnodeid="229" dstpinname="ptW" linkstyle="Bezier">
-   <LINKPOINT x="6330" y="5063">
+   <LINKPOINT x="6330" y="5058">
    </LINKPOINT>
-   <LINKPOINT x="8895" y="5063">
+   <LINKPOINT x="8895" y="5053">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="232">
@@ -1325,15 +1325,15 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="232" srcpinname="Y Output Value" dstnodeid="229" dstpinname="StepLength" linkstyle="Bezier">
-   <LINKPOINT x="18255" y="4680">
+   <LINKPOINT x="18255" y="4675">
    </LINKPOINT>
-   <LINKPOINT x="10515" y="4680">
+   <LINKPOINT x="10515" y="4670">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="232" srcpinname="Y Output Value" dstnodeid="219" dstpinname="stepLength" linkstyle="Bezier">
-   <LINKPOINT x="18255" y="5213">
+   <LINKPOINT x="18250" y="5228">
    </LINKPOINT>
-   <LINKPOINT x="15450" y="5213">
+   <LINKPOINT x="15440" y="5243">
    </LINKPOINT>
    </LINK>
    </PATCH>

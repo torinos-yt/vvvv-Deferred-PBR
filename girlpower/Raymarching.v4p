@@ -47,7 +47,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1500" top="6870" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="1000,1080">
+   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="1000,1000">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -99,7 +99,7 @@
    </PIN>
    <PIN pinname="Debug" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Debug Mode" slicecount="1" values="BentNormal">
+   <PIN pinname="Debug Mode" slicecount="1" values="Albedo">
    </PIN>
    <PIN pinname="Diffuse Environment Map" visible="1" slicecount="1" values="||">
    </PIN>
@@ -233,7 +233,7 @@
    </BOUNDS>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <PIN pinname="Filename" slicecount="1" values="..\src\HDRI\leadenhall_marketDiffuseHDR.dds">
+   <PIN pinname="Filename" slicecount="1" values="..\src\HDRI\leadenhallMarketDiffuseHDR.dds">
    </PIN>
    <PIN pinname="Reload" slicecount="1" values="0">
    </PIN>
@@ -247,7 +247,7 @@
    </BOUNDS>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <PIN pinname="Filename" slicecount="1" values="..\src\HDRI\leadenhall_marketSpecularHDR.dds">
+   <PIN pinname="Filename" slicecount="1" values="..\src\HDRI\leadenhallMarketSpecularHDR.dds">
    </PIN>
    <PIN pinname="Reload" slicecount="1" values="0">
    </PIN>
@@ -440,6 +440,8 @@
    <PIN pinname="Emission Stlength" slicecount="1" values="4">
    </PIN>
    <PIN pinname="MotionVector Iteration" slicecount="1" values="32">
+   </PIN>
+   <PIN pinname="StepLength" slicecount="1" values="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="34" srcpinname="Texture Out" dstnodeid="19" dstpinname="Roughness Map">

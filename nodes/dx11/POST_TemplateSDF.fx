@@ -29,6 +29,7 @@
 //	float3 rayDir;
 //	int maxLoop;
 //	int loop;
+//  float Material
 //	float3 posEnd;
 //	float totalDistance;
 //	float depth;

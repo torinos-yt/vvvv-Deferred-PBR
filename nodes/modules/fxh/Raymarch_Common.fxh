@@ -14,6 +14,7 @@ Texture2D RoughnessTex <string uiname = "Roughness Map";>;
 Texture2D EmissionTex <string uiname = "Emission Map";>;
 float Reflectance<string uiname = "Reflectance";> = .5;
 
+
 SamplerState tSampler : IMMUTABLE
 {
 	Filter = MIN_MAG_MIP_LINEAR;
@@ -44,7 +45,7 @@ struct Info{
 	float3 rayDir;
 	int maxLoop;
 	int loop;
-    float id;
+    float Material;
 	float3 posEnd;
 	float totalDistance;
 	float depth;

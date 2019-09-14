@@ -37,7 +37,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="4470" top="8550" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Filename" slicecount="1" values="..\src\HDRI\leadenhall_marketSpecularHDR.dds">
+   <PIN pinname="Filename" slicecount="1" values="..\src\HDRI\leadenhallMarketSpecularHDR.dds">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
@@ -49,7 +49,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="4200" top="8100" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Filename" slicecount="1" values="..\src\HDRI\leadenhall_marketDiffuseHDR.dds">
+   <PIN pinname="Filename" slicecount="1" values="..\src\HDRI\leadenhallMarketDiffuseHDR.dds">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>

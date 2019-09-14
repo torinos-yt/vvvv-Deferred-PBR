@@ -85,6 +85,8 @@
    </PIN>
    <PIN pinname="Use Vertexx Velocity" slicecount="1" values="0">
    </PIN>
+   <PIN pinname="Shader Valid" visible="1">
+   </PIN>
    </NODE>
    <NODE systemname="RenderGBuffer (Dx11.Texture)" filename="..\modules\RenderGBuffer (Dx11.Texture).v4p" nodename="RenderGBuffer (Dx11.Texture)" componentmode="Hidden" id="9">
    <BOUNDS type="Node" left="5655" top="11265" width="100" height="100">
@@ -181,7 +183,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="7875" top="10500" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Filename" slicecount="1" values="..\src\HDRI\leadenhall_marketDiffuseHDR.dds">
+   <PIN pinname="Filename" slicecount="1" values="..\src\HDRI\leadenhallMarketDiffuseHDR.dds">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
@@ -191,7 +193,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="8175" top="11070" width="3000" height="3000">
    </BOUNDS>
-   <PIN pinname="Filename" slicecount="1" values="..\src\HDRI\leadenhall_marketSpecularHDR.dds">
+   <PIN pinname="Filename" slicecount="1" values="..\src\HDRI\leadenhallMarketSpecularHDR.dds">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
@@ -223,7 +225,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="5340" top="13500" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="12990" top="4200" width="12690" height="7605">
+   <BOUNDS type="Window" left="11760" top="2760" width="12690" height="7605">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1">
    </PIN>
@@ -725,5 +727,23 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="63" srcpinname="Output" dstnodeid="10" dstpinname="EffectSetting">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="64">
+   <BOUNDS type="Box" left="5760" top="9945" width="525" height="270">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5760" top="9945" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Shader Valid|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Shader Valid" dstnodeid="64" dstpinname="Y Input Value">
    </LINK>
    </PATCH>
