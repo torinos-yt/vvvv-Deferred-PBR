@@ -867,7 +867,7 @@
    </PIN>
    <PIN pinname="Render State" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Geometry" visible="1">
+   <PIN pinname="Geometry" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
    </PIN>
@@ -887,15 +887,15 @@
    </PIN>
    <PIN pinname="ptW" visible="1">
    </PIN>
-   <PIN pinname="texW" visible="1">
+   <PIN pinname="texW" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Texture" visible="1">
+   <PIN pinname="Texture" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Bump Texture" visible="1">
+   <PIN pinname="Bump Texture" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Metalness Map" visible="1">
    </PIN>
-   <PIN pinname="Roughness Map" visible="1">
+   <PIN pinname="Roughness Map" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Emission Map" visible="1" slicecount="1" values="||">
    </PIN>

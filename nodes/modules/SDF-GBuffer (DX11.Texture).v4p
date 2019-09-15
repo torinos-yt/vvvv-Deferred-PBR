@@ -10,7 +10,7 @@
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="2775" top="2550" width="21780" height="11505">
+   <BOUNDS type="Window" left="0" top="1605" width="21780" height="11505">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
    </PACK>
@@ -1102,6 +1102,18 @@
    <LINKPOINT x="15440" y="5243">
    </LINKPOINT>
    </LINK>
+   <LINK srcnodeid="181" srcpinname="DeltaTime" dstnodeid="219" dstpinname="DeltaTime" linkstyle="Bezier">
+   <LINKPOINT x="11400" y="6915">
+   </LINKPOINT>
+   <LINKPOINT x="12945" y="6915">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="181" srcpinname="Time" dstnodeid="219" dstpinname="Time" linkstyle="Bezier">
+   <LINKPOINT x="10800" y="6923">
+   </LINKPOINT>
+   <LINKPOINT x="12780" y="6923">
+   </LINKPOINT>
+   </LINK>
    <NODE id="229" systemname="Shader (DX11.Effect Fieldtrip String)" filename="%VVVV%\packs\FieldTrip\nodes\plugins\FieldTripHelpers.dll" nodename="Shader (DX11.Effect Fieldtrip String)" componentmode="Hidden">
    <BOUNDS type="Node" left="4320" top="6870" width="7035" height="270">
    </BOUNDS>
@@ -1291,17 +1303,5 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="154" srcpinname="Output" dstnodeid="229" dstpinname="Defines">
-   </LINK>
-   <LINK srcnodeid="181" srcpinname="DeltaTime" dstnodeid="219" dstpinname="DeltaTime" linkstyle="Bezier">
-   <LINKPOINT x="11400" y="6915">
-   </LINKPOINT>
-   <LINKPOINT x="12945" y="6915">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="181" srcpinname="Time" dstnodeid="219" dstpinname="Time" linkstyle="Bezier">
-   <LINKPOINT x="10800" y="6923">
-   </LINKPOINT>
-   <LINKPOINT x="12780" y="6923">
-   </LINKPOINT>
    </LINK>
    </PATCH>

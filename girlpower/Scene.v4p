@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\girlpower\Scene.v4p" systemname="SCene" filename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\SCene.v4p" scrollx="45" scrolly="150">
-   <BOUNDS type="Window" left="10995" top="6975" width="12780" height="8775">
+   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\girlpower\Scene.v4p" systemname="SCene" filename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\SCene.v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="10995" top="7260" width="12690" height="8490">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
    </PACK>
@@ -45,7 +45,7 @@
    </PIN>
    <PIN pinname="Shadow mindist" slicecount="1" values="0.0018">
    </PIN>
-   <BOUNDS type="Window" left="2775" top="2550" width="21780" height="11505">
+   <BOUNDS type="Window" left="0" top="1605" width="21780" height="11505">
    </BOUNDS>
    </NODE>
    <NODE systemname="RenderGBuffer (Dx11.Texture)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\RenderGBuffer (Dx11.Texture).v4p" nodename="RenderGBuffer (Dx11.Texture)" componentmode="Hidden" id="1">
@@ -147,7 +147,7 @@
    </PIN>
    <PIN pinname="UseLight" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Render Environment" slicecount="1" values="0">
+   <PIN pinname="Render Environment" slicecount="1" values="1">
    </PIN>
    <PIN pinname="LightBleedingLimit" slicecount="1" values="0.66">
    </PIN>
@@ -205,7 +205,7 @@
    </PIN>
    <PIN pinname="Blur Sharpness" slicecount="1" values="1024">
    </PIN>
-   <PIN pinname="Use Grain" slicecount="1" values="1">
+   <PIN pinname="Use Grain" slicecount="1" values="0">
    </PIN>
    <PIN pinname="AO Power" slicecount="1" values="1.4">
    </PIN>
@@ -229,7 +229,7 @@
    </BOUNDS>
    <PIN pinname="Use Scatter" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Exposure" slicecount="1" values="1">
+   <PIN pinname="Exposure" slicecount="1" values="1.37">
    </PIN>
    <PIN pinname="F-Stop" slicecount="1" values="2.4">
    </PIN>
@@ -241,7 +241,7 @@
    </PIN>
    <PIN pinname="Use Tonemap" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Use Bloom" slicecount="1" values="1">
+   <PIN pinname="Use Bloom" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Num Circles" slicecount="1" values="4">
    </PIN>
@@ -249,11 +249,25 @@
    </PIN>
    <PIN pinname="Threshold Bias" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Intensity" slicecount="1" values="0.08">
+   <PIN pinname="Intensity" slicecount="1" values="0.17">
    </PIN>
    <PIN pinname="Width" slicecount="1" values="0.6">
    </PIN>
    <PIN pinname="Bloom Timt" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Vignette Intensity" slicecount="1" values="0.17">
+   </PIN>
+   <PIN pinname="Tonemap Techinique" slicecount="1" values="Rainhard">
+   </PIN>
+   <PIN pinname="Contrast" slicecount="1" values="1.13">
+   </PIN>
+   <PIN pinname="Saturation" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Smooth" slicecount="1" values="0.96">
+   </PIN>
+   <PIN pinname="Center" slicecount="1" values="0.35">
+   </PIN>
+   <PIN pinname="Gamma" slicecount="1" values="0.95">
    </PIN>
    </NODE>
    <LINK srcnodeid="7" srcpinname="Output" dstnodeid="4" dstpinname="EffectSetting">
@@ -281,7 +295,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="2355" top="4800" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="10995" top="0" width="12720" height="7200">
+   <BOUNDS type="Window" left="10995" top="0" width="12675" height="7365">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1">
    </PIN>
@@ -368,94 +382,6 @@
    <PIN pinname="Maximum Foreground FPS" slicecount="1" values="30">
    </PIN>
    </NODE>
-   <NODE systemname="GenRandomOffset (Value)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\vl\VVVV.Value.GenRandomOffset.vl" nodename="GenRandomOffset (Value)" componentmode="Hidden" id="25">
-   <BOUNDS type="Node" left="16650" top="4860" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="OutputXY" visible="1">
-   </PIN>
-   <PIN pinname="Jitter SpreadXY" slicecount="2" values="0.3,0.3">
-   </PIN>
-   </NODE>
-   <NODE systemname="GetMatrix (Transform)" nodename="GetMatrix (Transform)" componentmode="Hidden" id="24">
-   <BOUNDS type="Node" left="15465" top="3900" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Matrix Out" visible="1">
-   </PIN>
-   </NODE>
-   <NODE systemname="SetSlice (Spreads)" nodename="SetSlice (Spreads)" componentmode="Hidden" id="23">
-   <BOUNDS type="Node" left="15675" top="4905" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Spread" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname="Index" slicecount="1" visible="1" values="8">
-   </PIN>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="24" srcpinname="Matrix Out" dstnodeid="23" dstpinname="Spread">
-   </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="22">
-   <BOUNDS type="Box" left="16755" top="4710" width="795" height="480">
-   </BOUNDS>
-   <BOUNDS type="Node" left="16755" top="4710" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="8,9">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Integer">
-   </PIN>
-   <PIN pinname="Rows" slicecount="1" values="2">
-   </PIN>
-   <PIN pinname="Vector Size" slicecount="1" values="2">
-   </PIN>
-   <PIN pinname="Default" slicecount="1" values="|0, 0|">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="22" srcpinname="Y Output Value" dstnodeid="23" dstpinname="Index">
-   </LINK>
-   <NODE systemname="SetMatrix (Transform)" nodename="SetMatrix (Transform)" componentmode="Hidden" id="21">
-   <BOUNDS type="Node" left="15165" top="5565" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Matrix In" visible="1">
-   </PIN>
-   <PIN pinname="Transform Out" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="23" srcpinname="Output" dstnodeid="21" dstpinname="Matrix In">
-   </LINK>
-   <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="20">
-   <BOUNDS type="Node" left="16845" top="3750" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <PIN pinname="Input 2" visible="1" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="19">
-   <BOUNDS type="Node" left="16590" top="4845" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1">
-   </PIN>
-   <PIN pinname="Destination Minimum" slicecount="1" values="-1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="25" srcpinname="OutputXY" dstnodeid="19" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="19" srcpinname="Output" dstnodeid="20" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="20" srcpinname="Output" dstnodeid="23" dstpinname="Input">
-   </LINK>
    <NODE systemname="LightStruct (LightData)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\LightStruct (LightData).v4p" nodename="LightStruct (LightData)" componentmode="Hidden" id="27">
    <BOUNDS type="Node" left="9525" top="1560" width="100" height="100">
    </BOUNDS>
@@ -465,7 +391,7 @@
    </PIN>
    <PIN pinname="FOV" slicecount="1" values="110">
    </PIN>
-   <PIN pinname="Light Intensity" slicecount="1" values="2">
+   <PIN pinname="Light Intensity" slicecount="1" values="4">
    </PIN>
    <PIN pinname="Ambient" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
    </PIN>
@@ -490,4 +416,8 @@
    </NODE>
    <LINK srcnodeid="28" srcpinname="Y Output Value" dstnodeid="27" dstpinname="Position">
    </LINK>
+   <NODE systemname="DF_Template (DX11.Effect)" filename="%VVVV%\packs\PBRRenderer\nodes\dx11\DF_Template.fx" nodename="DF_Template (DX11.Effect)" componentmode="Hidden" id="30">
+   <BOUNDS type="Node" left="7665" top="2625" width="100" height="100">
+   </BOUNDS>
+   </NODE>
    </PATCH>

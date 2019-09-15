@@ -323,7 +323,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="12105" top="6720" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" visible="1" values="ACES">
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Rainhard">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="ACES">
    </PIN>
@@ -389,7 +389,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="300" top="435" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -543,7 +543,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="17460" top="4065" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -655,7 +655,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="930" top="1545" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="2">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="3">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -673,7 +673,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1125" top="2055" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.45">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.4">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -691,7 +691,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1320" top="2580" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="2">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="4">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -711,7 +711,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1515" top="3030" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="4">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="6">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -865,7 +865,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="4770" top="330" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="8">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="2.4">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1001,7 +1001,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6975" top="6105" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.4">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="3">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1037,7 +1037,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="9330" top="2205" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.38">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.6">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1055,15 +1055,17 @@
    </BOUNDS>
    <BOUNDS type="Node" left="9555" top="2685" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.02">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.17">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Precision" slicecount="1" values="4">
    </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="Intensity">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Bloom Intensity|">
    </PIN>
    <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   <PIN pinname="Tag" slicecount="1" values="bloom">
    </PIN>
    </NODE>
    <LINK srcnodeid="62" srcpinname="Y Output Value" dstnodeid="17" dstpinname="Intensity">
@@ -1087,7 +1089,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="11550" top="6165" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.69">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.9">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1123,7 +1125,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="13935" top="2580" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.13">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1159,7 +1161,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="14715" top="3435" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="-1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1168,6 +1170,10 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="Saturation">
    </PIN>
    <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="-1">
    </PIN>
    </NODE>
    <LINK srcnodeid="68" srcpinname="Y Output Value" dstnodeid="18" dstpinname="Saturation">
@@ -1213,15 +1219,17 @@
    </BOUNDS>
    <BOUNDS type="Node" left="16305" top="6210" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.150000005960464">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.18">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Precision" slicecount="1" values="4">
    </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="Intensity">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Vignette Intensity|">
    </PIN>
    <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   <PIN pinname="Tag" slicecount="1" values="vignette">
    </PIN>
    </NODE>
    <LINK srcnodeid="71" srcpinname="Y Output Value" dstnodeid="20" dstpinname="Intensity">
@@ -1285,7 +1293,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6510" top="4275" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>

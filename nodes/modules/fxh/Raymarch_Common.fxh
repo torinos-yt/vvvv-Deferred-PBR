@@ -2,17 +2,17 @@
 #define RAYMARCHCOMMON
 #endif
 
-float Time = 0;
-float DeltaTime = 0;
+float Time<bool visible = false;> = 0;
+float DeltaTime<bool visible = false;> = 0;
 
-float4 Variable;
+float4 Variable<bool visible = false;>;
 
-Texture2D ColorTex <string uiname="Texture";>;
-Texture2D BumpTex <string uiname="Bump Texture";>;
-Texture2D MetalnessTex <string uiname = "Metalness Map";>;
-Texture2D RoughnessTex <string uiname = "Roughness Map";>;
-Texture2D EmissionTex <string uiname = "Emission Map";>;
-float Reflectance<string uiname = "Reflectance";> = .5;
+Texture2D ColorTex <string uiname="Texture"; bool visible = false;>;
+Texture2D BumpTex <string uiname="Bump Texture"; bool visible = false;>;
+Texture2D MetalnessTex <string uiname = "Metalness Map"; bool visible = false;>;
+Texture2D RoughnessTex <string uiname = "Roughness Map"; bool visible = false;>;
+Texture2D EmissionTex <string uiname = "Emission Map"; bool visible = false;>;
+float Reflectance<string uiname = "Reflectance";  bool visible = false;> = .5;
 
 
 SamplerState tSampler : IMMUTABLE
@@ -38,7 +38,7 @@ float3 emissionTex(float2 uv){
     return EmissionTex.Sample(tSampler, uv).rgb;
 }
 
-float4x4 texW;
+float4x4 texW<bool visible = false;>;
 
 struct Info{
 	float3 posOrigin;
