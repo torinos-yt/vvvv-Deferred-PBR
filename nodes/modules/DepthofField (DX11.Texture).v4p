@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\nodes\modules\DepthofField (DX11.Texture).v4p" systemname="DepthofField (DX11.Texture)" filename="F:\vvvv\work\PBRRenderer\modules\DepthofField (DX11.Texture).v4p" scrollx="15" scrolly="0">
+   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\nodes\modules\DepthofField (DX11.Texture).v4p" systemname="DepthofField (DX11.Texture)" filename="F:\vvvv\work\PBRRenderer\modules\DepthofField (DX11.Texture).v4p" scrollx="15" scrolly="-360">
    <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="4">
    <BOUNDS type="Node" left="2985" top="2235" width="100" height="100">
    </BOUNDS>
@@ -142,7 +142,7 @@
    </LINK>
    <LINK srcnodeid="19" srcpinname="Matrix Out" dstnodeid="21" dstpinname="Input">
    </LINK>
-   <BOUNDS type="Window" left="3135" top="375" width="11100" height="15375">
+   <BOUNDS type="Window" left="1125" top="0" width="11100" height="15375">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
    </PACK>
@@ -499,13 +499,19 @@
    </BOUNDS>
    <BOUNDS type="Window" left="16485" top="7050" width="5475" height="7470">
    </BOUNDS>
-   <PIN pinname="Color" slicecount="1" values="|0.87952,0.87952,0.87952,1.00000|">
+   <PIN pinname="Color" slicecount="1" values="|0.74977,0.74977,0.74977,1.00000|">
    </PIN>
-   <PIN pinname="Output White" slicecount="1" values="|0.09454,0.09454,0.09454,1.00000|">
+   <PIN pinname="Output White" slicecount="1" values="|0.36517,0.36517,0.36517,1.00000|">
    </PIN>
    <PIN pinname="Post Width" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Filename" slicecount="1" values="..\..\src\Iris\Iris_Disc.png">
+   <PIN pinname="Filename" slicecount="1" values="..\..\src\Bokeh_Tex.jpg">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="XYZ" slicecount="1" values="1.52">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="0.19">
    </PIN>
    </NODE>
    <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="143">

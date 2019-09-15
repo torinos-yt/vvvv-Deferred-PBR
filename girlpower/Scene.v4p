@@ -44,7 +44,7 @@
    <PIN pinname="Transform In" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="RenderGBuffer (Dx11.Texture)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\RenderGBuffer (Dx11.Texture).v4p" nodename="RenderGBuffer (Dx11.Texture)" componentmode="InAWindow" id="1">
+   <NODE systemname="RenderGBuffer (Dx11.Texture)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\RenderGBuffer (Dx11.Texture).v4p" nodename="RenderGBuffer (Dx11.Texture)" componentmode="Hidden" id="1">
    <BOUNDS type="Node" left="2640" top="3105" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Layer In" visible="1">
@@ -195,7 +195,7 @@
    </PIN>
    <PIN pinname="AO Power" slicecount="1" values="0.45">
    </PIN>
-   <PIN pinname="Use DoF" slicecount="1" values="0">
+   <PIN pinname="Use DoF" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Use TAA" slicecount="1" values="1">
    </PIN>
@@ -210,6 +210,10 @@
    <PIN pinname="Use Motion Blur" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Velocity Weight" slicecount="1" values="100">
+   </PIN>
+   <BOUNDS type="Window" left="1110" top="3225" width="21030" height="10635">
+   </BOUNDS>
+   <PIN pinname="Use Scatter" slicecount="1" values="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="7" srcpinname="Output" dstnodeid="4" dstpinname="EffectSetting">
@@ -237,7 +241,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="2355" top="4800" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="28680" top="-120" width="38640" height="21840">
+   <BOUNDS type="Window" left="14190" top="0" width="14610" height="8760">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1">
    </PIN>

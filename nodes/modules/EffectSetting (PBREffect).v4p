@@ -87,7 +87,7 @@
    </PIN>
    <PIN pinname="maxCoC" slicecount="1" visible="1" values="0.3">
    </PIN>
-   <PIN pinname="Use Scatter" slicecount="1" values="0">
+   <PIN pinname="Use Scatter" slicecount="1" values="1" visible="1">
    </PIN>
    <PIN pinname="F-Stop" slicecount="1" visible="1" values="8">
    </PIN>
@@ -106,7 +106,7 @@
    </LINK>
    <LINK srcnodeid="6" srcpinname="Output String" dstnodeid="5" dstpinname="Strings">
    </LINK>
-   <BOUNDS type="Window" left="2475" top="3330" width="21030" height="10635">
+   <BOUNDS type="Window" left="1110" top="3225" width="21030" height="10635">
    </BOUNDS>
    <NODE systemname="SetEffectSetting (PBRRenderer)" filename="..\vl\VVVV.Value.RenderSetting.vl" nodename="SetEffectSetting (PBRRenderer)" componentmode="Hidden" id="13">
    <BOUNDS type="Node" left="300" top="8865" width="19395" height="270">
@@ -389,7 +389,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="300" top="435" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -455,7 +455,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="4575" top="4065" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -789,7 +789,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="2715" top="5880" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.73">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.54">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -807,7 +807,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3000" top="6330" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.78">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.86">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -825,7 +825,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3300" top="6690" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="0.35,0.35">
+   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="0.5,0.5">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -847,7 +847,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3600" top="7380" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1000">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="100">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1279,5 +1279,27 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="74" srcpinname="Y Output Value" dstnodeid="21" dstpinname="intensity">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="75">
+   <BOUNDS type="Box" left="6510" top="4275" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6510" top="4275" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Use Scatter|">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="75" srcpinname="Y Output Value" dstnodeid="7" dstpinname="Use Scatter">
    </LINK>
    </PATCH>

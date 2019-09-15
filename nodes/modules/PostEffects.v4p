@@ -141,7 +141,7 @@
    </PIN>
    <PIN pinname="Texture Size" visible="1">
    </PIN>
-   <BOUNDS type="Window" left="7725" top="7485" width="11100" height="15375">
+   <BOUNDS type="Window" left="1125" top="0" width="11100" height="15375">
    </BOUNDS>
    <PIN pinname="World Scale" slicecount="1" visible="1" values="1000">
    </PIN>
