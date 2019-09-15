@@ -18,6 +18,11 @@
           <Patch Id="ESJZDDS0I02LAWDOx9RJVV" Name="Create" ParticipatingElements="SxMSh7yOA4nNiiv98LwFid" />
           <Patch Id="OkqGvJfa3PDOppp4PFQghD" Name="Update">
             <Pin Id="F7jxMi1jEoUNd5XlhOUUAO" Name="Output" Kind="OutputPin" />
+            <Pin Id="PbiYrbPIXT9NuMYMPSaGg1" Name="Reset" Kind="InputPin" Bounds="494,-46" DefaultValue="False">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Boolean" />
+              </p:TypeAnnotation>
+            </Pin>
             <Pin Id="MSY5svCgDWqMFFQCTphAAc" Name="Jitter Spread" Kind="InputPin" DefaultValue="1, 1">
               <p:TypeAnnotation LastCategoryFullName="2D" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="Vector2" />
@@ -385,6 +390,16 @@
                 <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
               </p:ValueBoxSettings>
             </Pad>
+            <Node Bounds="287,202" Id="UQ4ktZc4THkPOXFgMsPcow">
+              <p:NodeReference LastCategoryFullName="Primitive.Boolean" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                <Choice Kind="OperationCallFlag" Name="OR" />
+              </p:NodeReference>
+              <Pin Id="PiFviSK8EbzLjIji49GKCe" Name="Input" Kind="StateInputPin" />
+              <Pin Id="D2XUahGppVZQHndAYPHnVy" Name="Input 2" Kind="InputPin" />
+              <Pin Id="QZac39pb8fCLuOILozBwpE" Name="Output" Kind="StateOutputPin" />
+            </Node>
+            <ControlPoint Id="DgMbZHnMZpBNk93WGroZLT" Bounds="522,-50" />
           </Canvas>
           <ProcessDefinition Id="FHNLl8GWgcVOJzRkkPI83E">
             <Fragment Id="MRFnVwHDf0WOO7H3jKbCxI" Patch="ESJZDDS0I02LAWDOx9RJVV" Enabled="true" />
@@ -412,7 +427,6 @@
           <Link Id="IFxFULJplBRLNF1LkyN29K" Ids="Uo4HuRf2RoxP4OvkYxKh4r,BaFSC2B4ij3LASthkBnJET" />
           <Link Id="GBY3OyCqG0DOTgZd39ibUU" Ids="VNP6PqlunuqLlf1ZdBgO6E,VZp4sP4XnDDPqTCPepVdud" />
           <Link Id="JoP6ppse3SmPnCEr7GvkhJ" Ids="RUq0yeZH17WP6AQa8vPXJh,CGnzsCw4TnEPb05HCaO2hS" />
-          <Link Id="QXnZUZjpsWBOl49mkY1zUF" Ids="Bj4NmdXN7EBM1bK3bbckkz,TUzCmKfAqaiLv0O7v6RKJi" />
           <Link Id="Vx6VWBnPQqKLfAJ5RavUJK" Ids="Vq0FBzqh9u9PWFeiFlRpuT,NUB3g9c6flMPedzcBqAdtO" IsFeedback="true" />
           <Link Id="QlNtCjZy5TrLCWtfFMmXDT" Ids="KnMbFY5i3uHMp5ak1nmyba,NOXtU9Vu2HAO3ywEamocR9" />
           <Link Id="KijBwenqiQBPBodBYN44Iy" Ids="NVmH2j7g1AnPxnMvcrbrJQ,NUB3g9c6flMPedzcBqAdtO" />
@@ -422,6 +436,10 @@
           <Link Id="C1U1cdL21S3MAW9gi8fIVX" Ids="QXZU82fpKdwNH7A5BHuS6C,Bzt2ZAbwLn0NgX8SrDYOGM" />
           <Link Id="C6dV2NstuHhMQbZo87ZEYr" Ids="QZxeBGO7Ir6M0JrzJAh80v,DsZHmqpzWuSLAMIfxgaDV0" />
           <Link Id="KzQKN31Q1Z8OShuCjdAYXl" Ids="QZxeBGO7Ir6M0JrzJAh80v,JkUNkKaC7rfPSpwL7oB5TE,Vq0FBzqh9u9PWFeiFlRpuT" />
+          <Link Id="LkXdcfJpsG5Nah6VpUpKPI" Ids="Bj4NmdXN7EBM1bK3bbckkz,D2XUahGppVZQHndAYPHnVy" />
+          <Link Id="AzUaFDLXiQCLUuVVi62Sxn" Ids="QZac39pb8fCLuOILozBwpE,TUzCmKfAqaiLv0O7v6RKJi" />
+          <Link Id="Gjf6GltxqWcOvhQdZU8W62" Ids="DgMbZHnMZpBNk93WGroZLT,PiFviSK8EbzLjIji49GKCe" />
+          <Link Id="I5EBdxFdhHLPqd1jDdhCY9" Ids="PbiYrbPIXT9NuMYMPSaGg1,DgMbZHnMZpBNk93WGroZLT" IsHidden="true" />
         </Patch>
       </Node>
     </Canvas>

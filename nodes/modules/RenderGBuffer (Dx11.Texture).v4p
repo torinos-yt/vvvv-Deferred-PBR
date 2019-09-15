@@ -86,7 +86,7 @@
    </LINK>
    <LINK srcnodeid="2" srcpinname="Output Enum" dstnodeid="0" dstpinname="Target Format">
    </LINK>
-   <BOUNDS type="Window" left="2565" top="6480" width="18240" height="11385">
+   <BOUNDS type="Window" left="-3045" top="3525" width="18240" height="11385">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
    </PACK>
@@ -373,9 +373,9 @@
    <LINK srcnodeid="44" srcpinname="Output" dstnodeid="45" dstpinname="Input Node">
    </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="46">
-   <BOUNDS type="Box" left="14265" top="885" width="795" height="240">
+   <BOUNDS type="Box" left="13875" top="960" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="14265" top="885" width="0" height="0">
+   <BOUNDS type="Node" left="13875" top="960" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
    </PIN>
@@ -385,9 +385,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="47">
-   <BOUNDS type="Box" left="15570" top="915" width="795" height="240">
+   <BOUNDS type="Box" left="15180" top="990" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="15570" top="915" width="0" height="0">
+   <BOUNDS type="Node" left="15180" top="990" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
    </PIN>
@@ -431,7 +431,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="11898" top="1041" width="4435" height="6580">
    </BOUNDS>
-   <BOUNDS type="Window" left="14175" top="3540" width="5775" height="6570">
+   <BOUNDS type="Window" left="6960" top="3690" width="9405" height="8985">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -443,22 +443,16 @@
    </PIN>
    <PIN pinname="AspectRatio" visible="1" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Texture SizeXY" visible="1">
+   <PIN pinname="Texture SizeXY" visible="1" slicecount="2" values="1920,1080">
    </PIN>
    <PIN pinname="PrevTranform" visible="1">
    </PIN>
    <PIN pinname="PrevView" visible="1">
    </PIN>
+   <PIN pinname="Jitter SpreadXY" slicecount="2" values="0.5,0.5">
+   </PIN>
    </NODE>
    <LINK srcnodeid="46" srcpinname="Output Node" dstnodeid="58" dstpinname="View">
-   </LINK>
-   <LINK srcnodeid="47" srcpinname="Output Node" dstnodeid="58" dstpinname="Projection">
-   </LINK>
-   <LINK srcnodeid="43" srcpinname="Y Output Value" dstnodeid="58" dstpinname="Texture SizeXY" linkstyle="Bezier" hiddenwhenlocked="1">
-   <LINKPOINT x="1700" y="1900">
-   </LINKPOINT>
-   <LINKPOINT x="13975" y="1910">
-   </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="60">
    <BOUNDS type="Box" left="16785" top="810" width="480" height="480">
@@ -872,6 +866,14 @@
    <LINKPOINT x="9165" y="5063">
    </LINKPOINT>
    <LINKPOINT x="4920" y="5063">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="47" srcpinname="Output Node" dstnodeid="58" dstpinname="Projection">
+   </LINK>
+   <LINK srcnodeid="43" srcpinname="Y Output Value" dstnodeid="58" dstpinname="Texture SizeXY" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINKPOINT x="1560" y="1905">
+   </LINKPOINT>
+   <LINKPOINT x="14115" y="1905">
    </LINKPOINT>
    </LINK>
    </PATCH>
