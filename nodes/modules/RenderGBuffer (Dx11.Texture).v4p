@@ -447,6 +447,8 @@
    </PIN>
    <PIN pinname="PrevTranform" visible="1">
    </PIN>
+   <PIN pinname="PrevView" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="46" srcpinname="Output Node" dstnodeid="58" dstpinname="View">
    </LINK>
@@ -481,9 +483,9 @@
    <LINK srcnodeid="60" srcpinname="Y Output Value" dstnodeid="58" dstpinname="AspectRatio">
    </LINK>
    <NODE systemname="RenderSemantic (DX11.Layer Transform)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="RenderSemantic (DX11.Layer Transform)" componentmode="Hidden" id="61">
-   <BOUNDS type="Node" left="4605" top="5220" width="100" height="100">
+   <BOUNDS type="Node" left="4605" top="4680" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="4605" top="5220" width="3000" height="3000">
+   <BOUNDS type="Box" left="4605" top="4680" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -493,9 +495,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="58" srcpinname="PrevTranform" dstnodeid="61" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="14115" y="4193">
+   <LINKPOINT x="14115" y="4013">
    </LINKPOINT>
-   <LINKPOINT x="4665" y="4193">
+   <LINKPOINT x="4665" y="3833">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Semantics (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Semantics (DX11.Layer)" componentmode="Hidden" id="62">
@@ -813,7 +815,7 @@
    <LINK srcnodeid="84" srcpinname="Output" dstnodeid="37" dstpinname="Input 1">
    </LINK>
    <NODE systemname="Inverse (Transform)" nodename="Inverse (Transform)" componentmode="Hidden" id="87">
-   <BOUNDS type="Node" left="6030" top="4800" width="100" height="100">
+   <BOUNDS type="Node" left="5940" top="4350" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Source" visible="1">
    </PIN>
@@ -821,9 +823,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="58" srcpinname="PrevTranform" dstnodeid="87" dstpinname="Source" linkstyle="Bezier">
-   <LINKPOINT x="14070" y="4170">
+   <LINKPOINT x="14040" y="4020">
    </LINKPOINT>
-   <LINKPOINT x="6660" y="4260">
+   <LINKPOINT x="6600" y="3960">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Cons (DX11.RenderSemantic)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Cons (DX11.RenderSemantic)" componentmode="Hidden" id="88">
@@ -837,15 +839,17 @@
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Input Count" slicecount="1" values="2">
+   <PIN pinname="Input Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Input 3" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="61" srcpinname="Output" dstnodeid="88" dstpinname="Input 1">
    </LINK>
    <NODE systemname="RenderSemantic (DX11.Layer Transform)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="RenderSemantic (DX11.Layer Transform)" componentmode="Hidden" id="89">
-   <BOUNDS type="Node" left="6045" top="5220" width="100" height="100">
+   <BOUNDS type="Node" left="5955" top="4770" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="6045" top="5220" width="3000" height="3000">
+   <BOUNDS type="Box" left="5955" top="4770" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
@@ -854,7 +858,11 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="89" srcpinname="Output" dstnodeid="88" dstpinname="Input 2">
+   <LINK srcnodeid="89" srcpinname="Output" dstnodeid="88" dstpinname="Input 2" linkstyle="Bezier">
+   <LINKPOINT x="5955" y="5370">
+   </LINKPOINT>
+   <LINKPOINT x="4905" y="5370">
+   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="88" srcpinname="Output" dstnodeid="62" dstpinname="Custom Semantics">
    </LINK>
@@ -864,6 +872,40 @@
    <LINKPOINT x="9165" y="5063">
    </LINKPOINT>
    <LINKPOINT x="4920" y="5063">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Inverse (Transform)" nodename="Inverse (Transform)" componentmode="Hidden" id="91">
+   <BOUNDS type="Node" left="7305" top="4605" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Source" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="RenderSemantic (DX11.Layer Transform)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="RenderSemantic (DX11.Layer Transform)" componentmode="Hidden" id="90">
+   <BOUNDS type="Node" left="7320" top="5025" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7320" top="5025" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Semantic" slicecount="1" values="PREVIOUSVIEWINVERSE">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="91" srcpinname="Transform Out" dstnodeid="90" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="58" srcpinname="PrevView" dstnodeid="91" dstpinname="Source" linkstyle="Bezier">
+   <LINKPOINT x="14940" y="4035">
+   </LINKPOINT>
+   <LINKPOINT x="7815" y="3735">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="90" srcpinname="Output" dstnodeid="88" dstpinname="Input 3" linkstyle="Bezier">
+   <LINKPOINT x="7320" y="5498">
+   </LINKPOINT>
+   <LINKPOINT x="5115" y="5498">
    </LINKPOINT>
    </LINK>
    </PATCH>

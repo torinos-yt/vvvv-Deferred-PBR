@@ -1,9 +1,9 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="F:\vvvv\work\PBRRenderer\node\modules\CamTransfromPool.v4p" systemname="CamTransfromPool" filename="F:\vvvv\contributions\modules\CamTransfromPool.v4p">
+   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\nodes\modules\CamTransfromPool.v4p" systemname="CamTransfromPool" filename="F:\vvvv\contributions\modules\CamTransfromPool.v4p" scrollx="0" scrolly="-360">
    <NODE systemname="FrameDelay (Transform)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="FrameDelay (Transform)" componentmode="Hidden" id="0">
-   <BOUNDS type="Node" left="1635" top="4575" width="100" height="100">
+   <BOUNDS type="Node" left="645" top="4650" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="1635" top="4575" width="3000" height="3000">
+   <BOUNDS type="Box" left="645" top="4650" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1" slicecount="1" values="||">
    </PIN>
@@ -13,7 +13,7 @@
    </PIN>
    </NODE>
    <NODE systemname="Multiply (Transform)" nodename="Multiply (Transform)" componentmode="Hidden" id="2">
-   <BOUNDS type="Node" left="1650" top="3915" width="100" height="100">
+   <BOUNDS type="Node" left="660" top="3990" width="330" height="270">
    </BOUNDS>
    <PIN pinname="Transform In 1" visible="1" slicecount="1" values="||">
    </PIN>
@@ -87,9 +87,9 @@
    <NODE id="9" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="PrevTranform">
    </PIN>
-   <BOUNDS type="Box" left="1650" top="5340" width="750" height="240">
+   <BOUNDS type="Box" left="660" top="5415" width="750" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="1650" top="5340" width="750" height="240">
+   <BOUNDS type="Node" left="660" top="5415" width="750" height="240">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="0" srcpinname="Output 1" dstnodeid="9" dstpinname="Input Node">
@@ -183,5 +183,29 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="2" srcpinname="Transform Out" dstnodeid="0" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="FrameDelay (Transform)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="FrameDelay (Transform)" componentmode="Hidden" id="16">
+   <BOUNDS type="Node" left="1830" top="4620" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1830" top="4620" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Initialize" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Output Node" dstnodeid="16" dstpinname="Input 1">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="17">
+   <BOUNDS type="Box" left="1815" top="5445" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1815" top="5445" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="PrevView">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Output 1" dstnodeid="17" dstpinname="Input Node">
    </LINK>
    </PATCH>

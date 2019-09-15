@@ -15,6 +15,8 @@ float bumps<string uiname = "BumpMap Strength"; float uimin = 0.0; float uimax =
 float emit <string uiname = "Emission Stlength";> = 1.0;
 float stepLength<string uiname = "StepLength";> = 1.0;
 
+bool VelocityMarching = false;
+
 SamplerState linearSampler : IMMUTABLE
 {
 	Filter = MIN_MAG_MIP_LINEAR;
@@ -31,6 +33,7 @@ cbuffer cbPerDraw : register( b0 )
 	float4x4 tPI : PROJECTIONINVERSE;
 	float4x4 tVI : VIEWINVERSE;
 	float4x4 ptVP : PREVIOUSVIEWPROJECTION;
+	float4x4 ptVI : PREVIOUSVIEWINVERSE;
 	float4x4 ptVPI : PREVIOUSVIEWPROJECTIONINVERSE;
 };
 
@@ -95,9 +98,7 @@ PSout PS(vs2ps In){
 	float3 ray = 
 	info.rayDir = normalize(mul(float4(normalize(rayDirVP.xyz / rayDirVP.w), 1), tWI).xyz);
 	
-
-	float3 rp = mul(float4(tVI[3].xyz, 1), tWI).xyz;
-	float3 rayPos = rp;
+	float3 rayPos = mul(float4(tVI[3].xyz, 1), tWI).xyz;
 	info.posOrigin = tVI[3].xyz;
 
 	float maxdist = -(tP[3].z / (tP[2].z - 1));
@@ -140,9 +141,11 @@ PSout PS(vs2ps In){
 	gbuffer.normal = float4(normal, o.Reflectance) * hit;
 	gbuffer.position = endPos * hit;
 
-	if(hit){
-		rayPos = rp;
+	if(hit && VelocityMarching){
+		rayPos = ptVI[3].xyz;
 		total = dist = 0;
+		rayDirVP = mul(float4(rayDir, 1, 1), ptVPI);
+		rayDir = normalize(mul(float4(normalize(rayDirVP.xyz / rayDirVP.w), 1), tWI).xyz);
 		float dumm = 0;
 		for(i = 0; i < VEC_ITE; i++){
 			dist = DistanceFunction(rayPos, dumm);
