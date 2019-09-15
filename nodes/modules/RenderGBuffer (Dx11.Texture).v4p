@@ -86,7 +86,7 @@
    </LINK>
    <LINK srcnodeid="2" srcpinname="Output Enum" dstnodeid="0" dstpinname="Target Format">
    </LINK>
-   <BOUNDS type="Window" left="435" top="4365" width="18240" height="11385">
+   <BOUNDS type="Window" left="2565" top="6480" width="18240" height="11385">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
    </PACK>
@@ -841,7 +841,7 @@
    </PIN>
    <PIN pinname="Input Count" slicecount="1" values="3">
    </PIN>
-   <PIN pinname="Input 3" visible="1">
+   <PIN pinname="Input 3" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
    <LINK srcnodeid="61" srcpinname="Output" dstnodeid="88" dstpinname="Input 1">
@@ -872,40 +872,6 @@
    <LINKPOINT x="9165" y="5063">
    </LINKPOINT>
    <LINKPOINT x="4920" y="5063">
-   </LINKPOINT>
-   </LINK>
-   <NODE systemname="Inverse (Transform)" nodename="Inverse (Transform)" componentmode="Hidden" id="91">
-   <BOUNDS type="Node" left="7305" top="4605" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Source" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Transform Out" visible="1">
-   </PIN>
-   </NODE>
-   <NODE systemname="RenderSemantic (DX11.Layer Transform)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="RenderSemantic (DX11.Layer Transform)" componentmode="Hidden" id="90">
-   <BOUNDS type="Node" left="7320" top="5025" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="7320" top="5025" width="3000" height="3000">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Semantic" slicecount="1" values="PREVIOUSVIEWINVERSE">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="91" srcpinname="Transform Out" dstnodeid="90" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="58" srcpinname="PrevView" dstnodeid="91" dstpinname="Source" linkstyle="Bezier">
-   <LINKPOINT x="14940" y="4035">
-   </LINKPOINT>
-   <LINKPOINT x="7815" y="3735">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="90" srcpinname="Output" dstnodeid="88" dstpinname="Input 3" linkstyle="Bezier">
-   <LINKPOINT x="7320" y="5498">
-   </LINKPOINT>
-   <LINKPOINT x="5115" y="5498">
    </LINKPOINT>
    </LINK>
    </PATCH>

@@ -2,10 +2,6 @@
 #define ITE 32
 #endif
 
-#if !defined(VEC_ITE)
-#define VEC_ITE 32
-#endif
-
 #define EPS 0.0003
 float mindist<float uistep = .0001;> = .0001;
 
@@ -14,8 +10,6 @@ float bumps<string uiname = "BumpMap Strength"; float uimin = 0.0; float uimax =
 
 float emit <string uiname = "Emission Stlength";> = 1.0;
 float stepLength<string uiname = "StepLength";> = 1.0;
-
-bool VelocityMarching = false;
 
 SamplerState linearSampler : IMMUTABLE
 {
@@ -33,7 +27,6 @@ cbuffer cbPerDraw : register( b0 )
 	float4x4 tPI : PROJECTIONINVERSE;
 	float4x4 tVI : VIEWINVERSE;
 	float4x4 ptVP : PREVIOUSVIEWPROJECTION;
-	float4x4 ptVI : PREVIOUSVIEWINVERSE;
 	float4x4 ptVPI : PREVIOUSVIEWPROJECTIONINVERSE;
 };
 
@@ -96,7 +89,7 @@ PSout PS(vs2ps In){
 	//info.rayDir = normalize(mul(normalize(mul(float4(mul(float4(rayDir, 0, 0), tPI).xy, 1, 0), tVI).xyz), tWI));
 	
 	float3 ray = 
-	info.rayDir = normalize(mul(float4(normalize(rayDirVP.xyz / rayDirVP.w), 1), tWI).xyz);
+	info.rayDir = normalize(mul(normalize(rayDirVP.xyz / rayDirVP.w), (float3x3)tWI));
 	
 	float3 rayPos = mul(float4(tVI[3].xyz, 1), tWI).xyz;
 	info.posOrigin = tVI[3].xyz;
@@ -107,9 +100,9 @@ PSout PS(vs2ps In){
 	bool hit = false;
 	float dist = 0;
 	float total = 0;
-	float id = 0;
+	float m = 0;
 	for(int i = 0; i < ITE; i++){
-		dist = DistanceFunction(rayPos, id);
+		dist = DistanceFunction(rayPos, m);
 		
 		if(dist < mindist * max(total, 1)){ 
 			normal = normalize(max(min(getNormal(rayPos), 1), -1));
@@ -127,7 +120,7 @@ PSout PS(vs2ps In){
 	info.loop = i;
 	info.totalDistance = total;
 	info.normal = normal;
-	info.Material = id;
+	info.Material = m;
 
 	float3 endPos = mul(float4(rayPos, 1), tW).xyz;
 	info.posEnd = endPos;
@@ -141,21 +134,6 @@ PSout PS(vs2ps In){
 	gbuffer.normal = float4(normal, o.Reflectance) * hit;
 	gbuffer.position = endPos * hit;
 
-	if(hit && VelocityMarching){
-		rayPos = ptVI[3].xyz;
-		total = dist = 0;
-		rayDirVP = mul(float4(rayDir, 1, 1), ptVPI);
-		rayDir = normalize(mul(float4(normalize(rayDirVP.xyz / rayDirVP.w), 1), tWI).xyz);
-		float dumm = 0;
-		for(i = 0; i < VEC_ITE; i++){
-			dist = DistanceFunction(rayPos, dumm);
-
-			if(dist < mindist * max(total, 1)) break;
-			rayPos += ray * dist * stepLength;
-			total += dist * stepLength;
-			if(total > maxdist) break;
-		}
-	}
 	float4 prevPosVP = mul(float4(mul(float4(rayPos, 1), ptW).xyz, 1), ptVP);
 	float2 prevpossc = prevPosVP.xy / prevPosVP.w;
 	float2 velxy = (possc.xy / possc.w) - prevpossc;
