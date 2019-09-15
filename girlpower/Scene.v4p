@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\girlpower\Scene.v4p" systemname="SCene" filename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\SCene.v4p">
-   <BOUNDS type="Window" left="0" top="0" width="9210" height="15555">
+   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\girlpower\Scene.v4p" systemname="SCene" filename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\SCene.v4p" scrollx="45" scrolly="150">
+   <BOUNDS type="Window" left="10995" top="6975" width="12780" height="8775">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
    </PACK>
@@ -27,11 +27,11 @@
    </PIN>
    <PIN pinname="Shader Valid" visible="1">
    </PIN>
-   <PIN pinname="Iteration" slicecount="1" values="90">
+   <PIN pinname="Iteration" slicecount="1" values="125">
    </PIN>
-   <PIN pinname="mindist" slicecount="1" values="0.0004">
+   <PIN pinname="mindist" slicecount="1" values="0.001">
    </PIN>
-   <PIN pinname="StepLength" slicecount="1" values="1">
+   <PIN pinname="StepLength" slicecount="1" values="0.4">
    </PIN>
    <PIN pinname="Shadow Iteration" slicecount="1" values="32">
    </PIN>
@@ -41,8 +41,12 @@
    </PIN>
    <PIN pinname="Metalic Map" visible="1">
    </PIN>
-   <PIN pinname="Transform In" visible="1">
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
    </PIN>
+   <PIN pinname="Shadow mindist" slicecount="1" values="0.0018">
+   </PIN>
+   <BOUNDS type="Window" left="2775" top="2550" width="21780" height="11505">
+   </BOUNDS>
    </NODE>
    <NODE systemname="RenderGBuffer (Dx11.Texture)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\RenderGBuffer (Dx11.Texture).v4p" nodename="RenderGBuffer (Dx11.Texture)" componentmode="Hidden" id="1">
    <BOUNDS type="Node" left="2640" top="3105" width="100" height="100">
@@ -65,6 +69,12 @@
    </PIN>
    <BOUNDS type="Window" left="-3045" top="3525" width="18240" height="11385">
    </BOUNDS>
+   <PIN pinname="LightData" visible="1">
+   </PIN>
+   <PIN pinname="ShadowMap SizeXY" slicecount="2" values="512,512">
+   </PIN>
+   <PIN pinname="Shadow Blur Width" slicecount="1" values="0.12">
+   </PIN>
    </NODE>
    <LINK srcnodeid="0" srcpinname="Layer Out" dstnodeid="1" dstpinname="Layer In">
    </LINK>
@@ -133,11 +143,15 @@
    </PIN>
    <PIN pinname="Debug" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Debug Mode" slicecount="1" values="MetalRoughVector">
+   <PIN pinname="Debug Mode" slicecount="1" values="AO">
    </PIN>
    <PIN pinname="UseLight" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Render Environment" slicecount="1" values="1">
+   <PIN pinname="Render Environment" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="LightBleedingLimit" slicecount="1" values="0.66">
+   </PIN>
+   <PIN pinname="Emv Scroll" slicecount="1" values="1.76">
    </PIN>
    </NODE>
    <LINK srcnodeid="1" srcpinname="GBuffer Out" dstnodeid="4" dstpinname="GBuffer">
@@ -183,17 +197,17 @@
    </PIN>
    <PIN pinname="Use Bent Normal" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Use AO" slicecount="1" values="0">
+   <PIN pinname="Use AO" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="AO Distance" slicecount="1" values="2">
+   <PIN pinname="AO Distance" slicecount="1" values="3">
    </PIN>
-   <PIN pinname="Num Slices" slicecount="1" values="4">
+   <PIN pinname="Num Slices" slicecount="1" values="6">
    </PIN>
    <PIN pinname="Blur Sharpness" slicecount="1" values="1024">
    </PIN>
    <PIN pinname="Use Grain" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="AO Power" slicecount="1" values="0.45">
+   <PIN pinname="AO Power" slicecount="1" values="1.4">
    </PIN>
    <PIN pinname="Use DoF" slicecount="1" values="1">
    </PIN>
@@ -205,7 +219,7 @@
    </PIN>
    <PIN pinname="Weight Min" slicecount="1" values="0.54">
    </PIN>
-   <PIN pinname="Amount" slicecount="1" values="1.4">
+   <PIN pinname="Amount" slicecount="1" values="3">
    </PIN>
    <PIN pinname="Use Motion Blur" slicecount="1" values="1">
    </PIN>
@@ -213,7 +227,33 @@
    </PIN>
    <BOUNDS type="Window" left="1110" top="3225" width="21030" height="10635">
    </BOUNDS>
-   <PIN pinname="Use Scatter" slicecount="1" values="1">
+   <PIN pinname="Use Scatter" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Exposure" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="F-Stop" slicecount="1" values="2.4">
+   </PIN>
+   <PIN pinname="Use Choromatic Abberation" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Use Vignette" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Use Color Correction" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Use Tonemap" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Use Bloom" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Num Circles" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Half Res AO" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Threshold Bias" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Intensity" slicecount="1" values="0.08">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="0.6">
+   </PIN>
+   <PIN pinname="Bloom Timt" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
    </PIN>
    </NODE>
    <LINK srcnodeid="7" srcpinname="Output" dstnodeid="4" dstpinname="EffectSetting">
@@ -223,7 +263,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="5610" top="2265" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0.34,0.34,0.34">
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0.22,0.16,0.43">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -241,7 +281,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="2355" top="4800" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="14190" top="0" width="14610" height="8760">
+   <BOUNDS type="Window" left="10995" top="0" width="12720" height="7200">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1">
    </PIN>
@@ -255,7 +295,7 @@
    </BOUNDS>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <PIN pinname="Data" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   <PIN pinname="Data" slicecount="1" values="|0.37071,0.37071,0.37071,1.00000|">
    </PIN>
    </NODE>
    <LINK srcnodeid="10" srcpinname="Texture Out" dstnodeid="0" dstpinname="Roughness Map">
@@ -325,27 +365,129 @@
    <NODE systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden" id="-6">
    <BOUNDS type="Node" left="6225" top="1305" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Maximum Foreground FPS" slicecount="1" values="60">
+   <PIN pinname="Maximum Foreground FPS" slicecount="1" values="30">
    </PIN>
    </NODE>
-   <NODE systemname="Rotate (Transform)" nodename="Rotate (Transform)" componentmode="Hidden" id="15">
-   <BOUNDS type="Node" left="840" top="1440" width="100" height="100">
+   <NODE systemname="GenRandomOffset (Value)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\vl\VVVV.Value.GenRandomOffset.vl" nodename="GenRandomOffset (Value)" componentmode="Hidden" id="25">
+   <BOUNDS type="Node" left="16650" top="4860" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Transform Out" visible="1">
+   <PIN pinname="OutputXY" visible="1">
    </PIN>
-   <PIN pinname="Y" slicecount="1" visible="1" values="0">
+   <PIN pinname="Jitter SpreadXY" slicecount="2" values="0.3,0.3">
    </PIN>
    </NODE>
-   <LINK srcnodeid="15" srcpinname="Transform Out" dstnodeid="0" dstpinname="Transform In">
-   </LINK>
-   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="16">
-   <BOUNDS type="Node" left="1140" top="720" width="100" height="100">
+   <NODE systemname="GetMatrix (Transform)" nodename="GetMatrix (Transform)" componentmode="Hidden" id="24">
+   <BOUNDS type="Node" left="15465" top="3900" width="100" height="100">
    </BOUNDS>
+   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Matrix Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="SetSlice (Spreads)" nodename="SetSlice (Spreads)" componentmode="Hidden" id="23">
+   <BOUNDS type="Node" left="15675" top="4905" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Spread" visible="1">
+   </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Pause" slicecount="1" values="1">
+   <PIN pinname="Index" slicecount="1" visible="1" values="8">
+   </PIN>
+   <PIN pinname="Input" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="16" srcpinname="Output" dstnodeid="15" dstpinname="Y">
+   <LINK srcnodeid="24" srcpinname="Matrix Out" dstnodeid="23" dstpinname="Spread">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="22">
+   <BOUNDS type="Box" left="16755" top="4710" width="795" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="16755" top="4710" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="8,9">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="|0, 0|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="22" srcpinname="Y Output Value" dstnodeid="23" dstpinname="Index">
+   </LINK>
+   <NODE systemname="SetMatrix (Transform)" nodename="SetMatrix (Transform)" componentmode="Hidden" id="21">
+   <BOUNDS type="Node" left="15165" top="5565" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Matrix In" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="23" srcpinname="Output" dstnodeid="21" dstpinname="Matrix In">
+   </LINK>
+   <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="20">
+   <BOUNDS type="Node" left="16845" top="3750" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="19">
+   <BOUNDS type="Node" left="16590" top="4845" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Destination Minimum" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="25" srcpinname="OutputXY" dstnodeid="19" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="Output" dstnodeid="20" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="20" srcpinname="Output" dstnodeid="23" dstpinname="Input">
+   </LINK>
+   <NODE systemname="LightStruct (LightData)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\LightStruct (LightData).v4p" nodename="LightStruct (LightData)" componentmode="Hidden" id="27">
+   <BOUNDS type="Node" left="9525" top="1560" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Light Data" visible="1">
+   </PIN>
+   <PIN pinname="Position" visible="1">
+   </PIN>
+   <PIN pinname="FOV" slicecount="1" values="110">
+   </PIN>
+   <PIN pinname="Light Intensity" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Ambient" slicecount="1" values="|0.00000,0.00000,0.00000,1.00000|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="27" srcpinname="Light Data" dstnodeid="1" dstpinname="LightData">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="28">
+   <BOUNDS type="Box" left="9285" top="555" width="795" height="720">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9285" top="555" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0.88,2.03,1.8">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="28" srcpinname="Y Output Value" dstnodeid="27" dstpinname="Position">
    </LINK>
    </PATCH>

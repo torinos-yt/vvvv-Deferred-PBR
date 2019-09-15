@@ -66,7 +66,7 @@ float2 PS(vs2ps In): SV_Target
 	
 	float2 rayDir = (In.uv * 2 - 1) * float2(1, -1);
 	float4 rs =  mul(float4(rayDir, 1, 1), tVPI[vpindex]);
-	float3 ray = normalize(mul(normalize(rs.xyz / rs.w), tWI));
+	float3 ray = normalize(mul(normalize(rs.xyz / rs.w), (float3x3)tWI));
 	
 	float maxdist = 50;
 	float3 normal = 0;
@@ -85,7 +85,7 @@ float2 PS(vs2ps In): SV_Target
 			break;
 		}
 		rayPos += ray * dist * stepLength;
-		total += dist;
+		total += dist * stepLength;
 		if(total > maxdist) break;
 	}
 	float2 col = 0;
