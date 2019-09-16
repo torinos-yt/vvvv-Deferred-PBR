@@ -88,11 +88,11 @@ PSout PS(vs2ps In){
 	//float3 ray = 
 	//info.rayDir = normalize(mul(normalize(mul(float4(mul(float4(rayDir, 0, 0), tPI).xy, 1, 0), tVI).xyz), tWI));
 	
-	float3 ray = 
-	info.rayDir = normalize(mul(normalize(rayDirVP.xyz / rayDirVP.w), (float3x3)tWI));
+	info.rayDir = normalize(rayDirVP.xyz / rayDirVP.w);
+	float3 ray = normalize(mul(info.rayDir, (float3x3)tWI));
 	
 	float3 rayPos = mul(float4(tVI[3].xyz, 1), tWI).xyz;
-	info.posOrigin = tVI[3].xyz;
+	info.camPos = tVI[3].xyz;
 
 	float maxdist = -(tP[3].z / (tP[2].z - 1));
 	
@@ -101,6 +101,9 @@ PSout PS(vs2ps In){
 	float dist = 0;
 	float total = 0;
 	float m = 0;
+
+	float near = -tP[3].z / tP[2].z;
+	rayPos += ray * near;
 	for(int i = 0; i < ITE; i++){
 		dist = DistanceFunction(rayPos, m);
 		
@@ -119,14 +122,14 @@ PSout PS(vs2ps In){
 	info.maxLoop = ITE;
 	info.loop = i;
 	info.totalDistance = total;
-	info.normal = normal;
+	info.Normal = normal;
 	info.Material = m;
 
 	float3 endPos = mul(float4(rayPos, 1), tW).xyz;
-	info.posEnd = endPos;
+	info.Pos = endPos;
 	float4 possc = mul(float4(endPos, 1), tVP);
 	gbuffer.depth = 
-	info.depth = possc.z / possc.w;
+	info.Depth = possc.z / possc.w;
 	
 	PostFunction(info, o);
 	
@@ -137,6 +140,7 @@ PSout PS(vs2ps In){
 	float4 prevPosVP = mul(float4(mul(float4(rayPos, 1), ptW).xyz, 1), ptVP);
 	float2 prevpossc = prevPosVP.xy / prevPosVP.w;
 	float2 velxy = (possc.xy / possc.w) - prevpossc;
+	
 	velxy *= .5;
 	velxy += .5;
 	

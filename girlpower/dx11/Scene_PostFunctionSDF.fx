@@ -55,7 +55,8 @@ void PostFunction(Info i, inout OutputData o){
 	//Write your own post function!!
 	
 	o.uv = 0;
-	o.Albedo = colorTex(o.uv).rgb;
+	//o.Albedo = colorTex(o.uv).rgb;
+	o.Albedo = 0;
 	o.Emission = emissionTex(o.uv);
 	o.Metalness = metalTex(o.uv);
 	o.Roughness = roughTex(o.uv);

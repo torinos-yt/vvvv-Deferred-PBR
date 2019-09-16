@@ -167,6 +167,8 @@
    </PIN>
    <PIN pinname="Threshold Bias" slicecount="1" values="-0.5">
    </PIN>
+   <PIN pinname="Saturation" slicecount="1" values="0">
+   </PIN>
    </NODE>
    <LINK srcnodeid="5" srcpinname="Output" dstnodeid="4" dstpinname="EffectSetting">
    </LINK>

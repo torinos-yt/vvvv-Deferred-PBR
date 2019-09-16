@@ -163,7 +163,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="8730" top="345" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.3">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -423,7 +423,7 @@
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
    </PIN>
    </NODE>
    <LINK srcnodeid="134" srcpinname="Y Output Value" dstnodeid="133" dstpinname="Input">
@@ -495,7 +495,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6615" top="570" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.5">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.25">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -853,9 +853,9 @@
    </PIN>
    </NODE>
    <NODE systemname="Shader (DX11.Effect Fieldtrip String)" filename="%VVVV%\packs\FieldTrip\nodes\plugins\FieldTripHelpers.dll" nodename="Shader (DX11.Effect Fieldtrip String)" componentmode="Hidden" id="160">
-   <BOUNDS type="Node" left="4425" top="6780" width="5025" height="270">
+   <BOUNDS type="Node" left="4410" top="6825" width="5025" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="4425" top="6780" width="3000" height="3000">
+   <BOUNDS type="Box" left="4410" top="6825" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="ShaderCode" visible="1">
    </PIN>
@@ -871,35 +871,35 @@
    </PIN>
    <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Time" visible="1">
+   <PIN pinname="Time" visible="1" slicecount="1" pintype="Input" values="0">
    </PIN>
-   <PIN pinname="DeltaTime" visible="1">
+   <PIN pinname="DeltaTime" visible="1" slicecount="1" pintype="Input" values="0">
    </PIN>
-   <PIN pinname="Reflectance" visible="1">
+   <PIN pinname="Reflectance" visible="1" slicecount="1" pintype="Input" values="0.5">
    </PIN>
-   <PIN pinname="vvel" visible="1">
+   <PIN pinname="vvel" visible="1" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="IsBump" visible="1">
+   <PIN pinname="IsBump" visible="1" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="BumpMap Strength" visible="1">
+   <PIN pinname="BumpMap Strength" visible="1" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Emission Stlength" visible="1">
+   <PIN pinname="Emission Stlength" visible="1" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="ptW" visible="1">
+   <PIN pinname="ptW" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="texW" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Texture" visible="1" slicecount="1" values="||">
+   <PIN pinname="Texture" visible="1" slicecount="1" values="||" pintype="Input">
    </PIN>
-   <PIN pinname="Bump Texture" visible="1" slicecount="1" values="||">
+   <PIN pinname="Bump Texture" visible="1" slicecount="1" values="||" pintype="Input">
    </PIN>
-   <PIN pinname="Metalness Map" visible="1">
+   <PIN pinname="Metalness Map" visible="1" slicecount="1" pintype="Input" values="||">
    </PIN>
-   <PIN pinname="Roughness Map" visible="1" slicecount="1" values="||">
+   <PIN pinname="Roughness Map" visible="1" slicecount="1" values="||" pintype="Input">
    </PIN>
-   <PIN pinname="Emission Map" visible="1" slicecount="1" values="||">
+   <PIN pinname="Emission Map" visible="1" slicecount="1" values="||" pintype="Input">
    </PIN>
-   <PIN pinname="prevPos" visible="1">
+   <PIN pinname="prevPos" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Enabled" visible="1">
    </PIN>
@@ -911,33 +911,33 @@
    </PIN>
    <PIN pinname="Technique Valid" visible="1">
    </PIN>
-   <PIN pinname="VariableXYZW" visible="1">
+   <PIN pinname="VariableXYZW" visible="1" slicecount="4" pintype="Input" values="0,0,0,0">
    </PIN>
    </NODE>
    <LINK srcnodeid="155" srcpinname="Output" dstnodeid="160" dstpinname="ShaderCode" linkstyle="Bezier">
-   <LINKPOINT x="2310" y="6420">
+   <LINKPOINT x="2305" y="6435">
    </LINKPOINT>
-   <LINKPOINT x="4890" y="6420">
+   <LINKPOINT x="4880" y="6450">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="161" srcpinname="Output Enum" dstnodeid="160" dstpinname="Technique" linkstyle="Bezier">
-   <LINKPOINT x="15780" y="3840">
+   <LINKPOINT x="15775" y="3855">
    </LINKPOINT>
-   <LINKPOINT x="9030" y="3840">
+   <LINKPOINT x="9020" y="3870">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="14" srcpinname="Output Node" dstnodeid="160" dstpinname="Render State" linkstyle="Bezier">
-   <LINKPOINT x="1410" y="3765">
+   <LINKPOINT x="1405" y="3780">
    </LINKPOINT>
-   <LINKPOINT x="4635" y="3765">
+   <LINKPOINT x="4625" y="3795">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="140" srcpinname="Output" dstnodeid="160" dstpinname="Geometry">
    </LINK>
    <LINK srcnodeid="11" srcpinname="Output Node" dstnodeid="160" dstpinname="Transform In" linkstyle="Bezier">
-   <LINKPOINT x="3210" y="3833">
+   <LINKPOINT x="3205" y="3848">
    </LINKPOINT>
-   <LINKPOINT x="5475" y="3833">
+   <LINKPOINT x="5465" y="3863">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="162" srcpinname="Time" dstnodeid="160" dstpinname="Time">
@@ -945,89 +945,89 @@
    <LINK srcnodeid="162" srcpinname="DeltaTime" dstnodeid="160" dstpinname="DeltaTime">
    </LINK>
    <LINK srcnodeid="135" srcpinname="Y Output Value" dstnodeid="160" dstpinname="Reflectance" linkstyle="Bezier">
-   <LINKPOINT x="6630" y="3788">
+   <LINKPOINT x="6625" y="3803">
    </LINKPOINT>
-   <LINKPOINT x="6315" y="3788">
+   <LINKPOINT x="6305" y="3818">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="141" srcpinname="Y Output Value" dstnodeid="160" dstpinname="vvel" linkstyle="Bezier">
-   <LINKPOINT x="14625" y="3840">
+   <LINKPOINT x="14620" y="3855">
    </LINKPOINT>
-   <LINKPOINT x="6555" y="3840">
+   <LINKPOINT x="6545" y="3870">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="160" dstpinname="IsBump" linkstyle="Bezier">
-   <LINKPOINT x="7815" y="3780">
+   <LINKPOINT x="7810" y="3795">
    </LINKPOINT>
-   <LINKPOINT x="6735" y="3780">
+   <LINKPOINT x="6725" y="3810">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="51" srcpinname="Y Output Value" dstnodeid="160" dstpinname="BumpMap Strength" linkstyle="Bezier">
-   <LINKPOINT x="8745" y="3683">
+   <LINKPOINT x="8740" y="3698">
    </LINKPOINT>
-   <LINKPOINT x="6930" y="3683">
+   <LINKPOINT x="6920" y="3713">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="112" srcpinname="Y Output Value" dstnodeid="160" dstpinname="Emission Stlength" linkstyle="Bezier">
-   <LINKPOINT x="10395" y="3863">
+   <LINKPOINT x="10390" y="3878">
    </LINKPOINT>
-   <LINKPOINT x="7155" y="3863">
+   <LINKPOINT x="7145" y="3893">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="33" srcpinname="Output 1" dstnodeid="160" dstpinname="ptW" linkstyle="Bezier">
-   <LINKPOINT x="5310" y="5693">
+   <LINKPOINT x="5305" y="5708">
    </LINKPOINT>
-   <LINKPOINT x="7320" y="5693">
+   <LINKPOINT x="7310" y="5723">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="49" srcpinname="Output Node" dstnodeid="160" dstpinname="texW" linkstyle="Bezier">
-   <LINKPOINT x="11880" y="3683">
+   <LINKPOINT x="11875" y="3698">
    </LINKPOINT>
-   <LINKPOINT x="7590" y="3683">
+   <LINKPOINT x="7580" y="3713">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="12" srcpinname="Output Node" dstnodeid="160" dstpinname="Texture">
    </LINK>
    <LINK srcnodeid="43" srcpinname="Output Node" dstnodeid="160" dstpinname="Bump Texture" linkstyle="Bezier">
-   <LINKPOINT x="7110" y="4005">
+   <LINKPOINT x="7105" y="4020">
    </LINKPOINT>
-   <LINKPOINT x="7950" y="4005">
+   <LINKPOINT x="7940" y="4035">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="146" srcpinname="Output" dstnodeid="160" dstpinname="Metalness Map" linkstyle="Bezier">
-   <LINKPOINT x="6540" y="4763">
+   <LINKPOINT x="6535" y="4778">
    </LINKPOINT>
-   <LINKPOINT x="8160" y="4763">
+   <LINKPOINT x="8150" y="4793">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="54" srcpinname="Output Node" dstnodeid="160" dstpinname="Roughness Map" linkstyle="Bezier">
-   <LINKPOINT x="5070" y="3893">
+   <LINKPOINT x="5065" y="3908">
    </LINKPOINT>
-   <LINKPOINT x="8355" y="3893">
+   <LINKPOINT x="8345" y="3923">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="113" srcpinname="Output Node" dstnodeid="160" dstpinname="Emission Map" linkstyle="Bezier">
-   <LINKPOINT x="9330" y="3870">
+   <LINKPOINT x="9325" y="3885">
    </LINKPOINT>
-   <LINKPOINT x="8595" y="3870">
+   <LINKPOINT x="8585" y="3900">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="142" srcpinname="3D Buffer" dstnodeid="160" dstpinname="prevPos" linkstyle="Bezier">
-   <LINKPOINT x="8265" y="6210">
+   <LINKPOINT x="8260" y="6225">
    </LINKPOINT>
-   <LINKPOINT x="8790" y="6210">
+   <LINKPOINT x="8780" y="6240">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="16" srcpinname="Y Output Value" dstnodeid="160" dstpinname="Enabled" linkstyle="Bezier">
-   <LINKPOINT x="17415" y="3938">
+   <LINKPOINT x="17410" y="3953">
    </LINKPOINT>
-   <LINKPOINT x="9240" y="3938">
+   <LINKPOINT x="9230" y="3968">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="132" srcpinname="Output" dstnodeid="160" dstpinname="Defines" linkstyle="Bezier">
-   <LINKPOINT x="13605" y="4733">
+   <LINKPOINT x="13600" y="4748">
    </LINKPOINT>
-   <LINKPOINT x="9450" y="4733">
+   <LINKPOINT x="9440" y="4763">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="160" srcpinname="Layer" dstnodeid="57" dstpinname="Layer In">
@@ -1069,9 +1069,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="165" srcpinname="Y Output Value" dstnodeid="160" dstpinname="VariableXYZW" linkstyle="Bezier">
-   <LINKPOINT x="10800" y="4298">
+   <LINKPOINT x="10795" y="4313">
    </LINKPOINT>
-   <LINKPOINT x="6135" y="4298">
+   <LINKPOINT x="6125" y="4328">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="166">
