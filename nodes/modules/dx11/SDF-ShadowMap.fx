@@ -51,6 +51,11 @@ struct vs2ps
 	float2 uv : TECXOORD0;
 };
 
+struct psShadow{
+	float2 Shadowmap : SV_Target;
+	float Depth : SV_Depth;
+};
+
 vs2ps VS(VS_IN input)
 {
 	vs2ps output;
@@ -60,8 +65,10 @@ vs2ps VS(VS_IN input)
 }
 
 
-float2 PS(vs2ps In): SV_Target
+psShadow PS(vs2ps In)
 {
+	psShadow o;
+
 	float3 rayPos = mul(float4(lights[vpindex].pos, 1), tWI);
 	
 	float2 rayDir = (In.uv * 2 - 1) * float2(1, -1);
@@ -88,16 +95,23 @@ float2 PS(vs2ps In): SV_Target
 		total += dist * stepLength;
 		if(total > maxdist) break;
 	}
+
 	float2 col = 0;
 	float ldist = distance(lights[vpindex].pos, mul(float4(rayPos, 1), tW).xyz) + depthOffset;
-	float  maxDepthSlope = max( abs( ddx( ldist ) ), abs( ddy( ldist ) ) );
+	float maxDepthSlope = max( abs( ddx( ldist ) ), abs( ddy( ldist ) ) );
 	
-	float  shadowBias = bias + slopeScaledBias * maxDepthSlope;
+	float shadowBias = bias + slopeScaledBias * maxDepthSlope;
 	shadowBias = min( shadowBias, depthBiasClamp );
 	
 	col.r = ldist - shadowBias;
 	col.g = ldist * ldist;
-	return col * alpha;
+	o.Shadowmap = col * alpha;
+
+	rayPos = mul(float4(rayPos, 1), tW).xyz;
+	float4 possc = mul(float4(rayPos, 1), lights[vpindex].VP);
+	o.Depth = possc.z / possc.w;
+
+	return o;
 }
 
 
