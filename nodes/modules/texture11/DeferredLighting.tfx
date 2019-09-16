@@ -203,7 +203,7 @@ float4 PS(psInput input) : SV_Target{
 		
 		float shadow = ShadowContribution(LightCd, LightDist, i, LightBleedingLimit);
 	
-		lighting += CookTorrance(V, L, N.xyz, H, Roughness, albedo.xyz, lights[i].amb*lerp(albedo.xyz*.25, 1, ao), lights[i].diff*lerp(albedo.xyz, 1, ao), shadow, attenuation, F0, Metalic);
+		lighting += CookTorrance(V, L, N.xyz, H, Roughness, albedo.xyz, lights[i].amb*lerp(albedo.xyz*.25, 1, ao), lights[i].diff*lerp(albedo.xyz*.5, 1, ao), shadow, attenuation, F0, Metalic);
 		
 	}
 	
