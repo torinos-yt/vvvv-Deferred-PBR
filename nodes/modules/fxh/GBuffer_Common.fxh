@@ -7,11 +7,12 @@ float DeltaTime<bool visible = false;> = 0;
 
 float4 Variable<bool visible = false;>;
 
+Texture2D ColorTex <string uiname="Texture"; bool visible = false;>;
 Texture2D BumpTex <string uiname="Bump Texture";bool visible = false;>;
 Texture2D MetalnessTex <string uiname = "Metalness Map";bool visible = false;>;
 Texture2D RoughnessTex <string uiname = "Roughness Map";bool visible = false;>;
 Texture2D EmissionTex <string uiname = "Emission Map";bool visible = false;>;
-float Reflectance<string uiname = "Reflectance";bool visible = false> = .5;
+float Reflectance<string uiname = "Reflectance";bool visible = false;> = .5;
 
 SamplerState tSampler : IMMUTABLE
 {

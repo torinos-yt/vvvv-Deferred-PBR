@@ -41,15 +41,15 @@ float3 emissionTex(float2 uv){
 float4x4 texW<bool visible = false;>;
 
 struct Info{
-	float3 posOrigin;
+	float3 camPos;
 	float3 rayDir;
 	int maxLoop;
 	int loop;
     float Material;
-	float3 posEnd;
+	float3 Pos;
 	float totalDistance;
-	float depth;
-	float3 normal;
+	float Depth;
+	float3 Normal;
 };
 
 struct OutputData{
@@ -138,7 +138,7 @@ float2 sphericalUV(float3 pos, float scale){
 	return float2(.5+ atan2(p.x, p.z) / TWO_PI, .5 - asin(p.y) / PI) * scale;
 }
 
-float3 TriPlanner(Texture2D t, float3 p, float3 n){
+float3 triPlanner(Texture2D t, float3 p, float3 n){
     n = max(abs(n), 0.001);
     n /= (n.x + n.y + n.z );  
 	p = (t.Sample(tSampler, p.yz)*n.x + t.Sample(tSampler, p.zx)*n.y + t.Sample(tSampler, p.xy)*n.z).xyz;
