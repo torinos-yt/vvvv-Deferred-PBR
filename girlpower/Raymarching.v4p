@@ -99,7 +99,7 @@
    </PIN>
    <PIN pinname="Debug" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Debug Mode" slicecount="1" values="Albedo">
+   <PIN pinname="Debug Mode" slicecount="1" values="AO">
    </PIN>
    <PIN pinname="Diffuse Environment Map" visible="1" slicecount="1" values="||">
    </PIN>
@@ -159,7 +159,7 @@
    </BOUNDS>
    <PIN pinname="Use Tonemap" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Half Res AO" slicecount="1" values="1">
+   <PIN pinname="Half Res AO" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Intensity" slicecount="1" values="0.31">
    </PIN>
@@ -183,6 +183,8 @@
    </PIN>
    <PIN pinname="Contrast" slicecount="1" values="1.04">
    </PIN>
+   <PIN pinname="Amount" slicecount="1" values="2.5">
+   </PIN>
    </NODE>
    <LINK srcnodeid="5" srcpinname="Output" dstnodeid="4" dstpinname="EffectSetting">
    </LINK>
@@ -197,7 +199,7 @@
    </PIN>
    <PIN pinname="FOV" slicecount="1" values="60">
    </PIN>
-   <PIN pinname="Ambient" slicecount="1" values="|0.31628,0.31309,0.41520,1.00000|">
+   <PIN pinname="Ambient" slicecount="1" values="|0.15088,0.14816,0.19648,1.00000|">
    </PIN>
    <PIN pinname="Lookat" slicecount="3" values="0,0,0">
    </PIN>
@@ -309,9 +311,9 @@
    <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="58">
    <BOUNDS type="Node" left="2955" top="1260" width="2355" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="2955" top="1260" width="4560" height="480">
+   <BOUNDS type="Box" left="2955" top="1260" width="4725" height="735">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;- Write your original function|">
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;- Clone Template &amp; Write your original function|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -363,7 +365,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6390" top="6495" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0.48,0.14,0.14">
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0.48,0.51,0.14">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -383,7 +385,7 @@
    </BOUNDS>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <PIN pinname="Data" slicecount="1" values="|0.53753,0.53156,0.53513,1.00000|">
+   <PIN pinname="Data" slicecount="1" values="|0.30583,0.30244,0.30470,1.00000|">
    </PIN>
    </NODE>
    <NODE systemname="Scale (Transform Vector)" nodename="Scale (Transform Vector)" componentmode="Hidden" id="84">
