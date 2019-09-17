@@ -15,6 +15,12 @@ Unpack on your vvvv/packs folder.
 - happy.fxh  
 - Field Trip  
 
+## Thanks to
+IBL Texture : [HDRI Haven](https://hdrihaven.com/)  
+IBL Precompute : [IBL Baker](http://www.derkreature.com/iblbaker)  
+Fire Hydrant obj : [SubstanceShare](https://share.substance3d.com/libraries/2124)  
+Some PBR Texture : [CC0 Textures](https://cc0textures.com/)
+
 ## TODO:
 - improve Anti Ailiating  
 - Screen Space Reflection(Hi-Z Cone Tracing)  
