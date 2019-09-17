@@ -2,7 +2,7 @@
 #define ITE 32
 #endif
 
-#define EPS 0.0003
+float EPS = 0.003;
 float mindist<float uistep = .0001;> = .0001;
 
 bool IsBump = true;
@@ -85,8 +85,6 @@ PSout PS(vs2ps In){
 	
 	float2 rayDir = (In.uv * 2 - 1) * float2(1, -1);
 	float4 rayDirVP = mul(float4(rayDir, 1, 1), tVPI);
-	//float3 ray = 
-	//info.rayDir = normalize(mul(normalize(mul(float4(mul(float4(rayDir, 0, 0), tPI).xy, 1, 0), tVI).xyz), tWI));
 	
 	info.rayDir = normalize(rayDirVP.xyz / rayDirVP.w);
 	float3 ray = normalize(mul(info.rayDir, (float3x3)tWI));
@@ -95,15 +93,14 @@ PSout PS(vs2ps In){
 	info.camPos = tVI[3].xyz;
 
 	float maxdist = -(tP[3].z / (tP[2].z - 1));
-	
-	float3 normal = 0;
-	bool hit = false;
-	float dist = 0;
-	float total = 0;
-	float m = 0;
 
 	float near = -tP[3].z / tP[2].z;
 	rayPos += ray * near;
+	float3 normal = 0;
+	bool hit = false;
+	float dist = 0;
+	float total = near;
+	float m = 0;
 	for(int i = 0; i < ITE; i++){
 		dist = DistanceFunction(rayPos, m);
 		
@@ -130,6 +127,8 @@ PSout PS(vs2ps In){
 	float4 possc = mul(float4(endPos, 1), tVP);
 	gbuffer.depth = 
 	info.Depth = possc.z / possc.w;
+
+	gbuffer.depth = lerp(maxdist, gbuffer.depth, hit);
 	
 	PostFunction(info, o);
 	

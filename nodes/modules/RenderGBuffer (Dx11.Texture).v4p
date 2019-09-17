@@ -115,7 +115,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3030" top="450" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="2048,2048">
+   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="512,512">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -303,7 +303,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="9615" top="6180" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.29">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.23">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -449,7 +449,7 @@
    </PIN>
    <PIN pinname="PrevView" visible="1">
    </PIN>
-   <PIN pinname="Jitter SpreadXY" slicecount="2" values="0.5,0.5">
+   <PIN pinname="Jitter SpreadXY" slicecount="2" values="0.36,0.36">
    </PIN>
    </NODE>
    <LINK srcnodeid="46" srcpinname="Output Node" dstnodeid="58" dstpinname="View">
@@ -852,6 +852,8 @@
    <PIN pinname="Value Type" slicecount="1" values="Integer">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Renderer ID|">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
    </PIN>
    </NODE>
    <LINK srcnodeid="92" srcpinname="Instance index" dstnodeid="95" dstpinname="Y Input Value" linkstyle="Bezier" hiddenwhenlocked="1">

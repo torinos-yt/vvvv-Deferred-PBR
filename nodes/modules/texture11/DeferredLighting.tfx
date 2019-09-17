@@ -123,7 +123,7 @@ float GeometrySmith(float3 N, float3 V, float3 L, float roughness){
 
 float3 CookTorrance(float3 V, float3 L, float3 N, float3 H, float roughness, 
 					float3 albedo, float3 ambient,float3 ldiff, float shadow,
-					float att, float3 F0, float metalic){
+					float att, float3 F0, float metalic, float ao){
 	float3 f = fresnelSphericalGaussian(max(dot(V, H), 0.0), F0);
 	float d = D_GGX(N, H, sqr(roughness));
 	float g = GeometrySmith(N, V, L, roughness);
@@ -133,11 +133,11 @@ float3 CookTorrance(float3 V, float3 L, float3 N, float3 H, float roughness,
 	float3 nominator  = d * g * f;
 	float denominator = 4 * max(dot(N, V), 0.0) * max(dot(N, L), 0.0) + 0.0001; 
 	float3 spe = nominator / denominator;	
-	float3 light = ldiff * shadow * att;
+	float3 light = ldiff * shadow * att * ao * ao;
 	float3 dif = kD * albedo * (1.0 / PI);
 	float ndl = max(dot(N, L), 0.0);
 
-	return (dif + spe) * light * ndl + ambient * albedo;
+	return (dif + spe) * light * ndl + ambient * albedo * ao;
 }
 
 float3 ApproximateSpecularIBL( float3 F0 , float Roughness , float3 N, float3 V ){
@@ -203,7 +203,7 @@ float4 PS(psInput input) : SV_Target{
 		
 		float shadow = ShadowContribution(LightCd, LightDist, i, LightBleedingLimit);
 	
-		lighting += CookTorrance(V, L, N.xyz, H, Roughness, albedo.xyz, lights[i].amb*lerp(albedo.xyz*.25, 1, ao), lights[i].diff*lerp(albedo.xyz*.5, 1, ao), shadow, attenuation, F0, Metalic);
+		lighting += CookTorrance(V, L, N.xyz, H, Roughness, albedo.xyz, lights[i].amb, lights[i].diff, shadow, attenuation, F0, Metalic, ao);
 		
 	}
 	

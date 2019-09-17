@@ -9,7 +9,7 @@
 float DistanceFunction(float3 p, inout float Material){
 	//Write your own distance function!!
 	
-    //return dMenger(p, 1, 2.65);
+    //return dMenger(p, 1, 2.65, 3);
 	return dMandelbox(p, 2.595, 12);
 }
 

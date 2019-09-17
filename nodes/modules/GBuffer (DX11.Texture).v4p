@@ -371,6 +371,8 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="0">
+   </PIN>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="113" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="9315" top="750" width="795" height="240">
@@ -495,7 +497,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6615" top="570" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.25">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.75">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1081,7 +1083,7 @@
    </BOUNDS>
    <PIN pinname="Display Channel" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Receive String" slicecount="1" values="LighCount0" visible="1">
+   <PIN pinname="Receive String" slicecount="1" visible="1" values="LighCount0">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="1">
    </PIN>
@@ -1151,7 +1153,7 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Renderer ID|">
    </PIN>
-   <PIN pinname="Pin Visibility" slicecount="1" values="True">
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
    </PIN>
    </NODE>
    <LINK srcnodeid="180" srcpinname="Y Output Value" dstnodeid="179" dstpinname="Input">

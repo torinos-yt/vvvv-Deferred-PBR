@@ -113,7 +113,7 @@
    </PIN>
    <PIN pinname="Emv Scroll" slicecount="1" values="0.65">
    </PIN>
-   <PIN pinname="LightBleedingLimit" slicecount="1" values="0.82">
+   <PIN pinname="LightBleedingLimit" slicecount="1" values="0.26">
    </PIN>
    <PIN pinname="Render Environment" slicecount="1" values="0">
    </PIN>
@@ -169,6 +169,20 @@
    </PIN>
    <PIN pinname="Saturation" slicecount="1" values="0">
    </PIN>
+   <PIN pinname="Num Circles" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="AO Power" slicecount="1" values="1.03">
+   </PIN>
+   <PIN pinname="Use Scatter" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="AO Blur" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Hue" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Gamma" slicecount="1" values="0.96">
+   </PIN>
+   <PIN pinname="Contrast" slicecount="1" values="1.04">
+   </PIN>
    </NODE>
    <LINK srcnodeid="5" srcpinname="Output" dstnodeid="4" dstpinname="EffectSetting">
    </LINK>
@@ -183,7 +197,7 @@
    </PIN>
    <PIN pinname="FOV" slicecount="1" values="60">
    </PIN>
-   <PIN pinname="Ambient" slicecount="1" values="|0.14816,0.14937,0.19648,1.00000|">
+   <PIN pinname="Ambient" slicecount="1" values="|0.31628,0.31309,0.41520,1.00000|">
    </PIN>
    <PIN pinname="Lookat" slicecount="3" values="0,0,0">
    </PIN>
@@ -275,7 +289,7 @@
    </PIN>
    </NODE>
    <NODE systemname="MyDistanceFunction (DX11.Effect)" filename="%VVVV%\packs\PBRRenderer\girlpower\dx11\MyDistanceFunction.fx" nodename="MyDistanceFunction (DX11.Effect)" componentmode="Hidden" id="54">
-   <BOUNDS type="Node" left="120" top="1665" width="100" height="100">
+   <BOUNDS type="Node" left="750" top="1635" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Technique" slicecount="1" values="RemoveMe">
    </PIN>
@@ -287,7 +301,7 @@
    </PIN>
    </NODE>
    <NODE systemname="MyPostFunction (DX11.Effect)" filename="%VVVV%\packs\PBRRenderer\girlpower\dx11\MyPostFunction.fx" nodename="MyPostFunction (DX11.Effect)" componentmode="Hidden" id="56">
-   <BOUNDS type="Node" left="300" top="1020" width="100" height="100">
+   <BOUNDS type="Node" left="1140" top="990" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Shader Path" visible="1" pintype="Output">
    </PIN>
@@ -349,7 +363,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6390" top="6495" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0.48,0.14,0.5">
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0.48,0.14,0.14">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -369,7 +383,7 @@
    </BOUNDS>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <PIN pinname="Data" slicecount="1" values="|0.51344,0.50773,0.51246,1.00000|">
+   <PIN pinname="Data" slicecount="1" values="|0.53753,0.53156,0.53513,1.00000|">
    </PIN>
    </NODE>
    <NODE systemname="Scale (Transform Vector)" nodename="Scale (Transform Vector)" componentmode="Hidden" id="84">

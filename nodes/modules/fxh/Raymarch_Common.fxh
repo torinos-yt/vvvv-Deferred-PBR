@@ -342,10 +342,10 @@ float dMandelbulb(float3 rayPos, float3 size){
 	return ds;
 }
 
-float dMenger(float3 rayPos, float3 offset, float3 scale) {
+float dMenger(float3 rayPos, float3 offset, float3 scale, int ite) {
 	scale.xyz = scale.x;
     float4 z = float4(rayPos, 1.0);
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < ite; i++) {
         z = abs(z);
         if (z.x < z.y) z.xy = z.yx;
         if (z.x < z.z) z.xz = z.zx;

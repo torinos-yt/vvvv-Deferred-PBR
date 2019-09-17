@@ -5,7 +5,7 @@
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
-   <PIN pinname="Input 2" slicecount="1" values="2.5">
+   <PIN pinname="Input 2" slicecount="1" values="2">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -142,7 +142,7 @@
    </LINK>
    <LINK srcnodeid="19" srcpinname="Matrix Out" dstnodeid="21" dstpinname="Input">
    </LINK>
-   <BOUNDS type="Window" left="1125" top="0" width="11100" height="15375">
+   <BOUNDS type="Window" left="10125" top="615" width="11100" height="15375">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
    </PACK>

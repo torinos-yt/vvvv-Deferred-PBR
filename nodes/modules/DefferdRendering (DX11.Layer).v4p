@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\nodes\modules\DefferdRendering (DX11.Layer).v4p" systemname="DefferdRendering (DX11.Layer)" filename="F:\vvvv\work\sandbox\Deferred Rendering\module\DefferdRendering (DX11.Layer).v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\nodes\modules\DefferdRendering (DX11.Layer).v4p" systemname="DefferdRendering (DX11.Layer)" filename="F:\vvvv\work\sandbox\Deferred Rendering\module\DefferdRendering (DX11.Layer).v4p" scrollx="15" scrolly="0">
    <NODE systemname="FileTexture (DX11 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d)" componentmode="Hidden" id="2">
    <BOUNDS type="Node" left="7164" top="6606" width="100" height="100">
    </BOUNDS>
@@ -48,7 +48,7 @@
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="2730" top="435" width="19680" height="14100">
+   <BOUNDS type="Window" left="0" top="600" width="19680" height="14100">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
    </PACK>
@@ -411,6 +411,8 @@
    </PIN>
    <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
    </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
    </NODE>
    <NODE systemname="GetSlice (Node)" nodename="GetSlice (Node)" componentmode="Hidden" id="163">
    <BOUNDS type="Node" left="5865" top="11925" width="100" height="100">
@@ -493,7 +495,7 @@
    </BOUNDS>
    <PIN pinname="Output Enum" visible="1">
    </PIN>
-   <PIN pinname="Input Enum" slicecount="1" values="MetalRoughVector">
+   <PIN pinname="Input Enum" slicecount="1" values="AO">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Debug Mode|">
    </PIN>
@@ -501,7 +503,7 @@
    </PIN>
    </NODE>
    <NODE systemname="Enum2Ord (Enumerations Explicit)" nodename="Enum2Ord (Enumerations Explicit)" componentmode="Hidden" id="187">
-   <BOUNDS type="Node" left="16275" top="9015" width="100" height="100">
+   <BOUNDS type="Node" left="15555" top="4665" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Enumeration" slicecount="1" values="|Debug Mode|">
    </PIN>
@@ -513,9 +515,9 @@
    <LINK srcnodeid="186" srcpinname="Output Enum" dstnodeid="187" dstpinname="Enum" hiddenwhenlocked="0">
    </LINK>
    <LINK srcnodeid="187" srcpinname="Ord Value" dstnodeid="163" dstpinname="Index" linkstyle="Bezier">
-   <LINKPOINT x="16160" y="10760">
+   <LINKPOINT x="15720" y="13815">
    </LINKPOINT>
-   <LINKPOINT x="6655" y="10420">
+   <LINKPOINT x="7215" y="10470">
    </LINKPOINT>
    </LINK>
    <NODE id="161" systemname="Switch (DX11.Texture 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Switch (DX11.Texture 2d)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
@@ -573,7 +575,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="14385" top="3015" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.25">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.32">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -912,8 +914,6 @@
    </LINK>
    <LINK srcnodeid="13" srcpinname="Output Node" dstnodeid="88" dstpinname="Environment Map">
    </LINK>
-   <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="88" dstpinname="Enabled" hiddenwhenlocked="1">
-   </LINK>
    <LINK srcnodeid="14" srcpinname="Output Node" dstnodeid="88" dstpinname="lights" linkstyle="Bezier">
    <LINKPOINT x="8190" y="4605">
    </LINKPOINT>
@@ -1070,12 +1070,6 @@
    <LINKPOINT x="1430" y="5498">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="216" dstpinname="Enable" hiddenwhenlocked="1" linkstyle="Bezier">
-   <LINKPOINT x="17310" y="5440">
-   </LINKPOINT>
-   <LINKPOINT x="2595" y="5405">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="217">
    <BOUNDS type="Node" left="16500" top="3240" width="100" height="100">
    </BOUNDS>
@@ -1168,6 +1162,78 @@
    <LINKPOINT x="780" y="9803">
    </LINKPOINT>
    <LINKPOINT x="6405" y="9803">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="219" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="14205" top="6720" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="219" dstpinname="Input 2" hiddenwhenlocked="1">
+   </LINK>
+   <NODE systemname="NOT (Boolean)" nodename="NOT (Boolean)" componentmode="Hidden" id="220" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="13740" top="5385" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="162" srcpinname="Y Output Value" dstnodeid="220" dstpinname="Input" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="219" srcpinname="Output" dstnodeid="88" dstpinname="Enabled" hiddenwhenlocked="1">
+   </LINK>
+   <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="221" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="14205" top="6150" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="220" srcpinname="Output" dstnodeid="221" dstpinname="Input 1" hiddenwhenlocked="1">
+   </LINK>
+   <NODE systemname="EQ (Value)" nodename="EQ (Value)" componentmode="Hidden" id="222" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="14700" top="5445" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="7">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="187" srcpinname="Ord Value" dstnodeid="222" dstpinname="Input 1" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="222" srcpinname="Output" dstnodeid="221" dstpinname="Input 2" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="221" srcpinname="Output" dstnodeid="219" dstpinname="Input 1" hiddenwhenlocked="1">
+   </LINK>
+   <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="223" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="13335" top="6180" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="220" srcpinname="Output" dstnodeid="223" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="223" dstpinname="Input 2" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="223" srcpinname="Output" dstnodeid="216" dstpinname="Enable" hiddenwhenlocked="1" linkstyle="Bezier">
+   <LINKPOINT x="13335" y="8070">
+   </LINKPOINT>
+   <LINKPOINT x="1755" y="8070">
    </LINKPOINT>
    </LINK>
    </PATCH>

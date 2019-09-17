@@ -87,7 +87,7 @@
    </PIN>
    <PIN pinname="maxCoC" slicecount="1" visible="1" values="0.3">
    </PIN>
-   <PIN pinname="Use Scatter" slicecount="1" values="1" visible="1">
+   <PIN pinname="Use Scatter" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="F-Stop" slicecount="1" visible="1" values="8">
    </PIN>
@@ -323,7 +323,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="12105" top="6720" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Rainhard">
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="Unreal">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="ACES">
    </PIN>
@@ -455,7 +455,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="4575" top="4065" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -477,7 +477,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="8880" top="4065" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -645,7 +645,7 @@
    </PIN>
    <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
+   <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    </NODE>
    <LINK srcnodeid="39" srcpinname="Y Output Value" dstnodeid="14" dstpinname="Half Res AO">
@@ -655,7 +655,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="930" top="1545" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="3">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.77">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -673,7 +673,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1125" top="2055" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.4">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.5">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -691,7 +691,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1320" top="2580" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="4">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="15">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -711,7 +711,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1515" top="3030" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="6">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="5">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -789,7 +789,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="2715" top="5880" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.54">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.85">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -807,7 +807,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3000" top="6330" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.86">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.95">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -865,7 +865,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="4770" top="330" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="2.4">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="8">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1001,7 +1001,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6975" top="6105" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="3">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.4">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1019,7 +1019,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="9090" top="1785" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="2.74">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1089,7 +1089,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="11550" top="6165" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.9">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.51">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1107,7 +1107,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="13575" top="2115" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.84">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.07">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1125,7 +1125,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="13935" top="2580" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.13">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1.19">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1143,7 +1143,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="14310" top="2985" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.94">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1161,7 +1161,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="14715" top="3435" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="-1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1183,7 +1183,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="15630" top="5370" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.5">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.46">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1201,7 +1201,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="15975" top="5820" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.850000023841858">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.96">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1219,7 +1219,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="16305" top="6210" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.18">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.12">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1275,7 +1275,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="20430" top="6390" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.2">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.18">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>

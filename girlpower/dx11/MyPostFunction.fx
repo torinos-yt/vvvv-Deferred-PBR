@@ -26,15 +26,15 @@
 
 //Input Data Struct
 //struct Info{
-//	float3 posOrigin;
+//	float3 camPos;
 //	float3 rayDir;
 //	int maxLoop;
 //	int loop;
-//  float Material;
-//	float3 posEnd;
+//  float Material
+//	float3 Pos;
 //	float totalDistance;
-//	float depth;
-//	float3 normal;
+//	float Depth;
+//	float3 Normal;
 //};
 
 //Output Data Struct
@@ -80,9 +80,9 @@ void PostFunction(Info i, inout OutputData o){
 	//Write your own post function!!
 	
 	o.uv = 0;
-	float3 p = i.posEnd;
+	float3 p = i.Pos;
 	float edge = calcEdge(p);
-	o.Albedo = colorTex(o.uv).rgb * lerp(1, i.normal, .6);
+	o.Albedo = colorTex(o.uv).rgb * lerp(1, i.Normal, .6);
 	o.Emission = edge * pow(abs(sin(p + Time*.8)), 8);
 	o.Metalness = metalTex(o.uv);
 	o.Roughness = edge+roughTex(o.uv)*.8;

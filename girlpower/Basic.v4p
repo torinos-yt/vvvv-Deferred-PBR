@@ -61,7 +61,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="5445" top="7980" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0.45,0.45,0.5">
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0.68,0.45,0.5">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -95,15 +95,15 @@
    </PIN>
    </NODE>
    <NODE systemname="PerfMeter (Debug)" filename="%VVVV%\lib\nodes\modules\Debug\PerfMeter (Debug).v4p" nodename="PerfMeter (Debug)" componentmode="Hidden" id="140">
-   <BOUNDS type="Node" left="7140" top="1485" width="100" height="100">
+   <BOUNDS type="Node" left="7725" top="3090" width="100" height="100">
    </BOUNDS>
    <PIN pinname="fps" visible="1">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="141">
-   <BOUNDS type="Box" left="8085" top="1905" width="840" height="240">
+   <BOUNDS type="Box" left="8670" top="3510" width="840" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="8085" top="1905" width="0" height="0">
+   <BOUNDS type="Node" left="8670" top="3510" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -157,7 +157,7 @@
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Ambient" slicecount="1" values="|0.02410,0.02410,0.02410,1.00000|">
+   <PIN pinname="Ambient" slicecount="1" values="|0.04634,0.04634,0.04634,1.00000|">
    </PIN>
    <PIN pinname="Light Data" visible="1">
    </PIN>
@@ -467,6 +467,14 @@
    </PIN>
    <PIN pinname="Saturation" slicecount="1" values="0">
    </PIN>
+   <PIN pinname="Hue" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="AO Power" slicecount="1" values="-0.01">
+   </PIN>
+   <PIN pinname="Num Circles" slicecount="1" values="8">
+   </PIN>
+   <PIN pinname="Use Scatter" slicecount="1" values="0">
+   </PIN>
    </NODE>
    <LINK srcnodeid="235" srcpinname="Output" dstnodeid="35" dstpinname="EffectSetting" linkstyle="Bezier">
    <LINKPOINT x="6645" y="8955">
@@ -499,7 +507,7 @@
    <LINK srcnodeid="69" srcpinname="Texture Out" dstnodeid="35" dstpinname="Specular Environment Map">
    </LINK>
    <NODE id="-6" systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden">
-   <BOUNDS type="Node" left="7125" top="1080" width="1020" height="270">
+   <BOUNDS type="Node" left="7710" top="2685" width="1020" height="270">
    </BOUNDS>
    <PIN pinname="Maximum Foreground FPS" visible="1">
    </PIN>
@@ -507,9 +515,9 @@
    </PIN>
    </NODE>
    <NODE id="152" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="7125" top="525" width="795" height="240">
+   <BOUNDS type="Box" left="7710" top="2130" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="7125" top="525" width="0" height="0">
+   <BOUNDS type="Node" left="7710" top="2130" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="60">
    </PIN>
@@ -859,9 +867,9 @@
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="260">
-   <BOUNDS type="Node" left="2340" top="60" width="1725" height="270">
+   <BOUNDS type="Node" left="1395" top="75" width="1725" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="2340" top="60" width="4500" height="240">
+   <BOUNDS type="Box" left="1395" top="75" width="3915" height="240">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="|&lt;- You Can Write Custom Function to modify GBuffer|">
    </PIN>
@@ -871,5 +879,31 @@
    </PIN>
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
+   </NODE>
+   <NODE systemname="POST_Template (DX11.Effect)" filename="%VVVV%\packs\PBRRenderer\nodes\dx11\POST_Template.fx" nodename="POST_Template (DX11.Effect)" componentmode="Hidden" id="261">
+   <BOUNDS type="Node" left="8130" top="105" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE nodename="IOBox (String)" systemname="IOBox (String)" componentmode="InABox" id="262">
+   <BOUNDS type="Node" left="6330" top="420" width="1125" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6330" top="420" width="1215" height="300">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|Clone these. -&gt;|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="POST_TemplateSDF (DX11.Effect)" filename="%VVVV%\packs\PBRRenderer\nodes\dx11\POST_TemplateSDF.fx" nodename="POST_TemplateSDF (DX11.Effect)" componentmode="Hidden" id="263">
+   <BOUNDS type="Node" left="7845" top="480" width="100" height="100">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="DF_Template (DX11.Effect)" filename="%VVVV%\packs\PBRRenderer\nodes\dx11\DF_Template.fx" nodename="DF_Template (DX11.Effect)" componentmode="Hidden" id="264">
+   <BOUNDS type="Node" left="8325" top="840" width="100" height="100">
+   </BOUNDS>
    </NODE>
    </PATCH>
