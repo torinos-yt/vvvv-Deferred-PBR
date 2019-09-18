@@ -1,9 +1,9 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta37.dtd" >
-   <PATCH nodename="F:\vvvv\work\PBRRenderer\modules\CSTextureThreading.v4p" systemname="CSTextureThreading" filename="F:\vvvv\work\PBRRenderer\modules\CSTextureThreading.v4p" scrollx="705" scrolly="120">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
+   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\nodes\modules\CSTextureThreading.v4p" systemname="CSTextureThreading" filename="F:\vvvv\work\PBRRenderer\modules\CSTextureThreading.v4p" scrollx="705" scrolly="120">
    <NODE systemname="Dispatcher (DX11.Drawer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Dispatcher (DX11.Drawer)" componentmode="Hidden" id="0">
-   <BOUNDS type="Node" left="1560" top="2835" width="100" height="100">
+   <BOUNDS type="Node" left="1620" top="3795" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="1560" top="2835" width="3000" height="3000">
+   <BOUNDS type="Box" left="1620" top="3795" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Thread X" visible="1">
    </PIN>
@@ -13,7 +13,7 @@
    </PIN>
    </NODE>
    <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="1">
-   <BOUNDS type="Node" left="1560" top="1500" width="100" height="100">
+   <BOUNDS type="Node" left="1575" top="960" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -23,7 +23,7 @@
    </PIN>
    </NODE>
    <NODE systemname="Vector (2d Split)" nodename="Vector (2d Split)" componentmode="Hidden" id="2">
-   <BOUNDS type="Node" left="1500" top="2355" width="100" height="100">
+   <BOUNDS type="Node" left="1560" top="3315" width="100" height="100">
    </BOUNDS>
    <PIN pinname="XY" visible="1">
    </PIN>
@@ -32,20 +32,6 @@
    <PIN pinname="Y" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="ceil (Value)" filename="..\..\..\contributions\plugins\Valueceil\Valueceil.csproj" nodename="ceil (Value)" componentmode="Hidden" id="3">
-   <BOUNDS type="Node" left="1530" top="1920" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="1530" top="1920" width="3000" height="3000">
-   </BOUNDS>
-   <PIN pinname="Input" slicecount="1" visible="1" values="1.31">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="3" srcpinname="Output" dstnodeid="2" dstpinname="XY">
-   </LINK>
-   <LINK srcnodeid="1" srcpinname="Output" dstnodeid="3" dstpinname="Input">
-   </LINK>
    <LINK srcnodeid="2" srcpinname="X" dstnodeid="0" dstpinname="Thread X">
    </LINK>
    <LINK srcnodeid="2" srcpinname="Y" dstnodeid="0" dstpinname="Thread Y">
@@ -53,9 +39,9 @@
    <NODE id="4" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="|Geometry Out|">
    </PIN>
-   <BOUNDS type="Box" left="1560" top="3435" width="750" height="240">
+   <BOUNDS type="Box" left="1620" top="4395" width="750" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="1560" top="3435" width="750" height="240">
+   <BOUNDS type="Node" left="1620" top="4395" width="750" height="240">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="0" srcpinname="Geometry Out" dstnodeid="4" dstpinname="Input Node">
@@ -70,7 +56,7 @@
    </NODE>
    <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Input">
    </LINK>
-   <BOUNDS type="Window" left="17100" top="8160" width="3150" height="4425">
+   <BOUNDS type="Window" left="12900" top="3405" width="2895" height="5655">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
    </PACK>
@@ -80,6 +66,56 @@
    </PACK>
    <PACK Name="ÎmagePack" Version="0.2.0">
    </PACK>
-   <PACK Name="addonpack" Version="36.0.0">
+   <PACK Name="addonpack" Version="38.1.0">
    </PACK>
+   <NODE systemname="Frac (Value)" nodename="Frac (Value)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="1560" top="1425" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Whole Part" visible="1">
+   </PIN>
+   <PIN pinname="Real Part" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Output" dstnodeid="6" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Switch (Value Input)" nodename="Switch (Value Input)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="1920" top="2250" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GT (Value)" nodename="GT (Value)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="1920" top="1830" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Real Part" dstnodeid="8" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Output" dstnodeid="7" dstpinname="Switch">
+   </LINK>
+   <NODE systemname="Add (Value)" nodename="Add (Value)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="1560" top="2835" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Whole Part" dstnodeid="9" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Output" dstnodeid="9" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Output" dstnodeid="2" dstpinname="XY">
+   </LINK>
    </PATCH>

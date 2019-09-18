@@ -45,7 +45,7 @@
    </PIN>
    <PIN pinname="Enabled" slicecount="1" visible="1" values="0">
    </PIN>
-   <BOUNDS type="Window" left="13515" top="5805" width="9000" height="6000">
+   <BOUNDS type="Window" left="4485" top="4095" width="9000" height="6000">
    </BOUNDS>
    </NODE>
    <NODE systemname="GetMatrix (Transform)" filename="" nodename="GetMatrix (Transform)" componentmode="Hidden" id="19">
@@ -83,7 +83,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="2132" top="1795" width="3160" height="4435">
    </BOUNDS>
-   <BOUNDS type="Window" left="16995" top="7455" width="3150" height="4425">
+   <BOUNDS type="Window" left="12900" top="3405" width="2895" height="5655">
    </BOUNDS>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="28" systemname="IOBox (Value Advanced)">
@@ -142,7 +142,7 @@
    </LINK>
    <LINK srcnodeid="19" srcpinname="Matrix Out" dstnodeid="21" dstpinname="Input">
    </LINK>
-   <BOUNDS type="Window" left="10125" top="615" width="11100" height="15375">
+   <BOUNDS type="Window" left="1125" top="0" width="11100" height="15375">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
    </PACK>
