@@ -14,6 +14,8 @@ Unpack on your vvvv/packs folder.
 - dx11-vvvv
 - happy.fxh  
 - Field Trip  
+- Instance Noodles
+- mp.dx
 
 ## Thanks to
 IBL Texture : [HDRI Haven](https://hdrihaven.com/)  
