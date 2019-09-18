@@ -8,7 +8,7 @@ Simple rendering solution based on PBR worlk flow.
 - Simple access to surface functions and distance functions
 
 ## Instaration
-Unpack on your vvvv/packs folder.
+Unpack on your vvvv/packs folder and rename packs root "PBRRenderer".
 
 ## Require
 - dx11-vvvv
