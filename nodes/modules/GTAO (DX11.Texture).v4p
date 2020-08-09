@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\nodes\modules\GTAO (DX11.Texture).v4p" systemname="GTAO (DX11.Texture)" filename="F:\vvvv\work\PBRRenderer\modules\GTAO (DX11.Texture).v4p" scrollx="0" scrolly="375" locked="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta39.dtd" >
+   <PATCH nodename="F:\vvvv\vvvv_beta_39_x64\packs\PBRRenderer\nodes\modules\GTAO (DX11.Texture).v4p" systemname="GTAO (DX11.Texture)" filename="F:\vvvv\work\PBRRenderer\modules\GTAO (DX11.Texture).v4p" scrollx="0" scrolly="375" locked="0">
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="1" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="390" top="885" width="795" height="240">
    </BOUNDS>
@@ -22,7 +22,7 @@
    <PIN pinname="Transform Out" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="timer" filename="timer.v4p" nodename="modules\timer.v4p" componentmode="Hidden" id="5">
+   <NODE systemname="timer" filename="%VVVV%\packs\PBRRenderer\nodes\modules\timer.v4p" nodename="modules\timer.v4p" componentmode="Hidden" id="5">
    <BOUNDS type="Node" left="5422" top="3738" width="0" height="0">
    </BOUNDS>
    <BOUNDS type="Box" left="3105" top="1506" width="4870" height="4465">
@@ -47,9 +47,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="8" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5025" top="6975" width="795" height="240">
+   <BOUNDS type="Box" left="5025" top="6915" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="5025" top="6975" width="0" height="0">
+   <BOUNDS type="Node" left="5025" top="6915" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="512">
    </PIN>
@@ -128,9 +128,9 @@
    </PACK>
    <PACK Name="ÎmagePack" Version="0.2.0">
    </PACK>
-   <PACK Name="addonpack" Version="38.1.0">
+   <PACK Name="addonpack" Version="39.0.0">
    </PACK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="17">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="17" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="3840" top="675" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="3840" top="675" width="0" height="0">
@@ -146,7 +146,7 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="18">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="18" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="4245" top="1665" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="4245" top="1665" width="0" height="0">
@@ -162,7 +162,7 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="19">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="19" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="4635" top="2175" width="360" height="255">
    </BOUNDS>
    <BOUNDS type="Node" left="4635" top="2175" width="0" height="0">
@@ -180,7 +180,7 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="20">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="20" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="4995" top="2775" width="285" height="255">
    </BOUNDS>
    <BOUNDS type="Node" left="4995" top="2775" width="0" height="0">
@@ -212,7 +212,7 @@
    </NODE>
    <LINK srcnodeid="22" srcpinname="Output" dstnodeid="7" dstpinname="Input 2">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="23">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="23" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="2175" top="1695" width="360" height="285">
    </BOUNDS>
    <BOUNDS type="Node" left="2175" top="1695" width="0" height="0">
@@ -246,7 +246,7 @@
    <PIN pinname="Flush" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="71">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="71" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="5355" top="7455" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="5355" top="7455" width="0" height="0">
@@ -262,7 +262,7 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="72">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="72" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="5625" top="7980" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="5625" top="7980" width="0" height="0">
@@ -278,7 +278,7 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="73">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="73" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="1950" top="705" width="795" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="1950" top="705" width="0" height="0">
@@ -404,7 +404,7 @@
    <PIN pinname="Buffers" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="86">
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="86" systemname="IOBox (Enumerations)">
    <BOUNDS type="Box" left="480" top="5145" width="1650" height="630">
    </BOUNDS>
    <BOUNDS type="Node" left="480" top="5145" width="0" height="0">
@@ -454,7 +454,7 @@
    </LINK>
    <LINK srcnodeid="85" srcpinname="Buffers" dstnodeid="92" dstpinname="Input Node">
    </LINK>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="93">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="93" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="7215" top="11340" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="7215" top="11340" width="0" height="0">
@@ -506,7 +506,7 @@
    </LINK>
    <LINK srcnodeid="74" srcpinname="Output" dstnodeid="16" dstpinname="Input Node">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="97">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="97" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="9825" top="975" width="480" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="9825" top="975" width="0" height="0">
@@ -570,7 +570,7 @@
    </NODE>
    <LINK srcnodeid="106" srcpinname="Layer Out" dstnodeid="85" dstpinname="Layer">
    </LINK>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="108">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="108" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="8670" top="840" width="600" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="8670" top="840" width="0" height="0">
@@ -594,7 +594,7 @@
    </NODE>
    <LINK srcnodeid="85" srcpinname="Buffers" dstnodeid="88" dstpinname="Input Node">
    </LINK>
-   <NODE systemname="GTAO (DX11.Effect)" filename="dx11\GTAO.fx" nodename="GTAO (DX11.Effect)" componentmode="Hidden" id="82">
+   <NODE systemname="GTAO (DX11.Effect)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\dx11\GTAO.fx" nodename="GTAO (DX11.Effect)" componentmode="Hidden" id="82">
    <BOUNDS type="Node" left="2280" top="4590" width="5910" height="270">
    </BOUNDS>
    <PIN pinname="Geometry" visible="1">
@@ -670,7 +670,7 @@
    </LINK>
    <LINK srcnodeid="82" srcpinname="Layer" dstnodeid="106" dstpinname="Layer In">
    </LINK>
-   <NODE systemname="BilateralAO (DX11.TextureFX)" filename="texture11\BilateralAO.tfx" nodename="BilateralAO (DX11.TextureFX)" componentmode="Hidden" id="87">
+   <NODE systemname="BilateralAO (DX11.TextureFX)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\texture11\BilateralAO.tfx" nodename="BilateralAO (DX11.TextureFX)" componentmode="Hidden" id="87">
    <BOUNDS type="Node" left="2580" top="8460" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1">
@@ -689,9 +689,9 @@
    <LINK srcnodeid="92" srcpinname="Output Node" dstnodeid="87" dstpinname="Texture In">
    </LINK>
    <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="87" dstpinname="BlurSharpeness" linkstyle="Bezier">
-   <LINKPOINT x="5025" y="7823">
+   <LINKPOINT x="5025" y="7783">
    </LINKPOINT>
-   <LINKPOINT x="3135" y="7823">
+   <LINKPOINT x="3135" y="7803">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="87" srcpinname="Texture Out" dstnodeid="95" dstpinname="Input 2">
@@ -704,7 +704,7 @@
    </LINK>
    <LINK srcnodeid="88" srcpinname="Output Node" dstnodeid="87" dstpinname="depthTex">
    </LINK>
-   <NODE systemname="BilateralNormal (DX11.TextureFX)" filename="texture11\BilateralNormal.tfx" nodename="BilateralNormal (DX11.TextureFX)" componentmode="Hidden" id="102">
+   <NODE systemname="BilateralNormal (DX11.TextureFX)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\texture11\BilateralNormal.tfx" nodename="BilateralNormal (DX11.TextureFX)" componentmode="Hidden" id="102">
    <BOUNDS type="Node" left="7200" top="8385" width="100" height="100">
    </BOUNDS>
    <PIN pinname="depthTex" visible="1">
@@ -728,7 +728,7 @@
    <LINKPOINT x="7920" y="7815">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="TemporalAOFilter (DX11.TextureFX)" filename="texture11\TemporalAOFilter.tfx" nodename="TemporalAOFilter (DX11.TextureFX)" componentmode="Hidden" id="25">
+   <NODE systemname="TemporalAOFilter (DX11.TextureFX)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\texture11\TemporalAOFilter.tfx" nodename="TemporalAOFilter (DX11.TextureFX)" componentmode="Hidden" id="25">
    <BOUNDS type="Node" left="2040" top="10125" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1">
@@ -782,7 +782,7 @@
    </LINK>
    <LINK srcnodeid="25" srcpinname="Texture Out" dstnodeid="74" dstpinname="Input 2">
    </LINK>
-   <NODE systemname="TemporalNormalFilter (DX11.TextureFX)" filename="texture11\TemporalNormalFilter.tfx" nodename="TemporalNormalFilter (DX11.TextureFX)" componentmode="Hidden" id="98">
+   <NODE systemname="TemporalNormalFilter (DX11.TextureFX)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\texture11\TemporalNormalFilter.tfx" nodename="TemporalNormalFilter (DX11.TextureFX)" componentmode="Hidden" id="98">
    <BOUNDS type="Node" left="7200" top="10125" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Technique" slicecount="1" values="TempNorm">

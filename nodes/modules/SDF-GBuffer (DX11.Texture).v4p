@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\nodes\modules\SDF-GBuffer (DX11.Texture).v4p" systemname="GBuffer (DX11.Texture)" filename="F:\vvvv\contributions\modules\GBuffer (DX11.Texture).v4p" scrollx="0" scrolly="360">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta39.1.dtd" >
+   <PATCH nodename="F:\vvvv\vvvv_beta_39.1_x64\packs\PBRRenderer\nodes\modules\SDF-GBuffer (DX11.Texture).v4p" systemname="GBuffer (DX11.Texture)" filename="F:\vvvv\contributions\modules\GBuffer (DX11.Texture).v4p" scrollx="0" scrolly="0">
    <NODE id="11" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="|Transform In|">
    </PIN>
@@ -10,7 +10,7 @@
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="1140" top="2490" width="21780" height="11505">
+   <BOUNDS type="Window" left="1230" top="3675" width="21780" height="11505">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
    </PACK>
@@ -20,9 +20,9 @@
    </PACK>
    <PACK Name="ÎmagePack" Version="0.2.0">
    </PACK>
-   <PACK Name="addonpack" Version="38.1.0">
+   <PACK Name="addonpack" Version="39.1.0">
    </PACK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="16">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="16" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="20640" top="1005" width="480" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="20640" top="1005" width="0" height="0">
@@ -74,7 +74,7 @@
    </NODE>
    <LINK srcnodeid="11" srcpinname="Output Node" dstnodeid="33" dstpinname="Input 1" hiddenwhenlocked="0" linkstyle="PolyLine">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="42">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="42" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="10035" top="525" width="480" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="10035" top="525" width="0" height="0">
@@ -98,7 +98,7 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="43">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="43" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="9195" top="1335" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="9195" top="1335" width="0" height="0">
@@ -110,7 +110,7 @@
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="51">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="51" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="10740" top="615" width="735" height="330">
    </BOUNDS>
    <BOUNDS type="Node" left="10740" top="615" width="0" height="0">
@@ -128,7 +128,7 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="55">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="55" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="8070" top="480" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="8070" top="480" width="0" height="0">
@@ -144,7 +144,7 @@
    </PACK>
    <PACK Name="dx11.particles" Version="1.0.6">
    </PACK>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="65">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="65" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="4335" top="9870" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="4335" top="9870" width="0" height="0">
@@ -260,7 +260,7 @@
    <LINKPOINT x="12540" y="2908">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="84">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="84" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="11865" top="10005" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="11865" top="10005" width="0" height="0">
@@ -270,12 +270,12 @@
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="112">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="112" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="12510" top="1080" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="12510" top="1080" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="4">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -290,7 +290,7 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="113">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="113" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="11295" top="1185" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="11295" top="1185" width="0" height="0">
@@ -302,12 +302,12 @@
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="135">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="135" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="8580" top="795" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="8580" top="795" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.71">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.34">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -422,12 +422,12 @@
    </NODE>
    <LINK srcnodeid="155" srcpinname="Output" dstnodeid="154" dstpinname="Input 2">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="156">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="156" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="15300" top="690" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="15300" top="690" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="128">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="64">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -472,12 +472,12 @@
    </NODE>
    <LINK srcnodeid="157" srcpinname="Output" dstnodeid="158" dstpinname="Input 2">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="159">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="159" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="16290" top="900" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="16290" top="900" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="60">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="20">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -498,12 +498,12 @@
    <LINKPOINT x="15900" y="3878">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="161">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="161" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="16635" top="1470" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="16635" top="1470" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.0067">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.0055">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -520,7 +520,7 @@
    <PIN pinname="Default" slicecount="1" values=".01">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="162">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="162" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="15330" top="1350" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="15330" top="1350" width="0" height="0">
@@ -558,22 +558,10 @@
    <PIN pinname="Show Characters [#0..#32,#127]" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <NODE systemname="EQ (String)" nodename="EQ (String)" componentmode="Hidden" id="169">
-   <BOUNDS type="Node" left="285" top="1350" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input 2" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="163" srcpinname="Output String" dstnodeid="169" dstpinname="Input 1">
-   </LINK>
    <NODE systemname="Switch (String Input)" nodename="Switch (String Input)" componentmode="Hidden" id="170">
    <BOUNDS type="Node" left="840" top="2550" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Switch" visible="1">
+   <PIN pinname="Switch" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Input 1" visible="1">
    </PIN>
@@ -582,8 +570,6 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="169" srcpinname="Output" dstnodeid="170" dstpinname="Switch">
-   </LINK>
    <NODE systemname="timer" filename="%VVVV%\packs\PBRRenderer\nodes\modules\timer.v4p" nodename="%VVVV%\packs\PBRRenderer\nodes\modules\timer.v4p" componentmode="Hidden" id="181">
    <BOUNDS type="Node" left="10740" top="5615" width="660" height="270">
    </BOUNDS>
@@ -599,11 +585,11 @@
    </PIN>
    </NODE>
    <NODE systemname="DF_Template (DX11.Effect)" filename="%VVVV%\packs\PBRRenderer\nodes\dx11\DF_Template.fx" nodename="DF_Template (DX11.Effect)" componentmode="Hidden" id="182">
-   <BOUNDS type="Node" left="765" top="1350" width="100" height="100">
+   <BOUNDS type="Node" left="1110" top="1470" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Shader Path" visible="1" pintype="Output">
    </PIN>
-   <BOUNDS type="Box" left="765" top="1350">
+   <BOUNDS type="Box" left="1110" top="1470">
    </BOUNDS>
    <PIN pinname="Time" visible="-1" pintype="Input" slicecount="1" values="0">
    </PIN>
@@ -628,10 +614,6 @@
    <PIN pinname="Emission Map" visible="-1" pintype="Input" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <LINK srcnodeid="163" srcpinname="Output String" dstnodeid="170" dstpinname="Input 1">
-   </LINK>
-   <LINK srcnodeid="182" srcpinname="Shader Path" dstnodeid="170" dstpinname="Input 2">
-   </LINK>
    <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="187">
    <BOUNDS type="Node" left="2775" top="750" width="100" height="100">
    </BOUNDS>
@@ -641,7 +623,7 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Post Function|">
    </PIN>
-   <PIN pinname="Input String" slicecount="1" values="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\girlpower\dx11\Scene_PostFunction.fx">
+   <PIN pinname="Input String" slicecount="1" values="||">
    </PIN>
    <PIN pinname="String Type" slicecount="1" values="String">
    </PIN>
@@ -649,9 +631,9 @@
    </PIN>
    </NODE>
    <NODE systemname="Switch (String Input)" nodename="Switch (String Input)" componentmode="Hidden" id="184">
-   <BOUNDS type="Node" left="3045" top="2520" width="100" height="100">
+   <BOUNDS type="Node" left="3150" top="2520" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Switch" visible="1" slicecount="1" values="0">
+   <PIN pinname="Switch" visible="1" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Input 1" visible="1">
    </PIN>
@@ -661,20 +643,6 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="187" srcpinname="Output String" dstnodeid="184" dstpinname="Input 1">
-   </LINK>
-   <NODE systemname="EQ (String)" nodename="EQ (String)" componentmode="Hidden" id="188">
-   <BOUNDS type="Node" left="2790" top="1770" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input 2" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Input 1" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="187" srcpinname="Output String" dstnodeid="188" dstpinname="Input 1">
-   </LINK>
-   <LINK srcnodeid="188" srcpinname="Output" dstnodeid="184" dstpinname="Switch">
    </LINK>
    <NODE systemname="Add (String)" nodename="Add (String)" componentmode="Hidden" id="192">
    <BOUNDS type="Node" left="2805" top="4860" width="100" height="100">
@@ -694,7 +662,7 @@
    <PIN pinname="Intersperse" slicecount="1" values="None">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="204">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="204" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="18180" top="9945" width="480" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="18180" top="9945" width="0" height="0">
@@ -729,9 +697,9 @@
    <LINK srcnodeid="206" srcpinname="Output String" dstnodeid="192" dstpinname="Input 1">
    </LINK>
    <NODE systemname="Quad (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Quad (DX11.Geometry)" componentmode="Hidden" id="209">
-   <BOUNDS type="Node" left="4845" top="3675" width="100" height="100">
+   <BOUNDS type="Node" left="4905" top="3675" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="4845" top="3675" width="3000" height="3000">
+   <BOUNDS type="Box" left="4905" top="3675" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="SizeXY" slicecount="2" values="2,2">
    </PIN>
@@ -739,12 +707,12 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="209" srcpinname="Geometry Out" dstnodeid="68" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="4930" y="4665">
+   <LINKPOINT x="4970" y="4665">
    </LINKPOINT>
-   <LINKPOINT x="12140" y="4665">
+   <LINKPOINT x="12160" y="4665">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (String)" componentmode="InABox" id="210">
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="210" systemname="IOBox (String)">
    <BOUNDS type="Box" left="3810" top="3930" width="765" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="3810" top="3930" width="0" height="0">
@@ -770,7 +738,7 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (String)" componentmode="InABox" id="218">
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="218" systemname="IOBox (String)">
    <BOUNDS type="Box" left="12510" top="6510" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="12510" top="6510" width="0" height="0">
@@ -814,7 +782,7 @@
    </NODE>
    <LINK srcnodeid="145" srcpinname="Is NIL" dstnodeid="146" dstpinname="Switch">
    </LINK>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="227">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="227" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="6510" top="1275" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="6510" top="1275" width="0" height="0">
@@ -826,7 +794,7 @@
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="228">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="228" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="7230" top="600" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="7230" top="600" width="0" height="0">
@@ -838,7 +806,7 @@
    <PIN pinname="Output Node" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="230">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="230" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="14505" top="1035" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="14505" top="1035" width="0" height="0">
@@ -848,26 +816,6 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="texW">
    </PIN>
    <PIN pinname="Output Node" visible="1">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="231">
-   <BOUNDS type="Box" left="13500" top="750" width="795" height="960">
-   </BOUNDS>
-   <BOUNDS type="Node" left="13500" top="750" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="0.005,0.005,0.005,0.005">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Vector Size" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Rows" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="VariableXYZW">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="ShaderWatcher (DX11 Shader)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\ShaderWatcher (DX11 Shader).v4p" nodename="ShaderWatcher (DX11 Shader)" componentmode="Hidden" id="165">
@@ -927,13 +875,13 @@
    <LINK srcnodeid="218" srcpinname="Output String" dstnodeid="217" dstpinname="File Path">
    </LINK>
    <NODE systemname="POST_TemplateSDF (DX11.Effect)" filename="%VVVV%\packs\PBRRenderer\nodes\dx11\POST_TemplateSDF.fx" nodename="POST_TemplateSDF (DX11.Effect)" componentmode="Hidden" id="190">
-   <BOUNDS type="Node" left="3300" top="1785" width="100" height="100">
+   <BOUNDS type="Node" left="3390" top="1740" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Compiled" visible="1" pintype="Output">
    </PIN>
    <PIN pinname="Shader Path" visible="1" pintype="Output">
    </PIN>
-   <BOUNDS type="Box" left="3300" top="1785">
+   <BOUNDS type="Box" left="3390" top="1740">
    </BOUNDS>
    <PIN pinname="Transform In" visible="-1" pintype="Input" slicecount="1" values="||">
    </PIN>
@@ -967,9 +915,9 @@
    </BOUNDS>
    <PIN pinname="ShaderCode" visible="1">
    </PIN>
-   <PIN pinname="ConfigShader" slicecount="1" values="|#ifndef RAYMARCHCOMMON&cr;&lf;#include &lt;packs\PBRRenderer\nodes\modules\fxh\Raymarch_Common.fxh&gt;&cr;&lf;#endif&cr;&lf;//Available Uniform Parameters&cr;&lf;//float Time&cr;&lf;//float DeltaTime&cr;&lf;//float4 Variable : User Variable Controlled on vvvv patch&cr;&lf;&cr;&lf;float DistanceFunction(float3 p, inout float Material){&cr;&lf;&tab;//Write your own distance function!!&cr;&lf;&tab;&cr;&lf;    //return dMenger(p, 1, 2.65, 3);&cr;&lf;&tab;return dMandelbox(p, 2.595, 12);&cr;&lf;}&cr;&lf;&cr;&lf;#if !defined(ITE)&cr;&lf;#define ITE 32&cr;&lf;#endif&cr;&lf;&cr;&lf;Texture2D texture2d &lt;string uiname=&quot;Texture&quot;;&gt;;&cr;&lf;&cr;&lf;#define depthOffset 0.0001&cr;&lf;#define EPS 0.0001&cr;&lf;float mindist&lt;float uistep = .001;&gt; = .01;&cr;&lf;&cr;&lf;float  shadowThreshold = 1.0f; &cr;&lf;float  bias&tab;&tab;&tab;   = 0.01f; &cr;&lf;float  slopeScaledBias = 0.01f; &cr;&lf;float  depthBiasClamp  = 0.1f;&cr;&lf;&cr;&lf;float stepLength = 1.0;&cr;&lf;&cr;&lf;SamplerState linearSampler : IMMUTABLE&cr;&lf;{&cr;&lf;&tab;Filter = MIN_MAG_MIP_LINEAR;&cr;&lf;&tab;AddressU = Clamp;&cr;&lf;&tab;AddressV = Clamp;&cr;&lf;};&cr;&lf;&cr;&lf;StructuredBuffer&lt;float4x4&gt; tVPI : LIGHTVIEWPROJECTIONINVERSE;&cr;&lf;int vpindex;&cr;&lf; &cr;&lf;cbuffer cbPerDraw : register( b0 )&cr;&lf;{&cr;&lf;&tab;float4x4 tV : LAYERVIEW;&cr;&lf;&tab;float4x4 tVP : LAYERVIEWPROJECTION;&tab;&cr;&lf;};&cr;&lf;&cr;&lf;cbuffer cbPerObj : register( b1 )&cr;&lf;{&cr;&lf;&tab;float4x4 tW : WORLD;&cr;&lf;&tab;float4x4 tWI : WORLDINVERSE;&cr;&lf;};&cr;&lf;&cr;&lf;&cr;&lf;struct VS_IN&cr;&lf;{&cr;&lf;&tab;float4 PosO : POSITION;&cr;&lf;&tab;float2 uv : TEXCOORD0;&cr;&lf;&cr;&lf;};&cr;&lf;&cr;&lf;struct vs2ps&cr;&lf;{&cr;&lf;&tab;float4 PosWVP : SV_Position;&cr;&lf;&tab;float2 uv : TECXOORD0;&cr;&lf;};&cr;&lf;&cr;&lf;struct psShadow{&cr;&lf;&tab;float2 Shadowmap : SV_Target;&cr;&lf;&tab;float Depth : SV_Depth;&cr;&lf;};&cr;&lf;&cr;&lf;vs2ps VS(VS_IN input)&cr;&lf;{&cr;&lf;&tab;vs2ps output;&cr;&lf;&tab;output.PosWVP = input.PosO;&cr;&lf;&tab;output.uv = input.uv;&cr;&lf;&tab;return output;&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;psShadow PS(vs2ps In)&cr;&lf;{&cr;&lf;&tab;psShadow o;&cr;&lf;&cr;&lf;&tab;float3 rayPos = mul(float4(lights[vpindex].pos, 1), tWI);&cr;&lf;&tab;&cr;&lf;&tab;float2 rayDir = (In.uv * 2 - 1) * float2(1, -1);&cr;&lf;&tab;float4 rs =  mul(float4(rayDir, 1, 1), tVPI[vpindex]);&cr;&lf;&tab;float3 ray = normalize(mul(normalize(rs.xyz / rs.w), (float3x3)tWI));&cr;&lf;&tab;&cr;&lf;&tab;float maxdist = 50;&cr;&lf;&tab;float3 normal = 0;&cr;&lf;&tab;float alpha = 0;&cr;&lf;&tab;&cr;&lf;&tab;float dist = 0;&cr;&lf;&tab;float total = 0;&cr;&lf;&cr;&lf;&tab;float id = 0;&cr;&lf;&tab;for(int i = 0; i &lt; ITE; i++){&cr;&lf;&tab;&tab;dist = DistanceFunction(rayPos, id);&cr;&lf;&tab;&tab;&cr;&lf;&tab;&tab;if(dist &lt; mindist * max(total, 1)){ &cr;&lf;&tab;&tab;&tab;alpha = 1;&cr;&lf;&tab;&tab;&tab;&cr;&lf;&tab;&tab;&tab;break;&cr;&lf;&tab;&tab;}&cr;&lf;&tab;&tab;rayPos += ray * dist * stepLength;&cr;&lf;&tab;&tab;total += dist * stepLength;&cr;&lf;&tab;&tab;if(total &gt; maxdist) break;&cr;&lf;&tab;}&cr;&lf;&cr;&lf;&tab;float2 col = 0;&cr;&lf;&tab;float ldist = distance(lights[vpindex].pos, mul(float4(rayPos, 1), tW).xyz) + depthOffset;&cr;&lf;&tab;float maxDepthSlope = max( abs( ddx( ldist ) ), abs( ddy( ldist ) ) );&cr;&lf;&tab;&cr;&lf;&tab;float shadowBias = bias + slopeScaledBias * maxDepthSlope;&cr;&lf;&tab;shadowBias = min( shadowBias, depthBiasClamp );&cr;&lf;&tab;&cr;&lf;&tab;col.r = ldist - shadowBias;&cr;&lf;&tab;col.g = ldist * ldist;&cr;&lf;&tab;o.Shadowmap = col * alpha;&cr;&lf;&cr;&lf;&tab;rayPos = mul(float4(rayPos, 1), tW).xyz;&cr;&lf;&tab;float4 possc = mul(float4(rayPos, 1), lights[vpindex].VP);&cr;&lf;&tab;o.Depth = possc.z / possc.w;&cr;&lf;&cr;&lf;&tab;return o;&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;technique10 Constant&cr;&lf;{&cr;&lf;&tab;pass P0&cr;&lf;&tab;{&cr;&lf;&tab;&tab;SetVertexShader( CompileShader( vs_4_0, VS() ) );&cr;&lf;&tab;&tab;SetPixelShader( CompileShader( ps_4_0, PS() ) );&cr;&lf;&tab;}&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;|">
+   <PIN pinname="ConfigShader" slicecount="1" values="|#ifndef RAYMARCHCOMMON&cr;&lf;&tab;#include &lt;packs\PBRRenderer\nodes\modules\fxh\Raymarch_Common.fxh&gt;&cr;&lf;#endif&cr;&lf;//Available Uniform Parameters&cr;&lf;//&cr;&lf;//float Time&cr;&lf;//float DeltaTime&cr;&lf;//float4 Variable : User Variable Controlled on vvvv patch&cr;&lf;&cr;&lf;// 4DPolytopes Distance Estimation by Syntopia : Mikael H Christensen&cr;&lf;// https://syntopia.github.io/Polytopia/polytopes.html&cr;&lf;&cr;&lf;// Parameters from Render Semantics&cr;&lf;int deg : DEGREES; // [2 - 5]&cr;&lf;&cr;&lf;float3 rotate : ROTATION; // [0 - 1]&cr;&lf;float angle : ANGLE;  // [0 - 360]&cr;&lf;&cr;&lf;float vRad : VERTEXRADIUS; // [0 - .2]&cr;&lf;float sRad : SEGMENTRADIUS; // [0 - .2]&cr;&lf;&cr;&lf;// [0 - 1]&cr;&lf;float u : U;&cr;&lf;float v : V;&cr;&lf;float w : W;&cr;&lf;float t : T;&cr;&lf;&cr;&lf;float4 fold(float4 pos, float4 nc, float4 nd) {&cr;&lf;&tab;for(int i = 0; i &lt; 25; i++){&cr;&lf;&tab;&tab;float4 tmp = pos;&cr;&lf;&tab;&tab;pos.xy=abs(pos.xy);&cr;&lf;&tab;&tab;&cr;&lf;&tab;&tab;float t = -2. * min(0., dot(pos,nc));&cr;&lf;&tab;&tab;pos += t * nc;&cr;&lf;&tab;&tab;&cr;&lf;&tab;&tab;t = -2. * min(0., dot(pos, nd));&cr;&lf;&tab;&tab;pos += t * nd;&cr;&lf;&tab;&tab;&cr;&lf;&tab;&tab;if (tmp.x == pos.x &amp;&amp;&cr;&lf;&tab;&tab;&tab;tmp.y == pos.y &amp;&amp;&cr;&lf;&tab;&tab;&tab;tmp.z == pos.z &amp;&amp;&cr;&lf;&tab;&tab;&tab;tmp.w == pos.w) { return pos; }&cr;&lf;&tab;}&cr;&lf;&tab;return pos;&cr;&lf;}&cr;&lf;&cr;&lf;float DD(float ca, float sa, float r){&cr;&lf;&tab;//magic formula to convert from spherical distance to planar distance.&cr;&lf;&tab;//involves transforming from 3-plane to 3-sphere, getting the distance&cr;&lf;&tab;//on the sphere then going back to the 3-plane.&cr;&lf;&tab;return r-(2.*r*ca-(1.-r*r)*sa)/((1.-r*r)*ca+2.*r*sa+1.+r*r);&cr;&lf;}&cr;&lf;&cr;&lf;float dist2Vertex(float4 p, float4 z, float r, float vRadius){&cr;&lf;&tab;float ca=dot(z,p), sa=0.5*length(p-z)*length(p+z);//sqrt(1.-ca*ca);//&cr;&lf;&tab;return DD(ca,sa,r)-vRadius;&cr;&lf;}&cr;&lf;&cr;&lf;float dist2Segment(float4 p, float4 z, float4 n, float r, float sRadius){&cr;&lf;&tab;//pmin is the orthogonal projection of z onto the plane defined by p and n&cr;&lf;&tab;//then pmin is projected onto the unit sphere&cr;&lf;&tab;float zn=dot(z,n),zp=dot(z,p),np=dot(n,p);&cr;&lf;&tab;float alpha=zp-zn*np, beta=zn-zp*np;&cr;&lf;&tab;float4 pmin=normalize(alpha*p+min(0.,beta)*n);&cr;&lf;&tab;//ca and sa are the cosine and sine of the angle between z and pmin. This is the spherical distance.&cr;&lf;&tab;float ca=dot(z,pmin), sa=0.5*length(pmin-z)*length(pmin+z);//sqrt(1.-ca*ca);//&cr;&lf;&tab;float factor = 1.0;// DD(ca,sa,r)/DD(ca+0.01,sa,r);&cr;&lf;&tab;return (DD(ca,sa,r)-sRadius*factor)*min(1.0/factor,1.0);&cr;&lf;&tab;&cr;&lf;}&cr;&lf;&cr;&lf;float dist2Segments(float4 p, float4 z, float r, float4 nc, float4 nd, float srad){&cr;&lf;&tab;float da=dist2Segment(p, z, float4(1.,0.,0.,0.), r, srad);&cr;&lf;&tab;float db=dist2Segment(p, z, float4(0.,1.,0.,0.), r, srad);&cr;&lf;&tab;float dc=dist2Segment(p, z, nc, r, srad);&cr;&lf;&tab;float dd=dist2Segment(p, z, nd, r, srad);&cr;&lf;&tab;&cr;&lf;&tab;return min(min(da,db),min(dc,dd));&cr;&lf;}&cr;&lf;&cr;&lf;float DE(float4 p, float3 pos, float3x3 rot, float4 nc, float4 nd, float vrad, float srad, inout float m) {&cr;&lf;&tab;&cr;&lf;&tab;float r=length(pos);&cr;&lf;&tab;float4 z4=float4(2.*pos,1.-r*r)*1./(1.+r*r);//Inverse stereographic projection of pos: z4 lies onto the unit 3-sphere centered at 0.&cr;&lf;&tab;z4.xyw=mul(z4.xyw, rot);&cr;&lf;&tab;z4=fold(z4, nc, nd);//fold it&cr;&lf;&tab;float d=10000.;&cr;&lf;&tab;&cr;&lf;&tab;d = min(d, dist2Vertex(p, z4,r, vrad));&cr;&lf;&tab;m = 1.;&cr;&lf;&tab;&cr;&lf;&tab;float seg = dist2Segments(p, z4, r, nc, nd, srad);&cr;&lf;&tab;if(d &gt; seg){&cr;&lf;&tab;&tab;d = seg;&cr;&lf;&tab;&tab;m = 0.;&lf;&tab;}&cr;&lf;&tab;return d ;&cr;&lf;}&cr;&lf;&cr;&lf;float DistanceFunction(float3 p, inout float Material){&tab;&cr;&lf;&tab;float rotX = rotate.x;   // [0 - 1]&cr;&lf;&tab;float rotY = rotate.y;   // [0 - 1]&cr;&lf;&tab;float rotZ = rotate.z;   // [0 - 1]&cr;&lf;&tab;&cr;&lf;&tab;// init&cr;&lf;&tab;float3x3 rot;&cr;&lf;&tab;float4 nc, nd, wp;&cr;&lf;&tab;&cr;&lf;&tab;float cospin=cos(PI/float(deg)), isinpin=1./sin(PI/float(deg));&cr;&lf;&tab;float scospin=sqrt(2./3.-cospin*cospin), issinpin=1./sqrt(3.-4.*cospin*cospin);&cr;&lf;&cr;&lf;&tab;nc=0.5*float4(0,-1,sqrt(3.),0.);&cr;&lf;&tab;nd=float4(-cospin,-0.5,-0.5/sqrt(3.),scospin);&cr;&lf;&cr;&lf;&tab;float4 pabc,pbdc,pcda,pdba;&cr;&lf;&tab;pabc=float4(0.,0.,0.,1.);&cr;&lf;&tab;pbdc=0.5*sqrt(3.)*float4(scospin,0.,0.,cospin);&cr;&lf;&tab;pcda=isinpin*float4(0.,0.5*sqrt(3.)*scospin,0.5*scospin,1./sqrt(3.));&cr;&lf;&tab;pdba=issinpin*float4(0.,0.,2.*scospin,1./sqrt(3.));&cr;&lf;&tab;&cr;&lf;&tab;wp=normalize(v*pabc+u*pbdc+w*pcda+t*pdba);&cr;&lf;&cr;&lf;&tab;rot = rot3D(normalize(float3(rotX,rotY,rotZ)), PI*(angle/360.0));//in reality we need a 4D rotation&cr;&lf;&tab;&cr;&lf;    return DE(wp, p, rot, nc, nd, vRad, sRad, Material);&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;#if !defined(ITE)&cr;&lf;#define ITE 32&cr;&lf;#endif&cr;&lf;&cr;&lf;Texture2D texture2d &lt;string uiname=&quot;Texture&quot;;&gt;;&cr;&lf;&cr;&lf;#define depthOffset 0.0001&cr;&lf;#define EPS 0.0001&cr;&lf;float mindist&lt;float uistep = .001;&gt; = .01;&cr;&lf;&cr;&lf;float  shadowThreshold = 1.0f; &cr;&lf;float  bias&tab;&tab;&tab;   = 0.01f; &cr;&lf;float  slopeScaledBias = 0.01f; &cr;&lf;float  depthBiasClamp  = 0.1f;&cr;&lf;&cr;&lf;float stepLength = 1.0;&cr;&lf;&cr;&lf;SamplerState linearSampler : IMMUTABLE&cr;&lf;{&cr;&lf;&tab;Filter = MIN_MAG_MIP_LINEAR;&cr;&lf;&tab;AddressU = Clamp;&cr;&lf;&tab;AddressV = Clamp;&cr;&lf;};&cr;&lf;&cr;&lf;StructuredBuffer&lt;float4x4&gt; tVPI : LIGHTVIEWPROJECTIONINVERSE;&cr;&lf;int vpindex;&cr;&lf;bool Directional = false;&cr;&lf; &cr;&lf;cbuffer cbPerDraw : register( b0 )&cr;&lf;{&cr;&lf;&tab;float4x4 tV : LAYERVIEW;&cr;&lf;&tab;float4x4 tVP : LAYERVIEWPROJECTION;&tab;&cr;&lf;};&cr;&lf;&cr;&lf;cbuffer cbPerObj : register( b1 )&cr;&lf;{&cr;&lf;&tab;float4x4 tW : WORLD;&cr;&lf;&tab;float4x4 tWI : WORLDINVERSE;&cr;&lf;};&cr;&lf;&cr;&lf;&cr;&lf;struct VS_IN&cr;&lf;{&cr;&lf;&tab;float4 PosO : POSITION;&cr;&lf;&tab;float2 uv : TEXCOORD0;&cr;&lf;&cr;&lf;};&cr;&lf;&cr;&lf;struct vs2ps&cr;&lf;{&cr;&lf;&tab;float4 PosWVP : SV_Position;&cr;&lf;&tab;float2 uv : TECXOORD0;&cr;&lf;};&cr;&lf;&cr;&lf;struct psShadow{&cr;&lf;&tab;float2 Shadowmap : SV_Target;&cr;&lf;&tab;float Depth : SV_Depth;&cr;&lf;};&cr;&lf;&cr;&lf;vs2ps VS(VS_IN input)&cr;&lf;{&cr;&lf;&tab;vs2ps output;&cr;&lf;&tab;output.PosWVP = input.PosO;&cr;&lf;&tab;output.uv = input.uv;&cr;&lf;&tab;return output;&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;psShadow PS(vs2ps In)&cr;&lf;{&cr;&lf;&tab;psShadow o;&cr;&lf;&cr;&lf;&tab;float3 rayPos = mul(float4(lights[vpindex].pos, 1), tWI);&cr;&lf;&tab;&cr;&lf;&tab;float2 rayDir = (In.uv * 2 - 1) * float2(1, -1);&cr;&lf;&tab;float4 rs =  mul(float4(rayDir, 1, 1), tVPI[vpindex]);&cr;&lf;&tab;float3 ray = normalize(mul(normalize(rs.xyz / rs.w), (float3x3)tWI));&cr;&lf;&tab;&cr;&lf;&tab;float maxdist = 50;&cr;&lf;&tab;float3 normal = 0;&cr;&lf;&tab;float alpha = 0;&cr;&lf;&tab;&cr;&lf;&tab;float dist = 0;&cr;&lf;&tab;float total = 0;&cr;&lf;&cr;&lf;&tab;float id = 0;&cr;&lf;&tab;for(int i = 0; i &lt; ITE; i++){&cr;&lf;&tab;&tab;dist = DistanceFunction(rayPos, id);&cr;&lf;&tab;&tab;&cr;&lf;&tab;&tab;if(dist &lt; mindist * max(1, total)){ &cr;&lf;&tab;&tab;&tab;alpha = 1;&cr;&lf;&tab;&tab;&tab;&cr;&lf;&tab;&tab;&tab;break;&cr;&lf;&tab;&tab;}&cr;&lf;&tab;&tab;rayPos += ray * dist * stepLength;&cr;&lf;&tab;&tab;total += dist * stepLength;&cr;&lf;&tab;&tab;if(total &gt; maxdist) break;&cr;&lf;&tab;}&cr;&lf;&cr;&lf;&tab;float2 col = 0;&cr;&lf;&tab;float ldist = distance(lights[vpindex].pos, mul(float4(rayPos, 1), tW).xyz) + depthOffset;&cr;&lf;&tab;float maxDepthSlope = max( abs( ddx( ldist ) ), abs( ddy( ldist ) ) );&cr;&lf;&tab;&cr;&lf;&tab;float shadowBias = bias + slopeScaledBias * maxDepthSlope;&cr;&lf;&tab;shadowBias = min( shadowBias, depthBiasClamp );&cr;&lf;&tab;&cr;&lf;&tab;col.r = ldist - shadowBias;&cr;&lf;&tab;col.g = ldist * ldist;&cr;&lf;&tab;o.Shadowmap = col*alpha;&cr;&lf;&tab;//o.Shadowmap = lerp(maxdist, col ,alpha);&cr;&lf;&cr;&lf;&cr;&lf;&tab;rayPos = mul(float4(rayPos, 1), tW).xyz;&cr;&lf;&tab;float4 possc = mul(float4(rayPos, 1), lights[vpindex].VP);&cr;&lf;&tab;o.Depth = possc.z / possc.w;&cr;&lf;&tab;o.Depth = lerp(1, o.Depth, alpha);&cr;&lf;&cr;&lf;&tab;return o;&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;technique10 Constant&cr;&lf;{&cr;&lf;&tab;pass P0&cr;&lf;&tab;{&cr;&lf;&tab;&tab;SetVertexShader( CompileShader( vs_4_0, VS() ) );&cr;&lf;&tab;&tab;SetPixelShader( CompileShader( ps_4_0, PS() ) );&cr;&lf;&tab;}&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;|">
    </PIN>
-   <PIN pinname="ConfigDefines" slicecount="1" values="ITE=60">
+   <PIN pinname="ConfigDefines" slicecount="1" values="ITE=20">
    </PIN>
    <PIN pinname="Geometry" visible="1">
    </PIN>
@@ -1003,7 +951,7 @@
    </PIN>
    <PIN pinname="Time" visible="1">
    </PIN>
-   <PIN pinname="VariableXYZW" visible="1" pintype="Input" slicecount="4" values="0,0,0,0">
+   <PIN pinname="VariableXYZW" visible="1" pintype="Input" slicecount="4" values="0.99,0.7,0.38,0">
    </PIN>
    </NODE>
    <LINK srcnodeid="216" srcpinname="Output" dstnodeid="219" dstpinname="ShaderCode">
@@ -1044,8 +992,6 @@
    <LINKPOINT x="13600" y="4853">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="219" srcpinname="Layer" dstnodeid="84" dstpinname="Input Node">
-   </LINK>
    <LINK srcnodeid="16" srcpinname="Y Output Value" dstnodeid="219" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="20630" y="4703">
    </LINKPOINT>
@@ -1060,7 +1006,7 @@
    </LINK>
    <LINK srcnodeid="158" srcpinname="Output" dstnodeid="219" dstpinname="Defines">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="232">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="232" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="18255" top="2265" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="18255" top="2265" width="0" height="0">
@@ -1103,9 +1049,9 @@
    </PIN>
    <PIN pinname="ShaderCode" visible="1">
    </PIN>
-   <PIN pinname="ConfigShader" slicecount="1" values="|#include &lt;packs\PBRRenderer\nodes\modules\fxh\Raymarch_Common.fxh&gt;&cr;&lf;#ifndef RAYMARCHCOMMON&cr;&lf;#include &lt;packs\PBRRenderer\nodes\modules\fxh\Raymarch_Common.fxh&gt;&cr;&lf;#endif&cr;&lf;//Available Uniform Parameters&cr;&lf;//float Time&cr;&lf;//float DeltaTime&cr;&lf;//float4 Variable : User Variable Controlled on vvvv patch&cr;&lf;&cr;&lf;float DistanceFunction(float3 p, inout float Material){&cr;&lf;&tab;//Write your own distance function!!&cr;&lf;&tab;&cr;&lf;    //return dMenger(p, 1, 2.65, 3);&cr;&lf;&tab;return dMandelbox(p, 2.595, 12);&cr;&lf;}&cr;&lf;&cr;&lf;#ifndef RAYMARCHCOMMON&cr;&lf;&tab;#include &lt;packs\PBRRenderer\nodes\modules\fxh\Raymarch_Common.fxh&gt;&cr;&lf;&tab;#define DistanceFunction&cr;&lf;#endif&cr;&lf;//Available Uniform Parameters&cr;&lf;//&cr;&lf;//float Time&cr;&lf;//float DeltaTime&cr;&lf;//float4x4 texW : Texture Transform&cr;&lf;//float4 Variable : User Variable Controlled on vvvv patch&cr;&lf;&cr;&lf;//Available Matelial Data&cr;&lf;//float4 colorTex(float2 uv)&cr;&lf;//float metalTex(float2 uv)&cr;&lf;//float roughTex(float2 uv)&cr;&lf;//float3 emissionTex(float2 uv)&cr;&lf;//float Reflectance;&cr;&lf;&cr;&lf;//struct Light{&cr;&lf;//&tab;float3 pos;&cr;&lf;//&tab;float3 amb;&cr;&lf;//&tab;float3 diff;&cr;&lf;//&tab;float4x4 VP;&cr;&lf;//};&cr;&lf;//StructuredBuffer&lt;Light&gt; lights : Light List;&cr;&lf;&cr;&lf;//Input Data Struct&cr;&lf;//struct Info{&cr;&lf;//&tab;float3 camPos;&cr;&lf;//&tab;float3 rayDir;&cr;&lf;//&tab;int maxLoop;&cr;&lf;//&tab;int loop;&cr;&lf;//  float Material&cr;&lf;//&tab;float3 Pos;&cr;&lf;//&tab;float totalDistance;&cr;&lf;//&tab;float Depth;&cr;&lf;//&tab;float3 Normal;&cr;&lf;//};&cr;&lf;&cr;&lf;//Output Data Struct&cr;&lf;//struct OutputData{&cr;&lf;//&tab;float3 Albedo;&cr;&lf;//&tab;float3 Emission;&cr;&lf;//&tab;float Metalness;&cr;&lf;//&tab;float Roughness;&cr;&lf;//&tab;float Reflectance;&cr;&lf;//&tab;&cr;&lf;//&tab;//If you want using Texturing, BumpMapping...&cr;&lf;//&tab;//Calc and output good uv coordinate.&cr;&lf;//&tab;float2 uv;&lf;//};&cr;&lf;float calcEdge(float3 p) {&cr;&lf;    float edge = 0.0;&cr;&lf;    float2 e = float2(.04, 0);&cr;&lf;&tab;float dum = 0;&cr;&lf;&cr;&lf;    // Take some distance function measurements from either side of the hit point on all three axes.&cr;&lf;&tab;float d1 = DistanceFunction(p + e.xyy, dum), d2 = DistanceFunction(p - e.xyy, dum);&cr;&lf;&tab;float d3 = DistanceFunction(p + e.yxy, dum), d4 = DistanceFunction(p - e.yxy, dum);&cr;&lf;&tab;float d5 = DistanceFunction(p + e.yyx, dum), d6 = DistanceFunction(p - e.yyx, dum);&cr;&lf;&tab;float d = DistanceFunction(p, dum)*2.;&tab;// The hit point itself - Doubled to cut down on calculations. See below.&cr;&lf;&cr;&lf;    // Edges - Take a geometry measurement from either side of the hit point. Average them, then see how&cr;&lf;    // much the value differs from the hit point itself. Do this for X, Y and Z directions. Here, the sum&cr;&lf;    // is used for the overall difference, but there are other ways. Note that it&apos;s mainly sharp surface&cr;&lf;    // curves that register a discernible difference.&cr;&lf;    edge = abs(d1 + d2 - d) + abs(d3 + d4 - d) + abs(d5 + d6 - d);&cr;&lf;    //edge = max(max(abs(d1 + d2 - d), abs(d3 + d4 - d)), abs(d5 + d6 - d)); // Etc.&cr;&lf;&cr;&lf;    // Once you have an edge value, it needs to normalized, and smoothed if possible. How you&cr;&lf;    // do that is up to you. This is what I came up with for now, but I might tweak it later.&cr;&lf;    edge = smoothstep(0., 1., sqrt(edge/e.x*2.));&cr;&lf;&cr;&lf;    // Return the normal.&cr;&lf;    // Standard, normalized gradient mearsurement.&cr;&lf;    return edge;&cr;&lf;}&cr;&lf;&cr;&lf;void PostFunction(Info i, inout OutputData o){&cr;&lf;&tab;//Write your own post function!!&cr;&lf;&tab;&cr;&lf;&tab;o.uv = 0;&cr;&lf;&tab;float3 p = i.Pos;&cr;&lf;&tab;float edge = calcEdge(p);&cr;&lf;&tab;o.Albedo = colorTex(o.uv).rgb * lerp(1, i.Normal, .6);&cr;&lf;&tab;o.Emission = edge * pow(abs(sin(p + Time*.8)), 8);&cr;&lf;&tab;o.Metalness = metalTex(o.uv);&cr;&lf;&tab;o.Roughness = edge+roughTex(o.uv)*.8;&cr;&lf;&tab;o.Reflectance = Reflectance;&cr;&lf;}&cr;&lf;&cr;&lf;#if !defined(ITE)&cr;&lf;#define ITE 32&cr;&lf;#endif&cr;&lf;&cr;&lf;float EPS = 0.003;&cr;&lf;float mindist&lt;float uistep = .0001;&gt; = .0001;&cr;&lf;&cr;&lf;bool IsBump = true;&cr;&lf;float bumps&lt;string uiname = &quot;BumpMap Strength&quot;; float uimin = 0.0; float uimax = 5.0;&gt; = 1;&cr;&lf;&cr;&lf;float emit &lt;string uiname = &quot;Emission Stlength&quot;;&gt; = 1.0;&cr;&lf;float stepLength&lt;string uiname = &quot;StepLength&quot;;&gt; = 1.0;&cr;&lf;&cr;&lf;SamplerState linearSampler : IMMUTABLE&cr;&lf;{&cr;&lf;&tab;Filter = MIN_MAG_MIP_LINEAR;&cr;&lf;&tab;AddressU = Wrap;&cr;&lf;&tab;AddressV = Wrap;&cr;&lf;};&cr;&lf;&cr;&lf;cbuffer cbPerDraw : register( b0 )&cr;&lf;{&cr;&lf;&tab;float4x4 tVP : VIEWPROJECTION;&tab;&cr;&lf;&tab;float4x4 tVPI : VIEWPROJECTIONINVERSE;&cr;&lf;&tab;float4x4 tV : VIEW;&cr;&lf;&tab;float4x4 tP : PROJECTION;&cr;&lf;&tab;float4x4 tPI : PROJECTIONINVERSE;&cr;&lf;&tab;float4x4 tVI : VIEWINVERSE;&cr;&lf;&tab;float4x4 ptVP : PREVIOUSVIEWPROJECTION;&cr;&lf;&tab;float4x4 ptVPI : PREVIOUSVIEWPROJECTIONINVERSE;&cr;&lf;};&cr;&lf;&cr;&lf;cbuffer cbPerObj : register( b1 )&cr;&lf;{&cr;&lf;&tab;float4x4 tW : WORLD;&cr;&lf;&tab;float4x4 tWI : WORLDINVERSE;&cr;&lf;&tab;float4x4 ptW;&cr;&lf;};&cr;&lf;&cr;&lf;struct VS_IN&cr;&lf;{&cr;&lf;&tab;float4 PosO : POSITION;&cr;&lf;&tab;float4 TexCd : TEXCOORD0;&cr;&lf;};&cr;&lf;struct vs2ps&cr;&lf;{&cr;&lf;&tab;float4 Pos: SV_Position;&cr;&lf;&tab;float2 uv: TEXCOORD0;&cr;&lf;};&cr;&lf;&cr;&lf;struct PSout{&cr;&lf;&tab;float4 color : SV_Target0;&cr;&lf;&tab;float4 normal : SV_Target1;&cr;&lf;&tab;float4 MRVel : SV_Target2;&cr;&lf;&tab;float3 position : SV_Target3;&cr;&lf;&tab;float depth : SV_Depth;&cr;&lf;};&cr;&lf;&cr;&lf;&cr;&lf;float3 getNormal(float3 p) {&cr;&lf;    float2 e = float2(1.0, -1.0) * EPS;&cr;&lf;&tab;float d = 0;&cr;&lf;    return normalize(&cr;&lf;        e.xyy * DistanceFunction(p + e.xyy, d) +&cr;&lf;        e.yxy * DistanceFunction(p + e.yxy, d) +&cr;&lf;        e.yyx * DistanceFunction(p + e.yyx, d) +&cr;&lf;        e.xxx * DistanceFunction(p + e.xxx, d)&cr;&lf;    );&cr;&lf;}&cr;&lf;&cr;&lf;vs2ps VS(VS_IN input)&cr;&lf;{&cr;&lf;&tab;vs2ps output;&cr;&lf;&tab;output.Pos  = input.PosO;&cr;&lf;&tab;output.uv = input.TexCd.xy;&cr;&lf;&tab;return output;&cr;&lf;}&cr;&lf;&cr;&lf;PSout PS(vs2ps In){&cr;&lf;&tab;PSout gbuffer;&cr;&lf;&tab;Info info = (Info)0;&cr;&lf;&tab;OutputData o = (OutputData)0;&cr;&lf;&cr;&lf;&tab;float2 u = mul(float4(In.uv, 1, 1), texW).xy;&cr;&lf;&tab;&cr;&lf;&tab;float2 rayDir = (In.uv * 2 - 1) * float2(1, -1);&cr;&lf;&tab;float4 rayDirVP = mul(float4(rayDir, 1, 1), tVPI);&cr;&lf;&tab;&cr;&lf;&tab;info.rayDir = normalize(rayDirVP.xyz / rayDirVP.w);&cr;&lf;&tab;float3 ray = normalize(mul(info.rayDir, (float3x3)tWI));&cr;&lf;&tab;&cr;&lf;&tab;float3 rayPos = mul(float4(tVI[3].xyz, 1), tWI).xyz;&cr;&lf;&tab;info.camPos = tVI[3].xyz;&cr;&lf;&cr;&lf;&tab;float maxdist = -(tP[3].z / (tP[2].z - 1));&cr;&lf;&cr;&lf;&tab;float near = -tP[3].z / tP[2].z;&cr;&lf;&tab;rayPos += ray * near;&cr;&lf;&tab;float3 normal = 0;&cr;&lf;&tab;bool hit = false;&cr;&lf;&tab;float dist = 0;&cr;&lf;&tab;float total = near;&cr;&lf;&tab;float m = 0;&cr;&lf;&tab;for(int i = 0; i &lt; ITE; i++){&cr;&lf;&tab;&tab;dist = DistanceFunction(rayPos, m);&cr;&lf;&tab;&tab;&cr;&lf;&tab;&tab;if(dist &lt; mindist * max(total, 1)){ &cr;&lf;&tab;&tab;&tab;normal = normalize(max(min(getNormal(rayPos), 1), -1));&cr;&lf;&tab;&tab;&tab;normal = normalize(mul(normal, (float3x3)tW));&cr;&lf;&tab;&tab;&tab;hit = true;&cr;&lf;&cr;&lf;&tab;&tab;&tab;break;&cr;&lf;&tab;&tab;}&cr;&lf;&tab;&tab;rayPos += ray * dist * stepLength;&cr;&lf;&tab;&tab;total += dist * stepLength;&cr;&lf;&tab;&tab;if(total &gt; maxdist) break;&cr;&lf;&tab;}&cr;&lf;&tab;&cr;&lf;&tab;info.maxLoop = ITE;&cr;&lf;&tab;info.loop = i;&cr;&lf;&tab;info.totalDistance = total;&cr;&lf;&tab;info.Normal = normal;&cr;&lf;&tab;info.Material = m;&cr;&lf;&cr;&lf;&tab;float3 endPos = mul(float4(rayPos, 1), tW).xyz;&cr;&lf;&tab;info.Pos = endPos;&cr;&lf;&tab;float4 possc = mul(float4(endPos, 1), tVP);&cr;&lf;&tab;gbuffer.depth = &cr;&lf;&tab;info.Depth = possc.z / possc.w;&cr;&lf;&cr;&lf;&tab;gbuffer.depth = lerp(maxdist, gbuffer.depth, hit);&cr;&lf;&tab;&cr;&lf;&tab;PostFunction(info, o);&cr;&lf;&tab;&cr;&lf;&tab;gbuffer.color = float4((o.Albedo + o.Emission * emit) * hit, hit);&cr;&lf;&tab;gbuffer.normal = float4(normal, o.Reflectance) * hit;&cr;&lf;&tab;gbuffer.position = endPos * hit;&cr;&lf;&cr;&lf;&tab;float4 prevPosVP = mul(float4(mul(float4(rayPos, 1), ptW).xyz, 1), ptVP);&cr;&lf;&tab;float2 prevpossc = prevPosVP.xy / prevPosVP.w;&cr;&lf;&tab;float2 velxy = (possc.xy / possc.w) - prevpossc;&cr;&lf;&tab;&cr;&lf;&tab;velxy *= .5;&cr;&lf;&tab;velxy += .5;&cr;&lf;&tab;&cr;&lf;&tab;gbuffer.MRVel = float4(o.Metalness, o.Roughness, velxy) * hit;&cr;&lf;&tab;&cr;&lf;&tab;if(IsBump){&cr;&lf;&tab;&tab;float3 p_dx = ddx(gbuffer.position);&cr;&lf;&tab;&tab;float3 p_dy = ddy(gbuffer.position);&cr;&lf;&cr;&lf;&tab;&tab;float2 tc_dx = ddx(o.uv);&cr;&lf;&tab;&tab;float2 tc_dy = ddy(o.uv);&cr;&lf;&cr;&lf;&tab;&tab;float3 t = normalize( tc_dy.y * p_dx - tc_dx.y * p_dy );&cr;&lf;&tab;&tab;float3 b = normalize( tc_dy.x * p_dx - tc_dx.x * p_dy ); &cr;&lf;&cr;&lf;&tab;&tab;float3 n = normalize(normal);&cr;&lf;&tab;&tab;float3 x = cross(n, t);&cr;&lf;&tab;&tab;t = cross(x, n);&cr;&lf;&tab;&tab;t = normalize(t);&cr;&lf;&cr;&lf;&tab;&tab;x = cross(b, n);&cr;&lf;&tab;&tab;b = cross(n, x);&cr;&lf;&tab;&tab;b = normalize(b);&cr;&lf;&tab;&tab;&cr;&lf;&tab;&tab;float3 nmap = BumpTex.Sample(linearSampler, o.uv).xyz;&cr;&lf;&tab;&tab;nmap = nmap * 2.0 - 1.0;&cr;&lf;&tab;&tab;gbuffer.normal = float4(normalize(gbuffer.normal.xyz + (nmap.x * t + nmap.y * b) * bumps), o.Reflectance) * hit;&cr;&lf;&tab;}&cr;&lf;&tab;return gbuffer;&cr;&lf;}&cr;&lf;&cr;&lf;technique10 GBuffer&cr;&lf;{&cr;&lf;&tab;pass P0&cr;&lf;&tab;{&cr;&lf;&tab;&tab;SetVertexShader( CompileShader( vs_4_0, VS() ) );&cr;&lf;&tab;&tab;SetPixelShader( CompileShader( ps_4_0, PS() ) );&cr;&lf;&tab;}&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;|">
+   <PIN pinname="ConfigShader" slicecount="1" values="|#include &lt;packs\PBRRenderer\nodes\modules\fxh\Raymarch_Common.fxh&gt;&cr;&lf;#ifndef RAYMARCHCOMMON&cr;&lf;&tab;#include &lt;packs\PBRRenderer\nodes\modules\fxh\Raymarch_Common.fxh&gt;&cr;&lf;#endif&cr;&lf;//Available Uniform Parameters&cr;&lf;//&cr;&lf;//float Time&cr;&lf;//float DeltaTime&cr;&lf;//float4 Variable : User Variable Controlled on vvvv patch&cr;&lf;&cr;&lf;// 4DPolytopes Distance Estimation by Syntopia : Mikael H Christensen&cr;&lf;// https://syntopia.github.io/Polytopia/polytopes.html&cr;&lf;&cr;&lf;// Parameters from Render Semantics&cr;&lf;int deg : DEGREES; // [2 - 5]&cr;&lf;&cr;&lf;float3 rotate : ROTATION; // [0 - 1]&cr;&lf;float angle : ANGLE;  // [0 - 360]&cr;&lf;&cr;&lf;float vRad : VERTEXRADIUS; // [0 - .2]&cr;&lf;float sRad : SEGMENTRADIUS; // [0 - .2]&cr;&lf;&cr;&lf;// [0 - 1]&cr;&lf;float u : U;&cr;&lf;float v : V;&cr;&lf;float w : W;&cr;&lf;float t : T;&cr;&lf;&cr;&lf;float4 fold(float4 pos, float4 nc, float4 nd) {&cr;&lf;&tab;for(int i = 0; i &lt; 25; i++){&cr;&lf;&tab;&tab;float4 tmp = pos;&cr;&lf;&tab;&tab;pos.xy=abs(pos.xy);&cr;&lf;&tab;&tab;&cr;&lf;&tab;&tab;float t = -2. * min(0., dot(pos,nc));&cr;&lf;&tab;&tab;pos += t * nc;&cr;&lf;&tab;&tab;&cr;&lf;&tab;&tab;t = -2. * min(0., dot(pos, nd));&cr;&lf;&tab;&tab;pos += t * nd;&cr;&lf;&tab;&tab;&cr;&lf;&tab;&tab;if (tmp.x == pos.x &amp;&amp;&cr;&lf;&tab;&tab;&tab;tmp.y == pos.y &amp;&amp;&cr;&lf;&tab;&tab;&tab;tmp.z == pos.z &amp;&amp;&cr;&lf;&tab;&tab;&tab;tmp.w == pos.w) { return pos; }&cr;&lf;&tab;}&cr;&lf;&tab;return pos;&cr;&lf;}&cr;&lf;&cr;&lf;float DD(float ca, float sa, float r){&cr;&lf;&tab;//magic formula to convert from spherical distance to planar distance.&cr;&lf;&tab;//involves transforming from 3-plane to 3-sphere, getting the distance&cr;&lf;&tab;//on the sphere then going back to the 3-plane.&cr;&lf;&tab;return r-(2.*r*ca-(1.-r*r)*sa)/((1.-r*r)*ca+2.*r*sa+1.+r*r);&cr;&lf;}&cr;&lf;&cr;&lf;float dist2Vertex(float4 p, float4 z, float r, float vRadius){&cr;&lf;&tab;float ca=dot(z,p), sa=0.5*length(p-z)*length(p+z);//sqrt(1.-ca*ca);//&cr;&lf;&tab;return DD(ca,sa,r)-vRadius;&cr;&lf;}&cr;&lf;&cr;&lf;float dist2Segment(float4 p, float4 z, float4 n, float r, float sRadius){&cr;&lf;&tab;//pmin is the orthogonal projection of z onto the plane defined by p and n&cr;&lf;&tab;//then pmin is projected onto the unit sphere&cr;&lf;&tab;float zn=dot(z,n),zp=dot(z,p),np=dot(n,p);&cr;&lf;&tab;float alpha=zp-zn*np, beta=zn-zp*np;&cr;&lf;&tab;float4 pmin=normalize(alpha*p+min(0.,beta)*n);&cr;&lf;&tab;//ca and sa are the cosine and sine of the angle between z and pmin. This is the spherical distance.&cr;&lf;&tab;float ca=dot(z,pmin), sa=0.5*length(pmin-z)*length(pmin+z);//sqrt(1.-ca*ca);//&cr;&lf;&tab;float factor = 1.0;// DD(ca,sa,r)/DD(ca+0.01,sa,r);&cr;&lf;&tab;return (DD(ca,sa,r)-sRadius*factor)*min(1.0/factor,1.0);&cr;&lf;&tab;&cr;&lf;}&cr;&lf;&cr;&lf;float dist2Segments(float4 p, float4 z, float r, float4 nc, float4 nd, float srad){&cr;&lf;&tab;float da=dist2Segment(p, z, float4(1.,0.,0.,0.), r, srad);&cr;&lf;&tab;float db=dist2Segment(p, z, float4(0.,1.,0.,0.), r, srad);&cr;&lf;&tab;float dc=dist2Segment(p, z, nc, r, srad);&cr;&lf;&tab;float dd=dist2Segment(p, z, nd, r, srad);&cr;&lf;&tab;&cr;&lf;&tab;return min(min(da,db),min(dc,dd));&cr;&lf;}&cr;&lf;&cr;&lf;float DE(float4 p, float3 pos, float3x3 rot, float4 nc, float4 nd, float vrad, float srad, inout float m) {&cr;&lf;&tab;&cr;&lf;&tab;float r=length(pos);&cr;&lf;&tab;float4 z4=float4(2.*pos,1.-r*r)*1./(1.+r*r);//Inverse stereographic projection of pos: z4 lies onto the unit 3-sphere centered at 0.&cr;&lf;&tab;z4.xyw=mul(z4.xyw, rot);&cr;&lf;&tab;z4=fold(z4, nc, nd);//fold it&cr;&lf;&tab;float d=10000.;&cr;&lf;&tab;&cr;&lf;&tab;d = min(d, dist2Vertex(p, z4,r, vrad));&cr;&lf;&tab;m = 1.;&cr;&lf;&tab;&cr;&lf;&tab;float seg = dist2Segments(p, z4, r, nc, nd, srad);&cr;&lf;&tab;if(d &gt; seg){&cr;&lf;&tab;&tab;d = seg;&cr;&lf;&tab;&tab;m = 0.;&lf;&tab;}&cr;&lf;&tab;return d ;&cr;&lf;}&cr;&lf;&cr;&lf;float DistanceFunction(float3 p, inout float Material){&tab;&cr;&lf;&tab;float rotX = rotate.x;   // [0 - 1]&cr;&lf;&tab;float rotY = rotate.y;   // [0 - 1]&cr;&lf;&tab;float rotZ = rotate.z;   // [0 - 1]&cr;&lf;&tab;&cr;&lf;&tab;// init&cr;&lf;&tab;float3x3 rot;&cr;&lf;&tab;float4 nc, nd, wp;&cr;&lf;&tab;&cr;&lf;&tab;float cospin=cos(PI/float(deg)), isinpin=1./sin(PI/float(deg));&cr;&lf;&tab;float scospin=sqrt(2./3.-cospin*cospin), issinpin=1./sqrt(3.-4.*cospin*cospin);&cr;&lf;&cr;&lf;&tab;nc=0.5*float4(0,-1,sqrt(3.),0.);&cr;&lf;&tab;nd=float4(-cospin,-0.5,-0.5/sqrt(3.),scospin);&cr;&lf;&cr;&lf;&tab;float4 pabc,pbdc,pcda,pdba;&cr;&lf;&tab;pabc=float4(0.,0.,0.,1.);&cr;&lf;&tab;pbdc=0.5*sqrt(3.)*float4(scospin,0.,0.,cospin);&cr;&lf;&tab;pcda=isinpin*float4(0.,0.5*sqrt(3.)*scospin,0.5*scospin,1./sqrt(3.));&cr;&lf;&tab;pdba=issinpin*float4(0.,0.,2.*scospin,1./sqrt(3.));&cr;&lf;&tab;&cr;&lf;&tab;wp=normalize(v*pabc+u*pbdc+w*pcda+t*pdba);&cr;&lf;&cr;&lf;&tab;rot = rot3D(normalize(float3(rotX,rotY,rotZ)), PI*(angle/360.0));//in reality we need a 4D rotation&cr;&lf;&tab;&cr;&lf;    return DE(wp, p, rot, nc, nd, vRad, sRad, Material);&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;#ifndef RAYMARCHCOMMON&cr;&lf;&tab;#include &lt;packs\PBRRenderer\nodes\modules\fxh\Raymarch_Common.fxh&gt;&cr;&lf;&tab;#define DistanceFunction&cr;&lf;#endif&cr;&lf;//Available Uniform Parameters&cr;&lf;//&cr;&lf;//float Time&cr;&lf;//float DeltaTime&cr;&lf;//float4 Variable : User Variable Controlled on vvvv patch&cr;&lf;&cr;&lf;//Available Matelial Data&cr;&lf;//float4 colorTex(float2 uv)&cr;&lf;//float metalTex(float2 uv)&cr;&lf;//float roughTex(float2 uv)&cr;&lf;//float3 emissionTex(float2 uv)&cr;&lf;//float Reflectance;&cr;&lf;&cr;&lf;//struct Light{&cr;&lf;//&tab;float3 pos;&cr;&lf;//&tab;float3 amb;&cr;&lf;//&tab;float3 diff;&cr;&lf;//&tab;float4x4 VP;&cr;&lf;//};&cr;&lf;//StructuredBuffer&lt;Light&gt; lights : Light List;&cr;&lf;&cr;&lf;//Input Data Struct&cr;&lf;//struct Info{&cr;&lf;//&tab;float3 camPos;&cr;&lf;//&tab;float3 rayDir;&cr;&lf;//&tab;int maxLoop;&cr;&lf;//&tab;int loop;&cr;&lf;//  float Material&cr;&lf;//&tab;float3 Pos;&cr;&lf;//&tab;float totalDistance;&cr;&lf;//&tab;float Depth;&cr;&lf;//&tab;float3 Normal;&cr;&lf;//};&cr;&lf;&cr;&lf;//Output Data Struct&cr;&lf;//struct OutputData{&cr;&lf;//&tab;float3 Albedo;&cr;&lf;//&tab;float3 Emission;&cr;&lf;//&tab;float Metalness;&cr;&lf;//&tab;float Roughness;&cr;&lf;//&tab;float Reflectance;&cr;&lf;//&tab;&cr;&lf;//&tab;//If you want using Texturing, BumpMapping...&cr;&lf;//&tab;//Calc and output good uv coordinate.&cr;&lf;//&tab;float2 uv;&cr;&lf;//};&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;void PostFunction(Info i, inout OutputData o){&cr;&lf;&tab;//Write your own post function!!&cr;&lf;&tab;&cr;&lf;&tab;o.uv = 0;&cr;&lf;&tab;o.Albedo = lerp(colorTex(o.uv).rgb, float3(.2, .08,.15), i.Material);&cr;&lf;&tab;o.Emission = emissionTex(o.uv);&cr;&lf;&tab;o.Metalness = lerp(metalTex(o.uv), .45, i.Material);&cr;&lf;&tab;o.Roughness = roughTex(o.uv);&cr;&lf;&tab;o.Reflectance = Reflectance;&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;#if !defined(ITE)&cr;&lf;#define ITE 32&cr;&lf;#endif&cr;&lf;&cr;&lf;float EPS = 0.003;&cr;&lf;float mindist&lt;float uistep = .0001;&gt; = .0001;&cr;&lf;&cr;&lf;bool IsBump = true;&cr;&lf;float bumps&lt;string uiname = &quot;BumpMap Strength&quot;; float uimin = 0.0; float uimax = 5.0;&gt; = 1;&cr;&lf;&cr;&lf;float emit &lt;string uiname = &quot;Emission Stlength&quot;;&gt; = 1.0;&cr;&lf;float stepLength&lt;string uiname = &quot;StepLength&quot;;&gt; = 1.0;&cr;&lf;&cr;&lf;SamplerState linearSampler : IMMUTABLE&cr;&lf;{&cr;&lf;&tab;Filter = MIN_MAG_MIP_LINEAR;&cr;&lf;&tab;AddressU = Wrap;&cr;&lf;&tab;AddressV = Wrap;&cr;&lf;};&cr;&lf;&cr;&lf;cbuffer cbPerDraw : register( b0 )&cr;&lf;{&cr;&lf;&tab;float4x4 tVP : VIEWPROJECTION;&tab;&cr;&lf;&tab;float4x4 tVPI : VIEWPROJECTIONINVERSE;&cr;&lf;&tab;float4x4 tV : VIEW;&cr;&lf;&tab;float4x4 tP : PROJECTION;&cr;&lf;&tab;float4x4 tPI : PROJECTIONINVERSE;&cr;&lf;&tab;float4x4 tVI : VIEWINVERSE;&cr;&lf;&tab;float4x4 ptVP : PREVIOUSVIEWPROJECTION;&cr;&lf;&tab;float4x4 ptVPI : PREVIOUSVIEWPROJECTIONINVERSE;&cr;&lf;};&cr;&lf;&cr;&lf;cbuffer cbPerObj : register( b1 )&cr;&lf;{&cr;&lf;&tab;float4x4 tW : WORLD;&cr;&lf;&tab;float4x4 tWI : WORLDINVERSE;&cr;&lf;&tab;float4x4 ptW;&cr;&lf;};&cr;&lf;&cr;&lf;struct VS_IN&cr;&lf;{&cr;&lf;&tab;float4 PosO : POSITION;&cr;&lf;&tab;float4 TexCd : TEXCOORD0;&cr;&lf;};&cr;&lf;struct vs2ps&cr;&lf;{&cr;&lf;&tab;float4 Pos: SV_Position;&cr;&lf;&tab;float2 uv: TEXCOORD0;&cr;&lf;};&cr;&lf;&cr;&lf;struct PSout{&cr;&lf;&tab;float4 color : SV_Target0;&cr;&lf;&tab;float4 normal : SV_Target1;&cr;&lf;&tab;float4 MRVel : SV_Target2;&cr;&lf;&tab;float3 position : SV_Target3;&cr;&lf;&tab;float depth : SV_Depth;&cr;&lf;};&cr;&lf;&cr;&lf;&cr;&lf;float3 getNormal(float3 p) {&cr;&lf;    float2 e = float2(1.0, -1.0) * EPS;&cr;&lf;&tab;float d = 0;&cr;&lf;    return normalize(&cr;&lf;        e.xyy * DistanceFunction(p + e.xyy, d) +&cr;&lf;        e.yxy * DistanceFunction(p + e.yxy, d) +&cr;&lf;        e.yyx * DistanceFunction(p + e.yyx, d) +&cr;&lf;        e.xxx * DistanceFunction(p + e.xxx, d)&cr;&lf;    );&cr;&lf;}&cr;&lf;&cr;&lf;vs2ps VS(VS_IN input)&cr;&lf;{&cr;&lf;&tab;vs2ps output;&cr;&lf;&tab;output.Pos  = input.PosO;&cr;&lf;&tab;output.uv = input.TexCd.xy;&cr;&lf;&tab;return output;&cr;&lf;}&cr;&lf;&cr;&lf;PSout PS(vs2ps In){&cr;&lf;&tab;PSout gbuffer;&cr;&lf;&tab;Info info = (Info)0;&cr;&lf;&tab;OutputData o = (OutputData)0;&cr;&lf;&cr;&lf;&tab;float2 u = mul(float4(In.uv, 1, 1), texW).xy;&cr;&lf;&tab;&cr;&lf;&tab;float2 rayDir = (In.uv * 2 - 1) * float2(1, -1);&cr;&lf;&tab;float4 rayDirVP = mul(float4(rayDir, 1, 1), tVPI);&cr;&lf;&tab;&cr;&lf;&tab;info.rayDir = normalize(rayDirVP.xyz / rayDirVP.w);&cr;&lf;&tab;float3 ray = normalize(mul(info.rayDir, (float3x3)tWI));&cr;&lf;&tab;&cr;&lf;&tab;float3 rayPos = mul(float4(tVI[3].xyz, 1), tWI).xyz;&cr;&lf;&tab;info.camPos = tVI[3].xyz;&cr;&lf;&cr;&lf;&tab;float maxdist = -(tP[3].z / (tP[2].z - 1));&cr;&lf;&cr;&lf;&tab;float near = -tP[3].z / tP[2].z;&cr;&lf;&tab;rayPos += ray * near;&cr;&lf;&tab;float3 normal = 0;&cr;&lf;&tab;bool hit = false;&cr;&lf;&tab;float dist = 0;&cr;&lf;&tab;float total = near;&cr;&lf;&tab;float m = 0;&cr;&lf;&tab;for(int i = 0; i &lt; ITE; i++){&cr;&lf;&tab;&tab;dist = DistanceFunction(rayPos, m);&cr;&lf;&tab;&tab;&cr;&lf;&tab;&tab;if(dist &lt; mindist * max(total, 1)){ &cr;&lf;&tab;&tab;&tab;normal = normalize(max(min(getNormal(rayPos), 1), -1));&cr;&lf;&tab;&tab;&tab;normal = normalize(mul(normal, (float3x3)tW));&cr;&lf;&tab;&tab;&tab;hit = true;&cr;&lf;&cr;&lf;&tab;&tab;&tab;break;&cr;&lf;&tab;&tab;}&cr;&lf;&tab;&tab;rayPos += ray * dist * stepLength;&cr;&lf;&tab;&tab;total += dist * stepLength;&cr;&lf;&tab;&tab;if(total &gt; maxdist) break;&cr;&lf;&tab;}&cr;&lf;&tab;&cr;&lf;&tab;info.maxLoop = ITE;&cr;&lf;&tab;info.loop = i;&cr;&lf;&tab;info.totalDistance = total;&cr;&lf;&tab;info.Normal = normal;&cr;&lf;&tab;info.Material = m;&cr;&lf;&cr;&lf;&tab;float3 endPos = mul(float4(rayPos, 1), tW).xyz;&cr;&lf;&tab;info.Pos = endPos;&cr;&lf;&tab;float4 possc = mul(float4(endPos, 1), tVP);&cr;&lf;&tab;gbuffer.depth = &cr;&lf;&tab;info.Depth = possc.z / possc.w;&cr;&lf;&cr;&lf;&tab;gbuffer.depth = lerp(maxdist, gbuffer.depth, hit);&cr;&lf;&tab;&cr;&lf;&tab;PostFunction(info, o);&cr;&lf;&tab;&cr;&lf;&tab;gbuffer.color = float4((o.Albedo + o.Emission * emit) * hit, hit);&cr;&lf;&tab;gbuffer.normal = float4(normal, o.Reflectance) * hit;&cr;&lf;&tab;gbuffer.position = endPos * hit;&cr;&lf;&cr;&lf;&tab;float4 prevPosVP = mul(float4(mul(float4(rayPos, 1), ptW).xyz, 1), ptVP);&cr;&lf;&tab;float2 prevpossc = prevPosVP.xy / prevPosVP.w;&cr;&lf;&tab;float2 velxy = (possc.xy / possc.w) - prevpossc;&cr;&lf;&tab;&cr;&lf;&tab;velxy *= .5;&cr;&lf;&tab;velxy += .5;&cr;&lf;&tab;&cr;&lf;&tab;gbuffer.MRVel = float4(o.Metalness, o.Roughness, velxy) * hit;&cr;&lf;&tab;&cr;&lf;&tab;if(IsBump){&cr;&lf;&tab;&tab;float3 p_dx = ddx(gbuffer.position);&cr;&lf;&tab;&tab;float3 p_dy = ddy(gbuffer.position);&cr;&lf;&cr;&lf;&tab;&tab;float2 tc_dx = ddx(o.uv);&cr;&lf;&tab;&tab;float2 tc_dy = ddy(o.uv);&cr;&lf;&cr;&lf;&tab;&tab;float3 t = normalize( tc_dy.y * p_dx - tc_dx.y * p_dy );&cr;&lf;&tab;&tab;float3 b = normalize( tc_dy.x * p_dx - tc_dx.x * p_dy ); &cr;&lf;&cr;&lf;&tab;&tab;float3 n = normalize(normal);&cr;&lf;&tab;&tab;float3 x = cross(n, t);&cr;&lf;&tab;&tab;t = cross(x, n);&cr;&lf;&tab;&tab;t = normalize(t);&cr;&lf;&cr;&lf;&tab;&tab;x = cross(b, n);&cr;&lf;&tab;&tab;b = cross(n, x);&cr;&lf;&tab;&tab;b = normalize(b);&cr;&lf;&tab;&tab;&cr;&lf;&tab;&tab;float3 nmap = BumpTex.Sample(linearSampler, o.uv).xyz;&cr;&lf;&tab;&tab;nmap = nmap * 2.0 - 1.0;&cr;&lf;&tab;&tab;gbuffer.normal = float4(normalize(gbuffer.normal.xyz + (nmap.x * t + nmap.y * b) * bumps), o.Reflectance) * hit;&cr;&lf;&tab;}&cr;&lf;&tab;return gbuffer;&cr;&lf;}&cr;&lf;&cr;&lf;technique10 GBuffer&cr;&lf;{&cr;&lf;&tab;pass P0&cr;&lf;&tab;{&cr;&lf;&tab;&tab;SetVertexShader( CompileShader( vs_4_0, VS() ) );&cr;&lf;&tab;&tab;SetPixelShader( CompileShader( ps_4_0, PS() ) );&cr;&lf;&tab;}&cr;&lf;}&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;&cr;&lf;|">
    </PIN>
-   <PIN pinname="ConfigDefines" slicecount="1" values="ITE=128">
+   <PIN pinname="ConfigDefines" slicecount="1" values="ITE=64">
    </PIN>
    <PIN pinname="Time" visible="1" slicecount="1" values="0">
    </PIN>
@@ -1153,7 +1099,7 @@
    </PIN>
    <PIN pinname="Technique Valid" visible="1">
    </PIN>
-   <PIN pinname="VariableXYZW" visible="1" slicecount="4" values="0,0,0,0">
+   <PIN pinname="VariableXYZW" visible="1" slicecount="4" values="0.99,0.7,0.38,0">
    </PIN>
    <PIN pinname="StepLength" visible="1" slicecount="1" values="1">
    </PIN>
@@ -1179,8 +1125,6 @@
    <LINK srcnodeid="11" srcpinname="Output Node" dstnodeid="229" dstpinname="Transform In">
    </LINK>
    <LINK srcnodeid="209" srcpinname="Geometry Out" dstnodeid="229" dstpinname="Geometry">
-   </LINK>
-   <LINK srcnodeid="229" srcpinname="Layer" dstnodeid="65" dstpinname="Input Node">
    </LINK>
    <LINK srcnodeid="113" srcpinname="Output Node" dstnodeid="229" dstpinname="Emission Map" linkstyle="Bezier">
    <LINKPOINT x="11310" y="4140">
@@ -1266,12 +1210,6 @@
    <LINKPOINT x="18185" y="8150">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="231" srcpinname="Y Output Value" dstnodeid="229" dstpinname="VariableXYZW" linkstyle="Bezier">
-   <LINKPOINT x="13555" y="4275">
-   </LINKPOINT>
-   <LINKPOINT x="6470" y="4275">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="33" srcpinname="Output 1" dstnodeid="229" dstpinname="ptW" linkstyle="Bezier">
    <LINKPOINT x="6330" y="5063">
    </LINKPOINT>
@@ -1285,8 +1223,6 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="154" srcpinname="Output" dstnodeid="229" dstpinname="Defines">
-   </LINK>
-   <LINK srcnodeid="231" srcpinname="Y Output Value" dstnodeid="219" dstpinname="VariableXYZW" linkstyle="PolyLine">
    </LINK>
    <NODE systemname="R (Value Advanced)" filename="%VVVV%\addonpack\lib\nodes\plugins\RSNodes.dll" nodename="R (Value Advanced)" componentmode="Hidden" id="233">
    <BOUNDS type="Node" left="13350" top="3660" width="100" height="100">
@@ -1317,11 +1253,11 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="242" systemname="IOBox (String)">
-   <BOUNDS type="Box" left="13335" top="2370" width="975" height="270">
+   <BOUNDS type="Box" left="13335" top="2430" width="975" height="270">
    </BOUNDS>
-   <BOUNDS type="Node" left="13335" top="2370" width="0" height="0">
+   <BOUNDS type="Node" left="13335" top="2430" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" visible="1" values="LighCount">
+   <PIN pinname="Input String" slicecount="1" visible="1" values="LightCount">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="send">
    </PIN>
@@ -1360,7 +1296,7 @@
    </NODE>
    <LINK srcnodeid="240" srcpinname="Output" dstnodeid="241" dstpinname="Input 2">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="239">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="239" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="19890" top="1665" width="285" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="19890" top="1665" width="0" height="0">
@@ -1386,12 +1322,12 @@
    </LINK>
    <LINK srcnodeid="241" srcpinname="Output" dstnodeid="233" dstpinname="Receive String">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="243">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="243" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="14940" top="450" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="14940" top="450" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.002">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.01">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1407,5 +1343,153 @@
    </LINKPOINT>
    <LINKPOINT x="10515" y="3773">
    </LINKPOINT>
+   </LINK>
+   <NODE systemname="Semantics (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Semantics (DX11.Layer)" componentmode="Hidden" id="244">
+   <BOUNDS type="Node" left="4335" top="8310" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4335" top="8310" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Layer In" visible="1">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <PIN pinname="Custom Semantics" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Resource Semantics" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="229" srcpinname="Layer" dstnodeid="244" dstpinname="Layer In">
+   </LINK>
+   <LINK srcnodeid="244" srcpinname="Layer Out" dstnodeid="65" dstpinname="Input Node">
+   </LINK>
+   <NODE systemname="Semantics (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Semantics (DX11.Layer)" componentmode="Hidden" id="245">
+   <BOUNDS type="Node" left="11850" top="9030" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="11850" top="9030" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Layer In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer Out" visible="1">
+   </PIN>
+   <PIN pinname="Resource Semantics" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Custom Semantics" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="219" srcpinname="Layer" dstnodeid="245" dstpinname="Layer In">
+   </LINK>
+   <LINK srcnodeid="245" srcpinname="Layer Out" dstnodeid="84" dstpinname="Input Node">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="246" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="18915" top="600" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="18915" top="600" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Custom Semantics|">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="246" srcpinname="Output Node" dstnodeid="244" dstpinname="Custom Semantics" linkstyle="Bezier">
+   <LINKPOINT x="18915" y="4560">
+   </LINKPOINT>
+   <LINKPOINT x="4650" y="4560">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="247" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="19275" top="1095" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="19275" top="1095" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Resource Semantics|">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="OnlyInspector">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="247" srcpinname="Output Node" dstnodeid="244" dstpinname="Resource Semantics" linkstyle="Bezier">
+   <LINKPOINT x="19275" y="4808">
+   </LINKPOINT>
+   <LINKPOINT x="4890" y="4808">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="247" srcpinname="Output Node" dstnodeid="245" dstpinname="Resource Semantics" linkstyle="Bezier">
+   <LINKPOINT x="19260" y="5168">
+   </LINKPOINT>
+   <LINKPOINT x="12405" y="5168">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="246" srcpinname="Output Node" dstnodeid="245" dstpinname="Custom Semantics" linkstyle="Bezier">
+   <LINKPOINT x="18900" y="4928">
+   </LINKPOINT>
+   <LINKPOINT x="12165" y="4928">
+   </LINKPOINT>
+   </LINK>
+   <PACK Name="Notuiv" Version="0.2.2.0">
+   </PACK>
+   <NODE systemname="Exists (File)" nodename="Exists (File)" componentmode="Hidden" id="248">
+   <BOUNDS type="Node" left="270" top="1395" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Filename" visible="1">
+   </PIN>
+   <PIN pinname="Exists" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="163" srcpinname="Output String" dstnodeid="248" dstpinname="Filename">
+   </LINK>
+   <NODE systemname="EQ (Value)" nodename="EQ (Value)" componentmode="Hidden" id="169">
+   <BOUNDS type="Node" left="285" top="1845" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Inverse Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="248" srcpinname="Exists" dstnodeid="169" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="169" srcpinname="Inverse Output" dstnodeid="170" dstpinname="Switch">
+   </LINK>
+   <LINK srcnodeid="163" srcpinname="Output String" dstnodeid="170" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="182" srcpinname="Shader Path" dstnodeid="170" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="Exists (File)" nodename="Exists (File)" componentmode="Hidden" id="250">
+   <BOUNDS type="Node" left="2610" top="1575" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Filename" visible="1" slicecount="1" values="file.foo">
+   </PIN>
+   <PIN pinname="Exists" visible="1">
+   </PIN>
+   <PIN pinname="Read" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="EQ (Value)" nodename="EQ (Value)" componentmode="Hidden" id="249">
+   <BOUNDS type="Node" left="2595" top="2010" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Inverse Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="250" srcpinname="Exists" dstnodeid="249" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="187" srcpinname="Output String" dstnodeid="250" dstpinname="Filename">
+   </LINK>
+   <LINK srcnodeid="249" srcpinname="Inverse Output" dstnodeid="184" dstpinname="Switch">
    </LINK>
    </PATCH>

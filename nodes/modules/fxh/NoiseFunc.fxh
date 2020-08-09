@@ -303,6 +303,88 @@ float Perlin(float2 P)
 	return 2.3 * n_xy;
 }
 
+float Perlin(float3 P)
+{
+	// インデックス生成のための格子の整数部
+	float3 Pi0 = floor(P);
+	// 格子の整数部 + 1
+	float3 Pi1 = Pi0 + (float3)1.0; // Integer part + 1
+
+	Pi0 = mod289(Pi0); // インデックス並び替え処理（purmute）においての切り捨てを避けるため
+	Pi1 = mod289(Pi1); // インデックス並び替え処理（purmute）においての切り捨てを避けるため
+	// 補間のための格子の小数部
+	float3 Pf0 = frac(P);
+	// 格子の小数部 - 1
+	float3 Pf1 = Pf0 - (float3)1.0;
+	float4 ix = float4(Pi0.x, Pi1.x, Pi0.x, Pi1.x);
+	float4 iy = float4(Pi0.yy, Pi1.yy);
+	float4 iz0 = Pi0.zzzz;
+	float4 iz1 = Pi1.zzzz;
+
+	// シャッフルされた勾配のためのインデックスを計算
+	float4 ixy  = permute(permute(ix) + iy);
+	float4 ixy0 = permute(ixy + iz0);
+	float4 ixy1 = permute(ixy + iz1);
+
+	// 勾配を計算
+	// 3次元正軸体（八面体）の境界に均一に分散した点
+	float4 gx0 = ixy0 * (1.0 / 7.0);
+	float4 gy0 = frac(floor(gx0) * (1.0 / 7.0)) - 0.5;
+	gx0 = frac(gx0);
+	float4 gz0 = (float4)0.5 - abs(gx0) - abs(gy0);
+	float4 sz0 = step(gz0, (float4)0.0);
+	gx0 -= sz0 * (step(0.0, gx0) - 0.5);
+	gy0 -= sz0 * (step(0.0, gy0) - 0.5);
+
+	float4 gx1 = ixy1 * (1.0 / 7.0);
+	float4 gy1 = frac(floor(gx1) * (1.0 / 7.0)) - 0.5;
+	gx1 = frac(gx1);
+	float4 gz1 = (float4)0.5 - abs(gx1) - abs(gy1);
+	float4 sz1 = step(gz1, (float4)0.0);
+	gx1 -= sz1 * (step(0.0, gx1) - 0.5);
+	gy1 -= sz1 * (step(0.0, gy1) - 0.5);
+
+	// 勾配ベクトル
+	float3 g000 = float3(gx0.x, gy0.x, gz0.x);
+	float3 g100 = float3(gx0.y, gy0.y, gz0.y);
+	float3 g010 = float3(gx0.z, gy0.z, gz0.z);
+	float3 g110 = float3(gx0.w, gy0.w, gz0.w);
+	float3 g001 = float3(gx1.x, gy1.x, gz1.x);
+	float3 g101 = float3(gx1.y, gy1.y, gz1.y);
+	float3 g011 = float3(gx1.z, gy1.z, gz1.z);
+	float3 g111 = float3(gx1.w, gy1.w, gz1.w);
+
+	// 正規化
+	float4 norm0 = taylorInvSqrt(float4(dot(g000, g000), dot(g010, g010), dot(g100, g100), dot(g110, g110)));
+	g000 *= norm0.x;
+	g010 *= norm0.y;
+	g100 *= norm0.z;
+	g110 *= norm0.w;
+	float4 norm1 = taylorInvSqrt(float4(dot(g001, g001), dot(g011, g011), dot(g101, g101), dot(g111, g111)));
+	g001 *= norm1.x;
+	g011 *= norm1.y;
+	g101 *= norm1.z;
+	g111 *= norm1.w;
+
+	// 勾配ベクトルと各格子点から点Pへのベクトルとの内積
+	float n000 = dot(g000, Pf0);
+	float n100 = dot(g100, float3(Pf1.x, Pf0.yz));
+	float n010 = dot(g010, float3(Pf0.x, Pf1.y, Pf0.z));
+	float n110 = dot(g110, float3(Pf1.xy, Pf0.z));
+	float n001 = dot(g001, float3(Pf0.xy, Pf1.z));
+	float n101 = dot(g101, float3(Pf1.x, Pf0.y, Pf1.z));
+	float n011 = dot(g011, float3(Pf0.x, Pf1.yz));
+	float n111 = dot(g111, Pf1);
+
+	// 補間
+	float3 fade_xyz = fade(Pf0);
+	float4 n_z = lerp(float4(n000, n100, n010, n110), float4(n001, n101, n011, n111), fade_xyz.z);
+	float2 n_yz = lerp(n_z.xy, n_z.zw, fade_xyz.y);
+	float  n_xyz = lerp(n_yz.x, n_yz.y, fade_xyz.x);
+	// [-1.0～1.0]の範囲で値を返すように調整
+	return 2.2 * n_xyz;
+}
+
 float Perlin(float3 P, float3 rep)
 {
 	// インデックス生成のための格子の整数部
@@ -788,12 +870,21 @@ float fBm(float4 p, int oct, float freq, float lacun, float pers)
 }
 
 float pattern( in float2 p, int oct, float freq, float lacun, float pers)
-  {
+{
     float2 q = float2( fBm( p + float2(0.0,0.0), oct, freq, lacun, pers),
                    fBm( p + float2(5.2,1.3), oct, freq, lacun, pers));
 
     return fBm( p + 4.0*q , oct, freq, lacun, pers);
-  }
+}
+
+float pattern( in float3 p, int oct, float freq, float lacun, float pers)
+{
+    float3 q = float3( fBm( p + float3(0.0,0.0, 0.0), oct, freq, lacun, pers),
+                   fBm( p + float3(5.2,1.3,2.5), oct, freq, lacun, pers),
+									 fBm( p + float3(1.7,9.8,3.2), oct, freq, lacun, pers));
+
+    return fBm( p + 4.0*q , oct, freq, lacun, pers);
+}
 
 float fnoise(float2 p, int oct, float freq, float pers){
     float t = 0.0;
@@ -801,6 +892,27 @@ float fnoise(float2 p, int oct, float freq, float pers){
         float ffreq = pow(abs(freq), float(i));
         float amp  = pow(abs(pers), float(oct - i));
         t += valueNoise(float2(p.x / ffreq, p.y / ffreq)) * amp;
+    }
+    return t;
+}
+
+float fnoise(float3 p, int oct, float freq, float pers){
+    float t = 0.0;
+    for(int i = 0; i < oct; i++){
+        float ffreq = pow(abs(freq), float(i));
+        float amp  = pow(abs(pers), float(oct - i));
+        t += (valueNoise(float3(p.x / ffreq, p.y / ffreq, p.z / ffreq))*.5+.5) * amp;
+    }
+    return t;
+}
+
+float fnoise(float4 p, int oct, float freq, float lacun, float pers){
+    float t = 0.0;
+		float ffreq = freq;
+    for(int i = 0; i < oct; i++){
+        float amp  = pow(abs(pers), float(oct - i));
+        t += (valueNoise(float4(p.x / ffreq, p.y / ffreq, p.z / ffreq, p.w / ffreq))*.5+.5) * amp;
+				ffreq *=lacun;
     }
     return t;
 }

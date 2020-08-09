@@ -1,0 +1,115 @@
+//@author: mburk
+//@help: 
+//@tags: filter
+//@credits: http://blazelight.net/de/artikel/ssao-tutorial-deutsch.php
+
+SamplerState blurSampler : register(s0); 
+Texture2D linearDepth;
+Texture2D tex: PREVIOUS;
+Texture2D tex0: PREVIOUS;
+SamplerState s0 <bool visible=false;string uiname="Sampler";> {Filter=MIN_MAG_MIP_LINEAR;AddressU=WRAP;AddressV=WRAP;};
+float2 R:TARGETSIZE;
+
+cbuffer controls:register(b0){
+	float Factor <float uimin=0.0;float uimax=10.0;> =1.0;
+};
+
+float4 blurX(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
+	const float texelsize = 1.0f / R.x;//Als erstes ermitteln wir die horizontale Texelsize. 
+	const  uint numSamples = 9;
+	const float samplerOffsets[numSamples] = 
+	    	{ -8.0f, -6.0f, -4.0f, -2.0f, 0.0f, 2.0f, 4.0f, 6.0f, 8.0f }; 
+//			{ -6.0f, -4.0f, -2.0f, 0.0f, 2.0f, 4.0f, 6.0f}; 
+	    	//Wie bereits erwähnt überspringen wir jeden zweiten Pixel. 
+	float4 result = 0.0f; 
+	float weightSum = 0.0f;
+	    	
+	    	float compareDepth = linearDepth.Sample(blurSampler, x).r; 
+	    	//Tiefe des momentanen Pixels 
+	    	
+	    	for(uint i = 0; i < numSamples; i++) 
+	    	{ 		
+	    			float lod=log2(max(R.x,R.y));
+					float4 map=linearDepth.SampleLevel(s0,x,0);
+	    			map=max(map.x,max(map.y,map.z))*map.a;
+					lod=map.x*(Factor)*log2(max(R.x,R.y));
+					float4 c=0;
+					float2 off=.5/R*pow(2,lod)*saturate(lod);
+	    	    	float2 sampleOffset = float2(texelsize*samplerOffsets[i], 0.0f)*Factor; 
+	    	    	float2 samplePos = x + sampleOffset; 
+	    	    	//Ermittle die Sampling-Position für den Gaussian-Blur. 
+	    	    	
+	    	    	float sampleDepth = linearDepth.SampleLevel(blurSampler, samplePos, 0).r; 
+	    	    	//Hole Tiefe für den aktuellen Sample. 
+	    	    	
+	    	    	float weight = (1.0f / (0.0001f + abs(compareDepth - sampleDepth))); 
+	    	    	//Berechne bilaterale Wichtung für den aktuellen Sample, je größer die Entfernung 
+	    	    	//vom momentanen Sample zum Quellsample, desto kleiner die Wichtung. 
+	    	    	//0.0001 wird addiert um ein teilen durch 0 zu verhindern. 
+	    	    	
+	    	    	result += tex.Sample(blurSampler, samplePos)*weight;
+	    	    	//Sample den Punkt und wichte ihn. 
+	    	    	
+	    	    	weightSum += weight; 
+	    	    	//Addiere die Wichtung, damit später der Durchschnitt ermittelt werden kann. 
+	    	} 
+	    	result /= weightSum; 
+	    	//Ermittle den Durchschnitt durch das Teilen durch die Wichtungssumme. 
+		
+			
+	
+	return result;
+}
+
+float4 blurY(float4 PosWVP:SV_POSITION,float2 x:TEXCOORD0):SV_TARGET{
+	const float texelsize = 1.0f / R.x;//Als erstes ermitteln wir die horizontale Texelsize. 
+	const  uint numSamples = 9;
+	const float samplerOffsets[numSamples] = 
+	    	{ -8.0f, -6.0f, -4.0f, -2.0f, 0.0f, 2.0f, 4.0f, 6.0f, 8.0f};
+//			{ -6.0f, -4.0f, -2.0f, 0.0f, 2.0f, 4.0f, 6.0f}; 
+	    	//Wie bereits erwähnt überspringen wir jeden zweiten Pixel. 
+	float4 result = 0.0f; 
+	float weightSum = 0.0f;
+	    	
+	    	float compareDepth = linearDepth.Sample(blurSampler, x).r; 
+	    	//Tiefe des momentanen Pixels 
+	    	
+	    	for(uint i = 0; i < numSamples; i++) 
+	    	{ 		
+	    			
+	    	    	float2 sampleOffset = float2(0.0f, texelsize*samplerOffsets[i])*Factor; 
+	    	    	float2 samplePos = x + sampleOffset; 
+	    	    	//Ermittle die Sampling-Position für den Gaussian-Blur. 
+	    	    	
+	    	    	float sampleDepth = linearDepth.SampleLevel(blurSampler, samplePos, 0).r; 
+	    	    	//Hole Tiefe für den aktuellen Sample. 
+	    	    	
+	    	    	float weight = (1.0f / (0.0001f + abs(compareDepth - sampleDepth))); 
+	    	    	//Berechne bilaterale Wichtung für den aktuellen Sample, je größer die Entfernung 
+	    	    	//vom momentanen Sample zum Quellsample, desto kleiner die Wichtung. 
+	    	    	//0.0001 wird addiert um ein teilen durch 0 zu verhindern. 
+	    	    	
+	    	    	result += tex.Sample(blurSampler, samplePos)*weight; 
+	    	    	//Sample den Punkt und wichte ihn. 
+	    	    	
+	    	    	weightSum += weight; 
+	    	    	//Addiere die Wichtung, damit später der Durchschnitt ermittelt werden kann. 
+	    	} 
+	    	result /= weightSum; 
+	    	//Ermittle den Durchschnitt durch das Teilen durch die Wichtungssumme. 
+		
+			
+	
+	return result;
+}
+
+
+technique10 RGB{
+	pass P1{SetPixelShader(CompileShader(ps_4_0,blurX()));}
+	pass P2{SetPixelShader(CompileShader(ps_4_0,blurY()));}
+//	pass P3{SetPixelShader(CompileShader(ps_4_0,blurX()));}
+//	pass P4{SetPixelShader(CompileShader(ps_4_0,blurY()));}
+//	pass P5{SetPixelShader(CompileShader(ps_4_0,blurX()));}
+//	pass P6{SetPixelShader(CompileShader(ps_4_0,blurY()));}
+}
+

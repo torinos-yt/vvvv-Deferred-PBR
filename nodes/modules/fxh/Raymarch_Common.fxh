@@ -5,8 +5,6 @@
 float Time<bool visible = false;> = 0;
 float DeltaTime<bool visible = false;> = 0;
 
-float4 Variable<bool visible = false;>;
-
 Texture2D ColorTex <string uiname="Texture"; bool visible = false;>;
 Texture2D BumpTex <string uiname="Bump Texture"; bool visible = false;>;
 Texture2D MetalnessTex <string uiname = "Metalness Map"; bool visible = false;>;

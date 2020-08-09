@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\nodes\modules\AsLight.v4p" systemname="AsLight" filename="F:\vvvv\work\PBRRenderer\modules\AsLight.v4p">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta39.dtd" >
+   <PATCH nodename="F:\vvvv\vvvv_beta_39_x64\packs\PBRRenderer\nodes\modules\AsLight.v4p" systemname="AsLight" filename="F:\vvvv\work\PBRRenderer\modules\AsLight.v4p">
    <NODE systemname="DynamicBuffer (DX11.Buffer Custom)" filename="%VVVV%\packs\mp.dx\nodes\plugins\DX11Utils\x64\DX11Utils.dll" nodename="DynamicBuffer (DX11.Buffer Custom)" componentmode="Hidden" id="0">
    <BOUNDS type="Node" left="1800" top="2655" width="100" height="100">
    </BOUNDS>
@@ -100,7 +100,7 @@
    </PACK>
    <PACK Name="ÎmagePack" Version="0.2.0">
    </PACK>
-   <PACK Name="addonpack" Version="38.1.0">
+   <PACK Name="addonpack" Version="39.0.0">
    </PACK>
    <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="8">
    <BOUNDS type="Node" left="2910" top="2145" width="100" height="100">
@@ -116,7 +116,7 @@
    </LINK>
    <LINK srcnodeid="8" srcpinname="Output" dstnodeid="0" dstpinname="Apply">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="10">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="10" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="3510" top="540" width="480" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="3510" top="540" width="0" height="0">
@@ -174,7 +174,7 @@
    </LINK>
    <LINK srcnodeid="8" srcpinname="Output" dstnodeid="12" dstpinname="Apply">
    </LINK>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="13">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="13" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="3765" top="3240" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="3765" top="3240" width="0" height="0">
@@ -196,7 +196,7 @@
    </LINK>
    <LINK srcnodeid="14" srcpinname="Output" dstnodeid="12" dstpinname="Data">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="15">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="15" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="4155" top="2295" width="285" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="4155" top="2295" width="0" height="0">

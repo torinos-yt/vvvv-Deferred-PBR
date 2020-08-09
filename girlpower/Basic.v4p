@@ -117,7 +117,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="2340" top="10755" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="9765" top="0" width="13890" height="8235">
+   <BOUNDS type="Window" left="19035" top="2280" width="13890" height="8235">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1">
    </PIN>
@@ -335,7 +335,7 @@
    </PIN>
    <BOUNDS type="Node" left="2340" top="9300" width="3135" height="270">
    </BOUNDS>
-   <BOUNDS type="Window" left="0" top="765" width="19185" height="14100">
+   <BOUNDS type="Window" left="1665" top="180" width="19185" height="14100">
    </BOUNDS>
    <PIN pinname="IBL Sample" visible="-1" pintype="Input" slicecount="1" values="4">
    </PIN>

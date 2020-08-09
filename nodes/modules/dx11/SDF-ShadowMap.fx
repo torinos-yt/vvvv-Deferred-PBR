@@ -24,6 +24,7 @@ SamplerState linearSampler : IMMUTABLE
 
 StructuredBuffer<float4x4> tVPI : LIGHTVIEWPROJECTIONINVERSE;
 int vpindex;
+bool Directional = false;
  
 cbuffer cbPerDraw : register( b0 )
 {
@@ -86,7 +87,7 @@ psShadow PS(vs2ps In)
 	for(int i = 0; i < ITE; i++){
 		dist = DistanceFunction(rayPos, id);
 		
-		if(dist < mindist * max(total, 1)){ 
+		if(dist < mindist * max(1, total)){ 
 			alpha = 1;
 			
 			break;
@@ -105,11 +106,14 @@ psShadow PS(vs2ps In)
 	
 	col.r = ldist - shadowBias;
 	col.g = ldist * ldist;
-	o.Shadowmap = col * alpha;
+	o.Shadowmap = col*alpha;
+	//o.Shadowmap = lerp(maxdist, col ,alpha);
+
 
 	rayPos = mul(float4(rayPos, 1), tW).xyz;
 	float4 possc = mul(float4(rayPos, 1), lights[vpindex].VP);
 	o.Depth = possc.z / possc.w;
+	o.Depth = lerp(1, o.Depth, alpha);
 
 	return o;
 }

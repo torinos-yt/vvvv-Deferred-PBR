@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\nodes\modules\ShaderWatcher (DX11 Shader).v4p" scrollx="0" scrolly="0" systemname="ShaderWatcher (DX11 Shader)" filename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\nodes\modules\ShaderWatcher (DX11 Shader).v4p">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta39.dtd" >
+   <PATCH nodename="F:\vvvv\vvvv_beta_39_x64\packs\PBRRenderer\nodes\modules\ShaderWatcher (DX11 Shader).v4p" scrollx="0" scrolly="0" systemname="ShaderWatcher (DX11 Shader)" filename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\nodes\modules\ShaderWatcher (DX11 Shader).v4p">
    <BOUNDS type="Window" left="2265" top="1005" width="7215" height="7935">
    </BOUNDS>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="12" systemname="IOBox (String)">
@@ -48,7 +48,7 @@
    </PACK>
    <PACK Name="VVVV.Packs" Version="0.2.0">
    </PACK>
-   <PACK Name="addonpack" Version="38.1.0">
+   <PACK Name="addonpack" Version="39.0.0">
    </PACK>
    <NODE systemname="AsString (Raw)" nodename="AsString (Raw)" componentmode="Hidden" id="61">
    <BOUNDS type="Node" left="2085" top="4305" width="100" height="100">

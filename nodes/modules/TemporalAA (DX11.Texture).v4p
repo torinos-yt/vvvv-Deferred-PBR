@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="F:\vvvv\work\PBRRenderer\modules\TemporalAA (DX11.Texture).v4p" systemname="TemporalAA (DX11.Texture)" filename="F:\vvvv\work\PBRRenderer\modules\TemporalAA (DX11.Texture).v4p">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta39.dtd" >
+   <PATCH nodename="F:\vvvv\vvvv_beta_39_x64\packs\PBRRenderer\nodes\modules\TemporalAA (DX11.Texture).v4p" systemname="TemporalAA (DX11.Texture)" filename="F:\vvvv\work\PBRRenderer\modules\TemporalAA (DX11.Texture).v4p">
    <NODE systemname="FrameDelay (DX11.Texture 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="FrameDelay (DX11.Texture 2d)" componentmode="Hidden" id="1">
    <BOUNDS type="Node" left="5355" top="3225" width="100" height="100">
    </BOUNDS>
@@ -10,7 +10,7 @@
    <PIN pinname="Texture Out" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="GenRandomOffset (Value)" filename="vl\VVVV.Value.GenRandomOffset.vl" nodename="GenRandomOffset (Value)" componentmode="Hidden" id="2">
+   <NODE systemname="GenRandomOffset (Value)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\vl\VVVV.Value.GenRandomOffset.vl" nodename="GenRandomOffset (Value)" componentmode="Hidden" id="2">
    <BOUNDS type="Node" left="3315" top="1695" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Jitter SpreadXY" slicecount="2" visible="1" values="0.3,0.3">
@@ -34,7 +34,7 @@
    <BOUNDS type="Node" left="300" top="3690" width="750" height="240">
    </BOUNDS>
    </NODE>
-   <BOUNDS type="Window" left="4125" top="4920" width="9405" height="4860">
+   <BOUNDS type="Window" left="4230" top="690" width="9405" height="5145">
    </BOUNDS>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="7" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="3315" top="735" width="795" height="480">
@@ -52,6 +52,8 @@
    <PIN pinname="Rows" slicecount="1" values="2">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Jitter SpreadXY|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="7" srcpinname="Y Output Value" dstnodeid="2" dstpinname="Jitter SpreadXY">
@@ -112,9 +114,9 @@
    </PACK>
    <PACK Name="ÎmagePack" Version="0.2.0">
    </PACK>
-   <PACK Name="addonpack" Version="38.1.0">
+   <PACK Name="addonpack" Version="39.0.0">
    </PACK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="11">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="11" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="4350" top="1245" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="4350" top="1245" width="0" height="0">
@@ -128,7 +130,7 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="|Velocity Weight Factor|">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="12">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="12" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="7380" top="450" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="7380" top="450" width="0" height="0">
@@ -138,7 +140,7 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="|Resource Semantics|">
    </PIN>
    </NODE>
-   <NODE systemname="TemporalAA (DX11.TextureFX)" filename="texture11\TemporalAA.tfx" nodename="TemporalAA (DX11.TextureFX)" componentmode="Hidden" id="0">
+   <NODE systemname="TemporalAA (DX11.TextureFX)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\texture11\TemporalAA.tfx" nodename="TemporalAA (DX11.TextureFX)" componentmode="Hidden" id="0">
    <BOUNDS type="Node" left="300" top="2280" width="8145" height="270">
    </BOUNDS>
    <PIN pinname="Texture Out" visible="1">
@@ -189,5 +191,31 @@
    <LINK srcnodeid="11" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Velocity Weight Factor">
    </LINK>
    <LINK srcnodeid="12" srcpinname="Output Node" dstnodeid="0" dstpinname="Resource Semantics">
+   </LINK>
+   <NODE id="14" systemname="S (Value Advanced)" filename="%VVVV%\addonpack\lib\nodes\plugins\RSNodes.dll" nodename="S (Value Advanced)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <BOUNDS type="Node" left="3330" top="3660" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" pintype="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Send String" slicecount="1" pintype="Input" visible="1" values="ProjectionJitter">
+   </PIN>
+   <BOUNDS type="Box" left="0" top="0" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="0" top="0" width="6000" height="4500">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Tag" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Display Channel" pintype="Configuration" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Evaluate" pintype="Input" visible="-1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Window Handle" pintype="Output">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="OutputXY" dstnodeid="14" dstpinname="Input">
    </LINK>
    </PATCH>

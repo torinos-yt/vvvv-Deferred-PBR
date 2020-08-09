@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\nodes\modules\CamTransfromPool.v4p" systemname="CamTransfromPool" filename="F:\vvvv\contributions\modules\CamTransfromPool.v4p" scrollx="0" scrolly="-360">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta39.dtd" >
+   <PATCH nodename="F:\vvvv\vvvv_beta_39_x64\packs\PBRRenderer\nodes\modules\CamTransfromPool.v4p" systemname="CamTransfromPool" filename="F:\vvvv\contributions\modules\CamTransfromPool.v4p" scrollx="0" scrolly="-360">
    <NODE systemname="FrameDelay (Transform)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="FrameDelay (Transform)" componentmode="Hidden" id="0">
    <BOUNDS type="Node" left="1605" top="6675" width="100" height="100">
    </BOUNDS>
@@ -154,7 +154,7 @@
    <LINKPOINT x="5955" y="1103">
    </LINKPOINT>
    </LINK>
-   <BOUNDS type="Window" left="6960" top="3690" width="9405" height="8985">
+   <BOUNDS type="Window" left="3090" top="3375" width="9405" height="8985">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
    </PACK>
@@ -164,7 +164,7 @@
    </PACK>
    <PACK Name="ÎmagePack" Version="0.2.0">
    </PACK>
-   <PACK Name="addonpack" Version="38.1.0">
+   <PACK Name="addonpack" Version="39.0.0">
    </PACK>
    <PACK Name="VVVV.Packs.Image" Version="0.2.0">
    </PACK>
@@ -174,7 +174,7 @@
    <LINKPOINT x="4395" y="6570">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="14">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="14" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="3375" top="7530" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="3375" top="7530" width="0" height="0">
@@ -195,7 +195,7 @@
    </BOUNDS>
    <PIN pinname="OutputXY" visible="1">
    </PIN>
-   <PIN pinname="Jitter SpreadXY" slicecount="2" values="0.45,0.45" visible="1">
+   <PIN pinname="Jitter SpreadXY" slicecount="2" visible="1" values="0.45,0.45">
    </PIN>
    </NODE>
    <NODE systemname="GetMatrix (Transform)" nodename="GetMatrix (Transform)" componentmode="Hidden" id="23">
@@ -264,12 +264,12 @@
    <LINKPOINT x="3555" y="1748">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="25">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="25" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="4485" top="360" width="795" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="4485" top="360" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="1,1">
+   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="0.1,0.1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>

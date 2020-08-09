@@ -6,7 +6,6 @@
 //
 //float Time
 //float DeltaTime
-//float4 Variable : User Variable Controlled on vvvv patch
 
 //Available Matelial Data
 //float4 colorTex(float2 uv)

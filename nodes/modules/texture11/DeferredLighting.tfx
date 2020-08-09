@@ -153,6 +153,27 @@ float3 DiffuseIBL(float3 albedo, float3 N){
 	return Irradiance * albedo;
 }
 
+float ApproximateOcclusionfromConeIntersection(float specLobeAngle, float visibleAngle, float angle){
+	float AngleDifference = abs(specLobeAngle - visibleAngle);
+	float Intersection = saturate( (angle - AngleDifference) / (specLobeAngle + visibleAngle - AngleDifference) );
+	
+	float Occlusion = smoothstep(0, 1, 1 - Intersection);
+	
+	return Occlusion;
+}
+
+float SpecularOcclusion(float3 BentNormal, float3 ReflectDir, float Roughness, float AO){
+	float BentnormLength = length(BentNormal);
+	float SpecularLobeAngle = max(Roughness, .1) * PI; 
+	float VisibilityAngle = BentnormLength * PI * AO;
+	
+	float AngleBetween = acos(dot(BentNormal, ReflectDir));
+	float SpecularOcclusion = ApproximateOcclusionfromConeIntersection(SpecularLobeAngle, VisibilityAngle, AngleBetween);
+	SpecularOcclusion = lerp(0, SpecularOcclusion, saturate((VisibilityAngle - 0.1) * 5));
+	
+	return SpecularOcclusion;
+}
+
 struct psInput{
 	float4 p : SV_Position;
 	float2 uv : TEXCOORD0;
@@ -210,8 +231,12 @@ float4 PS(psInput input) : SV_Target{
 	float3 bentN = bentnorm.Sample(linearSampler, input.uv).rgb;
 	bentN = lerp(N.xyz, bentN, bent);
 	
+	// Specular Occlusion
+	float SO = max(SpecularOcclusion(bentN, reflect(N.xyz, V), Roughness, ao), .15);
+	SO = lerp(1, SO, bent);
+	
 	float3 IBL = DiffuseIBL(albedo.xyz, bentN);
-	IBL = (kD * IBL * iblint.x + ApproximateSpecularIBL(F0, Roughness, N.xyz, V) * iblint.y);
+	IBL = (kD * IBL * iblint.x + ApproximateSpecularIBL(F0, Roughness, N.xyz, V) * iblint.y * SO);
 	
 	lighting += IBL * lerp(albedo.xyz*.25, 1, ao);
 	lighting = min(lighting, 100) * albedo.a + emissive;

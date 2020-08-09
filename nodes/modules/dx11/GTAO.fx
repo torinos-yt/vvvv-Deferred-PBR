@@ -38,7 +38,7 @@ aoout PS_AO(psInput input){
 	float depth;
 	float4 GTAO = gtao(normal, input.uv, NumCircle, NumSlice, depth);
 	ao.ao = float4(Multibounce(GTAO.w, albedo.xyz).xxx, 1.0);
-	ao.bentNormal = float4(normalize(mul(GTAO.xyz*float3(1,-1,1), (float3x3)tIV)), 1.0);
+	ao.bentNormal = float4(mul(GTAO.xyz*float3(1,-1,1), (float3x3)tIV), 1.0);
 	ao.depth = depth;
 	return ao;
 }

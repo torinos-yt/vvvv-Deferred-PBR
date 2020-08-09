@@ -1,10 +1,12 @@
-#ifndef GBUFFERCOMMON
-	#include <packs\PBRRenderer\nodes\modules\fxh\GBuffer_Common.fxh>
+#ifndef RAYMARCHCOMMON
+	#include <packs\PBRRenderer\nodes\modules\fxh\Raymarch_Common.fxh>
+	#define DistanceFunction
 #endif
 //Available Uniform Parameters
 //
 //float Time
 //float DeltaTime
+//float4 Variable : User Variable Controlled on vvvv patch
 
 //Available Matelial Data
 //float4 colorTex(float2 uv)
@@ -23,13 +25,15 @@
 
 //Input Data Struct
 //struct Info{
-//	float3 Pos;
-//  float2 posScreen;
 //	float3 camPos;
+//	float3 rayDir;
+//	int maxLoop;
+//	int loop;
+//  float Material
+//	float3 Pos;
+//	float totalDistance;
+//	float Depth;
 //	float3 Normal;
-//  float2 uv;
-//  float2 Velocity;
-//  float3 vertexColor; : if vertex color is none : vertexColor = 1.0;
 //};
 
 //Output Data Struct
@@ -40,18 +44,21 @@
 //	float Roughness;
 //	float Reflectance;
 //	
-//	float2 uv; : Already Set Model Texture Coordinate
+//	//If you want using Texturing, BumpMapping...
+//	//Calc and output good uv coordinate.
+//	float2 uv;
 //};
 
 
 
 void PostFunction(Info i, inout OutputData o){
 	//Write your own post function!!
-
-	o.Albedo = colorTex(i.uv).rgb * i.vertexColor;
-	o.Emission = emissionTex(i.uv);
-	o.Metalness = metalTex(i.uv);
-	o.Roughness = roughTex(i.uv);
+	
+	o.uv = 0;
+	o.Albedo = lerp(colorTex(o.uv).rgb, float3(.2, .08,.15), i.Material);
+	o.Emission = emissionTex(o.uv);
+	o.Metalness = lerp(metalTex(o.uv), .45, i.Material);
+	o.Roughness = roughTex(o.uv);
 	o.Reflectance = Reflectance;
 }
 

@@ -1,6 +1,3 @@
-StructuredBuffer<float3> prevPos;
-bool vvel = false;
-
 bool IsBump = true;
 float bumps<string uiname = "BumpMap Strength"; float uimin = 0.0; float uimax = 5.0;> = 1;
 
@@ -39,6 +36,9 @@ struct VS_IN
 	#if USECOLOR
 		float3 color : COLOR;
 	#endif
+	#if USEVELOCITY
+		float3 velocity : VELOCITY;
+	#endif
 };
 
 struct VS_INTNB
@@ -49,6 +49,9 @@ struct VS_INTNB
 	uint vid : SV_VertexID;
 	#if USECOLOR
 		float3 color : COLOR;
+	#endif
+	#if USEVELOCITY
+		float3 velocity : VELOCITY;
 	#endif
 };
 
@@ -90,7 +93,10 @@ vs2ps VS(VS_IN input)
 	output.PosWVP  = mul(input.PosO,mul(tW,tVP));
 	float4 PosW = mul(input.PosO, tW);
 	
-	float4 velpos = lerp(input.PosO, float4(prevPos[input.vid], 1), vvel);
+	float4 velpos = input.PosO;
+	#if USEVELOCITY
+		velpos -= float4(input.velocity, 0);
+	#endif
 	float4 velocity = mul(velpos, ptW);
 	output.PosW = PosW;
 	
@@ -113,7 +119,10 @@ vs2pstnb VS_TNB(VS_INTNB input)
 	output.PosWVP  = mul(input.PosO,mul(tW,tVP));
 	float4 PosW = mul(input.PosO, tW);
 	
-	float4 velpos = lerp(input.PosO, float4(prevPos[input.vid], 1), vvel);
+	float4 velpos = input.PosO;
+	#if USEVELOCITY
+		velpos -= float4(input.velocity, 0);
+	#endif
 	float4 velocity = mul(velpos, ptW);
 	output.PosW = PosW;
 	

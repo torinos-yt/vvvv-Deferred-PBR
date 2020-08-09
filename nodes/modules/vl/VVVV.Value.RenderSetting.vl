@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="GB2VxUl5VdhM5rsl5IbjQg" Version="0.94">
+<Document xmlns:p="property" Id="GB2VxUl5VdhM5rsl5IbjQg" LanguageVersion="2019.1.0-0959-g3a31ab0c51" Version="0.128">
   <NugetDependency Id="RKFCmk1Lg5EP3I4IQegLTw" Location="VL.CoreLib" Version="0.35.21" />
   <NugetDependency Id="U2JwHqMJLyGLDs97lM6eZ6" Location="VL.CoreLib.VVVV" Version="0.35.21" />
   <Patch Id="Th8hpfHvBF4Lk6VOwDCc9D">
@@ -33,7 +33,7 @@
             </Pin>
           </Patch>
           <Canvas Id="C4yd3S6BFv9NWqJ2WO3OFi" CanvasType="Group">
-            <Pad Id="Sd2KdFrCmemOMHt2oVkzTO" Bounds="1,2967,1254,70" ShowValueBox="true" isIOBox="true" Value="Grain Setting-------------------------------------------------">
+            <Pad Id="Sd2KdFrCmemOMHt2oVkzTO" Bounds="1,2939,1254,70" ShowValueBox="true" isIOBox="true" Value="Grain Setting-------------------------------------------------">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
@@ -135,7 +135,7 @@
               <p:ValueBoxSettings />
             </Pad>
             <ControlPoint Id="Qn38GcenJzlOmgKadPrr9w" Bounds="1428,334" />
-            <Pad Id="SbmZDCEeanXMEOZ1I7eEyn" Bounds="152,277,1243,48" ShowValueBox="true" isIOBox="true" Value="AO Setting-------------------------------------------------">
+            <Pad Id="SbmZDCEeanXMEOZ1I7eEyn" Bounds="152,260,1243,48" ShowValueBox="true" isIOBox="true" Value="AO Setting-------------------------------------------------">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
@@ -306,7 +306,7 @@
         </p:NodeReference>
         <Patch Id="UOdJFYYAwV0ObEVk3e6h8B">
           <Canvas Id="N8P0HsVKjGDNLeWXMfT3gY" CanvasType="Group">
-            <Pad Id="RvzwJh1muRwL00gqP06QAU" Bounds="222,308,1243,48" ShowValueBox="true" isIOBox="true" Value="DoF Setting-------------------------------------------------">
+            <Pad Id="RvzwJh1muRwL00gqP06QAU" Bounds="222,291,1243,48" ShowValueBox="true" isIOBox="true" Value="DoF Setting-------------------------------------------------">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
@@ -501,7 +501,7 @@
         </p:NodeReference>
         <Patch Id="NnPONhJcE7bPaVqkf7EY47">
           <Canvas Id="EjvRVMSnM1hMDP7Exf78KO" CanvasType="Group">
-            <Pad Id="GowTXlYUnNLOxHouyBjhWS" Bounds="223,314,1254,70" ShowValueBox="true" isIOBox="true" Value="Bloom Setting-------------------------------------------------">
+            <Pad Id="GowTXlYUnNLOxHouyBjhWS" Bounds="223,286,1254,70" ShowValueBox="true" isIOBox="true" Value="Bloom Setting-------------------------------------------------">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
@@ -612,7 +612,7 @@
         </p:NodeReference>
         <Patch Id="KptYNSb9f92NIcWJoHL6cV">
           <Canvas Id="BClgutrVCFjLsWobC8IKNJ" CanvasType="Group">
-            <Pad Id="Nd8fxcZLR8GPWINpyuDpLg" Bounds="247,368,1243,48" ShowValueBox="true" isIOBox="true" Value="TAA Setting-------------------------------------------------">
+            <Pad Id="Nd8fxcZLR8GPWINpyuDpLg" Bounds="247,351,1243,48" ShowValueBox="true" isIOBox="true" Value="TAA Setting-------------------------------------------------">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
@@ -723,7 +723,7 @@
         </p:NodeReference>
         <Patch Id="VlCyn5HyPGRMQWqaLnEIeD">
           <Canvas Id="MBpWRSZRPxiPLhZd5wDrgO" CanvasType="Group">
-            <Pad Id="JF2xD7269cfNtOeE4QnE4u" Bounds="198,445,1254,70" ShowValueBox="true" isIOBox="true" Value="Motion Blur Setting-------------------------------------------------">
+            <Pad Id="JF2xD7269cfNtOeE4QnE4u" Bounds="198,417,1254,70" ShowValueBox="true" isIOBox="true" Value="Motion Blur Setting-------------------------------------------------">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
@@ -866,7 +866,7 @@
         </p:NodeReference>
         <Patch Id="PCVi30zCSGnPswI9bFoLSx">
           <Canvas Id="M0gXCMfCELrQIdc64C4mU9" CanvasType="Group">
-            <Pad Id="FcDpfQzyY6AN2Lcrpy4wMw" Bounds="520,402,1254,70" ShowValueBox="true" isIOBox="true" Value="Vignette Setting-------------------------------------------------">
+            <Pad Id="FcDpfQzyY6AN2Lcrpy4wMw" Bounds="520,374,1254,70" ShowValueBox="true" isIOBox="true" Value="Vignette Setting-------------------------------------------------">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
@@ -961,7 +961,7 @@
         </p:NodeReference>
         <Patch Id="DV5jtXo5plVNKrp4zTbXYS">
           <Canvas Id="PUppDD95rG8MO3SRscoTeF" CanvasType="Group">
-            <Pad Id="NvCzDrf1QUPLXqQRZIBAQg" Bounds="574,504,1254,70" ShowValueBox="true" isIOBox="true" Value="Tonemap Setting-------------------------------------------------">
+            <Pad Id="NvCzDrf1QUPLXqQRZIBAQg" Bounds="574,476,1254,70" ShowValueBox="true" isIOBox="true" Value="Tonemap Setting-------------------------------------------------">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
@@ -1044,7 +1044,7 @@
         </p:NodeReference>
         <Patch Id="EQ1M5MCgaQZNUnJHgtx8mV">
           <Canvas Id="QQhK3aPJ1Z9NdWM9zsFlYk" CanvasType="Group">
-            <Pad Id="TcRrar7oU9pQQQc2wqq0vL" Bounds="464,431,1254,70" ShowValueBox="true" isIOBox="true" Value="Color Correction Setting-------------------------------------------------">
+            <Pad Id="TcRrar7oU9pQQQc2wqq0vL" Bounds="464,403,1254,70" ShowValueBox="true" isIOBox="true" Value="Color Correction Setting-------------------------------------------------">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
@@ -1155,7 +1155,7 @@
         </p:NodeReference>
         <Patch Id="F8BhO8Fj0PgMYHFguC2vFH">
           <Canvas Id="KYVe0I2iYTCQUbAgQzoDA9" CanvasType="Group">
-            <Pad Id="UCo3lhUf28AQJXkDWwqN3r" Bounds="585,296,1254,70" ShowValueBox="true" isIOBox="true" Value="Choromatic Abberation Setting-------------------------------------------------">
+            <Pad Id="UCo3lhUf28AQJXkDWwqN3r" Bounds="585,268,1254,70" ShowValueBox="true" isIOBox="true" Value="Choromatic Abberation Setting-------------------------------------------------">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="String" />
               </p:TypeAnnotation>
@@ -1269,6 +1269,11 @@
             </Pad>
             <ControlPoint Id="P9fwU5HwVQ9Px4pMUeMvs6" Bounds="206,137" />
             <ControlPoint Id="M51IIbxVlCsOOpVH29mC9W" Bounds="206,352" />
+            <Pad Id="VNNdi81oUeiQSCL3JekzQl" SlotId="UOfiBk9uqi9MyH77TIJRqX" Bounds="1658,239">
+              <p:ValueBoxSettings />
+            </Pad>
+            <ControlPoint Id="IdxORX9pjYDPiNHRUW9i5t" Bounds="1658,134" />
+            <ControlPoint Id="G9mX8LfAKhTMMoEjAJzjaq" Bounds="1666,352" />
           </Canvas>
           <Patch Id="NpnwyYEvZGmP8CzW7hsRpp" Name="Create">
             <Pin Id="HpIl3k7ZnQpPV2CWvPv6lt" Name="GTAO" Kind="InputPin">
@@ -1319,6 +1324,11 @@
             <Pin Id="DRNXErV4MelOC4RVXj2ZC3" Name="Grain" Kind="InputPin">
               <p:TypeAnnotation>
                 <Choice Kind="TypeFlag" Name="Grain" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="V7grW6kcJhNMDtPgZsU2DI" Name="Volumetric" Kind="InputPin">
+              <p:TypeAnnotation>
+                <Choice Kind="TypeFlag" Name="VolumetricLight" />
               </p:TypeAnnotation>
             </Pin>
           </Patch>
@@ -1387,7 +1397,17 @@
             <Pin Id="R5QEStVZIXrPeNCOU9SqrX" Name="Vignette" Kind="OutputPin" />
             <Pin Id="ULx4Use0RiBOTTpuORxdSi" Name="ChoromaticAbberation" Kind="OutputPin" />
             <Pin Id="POSekxt7QZgNmv0e1z02ka" Name="Grain" Kind="OutputPin" />
+            <Pin Id="HJ5NZSDOoJ5Oiabn4EiVa1" Name="Volumetric" Kind="OutputPin" />
           </Patch>
+          <Slot Id="UOfiBk9uqi9MyH77TIJRqX" Name="Volumetric">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="VolumetricLight" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="F7JyYwilEBINWbT0z2IlGh" Ids="IdxORX9pjYDPiNHRUW9i5t,VNNdi81oUeiQSCL3JekzQl" />
+          <Link Id="AlfxeNdEqz3Nt5poyK6Zv1" Ids="V7grW6kcJhNMDtPgZsU2DI,IdxORX9pjYDPiNHRUW9i5t" IsHidden="true" />
+          <Link Id="K7b3m2I41KOLhCohJroPKD" Ids="VNNdi81oUeiQSCL3JekzQl,G9mX8LfAKhTMMoEjAJzjaq" />
+          <Link Id="Ul8CmKb8yzcMPtETDVRhGl" Ids="G9mX8LfAKhTMMoEjAJzjaq,HJ5NZSDOoJ5Oiabn4EiVa1" IsHidden="true" />
         </Patch>
       </Node>
       <!--
@@ -1401,10 +1421,10 @@
         </p:NodeReference>
         <Patch Id="IB4l7GF8aQQOQTlt57dflj">
           <Canvas Id="N6XMGp0hJSpQY6qNUyxzEQ" CanvasType="Group">
-            <Node Bounds="282,755,415,192" Id="IKmuDh9rByLO5QvrMhSNfI">
+            <Node Bounds="282,755,511,192" Id="IKmuDh9rByLO5QvrMhSNfI">
               <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
-                <Choice Kind="ApplicationStatefulRegion" Name="Cache" />
+                <Choice Kind="ProcessStatefulRegion" Name="Cache" />
                 <FullNameCategoryReference ID="Primitive" />
               </p:NodeReference>
               <Pin Id="Up6f4B5cFlxMWvR4WpIbW5" Name="Force" Kind="InputPin" />
@@ -1429,6 +1449,7 @@
                   <Pin Id="LaPKLlB34clL95Q3GluzjV" Name="Vignette" Kind="InputPin" />
                   <Pin Id="HlMHAbwhBuHOejutBX4u60" Name="ChoromaticAbberation" Kind="InputPin" />
                   <Pin Id="AULYEx23cJfLjKG2fepdAG" Name="Grain" Kind="InputPin" />
+                  <Pin Id="BLhOap6dHdMM4ptR2N6nuM" Name="Volumetric" Kind="InputPin" />
                   <Pin Id="EvvTWd9NssrOZ7g15x43jV" Name="Output" Kind="StateOutputPin" />
                 </Node>
               </Patch>
@@ -1443,6 +1464,7 @@
               <ControlPoint Id="Sd03KHLqZFtN4q1ex7aM0V" Bounds="632,761" Alignment="Top" />
               <ControlPoint Id="A0mhTTNJKHENi34z7nVMmv" Bounds="674,761" Alignment="Top" />
               <ControlPoint Id="Vw95yaYOmxCL5Xq4RLg96F" Bounds="395,941" Alignment="Bottom" />
+              <ControlPoint Id="QUqGf2ud9q2LUBsar6NxXc" Bounds="752,761" Alignment="Top" />
             </Node>
             <Node Bounds="134,668,64,13" Id="IaF8kWlFXjRLeImosGudF0">
               <p:NodeReference LastCategoryFullName="Control" LastSymbolSource="CoreLibBasics.vl">
@@ -1463,6 +1485,7 @@
             <ControlPoint Id="Rk0jowvEeSiNFLQzi8XJWs" Bounds="726,317" />
             <ControlPoint Id="EwF23A8EmyuOAwAaqTTO9e" Bounds="781,359" />
             <ControlPoint Id="M1jKIxayPElPj8w7XN975N" Bounds="391,1025" />
+            <ControlPoint Id="TiUw2A5hvnLPBpYdqzNFnk" Bounds="856,371" />
           </Canvas>
           <Patch Id="OjfVrLCVPsOPHDnCf7uVcj" Name="Create" />
           <Patch Id="TYajNowiipdPv7JIwws6NK" Name="Update">
@@ -1470,13 +1493,14 @@
             <Pin Id="RsXKrbns4tROFSymvTnubk" Name="TemporalAntiAiliating" Kind="InputPin" Bounds="437,373" />
             <Pin Id="QepQOGBGmtpPeZCnNl1J7f" Name="DepthofField" Kind="InputPin" Bounds="553,382" />
             <Pin Id="MVJkwPud4iTPMtx8ZemM8s" Name="MotionBlur" Kind="InputPin" Bounds="656,388" />
-            <Pin Id="IdVg0kaVp6ZLPGqQ9G2sU2" Name="Output" Kind="OutputPin" Bounds="379,1044" />
             <Pin Id="NdHUctAJAE6NsErkkHMHTq" Name="Bloom" Kind="InputPin" Bounds="704,424" />
             <Pin Id="PxpqZCgm0wJNJfgb0pCXQ8" Name="Tonemap" Kind="InputPin" Bounds="712,456" />
             <Pin Id="EnKJo377QrgMBb2MsxybOQ" Name="ColorCorrection" Kind="InputPin" Bounds="723,490" />
             <Pin Id="TJCX6wyVaOHLV3FlfeIW6Z" Name="Vignette" Kind="InputPin" Bounds="769,536" />
             <Pin Id="Mw0XEWkWQXkNLtq4Rqeh5W" Name="ChoromaticAbberation" Kind="InputPin" Bounds="817,583" />
             <Pin Id="G5esOYItpIYMF3fwJ0qQXh" Name="Grain" Kind="InputPin" Bounds="802,628" />
+            <Pin Id="JymLlvRpyssL0Fphqaw7vg" Name="Volumetric" Kind="InputPin" Bounds="838,361" />
+            <Pin Id="IdVg0kaVp6ZLPGqQ9G2sU2" Name="Output" Kind="OutputPin" Bounds="379,1044" />
           </Patch>
           <ProcessDefinition Id="Lz7agK2bTj7PwCpdAyMPQ2">
             <Fragment Id="GtHWVRJUN1wMuhemkaHEk2" Patch="OjfVrLCVPsOPHDnCf7uVcj" Enabled="true" />
@@ -1516,6 +1540,9 @@
           <Link Id="PH7urkSna4lNyzAVQl2BCC" Ids="EvvTWd9NssrOZ7g15x43jV,Vw95yaYOmxCL5Xq4RLg96F" />
           <Link Id="U0TMjg0BXxdNHXE0j7gSO3" Ids="Vw95yaYOmxCL5Xq4RLg96F,M1jKIxayPElPj8w7XN975N" />
           <Link Id="IOfAbDMDuCKMQLGRof8YGY" Ids="M1jKIxayPElPj8w7XN975N,IdVg0kaVp6ZLPGqQ9G2sU2" IsHidden="true" />
+          <Link Id="VlILt0EIPHVMnB7jeCXrs5" Ids="QUqGf2ud9q2LUBsar6NxXc,BLhOap6dHdMM4ptR2N6nuM" />
+          <Link Id="KvREunxDkt2LtD6TjuO1BG" Ids="TiUw2A5hvnLPBpYdqzNFnk,QUqGf2ud9q2LUBsar6NxXc" />
+          <Link Id="RGDmwHVLoCXNDL8wnH3ayP" Ids="JymLlvRpyssL0Fphqaw7vg,TiUw2A5hvnLPBpYdqzNFnk" IsHidden="true" />
         </Patch>
       </Node>
       <!--
@@ -1587,7 +1614,6 @@
           <Pin Id="LUCuVpOAGA0Qdh6f6ngu5t" Name="Use Bent Normal" Kind="InputPin" Bounds="237,749" />
           <Pin Id="UOFDJ5E33eBNiEhrEHxdvS" Name="Half Res AO" Kind="InputPin" Bounds="259,786" />
           <Pin Id="NATISbSqJNIOSXq91N9YR6" Name="AO Distance" Kind="InputPin" Bounds="294,830" />
-          <Pin Id="MsUZ1kvnSANQaKQXefdg5p" Name="Output" Kind="OutputPin" Bounds="334,1027" />
           <Pin Id="FZknfbWzJKOQa4Mm9zhjkk" Name="AO Power" Kind="InputPin" Bounds="323,852" />
           <Pin Id="Trehmk5AGNBNQSUZqXl8Ix" Name="Num Circles" Kind="InputPin" Bounds="371,808" />
           <Pin Id="M9mwIIcATZpPqo88xuy6js" Name="Num Slices" Kind="InputPin" Bounds="412,842" />
@@ -1595,6 +1621,7 @@
           <Pin Id="Q5PYHo8oajrN47det04b0R" Name="Blur Sharpness" Kind="InputPin" Bounds="460,885" />
           <Pin Id="GdzhIraEF8PLNzdfvMrv2C" Name="Temporal Weight" Kind="InputPin" Bounds="501,839" />
           <Pin Id="O1Cq4uzWyDDMiByvMzJNx0" Name="Clamp Threshold" Kind="InputPin" Bounds="544,864" />
+          <Pin Id="MsUZ1kvnSANQaKQXefdg5p" Name="Output" Kind="OutputPin" Bounds="334,1027" />
         </Patch>
       </Node>
       <!--
@@ -1639,11 +1666,11 @@
           <Link Id="CTV2CMctExAP9MqZeXyfJw" Ids="Miaei7lIgKxNIA5ja0fNXb,GQs9AkaCCfwLGhkXVmR6bU" />
           <Link Id="CsKcycKTkwUONPTMO3FVj5" Ids="GQs9AkaCCfwLGhkXVmR6bU,QkFES5qPFsGMkQgwVDpZU0" IsHidden="true" />
           <Pin Id="HhLDFDIE0oIM1M3ZVQ3Hz8" Name="Use TAA" Kind="InputPin" Bounds="443,1237" />
-          <Pin Id="QkFES5qPFsGMkQgwVDpZU0" Name="Output" Kind="OutputPin" Bounds="526,1422" />
           <Pin Id="IZDkfKaUTjFMezhexuKsC3" Name="Weight Min" Kind="InputPin" Bounds="544,1228" />
           <Pin Id="DPaMFFA9v09PJmbzxT79w2" Name="Weight Max" Kind="InputPin" Bounds="608,1267" />
           <Pin Id="IfHurOJBzUYOMP4sqkm9Ay" Name="Jitter Spread" Kind="InputPin" Bounds="654,1301" />
           <Pin Id="LADu6PDllpaMwrqMl0SDdX" Name="Velocity Weight" Kind="InputPin" Bounds="708,1258" />
+          <Pin Id="QkFES5qPFsGMkQgwVDpZU0" Name="Output" Kind="OutputPin" Bounds="526,1422" />
         </Patch>
       </Node>
       <!--
@@ -1710,7 +1737,6 @@
           <Pin Id="QcTY0zR04BeONUqinWRH5x" Name="Use DoF" Kind="InputPin" Bounds="801,1222" />
           <Pin Id="Qt817zoeAcLMzzXk4KZCOU" Name="F-Stop" Kind="InputPin" Bounds="870,1229" />
           <Pin Id="Ra0y9A1W3a4PYBi8Wkb8LQ" Name="World Scale" Kind="InputPin" Bounds="944,1247" />
-          <Pin Id="DxkLqOPSaqMLwwDqAPqdMm" Name="Output" Kind="OutputPin" Bounds="876,1441" />
           <Pin Id="J1JGeNeaNhiONdHLxs169M" Name="maxCoC" Kind="InputPin" Bounds="1033,1245" />
           <Pin Id="V4hu7EHsD1OPaPhNLWFpVS" Name="Bokeh Rotation" Kind="InputPin" Bounds="1136,1288" />
           <Pin Id="OyicBVINLFwMBEmYy6jqro" Name="Auto Focus" Kind="InputPin" Bounds="1191,1244" />
@@ -1718,6 +1744,7 @@
           <Pin Id="PcQzLPjWvXVLesUd1Wy1Fw" Name="FocusDepth" Kind="InputPin" Bounds="1340,1058" />
           <Pin Id="OK4vc4fj0ZKPWRt1vbSzhJ" Name="DoF Quality" Kind="InputPin" Bounds="1266,1278" />
           <Pin Id="HVePiarNKlcQA6SwXMt5UD" Name="Use Scatter" Kind="InputPin" Bounds="1377,1261" />
+          <Pin Id="DxkLqOPSaqMLwwDqAPqdMm" Name="Output" Kind="OutputPin" Bounds="876,1441" />
         </Patch>
       </Node>
       <!--
@@ -1771,12 +1798,12 @@
           <Link Id="Eg9Bw8cdn9TPlI83rIgVqf" Ids="BY8vpvSCvwDODnV2SPuIjN,QYUGLXNrerOMnygBgb6sHv" IsHidden="true" />
           <Pin Id="Vsr4STf2yZULf5ZNPv8XNO" Name="Use Motion Blur" Kind="InputPin" Bounds="317,1232" />
           <Pin Id="Rb7WKInqAfrNK2ea1lVEry" Name="Amount" Kind="InputPin" Bounds="279,1222" />
-          <Pin Id="QYUGLXNrerOMnygBgb6sHv" Name="Output" Kind="OutputPin" Bounds="308,1379" />
           <Pin Id="SoVKWDw0JwANeMdKXcOiw2" Name="minVel" Kind="InputPin" Bounds="333,1192" />
           <Pin Id="AYf5h0Yx6VOMwEzmiaPHW9" Name="Sample Freq" Kind="InputPin" Bounds="364,1241" />
           <Pin Id="UaSpe7CxlrZMRiaJursRI1" Name="Max Sample" Kind="InputPin" Bounds="407,1201" />
           <Pin Id="O0Jhv7y8mrgPiscVtfF6hI" Name="Min Sample" Kind="InputPin" Bounds="457,1276" />
           <Pin Id="Rw1mKjFI0RtMLXXixSTy11" Name="Max Blur" Kind="InputPin" Bounds="496,1229" />
+          <Pin Id="QYUGLXNrerOMnygBgb6sHv" Name="Output" Kind="OutputPin" Bounds="308,1379" />
         </Patch>
       </Node>
       <!--
@@ -1822,10 +1849,10 @@
           <Link Id="VSw5Nnwu2tULDyVmWHZihQ" Ids="F6poH8pnYV3OKJcIxTxRT0,TFkB63nhpAeQYrtaijWuZo" IsHidden="true" />
           <Pin Id="Kll78cl9AHuLcc8UIiTA54" Name="Use Bloom" Kind="InputPin" Bounds="592,1135" />
           <Pin Id="DDsMNw7l8fGNOWucSoZszC" Name="Bias" Kind="InputPin" Bounds="643,1179" />
-          <Pin Id="TFkB63nhpAeQYrtaijWuZo" Name="Output" Kind="OutputPin" Bounds="662,1301" />
           <Pin Id="HlKqQm5AbpfL5VcehDJvSv" Name="Width" Kind="InputPin" Bounds="692,1136" />
           <Pin Id="FVcw5vqrzLtQLhjYMGVm7l" Name="Intensity" Kind="InputPin" Bounds="736,1181" />
           <Pin Id="QJrMv2tJHGqOYXIJX80AHm" Name="Bloom Timt" Kind="InputPin" Bounds="787,1153" />
+          <Pin Id="TFkB63nhpAeQYrtaijWuZo" Name="Output" Kind="OutputPin" Bounds="662,1301" />
         </Patch>
       </Node>
       <!--
@@ -1862,9 +1889,9 @@
           <Link Id="BxpVzwyXQNyNY3qqr3JmeM" Ids="UmyBL7qy8rCPOmJEkwmHdS,Thz86G8LLIHMgXBvrzOCOD" />
           <Link Id="Ei0evW0PLNqMmOKljXDENa" Ids="Thz86G8LLIHMgXBvrzOCOD,MAlb98nvUkHL0yaGCWP3Ow" IsHidden="true" />
           <Pin Id="PTsZt0m32OdLlVq9tNmdyB" Name="Use Tonemap" Kind="InputPin" Bounds="385,1508" />
-          <Pin Id="MAlb98nvUkHL0yaGCWP3Ow" Name="Output" Kind="OutputPin" Bounds="404,1626" />
           <Pin Id="EV4jt6Z8CAUMHXcwY9BrHJ" Name="Exposure" Kind="InputPin" Bounds="445,1524" />
           <Pin Id="VVtvS098L4eOVTXmYYYcSV" Name="Technique" Kind="InputPin" Bounds="514,1505" />
+          <Pin Id="MAlb98nvUkHL0yaGCWP3Ow" Name="Output" Kind="OutputPin" Bounds="404,1626" />
         </Patch>
       </Node>
       <!--
@@ -1909,11 +1936,11 @@
           <Link Id="JwU5d77P70vPPxFTmVB5wZ" Ids="R4DdApok6CgMWwnwcgnRE6,JbgAhVsFXXcOvOS9oVzKxW" />
           <Link Id="FxO2UPYdIvKMDafkdRT8MV" Ids="JbgAhVsFXXcOvOS9oVzKxW,VEAH4np2OOrQEhlpdIYbv2" IsHidden="true" />
           <Pin Id="BhXDKJg4E6RMQmSMoB8zHo" Name="Use Color Correction" Kind="InputPin" Bounds="485,1430" />
-          <Pin Id="VEAH4np2OOrQEhlpdIYbv2" Name="Output" Kind="OutputPin" Bounds="564,1581" />
           <Pin Id="RKD8hor2mi2OsnrkfyosTJ" Name="Gamma" Kind="InputPin" Bounds="542,1456" />
           <Pin Id="SWiAkUObQawMcoabdC9XQO" Name="Contrast" Kind="InputPin" Bounds="612,1451" />
           <Pin Id="KPBcamH9oaMP2Gg2fwSpVd" Name="Hue" Kind="InputPin" Bounds="643,1492" />
           <Pin Id="HuZNPi83XHwNVhOf1Dhjt5" Name="Saturation" Kind="InputPin" Bounds="675,1468" />
+          <Pin Id="VEAH4np2OOrQEhlpdIYbv2" Name="Output" Kind="OutputPin" Bounds="564,1581" />
         </Patch>
       </Node>
       <!--
@@ -1954,10 +1981,10 @@
           <Link Id="OCcpjAwgNspO8dqIzef2SK" Ids="SSYVPbz6JUEM4atwcoMKrA,EOJzCejN5N4LfPMLjQqaeb" />
           <Link Id="T1mVfNCr8YfMihoXK8mjS4" Ids="EOJzCejN5N4LfPMLjQqaeb,EjGEyILot8VLUtodd2tiHQ" IsHidden="true" />
           <Pin Id="J4DdjeQU5GOPdO9N2xFgoR" Name="Use Vignette" Kind="InputPin" Bounds="815,1425" />
-          <Pin Id="EjGEyILot8VLUtodd2tiHQ" Name="Output" Kind="OutputPin" Bounds="865,1533" />
           <Pin Id="JgMqHiwixEUMPCEOooqjAP" Name="Center" Kind="InputPin" Bounds="874,1452" />
           <Pin Id="UqbyO3OmNDRPh2NyuG2FA7" Name="Smooth" Kind="InputPin" Bounds="920,1431" />
           <Pin Id="BHxhhx3hKlkMEUh0jccaWr" Name="Intensity" Kind="InputPin" Bounds="958,1455" />
+          <Pin Id="EjGEyILot8VLUtodd2tiHQ" Name="Output" Kind="OutputPin" Bounds="865,1533" />
         </Patch>
       </Node>
       <!--
@@ -1990,8 +2017,8 @@
           <Link Id="RZa6jvkXVvxQMEdeONcWqO" Ids="QN2RQqAe2RHMwFGy7GJv9c,FWxObvpcvEIL9JkWp20fAV" />
           <Link Id="LEqQoqxc1fFNzrzb32YoED" Ids="FWxObvpcvEIL9JkWp20fAV,GtCDzPnxCMSPAoogHJCU4k" IsHidden="true" />
           <Pin Id="D8WA99rIWw7O7B7AoIFEBp" Name="Use Choromatic Abberation" Kind="InputPin" Bounds="1038,1386" />
-          <Pin Id="GtCDzPnxCMSPAoogHJCU4k" Name="Output" Kind="OutputPin" Bounds="1073,1533" />
           <Pin Id="BZu2SkF7rRDPEO5VhmIC3s" Name="amount" Kind="InputPin" Bounds="1149,1425" />
+          <Pin Id="GtCDzPnxCMSPAoogHJCU4k" Name="Output" Kind="OutputPin" Bounds="1073,1533" />
         </Patch>
       </Node>
       <!--
@@ -2028,9 +2055,9 @@
           <Link Id="EpwFjk8OyrNPvZ2HsEzD4l" Ids="OXF1c5gqCZaL0y4ySzOoC9,MY0T5PIWd6WPdzQaf2BkSs" />
           <Link Id="BiWQNeFNnmNMPkVAJvKlkv" Ids="MY0T5PIWd6WPdzQaf2BkSs,GAbucq4TRaRPssrPtTMDFv" IsHidden="true" />
           <Pin Id="F5keWfiF5DWLhxKYzppnJL" Name="Use Grain" Kind="InputPin" Bounds="1236,1456" />
-          <Pin Id="GAbucq4TRaRPssrPtTMDFv" Name="Output" Kind="OutputPin" Bounds="1246,1565" />
           <Pin Id="CZ0oMrETWGsNpOCqeKvLDi" Name="Scale" Kind="InputPin" Bounds="1291,1471" />
           <Pin Id="TJmbALUjGQJPVFHB0NMYFZ" Name="intensity" Kind="InputPin" Bounds="1330,1455" />
+          <Pin Id="GAbucq4TRaRPssrPtTMDFv" Name="Output" Kind="OutputPin" Bounds="1246,1565" />
         </Patch>
       </Node>
       <!--
@@ -2049,6 +2076,7 @@
               <Choice Kind="OperationCallFlag" Name="GetEffectSetting" />
             </p:NodeReference>
             <Pin Id="UVAMndXg0QDORlrWu4rmPs" Name="Input" Kind="StateInputPin" />
+            <Pin Id="AiEPPP5D5naPWcnOQASmov" Name="Output" Kind="OutputPin" />
             <Pin Id="QDF5eHJhQ3RN6tUTCkaoWR" Name="GTAO" Kind="OutputPin" />
             <Pin Id="T68JFHr9rgtLIUGEr1NBOM" Name="TemporalAntiAiliating" Kind="OutputPin" />
             <Pin Id="S3sFIzBjPYhNbt08zUdDEN" Name="DepthofField" Kind="OutputPin" />
@@ -2059,6 +2087,7 @@
             <Pin Id="MEn8pYGoLTjPCPdPu5PG9M" Name="Vignette" Kind="OutputPin" />
             <Pin Id="PSeYbupOCVHNZSxgqvXKBm" Name="ChoromaticAbberation" Kind="OutputPin" />
             <Pin Id="FgNrCfXKNw5QR6aGmBJfHv" Name="Grain" Kind="OutputPin" />
+            <Pin Id="GznHP14zmqBPWBn8hluh74" Name="Volumetric" Kind="OutputPin" />
           </Node>
           <ControlPoint Id="DB5I1yu6rS1MqB9FcvXiHa" Bounds="1994,640" />
           <Link Id="U6cG4DMBc74OoldDwWBHU0" Ids="DB5I1yu6rS1MqB9FcvXiHa,UVAMndXg0QDORlrWu4rmPs" />
@@ -2138,6 +2167,7 @@
               <Choice Kind="OperationCallFlag" Name="GetEffectSetting" />
             </p:NodeReference>
             <Pin Id="EQU5DlwrEcvMw5Lowdlk7u" Name="Input" Kind="StateInputPin" />
+            <Pin Id="OIkcJJhCKUtMxNxjfMbgK2" Name="Output" Kind="OutputPin" />
             <Pin Id="EN1LdKWWrWaNI08h09mOF9" Name="GTAO" Kind="OutputPin" />
             <Pin Id="DwLf64fbZ0xPYe0QpLt2NR" Name="TemporalAntiAiliating" Kind="OutputPin" />
             <Pin Id="QV05XNvswBUMgtuY47v0TE" Name="DepthofField" Kind="OutputPin" />
@@ -2148,6 +2178,7 @@
             <Pin Id="HCMWEuMhyOeO27mFUP0O7Z" Name="Vignette" Kind="OutputPin" />
             <Pin Id="OAEMw9hd7DVLkPxtPOUrA1" Name="ChoromaticAbberation" Kind="OutputPin" />
             <Pin Id="O5nl1rC37v3N9wM0Bncvwa" Name="Grain" Kind="OutputPin" />
+            <Pin Id="BTMddcKA2fHOKyn4xa5asl" Name="Volumetric" Kind="OutputPin" />
           </Node>
           <ControlPoint Id="QCEzRhEKBoINIsqb8BMngl" Bounds="2573,630" />
           <Link Id="Q01UnnsidJWN5bStSAPDB9" Ids="QCEzRhEKBoINIsqb8BMngl,EQU5DlwrEcvMw5Lowdlk7u" />
@@ -2201,6 +2232,7 @@
               <Choice Kind="OperationCallFlag" Name="GetEffectSetting" />
             </p:NodeReference>
             <Pin Id="MNxVvslzALlQOn8hBNyqD3" Name="Input" Kind="StateInputPin" />
+            <Pin Id="Pq7SQ3lf3k7OM5yp2KIbJn" Name="Output" Kind="OutputPin" />
             <Pin Id="MvBNbH347y1QE41oEhlEg6" Name="GTAO" Kind="OutputPin" />
             <Pin Id="HCZHFG5ILwrPem5nSiQPdV" Name="TemporalAntiAiliating" Kind="OutputPin" />
             <Pin Id="Bbif9ae9O0EPSBX3RM66Qw" Name="DepthofField" Kind="OutputPin" />
@@ -2211,6 +2243,7 @@
             <Pin Id="MVxyPRPspagQKv9Suoxdq2" Name="Vignette" Kind="OutputPin" />
             <Pin Id="HEHyGNM2V11Mf70H729HGL" Name="ChoromaticAbberation" Kind="OutputPin" />
             <Pin Id="MqJAqTQHASFPza4JVQcEeq" Name="Grain" Kind="OutputPin" />
+            <Pin Id="RfaShFSK2xjPSC0JK1r97R" Name="Volumetric" Kind="OutputPin" />
           </Node>
           <ControlPoint Id="DuW49tfNIhFNvx1gza5D27" Bounds="2913,620" />
           <Link Id="SRMCBBvmPVbLXzJeg1CPZ8" Ids="DuW49tfNIhFNvx1gza5D27,MNxVvslzALlQOn8hBNyqD3" />
@@ -2290,6 +2323,7 @@
               <Choice Kind="OperationCallFlag" Name="GetEffectSetting" />
             </p:NodeReference>
             <Pin Id="RcKlCIjVWSHLzAnY9AjKw4" Name="Input" Kind="StateInputPin" />
+            <Pin Id="SN7FWp4AOjzL65IfiXyKB4" Name="Output" Kind="OutputPin" />
             <Pin Id="IxThYSXBu5VLFrjjNBdIiV" Name="GTAO" Kind="OutputPin" />
             <Pin Id="B5kqbhIfqrNLYxub4uiZ2d" Name="TemporalAntiAiliating" Kind="OutputPin" />
             <Pin Id="LUk6oGutQqjMIgHNubT2C4" Name="DepthofField" Kind="OutputPin" />
@@ -2300,6 +2334,7 @@
             <Pin Id="RxMhkOqb8kcNnF4gBQysMo" Name="Vignette" Kind="OutputPin" />
             <Pin Id="LYqgG3g0SY2PVqQ90wv6Rx" Name="ChoromaticAbberation" Kind="OutputPin" />
             <Pin Id="MvSKLmN38mHMB2JNv63tvM" Name="Grain" Kind="OutputPin" />
+            <Pin Id="EJVIgBhIBCfQYpG0rqI4hF" Name="Volumetric" Kind="OutputPin" />
           </Node>
           <ControlPoint Id="CBOnS8YcVw7P8PSChXfUwU" Bounds="1900,1043" />
           <Link Id="DSvVJFgj3iqOVv5dT6pFMk" Ids="CBOnS8YcVw7P8PSChXfUwU,RcKlCIjVWSHLzAnY9AjKw4" />
@@ -2363,6 +2398,7 @@
               <Choice Kind="OperationCallFlag" Name="GetEffectSetting" />
             </p:NodeReference>
             <Pin Id="OAzhSobHkufOcslZnCPa1p" Name="Input" Kind="StateInputPin" />
+            <Pin Id="LdZP6GIHFC1PQ4nxwWN0c0" Name="Output" Kind="OutputPin" />
             <Pin Id="DHB9izzGtIAPJeHjifQxth" Name="GTAO" Kind="OutputPin" />
             <Pin Id="VDKtsvjYCAuQRujcZjKFda" Name="TemporalAntiAiliating" Kind="OutputPin" />
             <Pin Id="VXusodbxsQsNsvhbOPFQNa" Name="DepthofField" Kind="OutputPin" />
@@ -2373,6 +2409,7 @@
             <Pin Id="G7WobArDpV8OPkISZbvGrw" Name="Vignette" Kind="OutputPin" />
             <Pin Id="KM8u9CsTKMWNOHjrLNiUx8" Name="ChoromaticAbberation" Kind="OutputPin" />
             <Pin Id="GAVxFAfsIDYQGM9lMZIqVc" Name="Grain" Kind="OutputPin" />
+            <Pin Id="KMyfDqG4uQONQuKaIfAClq" Name="Volumetric" Kind="OutputPin" />
           </Node>
           <ControlPoint Id="DcVcGShv4bAO6OX7kVuhay" Bounds="2282,1053" />
           <Link Id="OJbHPpyEWshPwKxdrdRVnL" Ids="DulnBNsyVfaOQAoARKoL1m,DcVcGShv4bAO6OX7kVuhay,OAzhSobHkufOcslZnCPa1p" />
@@ -2427,6 +2464,7 @@
               <Choice Kind="OperationCallFlag" Name="GetEffectSetting" />
             </p:NodeReference>
             <Pin Id="Q4bSgevBiCaNjm5uhztHSg" Name="Input" Kind="StateInputPin" />
+            <Pin Id="FVxAaSV5pYIPaEex9jEiyH" Name="Output" Kind="OutputPin" />
             <Pin Id="Fg9cpMuee2TPoxl1SDfwOE" Name="GTAO" Kind="OutputPin" />
             <Pin Id="VilJD9WBIyUQDLAfDM5Oes" Name="TemporalAntiAiliating" Kind="OutputPin" />
             <Pin Id="VPtYmuJHobHP0Kz1IXzqs2" Name="DepthofField" Kind="OutputPin" />
@@ -2437,6 +2475,7 @@
             <Pin Id="QN0rqIhhrS2OtDipIShXK6" Name="Vignette" Kind="OutputPin" />
             <Pin Id="Q4TOG11qLdzOdLE63WtI8d" Name="ChoromaticAbberation" Kind="OutputPin" />
             <Pin Id="P7jxvk62cRKLiT4CTHMF5e" Name="Grain" Kind="OutputPin" />
+            <Pin Id="M2IHGNm4XQTMWiO2OAh0UY" Name="Volumetric" Kind="OutputPin" />
           </Node>
           <ControlPoint Id="NBluXHA6urbLU57NrshKKM" Bounds="2659,1057" />
           <Link Id="VSzLG1kX9ONLcPJD8UODFb" Ids="NBluXHA6urbLU57NrshKKM,Q4bSgevBiCaNjm5uhztHSg" />
@@ -2480,6 +2519,7 @@
               <Choice Kind="OperationCallFlag" Name="GetEffectSetting" />
             </p:NodeReference>
             <Pin Id="M9HSThioE4tPPDnSHNYgVi" Name="Input" Kind="StateInputPin" />
+            <Pin Id="C5bNQbIBKfFMwhSDkGF6lX" Name="Output" Kind="OutputPin" />
             <Pin Id="TUt8G1OGKrsPW4MQsgpocG" Name="GTAO" Kind="OutputPin" />
             <Pin Id="VlgPabVOqllLcueY9vMAfw" Name="TemporalAntiAiliating" Kind="OutputPin" />
             <Pin Id="TK1N771u40XLIrKM8VJBC3" Name="DepthofField" Kind="OutputPin" />
@@ -2490,6 +2530,7 @@
             <Pin Id="MvMjb6DnHh0MVLt5rI8EUD" Name="Vignette" Kind="OutputPin" />
             <Pin Id="VckXI2IrS16OdGqnNS7oFJ" Name="ChoromaticAbberation" Kind="OutputPin" />
             <Pin Id="U3wPwWpzWFBLHwSHw3AIM6" Name="Grain" Kind="OutputPin" />
+            <Pin Id="PGZFdvswTw0QVkqlmMAIks" Name="Volumetric" Kind="OutputPin" />
           </Node>
           <ControlPoint Id="NPmYbZT3lXOLfULrpC4HEC" Bounds="3023,1093" />
           <Link Id="HTYwyZQM63KQI5MUKBKzOP" Ids="NPmYbZT3lXOLfULrpC4HEC,M9HSThioE4tPPDnSHNYgVi" />
@@ -2543,6 +2584,7 @@
               <Choice Kind="OperationCallFlag" Name="GetEffectSetting" />
             </p:NodeReference>
             <Pin Id="FmCSXQToUmXPpEUHEDywno" Name="Input" Kind="StateInputPin" />
+            <Pin Id="EQeTWqH0SBzOYDErM1bjhj" Name="Output" Kind="OutputPin" />
             <Pin Id="EHLJ5PWJ173PROkh108NTc" Name="GTAO" Kind="OutputPin" />
             <Pin Id="RiPa54Tl2lyP2CD0wakDON" Name="TemporalAntiAiliating" Kind="OutputPin" />
             <Pin Id="DQiVKDDvC5aLb7L0WlX16t" Name="DepthofField" Kind="OutputPin" />
@@ -2553,6 +2595,7 @@
             <Pin Id="Fgl9QBmWPpNLkOEGdiu7YF" Name="Vignette" Kind="OutputPin" />
             <Pin Id="SifoJAm508YNjdB4lK2rbB" Name="ChoromaticAbberation" Kind="OutputPin" />
             <Pin Id="AUw5BZhC3gOQN50qctVC4t" Name="Grain" Kind="OutputPin" />
+            <Pin Id="IrFQzVHzwnlQa749fijiXj" Name="Volumetric" Kind="OutputPin" />
           </Node>
           <ControlPoint Id="IFVyJFno28SOGsSOw0uh0M" Bounds="1908,1406" />
           <Link Id="K6so1Wx0tfkP5k49BYNoiT" Ids="IFVyJFno28SOGsSOw0uh0M,FmCSXQToUmXPpEUHEDywno" />
@@ -2601,6 +2644,7 @@
               <Choice Kind="OperationCallFlag" Name="GetEffectSetting" />
             </p:NodeReference>
             <Pin Id="SvBZWm1BRvWM1Hg1LPTahL" Name="Input" Kind="StateInputPin" />
+            <Pin Id="Gzs2AcEfDF8LipCYeWiQwG" Name="Output" Kind="OutputPin" />
             <Pin Id="L0dd2z3VhijOLzzzzw3GWN" Name="GTAO" Kind="OutputPin" />
             <Pin Id="DIGEP1ey59yLGC6EGHeeVz" Name="TemporalAntiAiliating" Kind="OutputPin" />
             <Pin Id="QS8t61XceL6MZz6K0qUCYd" Name="DepthofField" Kind="OutputPin" />
@@ -2611,6 +2655,7 @@
             <Pin Id="RhOXrzE5HYKN3MlsTrcXyj" Name="Vignette" Kind="OutputPin" />
             <Pin Id="GpawhU4J73SLAmIL6g07E5" Name="ChoromaticAbberation" Kind="OutputPin" />
             <Pin Id="CX4R7epswDhMXA0EScBncT" Name="Grain" Kind="OutputPin" />
+            <Pin Id="QKrGsOGOonBOH00ZDmJXwr" Name="Volumetric" Kind="OutputPin" />
           </Node>
           <ControlPoint Id="VWud4vziJFsOyvo9pEkETJ" Bounds="2252,1396" />
           <Link Id="AEdu41sBb9BPwAKHN4RqTD" Ids="VWud4vziJFsOyvo9pEkETJ,SvBZWm1BRvWM1Hg1LPTahL" />
@@ -2649,6 +2694,7 @@
               <Choice Kind="OperationCallFlag" Name="GetEffectSetting" />
             </p:NodeReference>
             <Pin Id="Us1UBpvPu1aLI0dw0KUFEl" Name="Input" Kind="StateInputPin" />
+            <Pin Id="NlqoJSsCON4PIGwkisYau2" Name="Output" Kind="OutputPin" />
             <Pin Id="TdVS5gEbw5LOcOmluhAyR2" Name="GTAO" Kind="OutputPin" />
             <Pin Id="HWFCxuODuFUQaYyw0xfxO3" Name="TemporalAntiAiliating" Kind="OutputPin" />
             <Pin Id="F2ZJ7L2apI9PRPw1zJ39Ly" Name="DepthofField" Kind="OutputPin" />
@@ -2659,6 +2705,7 @@
             <Pin Id="SjyKGIbazMyNTIHjGu3qll" Name="Vignette" Kind="OutputPin" />
             <Pin Id="DFIVcSSHWPpQUQiV2Td7T4" Name="ChoromaticAbberation" Kind="OutputPin" />
             <Pin Id="OiT5TvBTHWDOiklON6yDuf" Name="Grain" Kind="OutputPin" />
+            <Pin Id="L5F4HyllwDkO35YfcvjwMe" Name="Volumetric" Kind="OutputPin" />
           </Node>
           <ControlPoint Id="LHN2syLfg21LBJUcOknfY0" Bounds="2544,1393" />
           <Link Id="UlEE5zJmC51LpkE6RtKbIn" Ids="LHN2syLfg21LBJUcOknfY0,Us1UBpvPu1aLI0dw0KUFEl" />
@@ -2686,7 +2733,7 @@
           <Pin Id="PzD4jxZxiAXPO9wR3xc2g0" Name="Scale" Kind="OutputPin" Bounds="994,2772" />
         </Patch>
       </Node>
-      <Pad Id="NHPfonHlUALMzvR5m880Hi" Bounds="145,536,343,59" ShowValueBox="true" isIOBox="true" Value="Setter">
+      <Pad Id="NHPfonHlUALMzvR5m880Hi" Bounds="145,514,343,59" ShowValueBox="true" isIOBox="true" Value="Setter">
         <p:TypeAnnotation>
           <Choice Kind="TypeFlag" Name="String" />
         </p:TypeAnnotation>
@@ -2695,7 +2742,7 @@
           <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
         </p:ValueBoxSettings>
       </Pad>
-      <Pad Id="McJQMKpW0w6LgAGQalrVtH" Bounds="1844,532,343,59" ShowValueBox="true" isIOBox="true" Value="Getter">
+      <Pad Id="McJQMKpW0w6LgAGQalrVtH" Bounds="1844,510,343,59" ShowValueBox="true" isIOBox="true" Value="Getter">
         <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
           <Choice Kind="TypeFlag" Name="String" />
         </p:TypeAnnotation>
@@ -2709,7 +2756,7 @@
     ************************ GetEffect ************************
 
 -->
-      <Node Name="GetEffect" Bounds="2811,1380,718,324" Id="GekuKvD4hsFN7IXKgLSMP5">
+      <Node Name="GetEffect" Bounds="2811,1380,916,324" Id="GekuKvD4hsFN7IXKgLSMP5">
         <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
           <Choice Kind="OperationDefinition" Name="Operation" />
         </p:NodeReference>
@@ -2720,6 +2767,7 @@
               <Choice Kind="OperationCallFlag" Name="GetEffectSetting" />
             </p:NodeReference>
             <Pin Id="S5Rdx6XmuDcOEILEdqq9iM" Name="Input" Kind="StateInputPin" />
+            <Pin Id="PPPwqHtm7M5Oxv2rNCm6vM" Name="Output" Kind="OutputPin" />
             <Pin Id="Vo7pNrX9rTWNZXLdzy5QO2" Name="GTAO" Kind="OutputPin" />
             <Pin Id="Fk5PBrgeP8VLIAlrtVEMnC" Name="TemporalAntiAiliating" Kind="OutputPin" />
             <Pin Id="LrkoXIzTsFDMcODWuU7hco" Name="DepthofField" Kind="OutputPin" />
@@ -2730,6 +2778,7 @@
             <Pin Id="AFSSPQAgdMlN2dhCsFJF10" Name="Vignette" Kind="OutputPin" />
             <Pin Id="VlTDc75Uq33QRRZBWtUjiu" Name="ChoromaticAbberation" Kind="OutputPin" />
             <Pin Id="J4AOv7wE2ZePKpJGyjJC0R" Name="Grain" Kind="OutputPin" />
+            <Pin Id="NIJHvmQwEA4P8QzTCRUaC1" Name="Volumetric" Kind="OutputPin" />
           </Node>
           <ControlPoint Id="M9lvyz7U7C2LH8RCPiKOl2" Bounds="2991,1396" />
           <Link Id="KXWhMGQ9tTmQH6MZjg4HWh" Ids="M9lvyz7U7C2LH8RCPiKOl2,S5Rdx6XmuDcOEILEdqq9iM" />
@@ -2835,14 +2884,43 @@
           <ControlPoint Id="TC54KWVXg7pNs52j4sXCpl" Bounds="3078,1670" />
           <Link Id="TykTZm2e1lHMh8xJJkPWly" Ids="O8UAtOoWhOVQSuxCq7wCzf,TC54KWVXg7pNs52j4sXCpl" />
           <Link Id="CBbuzOfpPilQMgfvaEYwEz" Ids="TC54KWVXg7pNs52j4sXCpl,AyStFkd8k31LpUfkffYdUn" IsHidden="true" />
+          <Link Id="OkgQyJz3XIpPA6ouuMwBZb" Ids="Fk5PBrgeP8VLIAlrtVEMnC,VJ1ou7K72KgM6t5nicn210" />
+          <Node Bounds="3573,1532" Id="U44EzQuq3p0MRNghqRFXM1">
+            <p:NodeReference LastCategoryFullName="VVVV.PBRRenderer.VolumetricLight" LastSymbolSource="VVVV.Value.RenderSetting.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="GetVolumetric" />
+              <CategoryReference Kind="RecordType" Name="VolumetricLight" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="AYy7Z6o7JhCQHqkm8NUeAA" Name="Input" Kind="StateInputPin" />
+            <Pin Id="PoEZm10oBgkN4YBJ5z3TaR" Name="Output" Kind="OutputPin" />
+            <Pin Id="CjE4Z5kD5heMQjFjKAO9XT" Name="Use Volumetric" Kind="OutputPin" />
+            <Pin Id="O3cEMm1zuKwO9xPXk32Okj" Name="HalfResVolume" Kind="OutputPin" />
+            <Pin Id="T52mp6dJNrkOEIqckwucLn" Name="Fog Color" Kind="OutputPin" />
+            <Pin Id="Q3h6F3h9uADP7Zri4uvHQ8" Name="Ray Step" Kind="OutputPin" />
+            <Pin Id="IBBBFeE3r6KM3LQLohQSFK" Name="Ray Length" Kind="OutputPin" />
+            <Pin Id="NDKzqkS4zr2LHkm2AWyliY" Name="Density" Kind="OutputPin" />
+            <Pin Id="DuWok6Js8JyOGh52fHtFqx" Name="Blur Factor" Kind="OutputPin" />
+            <Pin Id="KIpNLqeMdV4PHXY05NjWM7" Name="Use FogNoise" Kind="OutputPin" />
+            <Pin Id="BceEZIm4dMJMQpDhemPZ57" Name="Noise Octave" Kind="OutputPin" />
+            <Pin Id="FUE9XyEfHH2LPBmmzTIHsD" Name="Noise Position" Kind="OutputPin" />
+            <Pin Id="F43SvwFHnkiMcznfdtukpE" Name="Noise Frequency" Kind="OutputPin" />
+            <Pin Id="DH8DdT0flttN69VfMqzQTm" Name="Noise FractFreq" Kind="OutputPin" />
+            <Pin Id="KsjpQQQuUxFO4Wx0g0S1hn" Name="Noise FractAmp" Kind="OutputPin" />
+            <Pin Id="NyzJ9E30trcOwVoFamINXm" Name="Amplitude" Kind="OutputPin" />
+            <Pin Id="PncU0gbf9jnNcvgBMHsZYO" Name="Noise Evolution" Kind="OutputPin" />
+          </Node>
+          <Link Id="OcgiBWztP0oPZEPLRp9TE6" Ids="NIJHvmQwEA4P8QzTCRUaC1,AYy7Z6o7JhCQHqkm8NUeAA" />
+          <ControlPoint Id="EdI2FFKenibLLog0birxeg" Bounds="3576,1662" />
+          <Link Id="DH14FDA6KMoPUVJhRMEG20" Ids="CjE4Z5kD5heMQjFjKAO9XT,EdI2FFKenibLLog0birxeg" />
+          <Link Id="PxYQT2vt2xMPwW67rVraRE" Ids="EdI2FFKenibLLog0birxeg,BX5cLs77n8QN0A8UPC3JfS" IsHidden="true" />
+          <Pin Id="UoS4QtL2oqeOlb5gxyjpYt" Name="Input" Kind="InputPin" Bounds="2989,1435" />
           <Pin Id="I6pFRkVSARmM3v1xegsCEI" Name="Use AO" Kind="OutputPin" Bounds="2948,1621" />
           <Pin Id="GxUM6Jf1oxbO2N6lmt2R5M" Name="Use Bent Normal" Kind="OutputPin" Bounds="3038,1622" />
-          <Pin Id="UoS4QtL2oqeOlb5gxyjpYt" Name="Input" Kind="InputPin" Bounds="2989,1435" />
           <Pin Id="AyStFkd8k31LpUfkffYdUn" Name="Use TAA" Kind="OutputPin" Bounds="3081,1693" />
           <Pin Id="OUc3K7VohhQP7ljGazfMHC" Name="Use DoF" Kind="OutputPin" Bounds="3158,1675" />
           <Pin Id="GCiflqm08lmLoTZzTGojX4" Name="Use Motion Blur" Kind="OutputPin" Bounds="3297,1674" />
           <Pin Id="QZsbFn7ZQJPLTxEMZLi1Wf" Name="Use Bloom" Kind="OutputPin" Bounds="3435,1640" />
-          <Link Id="OkgQyJz3XIpPA6ouuMwBZb" Ids="Fk5PBrgeP8VLIAlrtVEMnC,VJ1ou7K72KgM6t5nicn210" />
+          <Pin Id="BX5cLs77n8QN0A8UPC3JfS" Name="Use Volumetric" Kind="OutputPin" Bounds="3576,1662" />
         </Patch>
       </Node>
       <!--
@@ -2861,6 +2939,7 @@
               <Choice Kind="OperationCallFlag" Name="GetEffectSetting" />
             </p:NodeReference>
             <Pin Id="D6VekNYg24FLurbuleEiYh" Name="Input" Kind="StateInputPin" />
+            <Pin Id="JqKCr9CHUcrNtlZRNufHPJ" Name="Output" Kind="OutputPin" />
             <Pin Id="J7y84IFN7rPQQgfoFNcTVY" Name="GTAO" Kind="OutputPin" />
             <Pin Id="TW3rQHtwcDsMzi2hLDjRNI" Name="TemporalAntiAiliating" Kind="OutputPin" />
             <Pin Id="FIGtjhDmOMFPxdlHJPHI3R" Name="DepthofField" Kind="OutputPin" />
@@ -2871,6 +2950,7 @@
             <Pin Id="Rte6sx9xnvgM7rapyqrktd" Name="Vignette" Kind="OutputPin" />
             <Pin Id="I9doBY222nVP9G8KvJaSVs" Name="ChoromaticAbberation" Kind="OutputPin" />
             <Pin Id="KbQmWfGMiZVN5JFL0LYpKz" Name="Grain" Kind="OutputPin" />
+            <Pin Id="PFpJjnIxEo2PfyRTHvsbcn" Name="Volumetric" Kind="OutputPin" />
           </Node>
           <ControlPoint Id="EAHIocAcLrZMrALNwJlLpA" Bounds="2900,1786" />
           <Link Id="Tdo8htKqIZoN7aBESSy8jv" Ids="EAHIocAcLrZMrALNwJlLpA,D6VekNYg24FLurbuleEiYh" />
@@ -2952,15 +3032,586 @@
           <ControlPoint Id="IYcT7XxjMLVNSZR0ZPmRrG" Bounds="3087,2013" />
           <Link Id="CNyv0fVD3naMaqmobg5pfl" Ids="CvMyMMzSDpuLT46XwekiQi,IYcT7XxjMLVNSZR0ZPmRrG" />
           <Link Id="DLgGsHoDBLUNmwEdtTjEEc" Ids="IYcT7XxjMLVNSZR0ZPmRrG,Vejp6EzJVW7PU52N5DsBvk" IsHidden="true" />
-          <Pin Id="BHQf2zSj94dLbMUqgGuKjb" Name="Use Tonemap" Kind="OutputPin" Bounds="2751,1935" />
           <Pin Id="R83rE4Fz2h2L7xbfLtEVeo" Name="Input" Kind="InputPin" Bounds="2989,1435" />
+          <Pin Id="BHQf2zSj94dLbMUqgGuKjb" Name="Use Tonemap" Kind="OutputPin" Bounds="2751,1935" />
           <Pin Id="G8lgH9RuBfCQI1Fmik6cZx" Name="Use Color Correction" Kind="OutputPin" Bounds="2807,1972" />
           <Pin Id="Vejp6EzJVW7PU52N5DsBvk" Name="Use Vignette" Kind="OutputPin" Bounds="2887,1977" />
           <Pin Id="JOtqKqjP6F2MriEMW2ETO9" Name="Use Choromatic Abberation" Kind="OutputPin" Bounds="2882,1981" />
           <Pin Id="Av2RUzdnr1PMKSljcVPumW" Name="Use Grain" Kind="OutputPin" Bounds="2922,1973" />
         </Patch>
       </Node>
+      <!--
+
+    ************************ VolumetricLight ************************
+
+-->
+      <Node Name="VolumetricLight" Bounds="643,102" Id="F6Q8tFZt8jdNK2dE4W0vcZ">
+        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
+          <Choice Kind="RecordDefinition" Name="Record" />
+        </p:NodeReference>
+        <Patch Id="UdHxut3M7o4QUBPLSeX2ci">
+          <Canvas Id="EWHerhuH8tmPv2S1zm0oyl" CanvasType="Group">
+            <Pad Id="LqNpD4vmGRQNN6hUhZf5kL" Bounds="186,177,1253,69" ShowValueBox="true" isIOBox="true" Value="Volumetric Setting-------------------------------------------------">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="String" />
+              </p:TypeAnnotation>
+              <p:ValueBoxSettings>
+                <p:fontsize p:Type="Int32">26</p:fontsize>
+                <p:stringtype p:Assembly="VL.Core" p:Type="VL.Core.StringType">Comment</p:stringtype>
+              </p:ValueBoxSettings>
+            </Pad>
+            <Pad Id="PMBQ5iQEbctPehhfBfrvjh" SlotId="I7Xb8lPWa8yPpaxc8x6OWw" Bounds="701,478">
+              <p:ValueBoxSettings />
+            </Pad>
+            <ControlPoint Id="H6JZyc8gA5yMBDFEiET3Cw" Bounds="697,325" />
+            <ControlPoint Id="EsP1Le0kFGnPK9da5Zj6lk" Bounds="698,631" />
+            <Pad Id="I1d14eeLy6qNMJPdC6vnGO" SlotId="R7WCjYmvTqhMtjIB4eBIKo" Bounds="322,503">
+              <p:ValueBoxSettings>
+                <p:showbutton p:Type="Boolean">false</p:showbutton>
+              </p:ValueBoxSettings>
+            </Pad>
+            <ControlPoint Id="CuRBzrQA8esN747vlwAAZh" Bounds="314,320" />
+            <ControlPoint Id="BSOJ3ds0gY2MwQM5HZ1zWJ" Bounds="310,625" />
+            <Pad Id="EvMAiuoqKAuNmZeLejw76M" SlotId="JuYxtoWpvn6PJgMaiizzKN" Bounds="573,487">
+              <p:ValueBoxSettings />
+            </Pad>
+            <ControlPoint Id="G78ppYOQBp1NymiUD8Db24" Bounds="578,320" />
+            <ControlPoint Id="RWfsGeRVVkYQIDtz58tQrn" Bounds="581,594" />
+            <Pad Id="FcFHjB1pF1zLrl0pOXo7dG" SlotId="BTJ7gNLpJggPO3b4xZ64Wz" Bounds="839,476">
+              <p:ValueBoxSettings />
+            </Pad>
+            <ControlPoint Id="D3SxKZqXNmaLu2ptNuFGhm" Bounds="824,325" />
+            <ControlPoint Id="ARU7HtoxKGOLQpwGulVfYY" Bounds="843,607" />
+            <Pad Id="Q7C6rUOfnjCLFzU6vLkLlf" SlotId="GvqWl9kZAhrMYtHKd1JcW5" Bounds="953,490">
+              <p:ValueBoxSettings />
+            </Pad>
+            <ControlPoint Id="LaRlmJ00gJWOQif1vpkEAY" Bounds="939,335" />
+            <ControlPoint Id="PGC3XhseYlGO9ugAGQm548" Bounds="972,592" />
+            <Pad Id="QRK3ufIKPoKNsZJHpATdSA" SlotId="Ce4ftMxUUFRNinw6HUc0Z5" Bounds="449,494">
+              <p:ValueBoxSettings />
+            </Pad>
+            <ControlPoint Id="AABpuMn5DU5Ntyent4GbYP" Bounds="461,328" />
+            <ControlPoint Id="OabIqTCo9FlPh7TUpC5GlK" Bounds="455,594" />
+            <Pad Id="TEvhxuoWYZLLbJktPIB1nO" SlotId="N1UOHZmwiBIL6nwHMKFA4f" Bounds="1107,499">
+              <p:ValueBoxSettings />
+            </Pad>
+            <ControlPoint Id="LkZhZGpIQoDNKx3gR7kUI1" Bounds="1115,360" />
+            <ControlPoint Id="GSDbr2MWq56ObAmUAB2KCE" Bounds="1107,582" />
+            <Pad Id="NCSOVUgjduINdrnKtVbkyk" SlotId="NrXyevqkDVMOUDcaJCLiwt" Bounds="1318,480">
+              <p:ValueBoxSettings />
+            </Pad>
+            <ControlPoint Id="FPjRMVGMs4lLDjVwCXYKwa" Bounds="1309,341" />
+            <ControlPoint Id="FGaGdc6o5eCLZtJAO9PvfM" Bounds="1315,595" />
+            <Pad Id="Sudg0EeCrJePjRdGt03gwL" SlotId="NiEregYsGMgMmABV62my4V" Bounds="1681,473">
+              <p:ValueBoxSettings />
+            </Pad>
+            <ControlPoint Id="OUesfU5uhvHON6MvZ5eJsI" Bounds="1649,339" />
+            <ControlPoint Id="Rv60azrxN89QcFIUH88EcH" Bounds="1649,574" />
+            <Pad Id="QipF06gQ4wELpHgKuWxL1d" SlotId="Cfmx2Fbx6YAP3MdwXQh7CY" Bounds="1818,492">
+              <p:ValueBoxSettings />
+            </Pad>
+            <ControlPoint Id="PyAEIiVCmG2LEqgVfMxMLc" Bounds="1806,341" />
+            <ControlPoint Id="QEmK7MwjW41O9OZ3yVdM2k" Bounds="1809,582" />
+            <Pad Id="RJUZ8MNn6oZMix36EJPNKD" SlotId="BMPjlsI1iffOjwq44jFtUW" Bounds="2002,480">
+              <p:ValueBoxSettings />
+            </Pad>
+            <ControlPoint Id="MU0Gd24U4tpN3rCGreKLWT" Bounds="1999,360" />
+            <ControlPoint Id="IeoZJ2Mfr9UOZawmtT8Fxo" Bounds="1997,572" />
+            <Pad Id="BoMyG9hOrlhPMc0oK78l3J" SlotId="MFgqPoLf7QCMazMr7EUuBI" Bounds="2120,504">
+              <p:ValueBoxSettings />
+            </Pad>
+            <ControlPoint Id="NVdyek5770HOMgGbI8xy7T" Bounds="2129,373" />
+            <ControlPoint Id="Ekz2alwwgF3PHlsSQvoKSV" Bounds="2121,581" />
+            <Pad Id="USoO2Pg1cYOMjWLVkhPKuo" SlotId="IeaR6fQXM8mPnrZF2y7lOB" Bounds="2264,487">
+              <p:ValueBoxSettings />
+            </Pad>
+            <ControlPoint Id="SNk7nlFAAWHM2mCe0kyLol" Bounds="2276,366" />
+            <ControlPoint Id="MW6SAk5PeJJLoLk1Zhi5ql" Bounds="2260,590" />
+            <Pad Id="I1hqAQBw504L2vT9cXNPM2" SlotId="M6lPjyBgGprNlLYjlmrG2b" Bounds="1480,479">
+              <p:ValueBoxSettings />
+            </Pad>
+            <ControlPoint Id="D12JCgmrEdlNHsKJKH5Sag" Bounds="1474,344" />
+            <ControlPoint Id="D2TgTIpi9hXOb9T0qcuWxs" Bounds="1480,577" />
+            <Pad Id="PsdEClBtc3FO2AKUQX3TFi" SlotId="UMuGzI2uECPOqjeyFidZje" Bounds="1571,480">
+              <p:ValueBoxSettings />
+            </Pad>
+            <ControlPoint Id="Dhn9lIXHVUiPfehlK1kx4h" Bounds="1585,350" />
+            <ControlPoint Id="AoU6lOozLj0MANPlX2lN9O" Bounds="1568,591" />
+          </Canvas>
+          <Patch Id="Lytnusj9AOgP5fVlnvPfKN" Name="Create" ParticipatingElements="OG2BoehQjm5LZ3URAfjWAz">
+            <Pin Id="PShUNvriRMjLkvLvWk9zaW" Name="Use Volumetric" Kind="InputPin" Bounds="439,339" DefaultValue="False">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Boolean" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="RmyeXFoCJz8MxxRTQZ6PBT" Name="HalfResVolume" Kind="InputPin" DefaultValue="True">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Boolean" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="V6va9uAgiNXNYYEfPHyMeZ" Name="Fog Color" Kind="InputPin">
+              <p:TypeAnnotation>
+                <Choice Kind="TypeFlag" Name="RGBA" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="SDsZmn9dlwOPcahvKBmlKG" Name="Ray Step" Kind="InputPin" Bounds="333,359" DefaultValue="32">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Integer32" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="MLHJ5MNGq85MBQNZx90jOT" Name="Ray Length" Kind="InputPin" DefaultValue="5">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Float64" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="E0j9W7mTwIpLYZLfNdoyrD" Name="Density" Kind="InputPin" DefaultValue="1">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Float64" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="CeAF6m5zyBHMJktPEme9Ix" Name="Blur Factor" Kind="InputPin" DefaultValue="1">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Float64" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="KieZJb2tzhhMrnoM3OZ6nG" Name="Use FogNoise" Kind="InputPin" DefaultValue="False">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Boolean" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="DoGSAutQz5ePsZODgIpBXY" Name="Noise Octave" Kind="InputPin" DefaultValue="2">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Integer64 (Unsigned)" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="DpfvehH5WBlP1QaK6T5xob" Name="Noise Position" Kind="InputPin" DefaultValue="0, 0, 0">
+              <p:TypeAnnotation LastCategoryFullName="3D" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Vector3" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="E1I5Cr5BnzsMhPPeZm7PqJ" Name="Noise Frequency" Kind="InputPin" DefaultValue="0.5">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Float64" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="Owd4DaPecqpLLRR4G3M7iJ" Name="Noise FractFreq" Kind="InputPin" DefaultValue="0.349999994039536">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Float64" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="LmIOY7o0APrOd3F4mO5VbH" Name="Noise FractAmp" Kind="InputPin" DefaultValue="0.25">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Float64" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="DyXwEwndV3YMhNyCDN12sj" Name="Amplitude" Kind="InputPin" DefaultValue="0.75">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Float64" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="P1oxK4kQ3sGOAdhO4qo7al" Name="Noise Evolution" Kind="InputPin" DefaultValue="0.349999994039536">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Float64" />
+              </p:TypeAnnotation>
+            </Pin>
+          </Patch>
+          <ProcessDefinition Id="TQKJeq3tiYkNuYXgnIbpJw" IsHidden="true">
+            <Fragment Id="UqqZbwiIvBxLvT6ZpT3Sdv" Patch="Lytnusj9AOgP5fVlnvPfKN" Enabled="true" />
+            <Fragment Id="PbRP3nWpJnzOdG94jscy8U" Patch="PA9sbpAqnSDLXwq6c3bfPk" Enabled="true" />
+          </ProcessDefinition>
+          <Slot Id="I7Xb8lPWa8yPpaxc8x6OWw" Name="Ray Step">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Integer32" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="LXnF264c8pEOCAS0kczKj7" Ids="H6JZyc8gA5yMBDFEiET3Cw,PMBQ5iQEbctPehhfBfrvjh" />
+          <Link Id="TQmBkbW2bU0PocDLozLXXQ" Ids="SDsZmn9dlwOPcahvKBmlKG,H6JZyc8gA5yMBDFEiET3Cw" IsHidden="true" />
+          <Link Id="NNjv2THnXMrPYY7nCtKQ89" Ids="PMBQ5iQEbctPehhfBfrvjh,EsP1Le0kFGnPK9da5Zj6lk" />
+          <Link Id="C5DyIs47LxaNwTjwB057oc" Ids="EsP1Le0kFGnPK9da5Zj6lk,OpspfZgPfdkOkasJDWG6Y1" IsHidden="true" />
+          <Patch Id="PA9sbpAqnSDLXwq6c3bfPk" Name="GetVolumetric">
+            <Pin Id="Q3UYyW1yaJuOI7uvbtvXd1" Name="Use Volumetric" Kind="OutputPin" />
+            <Pin Id="QBXssv72VDWOSyL8qM5gxV" Name="HalfResVolume" Kind="OutputPin" Bounds="455,594" />
+            <Pin Id="D9p0Yrr8194OgZbnLhS0qE" Name="Fog Color" Kind="OutputPin" Bounds="581,594" />
+            <Pin Id="OpspfZgPfdkOkasJDWG6Y1" Name="Ray Step" Kind="OutputPin" />
+            <Pin Id="JDmasJQp1gaPNcRN3UUPk7" Name="Ray Length" Kind="OutputPin" Bounds="843,607" />
+            <Pin Id="DtpTn1lSq2kNrlMDWUftoc" Name="Density" Kind="OutputPin" Bounds="972,592" />
+            <Pin Id="SWuJqu77v3kPOccYIamUJD" Name="Blur Factor" Kind="OutputPin" Bounds="1107,582" />
+            <Pin Id="PaA5Q9a8VJrM2547bfYERD" Name="Use FogNoise" Kind="OutputPin" Bounds="1350,573" />
+            <Pin Id="Mk3juJFvy02OAQlRAO0NcQ" Name="Noise Octave" Kind="OutputPin" Bounds="1479,577" />
+            <Pin Id="DmpnnHEuA2AOjkDb8QAv6A" Name="Noise Position" Kind="OutputPin" Bounds="1572,591" />
+            <Pin Id="Jn7zHrXVEbMPhwmtQIAO9g" Name="Noise Frequency" Kind="OutputPin" Bounds="1503,589" />
+            <Pin Id="UzDWdYpkyohOtM86QXM3tr" Name="Noise FractFreq" Kind="OutputPin" Bounds="1663,598" />
+            <Pin Id="CelNu0PTKiLQYvHJqPjcmf" Name="Noise FractAmp" Kind="OutputPin" Bounds="1851,588" />
+            <Pin Id="TotFSj6ykhGQPOz3COnjSi" Name="Amplitude" Kind="OutputPin" Bounds="1975,597" />
+            <Pin Id="RyN4xej8ax4OY3f8dG24os" Name="Noise Evolution" Kind="OutputPin" Bounds="2104,635" />
+          </Patch>
+          <Slot Id="R7WCjYmvTqhMtjIB4eBIKo" Name="Use Volumetric">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="GtWRwACljRmPdqhMXYzQAw" Ids="CuRBzrQA8esN747vlwAAZh,I1d14eeLy6qNMJPdC6vnGO" />
+          <Link Id="Iob3tFpzN1mM81g4mmFKwC" Ids="PShUNvriRMjLkvLvWk9zaW,CuRBzrQA8esN747vlwAAZh" IsHidden="true" />
+          <Link Id="Q8HhKrbnkbWMP3xqi5Y6ym" Ids="I1d14eeLy6qNMJPdC6vnGO,BSOJ3ds0gY2MwQM5HZ1zWJ" />
+          <Link Id="VtlFvK4aOilQH8otb0pi2R" Ids="BSOJ3ds0gY2MwQM5HZ1zWJ,Q3UYyW1yaJuOI7uvbtvXd1" IsHidden="true" />
+          <Slot Id="JuYxtoWpvn6PJgMaiizzKN" Name="Fog Color">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="RGBA" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="ACVybMzOc9YLhphK6z0De5" Ids="G78ppYOQBp1NymiUD8Db24,EvMAiuoqKAuNmZeLejw76M" />
+          <Link Id="GVsOc137c1JLWzxZvDoKlc" Ids="V6va9uAgiNXNYYEfPHyMeZ,G78ppYOQBp1NymiUD8Db24" IsHidden="true" />
+          <Link Id="PSxLDpORXasMkjJcRiT93B" Ids="EvMAiuoqKAuNmZeLejw76M,RWfsGeRVVkYQIDtz58tQrn" />
+          <Link Id="PnR2Y7O8JOkN8yRf4GrmcI" Ids="RWfsGeRVVkYQIDtz58tQrn,D9p0Yrr8194OgZbnLhS0qE" IsHidden="true" />
+          <Slot Id="BTJ7gNLpJggPO3b4xZ64Wz" Name="Ray Length">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Float64" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="PcjmaGylE3yLNcZwXby03o" Ids="D3SxKZqXNmaLu2ptNuFGhm,FcFHjB1pF1zLrl0pOXo7dG" />
+          <Link Id="Aj4yd3XhZpoMsm2oDbMLfu" Ids="MLHJ5MNGq85MBQNZx90jOT,D3SxKZqXNmaLu2ptNuFGhm" IsHidden="true" />
+          <Link Id="KT9TsT5GRnUMPWpk5gcgLr" Ids="FcFHjB1pF1zLrl0pOXo7dG,ARU7HtoxKGOLQpwGulVfYY" />
+          <Link Id="BZQDn3OEBhoOLhOaCCtZ5F" Ids="ARU7HtoxKGOLQpwGulVfYY,JDmasJQp1gaPNcRN3UUPk7" IsHidden="true" />
+          <Slot Id="GvqWl9kZAhrMYtHKd1JcW5" Name="Density">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Float64" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="SpK8XyQ2XZVNBVx7KELrvX" Ids="LaRlmJ00gJWOQif1vpkEAY,Q7C6rUOfnjCLFzU6vLkLlf" />
+          <Link Id="OsTBk34txTyOqzJ0c2XHTn" Ids="E0j9W7mTwIpLYZLfNdoyrD,LaRlmJ00gJWOQif1vpkEAY" IsHidden="true" />
+          <Link Id="RpsQMVQJDApPClzC7zCoYd" Ids="Q7C6rUOfnjCLFzU6vLkLlf,PGC3XhseYlGO9ugAGQm548" />
+          <Link Id="SxcPxC63XfJNXLVO2OfX6V" Ids="PGC3XhseYlGO9ugAGQm548,DtpTn1lSq2kNrlMDWUftoc" IsHidden="true" />
+          <Slot Id="Ce4ftMxUUFRNinw6HUc0Z5" Name="HalfResVolume">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="L3xEYm4KgN1QM7jAvDdhz5" Ids="AABpuMn5DU5Ntyent4GbYP,QRK3ufIKPoKNsZJHpATdSA" />
+          <Link Id="Ss4k7jE8ZlyNR2PgjwSHhS" Ids="RmyeXFoCJz8MxxRTQZ6PBT,AABpuMn5DU5Ntyent4GbYP" IsHidden="true" />
+          <Link Id="JQSxuNoos94OtssQM2RTc0" Ids="QRK3ufIKPoKNsZJHpATdSA,OabIqTCo9FlPh7TUpC5GlK" />
+          <Link Id="ACW4NYHDUu9QBH6Cj8qlOi" Ids="OabIqTCo9FlPh7TUpC5GlK,QBXssv72VDWOSyL8qM5gxV" IsHidden="true" />
+          <Slot Id="N1UOHZmwiBIL6nwHMKFA4f" Name="Blur Factor">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Float64" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="Qw0WBIqX6E5OrEq2ssjww7" Ids="LkZhZGpIQoDNKx3gR7kUI1,TEvhxuoWYZLLbJktPIB1nO" />
+          <Link Id="UsXKV8xecD7MaxWSzPJWEH" Ids="CeAF6m5zyBHMJktPEme9Ix,LkZhZGpIQoDNKx3gR7kUI1" IsHidden="true" />
+          <Link Id="Gvj7xmb1zi0OiX5DmnZPmm" Ids="TEvhxuoWYZLLbJktPIB1nO,GSDbr2MWq56ObAmUAB2KCE" />
+          <Link Id="R8UVRThf7xKNbCh8D6LPLF" Ids="GSDbr2MWq56ObAmUAB2KCE,SWuJqu77v3kPOccYIamUJD" IsHidden="true" />
+          <Slot Id="NrXyevqkDVMOUDcaJCLiwt" Name="Use FogNoise">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Boolean" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="OG2BoehQjm5LZ3URAfjWAz" Ids="FPjRMVGMs4lLDjVwCXYKwa,NCSOVUgjduINdrnKtVbkyk" />
+          <Link Id="RxGpNjHj8r0LhiyxNYI8wZ" Ids="KieZJb2tzhhMrnoM3OZ6nG,FPjRMVGMs4lLDjVwCXYKwa" IsHidden="true" />
+          <Link Id="UCkDOmoYzSmPn7M6ilLgOA" Ids="NCSOVUgjduINdrnKtVbkyk,FGaGdc6o5eCLZtJAO9PvfM" />
+          <Link Id="B1hD7Km2oYqMkmaMq1XpoT" Ids="FGaGdc6o5eCLZtJAO9PvfM,PaA5Q9a8VJrM2547bfYERD" IsHidden="true" />
+          <Slot Id="NiEregYsGMgMmABV62my4V" Name="Noise Frequency">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Float64" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="HRDwhdIaZrmQJ7dyIy8W89" Ids="OUesfU5uhvHON6MvZ5eJsI,Sudg0EeCrJePjRdGt03gwL" />
+          <Link Id="UwZPjbzWrNRNbxKzqxjZyg" Ids="E1I5Cr5BnzsMhPPeZm7PqJ,OUesfU5uhvHON6MvZ5eJsI" IsHidden="true" />
+          <Link Id="G4Xb0Ljem24PzYpxduN8V4" Ids="Sudg0EeCrJePjRdGt03gwL,Rv60azrxN89QcFIUH88EcH" />
+          <Link Id="FWTD9YsJXfrLyLCNdSZXar" Ids="Rv60azrxN89QcFIUH88EcH,Jn7zHrXVEbMPhwmtQIAO9g" IsHidden="true" />
+          <Slot Id="Cfmx2Fbx6YAP3MdwXQh7CY" Name="Noise FractFreq">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Float64" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="EigWqPQbYEnQWd0lbzhbzG" Ids="PyAEIiVCmG2LEqgVfMxMLc,QipF06gQ4wELpHgKuWxL1d" />
+          <Link Id="MYneZl15xSDLse4ZuiHXH7" Ids="Owd4DaPecqpLLRR4G3M7iJ,PyAEIiVCmG2LEqgVfMxMLc" IsHidden="true" />
+          <Link Id="GzFyoYMib6nPWowuvGECfI" Ids="QipF06gQ4wELpHgKuWxL1d,QEmK7MwjW41O9OZ3yVdM2k" />
+          <Link Id="SY20r7cNRuuPgc7uLH7J5e" Ids="QEmK7MwjW41O9OZ3yVdM2k,UzDWdYpkyohOtM86QXM3tr" IsHidden="true" />
+          <Slot Id="BMPjlsI1iffOjwq44jFtUW" Name="Noise FractAmp">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Float64" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="APmSjF01ISaM6IvTZsUbZy" Ids="MU0Gd24U4tpN3rCGreKLWT,RJUZ8MNn6oZMix36EJPNKD" />
+          <Link Id="N77ZUfX8tOAQb4Wai4TQzT" Ids="LmIOY7o0APrOd3F4mO5VbH,MU0Gd24U4tpN3rCGreKLWT" IsHidden="true" />
+          <Link Id="FVnFszAKIaFM1qJdEIMzgU" Ids="RJUZ8MNn6oZMix36EJPNKD,IeoZJ2Mfr9UOZawmtT8Fxo" />
+          <Link Id="Q3kUeaNcCpaLCj6uUYKkp8" Ids="IeoZJ2Mfr9UOZawmtT8Fxo,CelNu0PTKiLQYvHJqPjcmf" IsHidden="true" />
+          <Slot Id="MFgqPoLf7QCMazMr7EUuBI" Name="Amplitude">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Float64" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="DjXO9DOm8cAL9qtVzGw4md" Ids="NVdyek5770HOMgGbI8xy7T,BoMyG9hOrlhPMc0oK78l3J" />
+          <Link Id="OvQEPMBx1G6PhRo4vyYti3" Ids="DyXwEwndV3YMhNyCDN12sj,NVdyek5770HOMgGbI8xy7T" IsHidden="true" />
+          <Link Id="UKsFQGbuR1uM3A795RIPPl" Ids="BoMyG9hOrlhPMc0oK78l3J,Ekz2alwwgF3PHlsSQvoKSV" />
+          <Link Id="DudvLV5xViJQIX70P7y5pV" Ids="Ekz2alwwgF3PHlsSQvoKSV,TotFSj6ykhGQPOz3COnjSi" IsHidden="true" />
+          <Slot Id="IeaR6fQXM8mPnrZF2y7lOB" Name="Noise Evolution">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Float64" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="OiAffQc85JPNOstPcwhV01" Ids="SNk7nlFAAWHM2mCe0kyLol,USoO2Pg1cYOMjWLVkhPKuo" />
+          <Link Id="Bh0sWPCc4KgNygItlDY5YP" Ids="P1oxK4kQ3sGOAdhO4qo7al,SNk7nlFAAWHM2mCe0kyLol" IsHidden="true" />
+          <Link Id="GEldbWKIwCzLD9VpPo7cwM" Ids="USoO2Pg1cYOMjWLVkhPKuo,MW6SAk5PeJJLoLk1Zhi5ql" />
+          <Link Id="SFHkomvsFaWLUOVsnaSZdW" Ids="MW6SAk5PeJJLoLk1Zhi5ql,RyN4xej8ax4OY3f8dG24os" IsHidden="true" />
+          <Slot Id="M6lPjyBgGprNlLYjlmrG2b" Name="Noise Octave">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Integer64 (Unsigned)" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="VjWV2sYG0sEPNRAQRABMDi" Ids="D12JCgmrEdlNHsKJKH5Sag,I1hqAQBw504L2vT9cXNPM2" />
+          <Link Id="AP78uyN8R9MNldJ5YBkVEU" Ids="DoGSAutQz5ePsZODgIpBXY,D12JCgmrEdlNHsKJKH5Sag" IsHidden="true" />
+          <Link Id="EaKMfZkxyNHMcfHacbu3Nr" Ids="I1hqAQBw504L2vT9cXNPM2,D2TgTIpi9hXOb9T0qcuWxs" />
+          <Link Id="VaF5CC9zkoNLiRIMi05M0Z" Ids="D2TgTIpi9hXOb9T0qcuWxs,Mk3juJFvy02OAQlRAO0NcQ" IsHidden="true" />
+          <Slot Id="UMuGzI2uECPOqjeyFidZje" Name="Noise Position">
+            <p:TypeAnnotation>
+              <Choice Kind="TypeFlag" Name="Vector3" />
+            </p:TypeAnnotation>
+          </Slot>
+          <Link Id="BkbgZ9pzxH8MsBh7PPZk8L" Ids="Dhn9lIXHVUiPfehlK1kx4h,PsdEClBtc3FO2AKUQX3TFi" />
+          <Link Id="ETUoosIRSSuOQxKbDrdgQR" Ids="DpfvehH5WBlP1QaK6T5xob,Dhn9lIXHVUiPfehlK1kx4h" IsHidden="true" />
+          <Link Id="TlnBmjW0BL7LZEQZljn0UB" Ids="PsdEClBtc3FO2AKUQX3TFi,AoU6lOozLj0MANPlX2lN9O" />
+          <Link Id="QhqBk55Gt08LZjTVXgoXol" Ids="AoU6lOozLj0MANPlX2lN9O,DmpnnHEuA2AOjkDb8QAv6A" IsHidden="true" />
+        </Patch>
+      </Node>
+      <!--
+
+    ************************ SetVolumetric ************************
+
+-->
+      <Node Name="SetVolumetric" Bounds="189,1658,614,244" Id="VqScCnPPm4NOmwYsRtjtw2">
+        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
+          <Choice Kind="OperationDefinition" Name="Operation" />
+        </p:NodeReference>
+        <Patch Id="P4pBxcQZUKaLHRnb29t8Aj">
+          <Node Bounds="242,1794,507,22" Id="RZ9O0t5k0wAMZXxWJK4GpX">
+            <p:NodeReference LastCategoryFullName="VVVV.PBRRenderer.VolumetricLight" LastSymbolSource="VVVV.Value.RenderSetting.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="Create" />
+              <CategoryReference Kind="RecordType" Name="VolumetricLight" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="VXJySmetkGPM90PtZR3CIa" Name="Use Volumetric" Kind="InputPin" />
+            <Pin Id="NX8lAilTjwhOjUtkthhh2r" Name="HalfResVolume" Kind="InputPin" />
+            <Pin Id="Vq1pVktY9EJQJDgtMooPOY" Name="Fog Color" Kind="InputPin" />
+            <Pin Id="U9TJxSjCJSoNoscDGEKtFB" Name="Ray Step" Kind="InputPin" />
+            <Pin Id="Kp75AJ7kiPqLmGw4lAXeFp" Name="Ray Length" Kind="InputPin" />
+            <Pin Id="EfNAo5MeYA8MRxintXOymt" Name="Density" Kind="InputPin" />
+            <Pin Id="Cuf15kebcz3NzcgXUU3N20" Name="Blur Factor" Kind="InputPin" />
+            <Pin Id="B3eF39YkCJOPGOqyxVx0Ky" Name="Use FogNoise" Kind="InputPin" />
+            <Pin Id="Bkz9BXxImhIMpbyg7R9cQ7" Name="Noise Octave" Kind="InputPin" />
+            <Pin Id="KRhwKgZ2Pj4PbEEkbJgBXf" Name="Noise Position" Kind="InputPin" />
+            <Pin Id="Jhh25oGh7kTPt9LaWfgUJv" Name="Noise Frequency" Kind="InputPin" />
+            <Pin Id="N9VbYJYuoVhNe7Cjk4ihok" Name="Noise FractFreq" Kind="InputPin" />
+            <Pin Id="ILBEZKaHB5RO2Tn88gOoxe" Name="Noise FractAmp" Kind="InputPin" />
+            <Pin Id="HopsdJ64qTHOzMAm398ysR" Name="Amplitude" Kind="InputPin" />
+            <Pin Id="RGAwubdt8P0QchwP2OPbmZ" Name="Noise Evolution" Kind="InputPin" />
+            <Pin Id="UQOTtJAmFDROw2mJo5wRFA" Name="Output" Kind="StateOutputPin" />
+          </Node>
+          <ControlPoint Id="RYXb4Seto9xP39GnolC3CD" Bounds="203,1675" />
+          <Link Id="TLwJlFzJqv6OMNsSuJUuIt" Ids="RYXb4Seto9xP39GnolC3CD,VXJySmetkGPM90PtZR3CIa" />
+          <Link Id="Putv7d409DYMYymC1qbQvr" Ids="TDRYK0QI60KM56sXNz6tDF,RYXb4Seto9xP39GnolC3CD" IsHidden="true" />
+          <ControlPoint Id="AmbsCjFXGvZNVt22XxxuO2" Bounds="346,1678" />
+          <Link Id="JEgWRt20I9CNcIo0P9kD1T" Ids="AmbsCjFXGvZNVt22XxxuO2,U9TJxSjCJSoNoscDGEKtFB" />
+          <Link Id="UCgCdK7QUgLOYQZ6ZmS5Xw" Ids="T9HpvVNsnTAPtoUODYdIdH,AmbsCjFXGvZNVt22XxxuO2" IsHidden="true" />
+          <ControlPoint Id="CdEVomDJSJoPVaJyVjBreI" Bounds="223,1883" />
+          <Link Id="N5GzDglp4yLK9pnI4AeYPr" Ids="UQOTtJAmFDROw2mJo5wRFA,CdEVomDJSJoPVaJyVjBreI" />
+          <Link Id="Pd7hNjtxlx1Ld1mXyNcCAG" Ids="CdEVomDJSJoPVaJyVjBreI,AFSjdSICz8FOUyzchtHRAq" IsHidden="true" />
+          <ControlPoint Id="HDzTZCJEdP9LaDmWQy2PoF" Bounds="294,1675" />
+          <Link Id="DwlutcZkW0qNOhPVlVXd2D" Ids="HDzTZCJEdP9LaDmWQy2PoF,Vq1pVktY9EJQJDgtMooPOY" />
+          <Link Id="VNFqLqdHChxNQvNKxEcce8" Ids="I8tjN4vwxmkLrwSwOkIFT9,HDzTZCJEdP9LaDmWQy2PoF" IsHidden="true" />
+          <ControlPoint Id="Iw81qFDXyLEMORICBWcs54" Bounds="443,1674" />
+          <Link Id="NaWZnBd1gKZPjwZ2w3Dn0m" Ids="Iw81qFDXyLEMORICBWcs54,EfNAo5MeYA8MRxintXOymt" />
+          <Link Id="L4C6FneZtllNSYgPOsnOuE" Ids="BecrLwhqs8RL0SuUvGVIUf,Iw81qFDXyLEMORICBWcs54" IsHidden="true" />
+          <ControlPoint Id="NssuZWwBSGRPtA7JZx4ELO" Bounds="377,1692" />
+          <Link Id="Ma95Y9sKBk5QFpL1iDoOZe" Ids="NssuZWwBSGRPtA7JZx4ELO,Kp75AJ7kiPqLmGw4lAXeFp" />
+          <Link Id="J6Luq5YsWSTMv6qWikEtpH" Ids="RCx1KhslEb7OpgocO9ie1t,NssuZWwBSGRPtA7JZx4ELO" IsHidden="true" />
+          <ControlPoint Id="H8qvD9XowDALBWgn0Yva4f" Bounds="243,1696" />
+          <Link Id="FlARScrLASXMJoXKs6Y8N3" Ids="H8qvD9XowDALBWgn0Yva4f,NX8lAilTjwhOjUtkthhh2r" />
+          <Link Id="PqBzI0srfWVPepvVRHTX7K" Ids="TTqkKq7efHSPUOtEXBbqoA,H8qvD9XowDALBWgn0Yva4f" IsHidden="true" />
+          <ControlPoint Id="BE1HG8DpiaTLEQGCxxdze7" Bounds="465,1711" />
+          <Link Id="KLN3z1ModbtLzOdEXyEFdX" Ids="BE1HG8DpiaTLEQGCxxdze7,Cuf15kebcz3NzcgXUU3N20" />
+          <Link Id="JgFgXVyW0QNOYKP8hMOCwm" Ids="PSIH3Gj6ecqLe9krGqKb0e,BE1HG8DpiaTLEQGCxxdze7" IsHidden="true" />
+          <ControlPoint Id="A89eTI0f9V6LSlhql5CxiG" Bounds="710,1688" />
+          <Link Id="N4e9C0qnjLiPJ0rOkQ67nG" Ids="A89eTI0f9V6LSlhql5CxiG,RGAwubdt8P0QchwP2OPbmZ" />
+          <Link Id="Epr0gThnMr3OsYjbkUUFWr" Ids="Msmrefqe0PDNC8pErTDRxK,A89eTI0f9V6LSlhql5CxiG" IsHidden="true" />
+          <ControlPoint Id="GmgUQYXjbCFO5SAnnyiXlq" Bounds="676,1687" />
+          <Link Id="UjE0QeM2vuaOJzKZSo85Pb" Ids="GmgUQYXjbCFO5SAnnyiXlq,HopsdJ64qTHOzMAm398ysR" />
+          <Link Id="FSXXEu1ecPUNIIDvcuCYbL" Ids="DZgJ81gF9nnOLPC77Nd9kU,GmgUQYXjbCFO5SAnnyiXlq" IsHidden="true" />
+          <ControlPoint Id="Tyv8J91OXKCLvaZVJLZCfZ" Bounds="643,1712" />
+          <Link Id="CO4NEcjnY5aMqhhsTPB1ue" Ids="Tyv8J91OXKCLvaZVJLZCfZ,ILBEZKaHB5RO2Tn88gOoxe" />
+          <Link Id="JTqhGOOg328N3KcRSBhtIp" Ids="JDHDL8xauvuOLBEbGm18OV,Tyv8J91OXKCLvaZVJLZCfZ" IsHidden="true" />
+          <ControlPoint Id="UcrwIga6hYcL2n6ToI8ZjJ" Bounds="604,1690" />
+          <Link Id="OA7tkTPl9WVL2X9eFFkjkX" Ids="UcrwIga6hYcL2n6ToI8ZjJ,N9VbYJYuoVhNe7Cjk4ihok" />
+          <Link Id="MB5vX9Mgn2wOBA000V7YnX" Ids="IXyX682lXRPMTZhb7Tdu0l,UcrwIga6hYcL2n6ToI8ZjJ" IsHidden="true" />
+          <ControlPoint Id="Sgxv6VcrJNvN7hZFpyP5zy" Bounds="587,1741" />
+          <Link Id="ULtTay831bmL5xWceoYBUA" Ids="Sgxv6VcrJNvN7hZFpyP5zy,Jhh25oGh7kTPt9LaWfgUJv" />
+          <Link Id="V5Ptl0Tk3EkLZZolZuBG5q" Ids="VpkJcZ7UROwN4XC6gYbzwT,Sgxv6VcrJNvN7hZFpyP5zy" IsHidden="true" />
+          <ControlPoint Id="DlGWHOpACsONfEvGLQOPPN" Bounds="560,1712" />
+          <Link Id="I6cn92gOb7DLPCowea9l32" Ids="DlGWHOpACsONfEvGLQOPPN,KRhwKgZ2Pj4PbEEkbJgBXf" />
+          <Link Id="GP1kEcZAjCzNMhktJRtNsk" Ids="HtWfnq7iXiTQFJQZEZO8xZ,DlGWHOpACsONfEvGLQOPPN" IsHidden="true" />
+          <ControlPoint Id="L6PHvGWqCsNOsK9BIQgTFd" Bounds="539,1694" />
+          <Link Id="C2aGKfhIKLFPfbFMH6OLTQ" Ids="L6PHvGWqCsNOsK9BIQgTFd,Bkz9BXxImhIMpbyg7R9cQ7" />
+          <Link Id="C8Mp6KTxoiHLbHwvpmbCcJ" Ids="QUWNcsCleP1MIi5vdm6kcD,L6PHvGWqCsNOsK9BIQgTFd" IsHidden="true" />
+          <ControlPoint Id="Uq2qboubogkPHKYKqMZ1eU" Bounds="501,1746" />
+          <Link Id="PGOcB0w94S3OibbAi7TjtW" Ids="Uq2qboubogkPHKYKqMZ1eU,B3eF39YkCJOPGOqyxVx0Ky" />
+          <Link Id="VmL3A8HIAEaOHIbvjC48hT" Ids="Ugv9n8BJZJxNruaIz4eQ6u,Uq2qboubogkPHKYKqMZ1eU" IsHidden="true" />
+          <Pin Id="TDRYK0QI60KM56sXNz6tDF" Name="Use Volumetric" Kind="InputPin" Bounds="1470,1445" />
+          <Pin Id="TTqkKq7efHSPUOtEXBbqoA" Name="HalfResVolume" Kind="InputPin" Bounds="1527,1470" />
+          <Pin Id="I8tjN4vwxmkLrwSwOkIFT9" Name="Fog Color" Kind="InputPin" Bounds="1576,1449" />
+          <Pin Id="T9HpvVNsnTAPtoUODYdIdH" Name="Ray Step" Kind="InputPin" Bounds="1630,1444" DefaultValue="32">
+            <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+              <Choice Kind="TypeFlag" Name="Integer32" />
+            </p:TypeAnnotation>
+          </Pin>
+          <Pin Id="RCx1KhslEb7OpgocO9ie1t" Name="Ray Length" Kind="InputPin" Bounds="1637,1494" />
+          <Pin Id="BecrLwhqs8RL0SuUvGVIUf" Name="Density" Kind="InputPin" Bounds="1652,1490" />
+          <Pin Id="PSIH3Gj6ecqLe9krGqKb0e" Name="Blur Factor" Kind="InputPin" Bounds="1729,1514" />
+          <Pin Id="Ugv9n8BJZJxNruaIz4eQ6u" Name="Use FogNoise" Kind="InputPin" Bounds="501,1746" />
+          <Pin Id="QUWNcsCleP1MIi5vdm6kcD" Name="Noise Octave" Kind="InputPin" Bounds="539,1694" />
+          <Pin Id="HtWfnq7iXiTQFJQZEZO8xZ" Name="Noise Position" Kind="InputPin" Bounds="560,1711" />
+          <Pin Id="VpkJcZ7UROwN4XC6gYbzwT" Name="Noise Frequency" Kind="InputPin" Bounds="587,1741" />
+          <Pin Id="IXyX682lXRPMTZhb7Tdu0l" Name="Noise FractFreq" Kind="InputPin" Bounds="604,1690" />
+          <Pin Id="JDHDL8xauvuOLBEbGm18OV" Name="Noise FractAmp" Kind="InputPin" Bounds="643,1712" />
+          <Pin Id="DZgJ81gF9nnOLPC77Nd9kU" Name="Amplitude" Kind="InputPin" Bounds="676,1687" />
+          <Pin Id="Msmrefqe0PDNC8pErTDRxK" Name="Noise Evolution" Kind="InputPin" Bounds="543,1723" />
+          <Pin Id="AFSjdSICz8FOUyzchtHRAq" Name="Output" Kind="OutputPin" Bounds="1500,1564" />
+        </Patch>
+      </Node>
+      <!--
+
+    ************************ GetVolumetric ************************
+
+-->
+      <Node Name="GetVolumetric" Bounds="1905,1762,795,259" Id="CQQyEMYDmT0Oa42iS0sVX6">
+        <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
+          <Choice Kind="OperationDefinition" Name="Operation" />
+        </p:NodeReference>
+        <Patch Id="MxNe9e3pZBAOPdKJcYpz9O">
+          <Node Bounds="1917,1797,205,22" Id="V8D7dg9T7FrNMsP4ot5aUy">
+            <p:NodeReference LastCategoryFullName="VVVV.PBRRenderer.EffectSetting" LastSymbolSource="VVVV.Value.RenderSetting.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="GetEffectSetting" />
+            </p:NodeReference>
+            <Pin Id="VYYdOgeEhAENxBJWfzm8Rg" Name="Input" Kind="StateInputPin" />
+            <Pin Id="Sf7Z5A61IONPx5iNWEOsf8" Name="GTAO" Kind="OutputPin" />
+            <Pin Id="MH082BIM5YROk2Y3Nzqwcc" Name="TemporalAntiAiliating" Kind="OutputPin" />
+            <Pin Id="L9JpXZRBqSaOIZ8lSFGfRt" Name="DepthofField" Kind="OutputPin" />
+            <Pin Id="MSNeakTmStgOD43pSuZdYQ" Name="MotionBlur" Kind="OutputPin" />
+            <Pin Id="K8uaY4W8ciXOXALt2BrsFp" Name="Bloom" Kind="OutputPin" />
+            <Pin Id="LqxHhwRtDcFMlcXt9dRSB8" Name="Tonemap" Kind="OutputPin" />
+            <Pin Id="ITTTiFZPgZ9MgODU8cf5SU" Name="ColorCorrection" Kind="OutputPin" />
+            <Pin Id="VUMhMfd3XNSQKVZneFyaAP" Name="Vignette" Kind="OutputPin" />
+            <Pin Id="Djmbt8STnHzOtHO1IjHhUk" Name="ChoromaticAbberation" Kind="OutputPin" />
+            <Pin Id="MtkGwFUGH4sOatFqa72MsG" Name="Grain" Kind="OutputPin" />
+            <Pin Id="QdG3s3MuUpZNV28dRjskm6" Name="Volumetric" Kind="OutputPin" />
+          </Node>
+          <ControlPoint Id="SnDbOr0N0tcNyL9AHnRZIZ" Bounds="1919,1778" />
+          <Link Id="Ur20JamAiWTOwNYURs7xK9" Ids="SnDbOr0N0tcNyL9AHnRZIZ,VYYdOgeEhAENxBJWfzm8Rg" />
+          <Link Id="Oud8hP0LEo5PEs5CX2Q1rx" Ids="H6AiIG39fxtPOWXAjuXVNK,SnDbOr0N0tcNyL9AHnRZIZ" IsHidden="true" />
+          <Node Bounds="1984,1870,616,22" Id="QVWLWDONZPwNSSqTVR4dZ6">
+            <p:NodeReference LastCategoryFullName="VVVV.PBRRenderer.VolumetricLight" LastSymbolSource="VVVV.Value.RenderSetting.vl">
+              <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+              <Choice Kind="OperationCallFlag" Name="GetVolumetric" />
+              <CategoryReference Kind="RecordType" Name="VolumetricLight" NeedsToBeDirectParent="true" />
+            </p:NodeReference>
+            <Pin Id="V1BJh9n6QJcL9UVUqUeSCW" Name="Input" Kind="StateInputPin" />
+            <Pin Id="AyJNqjeIAMeLg1m7xvfoLU" Name="Output" Kind="OutputPin" />
+            <Pin Id="UxLe8zcOIh6NuBHiriDKPI" Name="Use Volumetric" Kind="OutputPin" />
+            <Pin Id="B0oazifqA6WNCr6z7Kc5U0" Name="HalfResVolume" Kind="OutputPin" />
+            <Pin Id="CJ5cIPAem3qNgBM9yQCFjg" Name="Fog Color" Kind="OutputPin" />
+            <Pin Id="OxS72Zrp42GO7VYjbJRKy6" Name="Ray Step" Kind="OutputPin" />
+            <Pin Id="QbCMAZQcIyROlmAmXuPvHg" Name="Ray Length" Kind="OutputPin" />
+            <Pin Id="BwsIsNzOnbENDpaPhL3xfB" Name="Density" Kind="OutputPin" />
+            <Pin Id="MK9xY75AbAmMdHpSw33oDK" Name="Blur Factor" Kind="OutputPin" />
+            <Pin Id="SvA6o8cf4hjMe1xKpoDVFt" Name="Use FogNoise" Kind="OutputPin" />
+            <Pin Id="BRj5cEuljxtMI6Kwlz81cn" Name="Noise Octave" Kind="OutputPin" />
+            <Pin Id="PExiFhQI2niOEidxc7590G" Name="Noise Position" Kind="OutputPin" />
+            <Pin Id="SVgUpYIFcVrPtTLAXFxmw3" Name="Noise Frequency" Kind="OutputPin" />
+            <Pin Id="Lg2dKk7Q4bxNc5HQasJ4BC" Name="Noise FractFreq" Kind="OutputPin" />
+            <Pin Id="FD7uDKqCfLONK4muM9xVXK" Name="Noise FractAmp" Kind="OutputPin" />
+            <Pin Id="QMuwTQhZtvlM4CDoQt8j1Q" Name="Amplitude" Kind="OutputPin" />
+            <Pin Id="CYjjsgpZFYaOlsYzlvhJRh" Name="Noise Evolution" Kind="OutputPin" />
+          </Node>
+          <Link Id="KheSzLvgE5gPyeshL5IkfA" Ids="QdG3s3MuUpZNV28dRjskm6,V1BJh9n6QJcL9UVUqUeSCW" />
+          <ControlPoint Id="Kruz2niXwQaNCFyOuys8Sc" Bounds="2080,1945" />
+          <Link Id="MlDsg2HmWakOu8Sl2phGUe" Ids="OxS72Zrp42GO7VYjbJRKy6,Kruz2niXwQaNCFyOuys8Sc" />
+          <Link Id="VL9rsSKI84vNi2IoXjIDdc" Ids="Kruz2niXwQaNCFyOuys8Sc,AyJ1qXCQzHILzJimdcFXEj" IsHidden="true" />
+          <ControlPoint Id="BdxmpByFeoFNhSCOJ4bGWZ" Bounds="2023,1969" />
+          <Link Id="PoDuK2hQDDzO3z8fTzNYM3" Ids="CJ5cIPAem3qNgBM9yQCFjg,BdxmpByFeoFNhSCOJ4bGWZ" />
+          <Link Id="Gd7EB2yFF4mMloJBr3A9jP" Ids="BdxmpByFeoFNhSCOJ4bGWZ,Uc2JAm8d0L7PkE7GXpef4u" IsHidden="true" />
+          <ControlPoint Id="CbKMo1pVyZlMmDoM9T2heR" Bounds="2227,1987" />
+          <Link Id="EFykVPkKDQQNBypOQtzI9F" Ids="BwsIsNzOnbENDpaPhL3xfB,CbKMo1pVyZlMmDoM9T2heR" />
+          <Link Id="TvqVhcGPnfIM33Cj4XkOns" Ids="CbKMo1pVyZlMmDoM9T2heR,MOGpA9B6IdAMBH7qjPmRzU" IsHidden="true" />
+          <ControlPoint Id="FHvghtWhWlINGiRkjNmfUp" Bounds="2142,1991" />
+          <Link Id="L4wSOCEHRDGNVeege3u2Nx" Ids="QbCMAZQcIyROlmAmXuPvHg,FHvghtWhWlINGiRkjNmfUp" />
+          <Link Id="INZWUsDLUnvP1WiJaZ3pOQ" Ids="FHvghtWhWlINGiRkjNmfUp,AICVGBxMdRfMNTBRPhBU3V" IsHidden="true" />
+          <ControlPoint Id="JJYoDRhsQ8rPnL4WnZTBbu" Bounds="1960,2002" />
+          <Link Id="RgdLs2uPxqqOo5HHAD7yhN" Ids="B0oazifqA6WNCr6z7Kc5U0,JJYoDRhsQ8rPnL4WnZTBbu" />
+          <Link Id="P8mWpIWl7o5NlydG589zz7" Ids="JJYoDRhsQ8rPnL4WnZTBbu,QSQy8XVYLacN69t0lgYvjC" IsHidden="true" />
+          <ControlPoint Id="ELhLgT9TCDxPYFJGV2kqUo" Bounds="2241,1953" />
+          <Link Id="HGgs39XEoZsMzuUSXGqykz" Ids="MK9xY75AbAmMdHpSw33oDK,ELhLgT9TCDxPYFJGV2kqUo" />
+          <Link Id="JvbrTdcfa7tOLc9lPfdcOS" Ids="ELhLgT9TCDxPYFJGV2kqUo,US6KLMySTNFMsARFu1FyCs" IsHidden="true" />
+          <ControlPoint Id="BCg3Q2NJyl6OrKfEyIwJ5r" Bounds="2607,1973" />
+          <Link Id="AbPdJqqob9wLX5bv1OcZtU" Ids="CYjjsgpZFYaOlsYzlvhJRh,BCg3Q2NJyl6OrKfEyIwJ5r" />
+          <Link Id="Vv5jbPblxTFOiT3QtJ97yn" Ids="BCg3Q2NJyl6OrKfEyIwJ5r,Kax1BVv9szSOGsvgzjzsRe" IsHidden="true" />
+          <ControlPoint Id="KVPjJSfKjbPN5QtTiMm8ha" Bounds="2559,1970" />
+          <Link Id="RorwQpGqTxvMA9rwZCZPIJ" Ids="QMuwTQhZtvlM4CDoQt8j1Q,KVPjJSfKjbPN5QtTiMm8ha" />
+          <Link Id="OgTgM2eJGmnL1haFmKaxZk" Ids="KVPjJSfKjbPN5QtTiMm8ha,ImpdE1GTsgzQKdcpCoYFFH" IsHidden="true" />
+          <ControlPoint Id="MqZtRy0bybKN7qU7yE3bdT" Bounds="2523,1922" />
+          <Link Id="AGvJfpBPchlOEb82V9g2SU" Ids="FD7uDKqCfLONK4muM9xVXK,MqZtRy0bybKN7qU7yE3bdT" />
+          <Link Id="LJUtHOIECNyMeBQjxxzWGh" Ids="MqZtRy0bybKN7qU7yE3bdT,TCYDmGAczVLPl0x21HWBPp" IsHidden="true" />
+          <ControlPoint Id="TcMUOe3uS2kLGEnxjjx7em" Bounds="2473,1990" />
+          <Link Id="Ax8On7G36FaOomNW6uYIrO" Ids="Lg2dKk7Q4bxNc5HQasJ4BC,TcMUOe3uS2kLGEnxjjx7em" />
+          <Link Id="F6Liy9lgDplOBqU9QBad04" Ids="TcMUOe3uS2kLGEnxjjx7em,DwUabnlNH3WOAFlmg5LTz1" IsHidden="true" />
+          <ControlPoint Id="TyHHLpSAHgrNWk35ayX8N4" Bounds="2433,1946" />
+          <Link Id="FILtAwk6PpuN1Z1l0Q4DFZ" Ids="SVgUpYIFcVrPtTLAXFxmw3,TyHHLpSAHgrNWk35ayX8N4" />
+          <Link Id="HGfRtc9HkLxMmA0eG6DnQd" Ids="TyHHLpSAHgrNWk35ayX8N4,BA82E42HmWsNuzIv9r2JaS" IsHidden="true" />
+          <ControlPoint Id="VvvO5e2KqU7QaxUrgZxX2K" Bounds="2388,2000" />
+          <Link Id="QFMElsFTYnEPKMLybC1p4O" Ids="PExiFhQI2niOEidxc7590G,VvvO5e2KqU7QaxUrgZxX2K" />
+          <Link Id="NWNGsXLfjxHMY0ldBGK0HC" Ids="VvvO5e2KqU7QaxUrgZxX2K,TRgArp4zrMwM1KK6CMIQbl" IsHidden="true" />
+          <ControlPoint Id="Io2RJd0abePMtD9ot8sCYG" Bounds="2350,1944" />
+          <Link Id="TY1nqKdY5jUL7DbJGI4HKM" Ids="BRj5cEuljxtMI6Kwlz81cn,Io2RJd0abePMtD9ot8sCYG" />
+          <Link Id="USh4URdGQWzN0mEWihV96Y" Ids="Io2RJd0abePMtD9ot8sCYG,AdQuPKTQYoLLyTjbl79sTS" IsHidden="true" />
+          <ControlPoint Id="S3xJhBoR4LlN4zGS5HFeCn" Bounds="2316,1990" />
+          <Link Id="LLY1wba0SkjN408uYUQmvI" Ids="SvA6o8cf4hjMe1xKpoDVFt,S3xJhBoR4LlN4zGS5HFeCn" />
+          <Link Id="AxhE0lIUyNhNYY3LfYrdVs" Ids="S3xJhBoR4LlN4zGS5HFeCn,SGhofcHhiM2NYFi262usMH" IsHidden="true" />
+          <Pin Id="H6AiIG39fxtPOWXAjuXVNK" Name="Input" Kind="InputPin" Bounds="2297,1692" />
+          <Pin Id="QSQy8XVYLacN69t0lgYvjC" Name="HalfResVolume" Kind="OutputPin" Bounds="2363,1897" />
+          <Pin Id="Uc2JAm8d0L7PkE7GXpef4u" Name="Fog Color" Kind="OutputPin" Bounds="2411,1855" />
+          <Pin Id="AyJ1qXCQzHILzJimdcFXEj" Name="Ray Step" Kind="OutputPin" Bounds="2476,1821" />
+          <Pin Id="AICVGBxMdRfMNTBRPhBU3V" Name="Ray Length" Kind="OutputPin" Bounds="2519,1862" />
+          <Pin Id="MOGpA9B6IdAMBH7qjPmRzU" Name="Density" Kind="OutputPin" Bounds="2550,1855" />
+          <Pin Id="US6KLMySTNFMsARFu1FyCs" Name="Blur Factor" Kind="OutputPin" Bounds="2596,1863" />
+          <Pin Id="SGhofcHhiM2NYFi262usMH" Name="Use FogNoise" Kind="OutputPin" Bounds="2316,1990" />
+          <Pin Id="AdQuPKTQYoLLyTjbl79sTS" Name="Noise Octave" Kind="OutputPin" Bounds="2350,1944" />
+          <Pin Id="TRgArp4zrMwM1KK6CMIQbl" Name="Noise Position" Kind="OutputPin" Bounds="2388,2000" />
+          <Pin Id="BA82E42HmWsNuzIv9r2JaS" Name="Noise Frequency" Kind="OutputPin" Bounds="2433,1946" />
+          <Pin Id="DwUabnlNH3WOAFlmg5LTz1" Name="Noise FractFreq" Kind="OutputPin" Bounds="2472,1991" />
+          <Pin Id="TCYDmGAczVLPl0x21HWBPp" Name="Noise FractAmp" Kind="OutputPin" Bounds="2523,1922" />
+          <Pin Id="ImpdE1GTsgzQKdcpCoYFFH" Name="Amplitude" Kind="OutputPin" Bounds="2559,1970" />
+          <Pin Id="Kax1BVv9szSOGsvgzjzsRe" Name="Noise Evolution" Kind="OutputPin" Bounds="2514,1945" />
+        </Patch>
+      </Node>
     </Canvas>
+    <!--
+
+    ************************ Application ************************
+
+-->
+    <Node Name="Application" Bounds="100,100" Id="MhRtMInIHnLMtxFRERVG5a">
+      <p:NodeReference>
+        <Choice Kind="ContainerDefinition" Name="Process" />
+        <FullNameCategoryReference ID="Primitive" />
+      </p:NodeReference>
+      <Patch Id="JEPvZwQzzy5MZXXsaSEHMJ">
+        <Canvas Id="DJQZAcNtwVJOPDbaoX0gWu" BordersChecked="false" CanvasType="Group" />
+        <Patch Id="PodVjNgyaw0PwtZVDRddLW" Name="Create" />
+        <Patch Id="NMv6TbNHy39MWYuQoXmtGi" Name="Update" />
+        <ProcessDefinition Id="I1EQO7LPUr3McU2ENdgout">
+          <Fragment Id="UzxeuRwqSxRNfgEwaDVSmD" Patch="PodVjNgyaw0PwtZVDRddLW" Enabled="true" />
+          <Fragment Id="Sj2Z3wqBXMqMhDlANG76bb" Patch="NMv6TbNHy39MWYuQoXmtGi" Enabled="true" />
+        </ProcessDefinition>
+      </Patch>
+    </Node>
   </Patch>
   <NugetDependency Id="ONRe87f9TNzPsN3weYFxFZ" Location="VL.Boids" Version="0.94.50-gf563f1b382" />
   <NugetDependency Id="O0MjpJki18gOksYLZAWNcM" Location="VL.VVVV.DirectX11" Version="0.94.50-gf563f1b382" />

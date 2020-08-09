@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="F:\vvvv\work\PBRRenderer\node\modules\ColorGrading (DX11.Texture).v4p" systemname="ColorGrading (DX11.Texture)" filename="F:\vvvv\work\PBRRenderer\modules\ColorGrading (DX11.Texture).v4p" scrollx="30" scrolly="-360">
+   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\nodes\modules\ColorGrading (DX11.Texture).v4p" systemname="ColorGrading (DX11.Texture)" filename="F:\vvvv\work\PBRRenderer\modules\ColorGrading (DX11.Texture).v4p" scrollx="30" scrolly="-360">
    <NODE id="2" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="|Texture In|">
    </PIN>
@@ -18,7 +18,7 @@
    <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="8850" top="570" width="11865" height="14265">
+   <BOUNDS type="Window" left="3480" top="0" width="11865" height="14265">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
    </PACK>
@@ -105,7 +105,7 @@
    </PIN>
    <PIN pinname="Enabled" visible="1">
    </PIN>
-   <PIN pinname="amount" slicecount="1" visible="1" values="0.15">
+   <PIN pinname="amount" slicecount="1" visible="1" values="0.300000011920929">
    </PIN>
    </NODE>
    <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="33">
@@ -169,9 +169,9 @@
    </PIN>
    <PIN pinname="contrast" slicecount="1" visible="1" values="1">
    </PIN>
-   <PIN pinname="saturation" slicecount="1" visible="1" values="-0.02">
+   <PIN pinname="saturation" slicecount="1" visible="1" values="0">
    </PIN>
-   <PIN pinname="hue" slicecount="1" visible="1" values="0.03">
+   <PIN pinname="hue" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Query" visible="1">
    </PIN>
@@ -185,13 +185,13 @@
    </BOUNDS>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <PIN pinname="smooth" slicecount="1" visible="1" values="1.37">
+   <PIN pinname="smooth" slicecount="1" visible="1" values="0.200000002980232">
    </PIN>
-   <PIN pinname="center" slicecount="1" visible="1" values="0.63">
+   <PIN pinname="center" slicecount="1" visible="1" values="0.75">
    </PIN>
    <PIN pinname="Texture In" visible="1">
    </PIN>
-   <PIN pinname="intensity" slicecount="1" visible="1" values="0.35">
+   <PIN pinname="intensity" slicecount="1" visible="1" values="0.449999988079071">
    </PIN>
    <PIN pinname="Enabled" slicecount="1" visible="1" values="1">
    </PIN>
@@ -231,7 +231,7 @@
    </PIN>
    <PIN pinname="Default SizeXY" slicecount="2" values="1024,1024">
    </PIN>
-   <PIN pinname="scale" slicecount="1" visible="1" values="1.68">
+   <PIN pinname="scale" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="mult" slicecount="1" values="8.67">
    </PIN>
@@ -251,7 +251,7 @@
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <PIN pinname="intensity" visible="1">
+   <PIN pinname="intensity" visible="1" slicecount="1" values="0.25">
    </PIN>
    </NODE>
    <LINK srcnodeid="31" srcpinname="Texture Out" dstnodeid="43" dstpinname="Texture In">
@@ -273,7 +273,7 @@
    <NODE systemname="GetGrading (PBRRenderer)" filename="vl\VVVV.Value.RenderSetting.vl" nodename="GetGrading (PBRRenderer)" componentmode="Hidden" id="46">
    <BOUNDS type="Node" left="7545" top="990" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input" visible="1">
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Use Tonemap" visible="1">
    </PIN>
@@ -301,7 +301,7 @@
    <NODE systemname="GetTonemap (PBRRenderer)" filename="vl\VVVV.Value.RenderSetting.vl" nodename="GetTonemap (PBRRenderer)" componentmode="Hidden" id="47">
    <BOUNDS type="Node" left="2355" top="885" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input" visible="1">
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Use Tonemap" visible="1">
    </PIN>
@@ -319,7 +319,7 @@
    <NODE systemname="Ord2Enum (Enumerations Explicit)" nodename="Ord2Enum (Enumerations Explicit)" componentmode="Hidden" id="48">
    <BOUNDS type="Node" left="3465" top="1275" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Ord Value" visible="1">
+   <PIN pinname="Ord Value" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Enum" visible="1">
    </PIN>
@@ -367,7 +367,7 @@
    <NODE systemname="GetCC (PBRRenderer)" filename="vl\VVVV.Value.RenderSetting.vl" nodename="GetCC (PBRRenderer)" componentmode="Hidden" id="51">
    <BOUNDS type="Node" left="1545" top="3420" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input" visible="1">
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Contrast" visible="1">
    </PIN>
@@ -395,7 +395,7 @@
    <NODE systemname="GetVignette (PBRRenderer)" filename="vl\VVVV.Value.RenderSetting.vl" nodename="GetVignette (PBRRenderer)" componentmode="Hidden" id="52">
    <BOUNDS type="Node" left="1365" top="6270" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input" visible="1">
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Center" visible="1">
    </PIN>
@@ -419,7 +419,7 @@
    <NODE systemname="GetChromatic (PBRRenderer)" filename="vl\VVVV.Value.RenderSetting.vl" nodename="GetChromatic (PBRRenderer)" componentmode="Hidden" id="53">
    <BOUNDS type="Node" left="1875" top="8490" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input" visible="1">
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="amount" visible="1">
    </PIN>
@@ -435,7 +435,7 @@
    <NODE systemname="GetGrain (PBRRenderer)" filename="vl\VVVV.Value.RenderSetting.vl" nodename="GetGrain (PBRRenderer)" componentmode="Hidden" id="54">
    <BOUNDS type="Node" left="1380" top="10500" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input" visible="1">
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Scale" visible="1">
    </PIN>

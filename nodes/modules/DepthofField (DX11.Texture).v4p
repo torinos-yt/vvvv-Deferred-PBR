@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\nodes\modules\DepthofField (DX11.Texture).v4p" systemname="DepthofField (DX11.Texture)" filename="F:\vvvv\work\PBRRenderer\modules\DepthofField (DX11.Texture).v4p" scrollx="15" scrolly="-360">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta39.dtd" >
+   <PATCH nodename="F:\vvvv\vvvv_beta_39_x64\packs\PBRRenderer\nodes\modules\DepthofField (DX11.Texture).v4p" systemname="DepthofField (DX11.Texture)" filename="F:\vvvv\work\PBRRenderer\modules\DepthofField (DX11.Texture).v4p" scrollx="15" scrolly="-360">
    <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="4">
    <BOUNDS type="Node" left="2985" top="2235" width="100" height="100">
    </BOUNDS>
@@ -78,7 +78,7 @@
    <PIN pinname="Index" slicecount="1" values="5">
    </PIN>
    </NODE>
-   <NODE systemname="CSTextureThreading" filename="CSTextureThreading.v4p" nodename="modules\CSTextureThreading.v4p" componentmode="Hidden" id="27">
+   <NODE systemname="CSTextureThreading" filename="%VVVV%\packs\PBRRenderer\nodes\modules\CSTextureThreading.v4p" nodename="modules\CSTextureThreading.v4p" componentmode="Hidden" id="27">
    <BOUNDS type="Node" left="3712" top="4012" width="0" height="0">
    </BOUNDS>
    <BOUNDS type="Box" left="2132" top="1795" width="3160" height="4435">
@@ -152,7 +152,7 @@
    </PACK>
    <PACK Name="ÎmagePack" Version="0.2.0">
    </PACK>
-   <PACK Name="addonpack" Version="38.1.0">
+   <PACK Name="addonpack" Version="39.0.0">
    </PACK>
    <NODE systemname="NullIndirect (DX11.Drawer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="NullIndirect (DX11.Drawer)" componentmode="Hidden" id="31">
    <BOUNDS type="Node" left="2610" top="10005" width="100" height="100">
@@ -172,7 +172,7 @@
    <PIN pinname="Default Instance Count" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="33">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="33" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="3150" top="9105" width="1080" height="270">
    </BOUNDS>
    <BOUNDS type="Node" left="3150" top="9105" width="0" height="0">
@@ -184,7 +184,7 @@
    <PIN pinname="Input Node" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="34">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="34" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="5340" top="465" width="480" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="5340" top="465" width="0" height="0">
@@ -204,7 +204,7 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="35">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="35" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="5655" top="615" width="795" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="5655" top="615" width="0" height="0">
@@ -224,7 +224,7 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="37">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="37" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="6690" top="2775" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="6690" top="2775" width="0" height="0">
@@ -368,7 +368,7 @@
    <PIN pinname="Aspect Ratio" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Node)" componentmode="InABox" id="90">
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="90" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="1290" top="14160" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="1290" top="14160" width="0" height="0">
@@ -388,7 +388,7 @@
    <PIN pinname="Input Assembler Primitives" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="95">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="95" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="5340" top="11940" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="5340" top="11940" width="0" height="0">
@@ -406,7 +406,7 @@
    </NODE>
    <LINK srcnodeid="93" srcpinname="Input Assembler Primitives" dstnodeid="95" dstpinname="Y Input Value">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="96">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="96" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="4275" top="405" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="4275" top="405" width="0" height="0">
@@ -426,7 +426,7 @@
    <PIN pinname="Maximum" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="97">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="97" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="4440" top="885" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="4440" top="885" width="0" height="0">
@@ -476,7 +476,7 @@
    <LINKPOINT x="2025" y="4665">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="iris" filename="iris.v4p" nodename="iris.v4p" componentmode="Hidden" id="141">
+   <NODE systemname="iris" filename="%VVVV%\packs\PBRRenderer\nodes\modules\iris.v4p" nodename="iris.v4p" componentmode="Hidden" id="141">
    <BOUNDS type="Node" left="4504" top="9480" width="0" height="0">
    </BOUNDS>
    <BOUNDS type="Box" left="2452" top="6978" width="4105" height="5005">
@@ -544,7 +544,7 @@
    </LINK>
    <LINK srcnodeid="146" srcpinname="Output" dstnodeid="5" dstpinname="Enabled">
    </LINK>
-   <NODE systemname="focusDepth" filename="focusDepth.v4p" nodename="focusDepth.v4p" componentmode="Hidden" id="147">
+   <NODE systemname="focusDepth" filename="%VVVV%\packs\PBRRenderer\nodes\modules\focusDepth.v4p" nodename="focusDepth.v4p" componentmode="Hidden" id="147">
    <BOUNDS type="Node" left="6296" top="4399" width="0" height="0">
    </BOUNDS>
    <BOUNDS type="Box" left="4064" top="119" width="4465" height="8560">
@@ -616,7 +616,7 @@
    <LINKPOINT x="4710" y="4735">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="163">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="163" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="6105" top="990" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="6105" top="990" width="0" height="0">
@@ -698,7 +698,7 @@
    <PIN pinname="String Value" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="197">
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="197" systemname="IOBox (Enumerations)">
    <BOUNDS type="Box" left="7680" top="465" width="720" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="7680" top="465" width="0" height="0">
@@ -738,7 +738,7 @@
    <LINKPOINT x="1320" y="7140">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="200">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="200" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="2670" top="315" width="795" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="2670" top="315" width="0" height="0">
@@ -780,7 +780,7 @@
    </NODE>
    <LINK srcnodeid="200" srcpinname="Y Output Value" dstnodeid="201" dstpinname="XY">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="202">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="202" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="3690" top="585" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="3690" top="585" width="0" height="0">
@@ -808,7 +808,7 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="206">
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="206" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="8850" top="360" width="480" height="480">
    </BOUNDS>
    <BOUNDS type="Node" left="8850" top="360" width="0" height="0">
@@ -862,7 +862,7 @@
    </LINK>
    <LINK srcnodeid="61" srcpinname="Buffers" dstnodeid="208" dstpinname="Input 2">
    </LINK>
-   <NODE systemname="CoC (DX11.TextureFX)" filename="texture11\CoC.tfx" nodename="CoC (DX11.TextureFX)" componentmode="Hidden" id="148">
+   <NODE systemname="CoC (DX11.TextureFX)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\texture11\CoC.tfx" nodename="CoC (DX11.TextureFX)" componentmode="Hidden" id="148">
    <BOUNDS type="Node" left="4785" top="6285" width="100" height="100">
    </BOUNDS>
    <PIN pinname="tIP" visible="1">
@@ -908,7 +908,7 @@
    </LINK>
    <LINK srcnodeid="202" srcpinname="Y Output Value" dstnodeid="148" dstpinname="World Scale">
    </LINK>
-   <NODE systemname="BokehExtruct (DX11.Effect)" filename="dx11\BokehExtruct.fx" nodename="BokehExtruct (DX11.Effect)" componentmode="Hidden" id="0">
+   <NODE systemname="BokehExtruct (DX11.Effect)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\dx11\BokehExtruct.fx" nodename="BokehExtruct (DX11.Effect)" componentmode="Hidden" id="0">
    <BOUNDS type="Node" left="3450" top="7410" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Geometry" visible="1" slicecount="1" values="||">
@@ -1012,7 +1012,7 @@
    </LINK>
    <LINK srcnodeid="148" srcpinname="Texture Out" dstnodeid="0" dstpinname="CoCTex">
    </LINK>
-   <NODE systemname="BokehRender (DX11.Effect)" filename="dx11\BokehRender.fx" nodename="BokehRender (DX11.Effect)" componentmode="Hidden" id="58">
+   <NODE systemname="BokehRender (DX11.Effect)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\dx11\BokehRender.fx" nodename="BokehRender (DX11.Effect)" componentmode="Hidden" id="58">
    <BOUNDS type="Node" left="1635" top="10860" width="3435" height="270">
    </BOUNDS>
    <PIN pinname="Geometry" visible="1">
@@ -1066,7 +1066,7 @@
    <LINKPOINT x="5445" y="8705">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="DepthBlurConcentric (DX11.TextureFX)" filename="texture11\DepthBlurConcentric.tfx" nodename="DepthBlurConcentric (DX11.TextureFX)" componentmode="Hidden" id="169">
+   <NODE systemname="DepthBlurConcentric (DX11.TextureFX)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\texture11\DepthBlurConcentric.tfx" nodename="DepthBlurConcentric (DX11.TextureFX)" componentmode="Hidden" id="169">
    <BOUNDS type="Node" left="1785" top="13005" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1">
@@ -1114,7 +1114,7 @@
    <LINKPOINT x="2880" y="9845">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="BlurComp (DX11.TextureFX)" filename="texture11\BlurComp.tfx" nodename="BlurComp (DX11.TextureFX)" componentmode="Hidden" id="182">
+   <NODE systemname="BlurComp (DX11.TextureFX)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\texture11\BlurComp.tfx" nodename="BlurComp (DX11.TextureFX)" componentmode="Hidden" id="182">
    <BOUNDS type="Node" left="1290" top="13515" width="100" height="100">
    </BOUNDS>
    <PIN pinname="blurTex" visible="1">

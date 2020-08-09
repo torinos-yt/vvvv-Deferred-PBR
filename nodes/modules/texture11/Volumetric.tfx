@@ -1,0 +1,137 @@
+//Volumetric Lights
+//by Alexandre Pestana
+//http://www.alexandre-pestana.com/volumetric-lights/
+
+#include "../fxh/NoiseFunc.fxh"
+
+#define G_SCATTERING -.2
+#define PI 3.14159
+
+Texture2D texture2d : PREVIOUS;
+Texture2D WorldTex : POSITION;
+
+Texture2DArray shadowMap;
+struct Light{
+	float3 pos;
+	float3 amb;
+	float3 diff;
+	float4x4 VP;
+};
+StructuredBuffer<Light> lights;
+
+Texture2D NoiseTex;
+
+bool useFogNoise = false;
+int oct<string uiname = "Noise Octave"; float uimax = 5.0; float uimin = 1.0;> = 2.0;
+float3 pos<string uiname ="Noise Position";> = 0.0;
+float freq<string uiname = "Noise Frequency";> = 2.0;
+float lacun<string uiname = "Noise FractFreq";> = .35;
+float pers<string uiname = "Noise FractAmp";> = 3.5;
+float evo<string uiname = "Noise Evolution";> = 1.0; 
+
+float amp = 1.0;
+
+SamplerState linearSampler : IMMUTABLE
+{
+    Filter = MIN_MAG_MIP_LINEAR;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+SamplerState shadowSampler : immutable{
+	Filter = MIN_MAG_MIP_LINEAR;
+	AddressU = BORDER;
+	AddressV = BORDER;
+};
+
+struct psInput
+{
+	float4 p : SV_Position;
+	float2 uv : TEXCOORD0;
+};
+
+float4 FogColor<bool color = true;> = 1;
+
+uint NB_STEPS = 16;
+float rayLength = 1.0;
+float Density = 1.0;
+
+float4x4 tVI;
+float4x4 tPI;
+
+float ComputeScattering(float lightDotView){
+	float result = 1.0f - G_SCATTERING * G_SCATTERING;
+	result *= result;
+	result /= (4.0f * PI * pow(abs(1.0f + G_SCATTERING * G_SCATTERING - (2.0f * G_SCATTERING) * lightDotView), 1.5f));
+	return result;
+}
+
+float4 PS(psInput input) : SV_Target{
+	float3 wPos = WorldTex.Sample(linearSampler, input.uv).xyz;
+	float3 rayPos = tVI[3].xyz;
+	float3 rayDir = normalize(mul(float4(mul(float4((input.uv*2-1)*float2(1,-1),0,1),tPI).xy,1,0),tVI).xyz);
+	
+	bool emv = all(abs(wPos)<0.0001);
+	
+	float stepLength = distance(rayPos, wPos) / NB_STEPS;
+	stepLength = lerp(stepLength, rayLength/NB_STEPS, emv);
+	float3 steps = rayDir * stepLength;
+	
+	float noise = NoiseTex.Sample(linearSampler, input.uv).r;
+	rayPos += steps * noise * 2.5;
+	
+	float3 accumFog = 0.0f.xxx;
+	
+	uint LightCount, dumm;
+	lights.GetDimensions(LightCount, dumm);
+	
+	float rayDepth = 0;
+
+	for(uint i = 0; i < NB_STEPS; i++){	
+		if(rayDepth > distance(tVI[3].xyz, wPos) && !emv) break;
+		
+		for(uint j = 0; j < LightCount; j++){
+			float4x4 LightVP = lights[j].VP;
+			float3 lightDir = normalize(float3(LightVP._13, LightVP._23, LightVP._33));
+			float3 lightPos = lights[j].pos;
+			float lightFar = -LightVP._43 / (LightVP._33-1) * 2.5;
+	
+			float4 worldInShadowCameraSpace = mul(float4(rayPos,1.0), LightVP);
+			worldInShadowCameraSpace /= worldInShadowCameraSpace.w;
+			float3 LightCd = (worldInShadowCameraSpace.xyz + 1) * .5;
+			if(saturate(LightCd.x)==LightCd.x && saturate(LightCd.y)==LightCd.y && saturate(LightCd.z)==LightCd.z){
+			
+				float shadowMapValue = shadowMap.SampleLevel(shadowSampler,float3((worldInShadowCameraSpace.x+1)*.5,(-worldInShadowCameraSpace.y+1)*.5, j),0).r;
+				float ldist = distance(lightPos, rayPos);
+				
+				float edgeFade = smoothstep(1, 0, saturate(length(worldInShadowCameraSpace.xy)));
+				float distFade = pow(saturate(lightFar*.9 - ldist), 2);
+			
+				if (shadowMapValue > worldInShadowCameraSpace.z || shadowMapValue == 0){
+					float fogNoise = 1.0;
+					if(useFogNoise){
+						fogNoise = fnoise(float4(rayPos+pos, evo), oct, freq, lacun, pers);
+						fogNoise = saturate(lerp(1.0, fogNoise*2, amp));
+					}
+					accumFog += ComputeScattering(dot(rayDir, lightDir)) * lights[j].diff * distFade * edgeFade * Density * rayDepth * fogNoise * .5;
+				}
+			}
+		}
+		rayPos += steps;
+		rayDepth += stepLength;
+	}
+	accumFog /= NB_STEPS;
+	
+	return float4(accumFog * FogColor.xyz, 1.0);
+}
+
+technique10 VolumetricLight
+{
+	pass P0
+	{
+		SetPixelShader(CompileShader(ps_5_0,PS()));
+	}
+}
+
+
+
