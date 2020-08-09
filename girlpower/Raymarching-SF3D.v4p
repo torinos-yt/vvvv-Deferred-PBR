@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta39.dtd" >
-   <PATCH nodename="F:\vvvv\vvvv_beta_39_x64\packs\PBRRenderer\girlpower\Raymarching-SF3D.v4p" systemname="Raymarching-SF3D" filename="F:\vvvv\vvvv_beta_39_x64\packs\PBRRenderer\girlpower\Raymarching-SF3D.v4p" scrollx="30" scrolly="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta39.1.dtd" >
+   <PATCH nodename="F:\vvvv\vvvv_beta_39.1_x64\packs\PBRRenderer\girlpower\Raymarching-SF3D.v4p" systemname="Raymarching-SF3D" filename="F:\vvvv\vvvv_beta_39_x64\packs\PBRRenderer\girlpower\Raymarching-SF3D.v4p" scrollx="30" scrolly="0">
    <BOUNDS type="Window" left="0" top="0" width="8535" height="15735">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
@@ -10,10 +10,10 @@
    </PACK>
    <PACK Name="ÎmagePack" Version="0.2.0">
    </PACK>
-   <PACK Name="addonpack" Version="39.0.0">
+   <PACK Name="addonpack" Version="39.1.0">
    </PACK>
    <NODE systemname="RenderGBuffer (Dx11.Texture)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\RenderGBuffer (Dx11.Texture).v4p" nodename="RenderGBuffer (Dx11.Texture)" componentmode="Hidden" id="1">
-   <BOUNDS type="Node" left="2550" top="12060" width="100" height="100">
+   <BOUNDS type="Node" left="2505" top="12060" width="1485" height="270">
    </BOUNDS>
    <PIN pinname="Layer In" visible="1" slicecount="1" values="||">
    </PIN>
@@ -41,6 +41,8 @@
    </PIN>
    <BOUNDS type="Window" left="0" top="3435" width="18240" height="11385">
    </BOUNDS>
+   <PIN pinname="Shadow Depth" visible="1">
+   </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="2" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="1140" top="11385" width="795" height="480">
@@ -105,6 +107,8 @@
    </PIN>
    <PIN pinname="Enabled" slicecount="1" values="1">
    </PIN>
+   <PIN pinname="Shadow Depth" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="1" srcpinname="GBuffer Out" dstnodeid="4" dstpinname="GBuffer">
    </LINK>
@@ -117,7 +121,7 @@
    <LINK srcnodeid="1" srcpinname="Projection" dstnodeid="4" dstpinname="Projection">
    </LINK>
    <NODE systemname="EffectSetting (PBREffect)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\EffectSetting (PBREffect).v4p" nodename="EffectSetting (PBREffect)" componentmode="Hidden" id="5">
-   <BOUNDS type="Node" left="4995" top="12330" width="100" height="100">
+   <BOUNDS type="Node" left="5220" top="12330" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -181,7 +185,7 @@
    </PIN>
    <PIN pinname="Bloom Intensity" slicecount="1" values="0.01">
    </PIN>
-   <PIN pinname="Exposure" slicecount="1" values="0.55">
+   <PIN pinname="Exposure" slicecount="1" values="0.62">
    </PIN>
    <PIN pinname="amount" slicecount="1" values="0.06">
    </PIN>
@@ -223,9 +227,9 @@
    <LINK srcnodeid="2" srcpinname="Y Output Value" dstnodeid="4" dstpinname="Resolution">
    </LINK>
    <NODE systemname="FileTexture (DX11 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d)" componentmode="Hidden" id="14">
-   <BOUNDS type="Node" left="4080" top="11310" width="100" height="100">
+   <BOUNDS type="Node" left="4185" top="11340" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="4080" top="11310" width="3000" height="3000">
+   <BOUNDS type="Box" left="4185" top="11340" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
@@ -237,9 +241,9 @@
    <LINK srcnodeid="14" srcpinname="Texture Out" dstnodeid="4" dstpinname="Diffuse Environment Map">
    </LINK>
    <NODE systemname="FileTexture (DX11 2d)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="FileTexture (DX11 2d)" componentmode="Hidden" id="15">
-   <BOUNDS type="Node" left="4395" top="11805" width="100" height="100">
+   <BOUNDS type="Node" left="4500" top="11805" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="4395" top="11805" width="3000" height="3000">
+   <BOUNDS type="Box" left="4500" top="11805" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
@@ -309,7 +313,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6030" top="11010" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0.48,0.51,0.14">
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0.48,0.49,0.05">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -329,7 +333,7 @@
    </BOUNDS>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <PIN pinname="Data" slicecount="1" values="|0.27525,0.27525,0.27525,1.00000|">
+   <PIN pinname="Data" slicecount="1" values="|0.97034,0.97034,0.97034,1.00000|">
    </PIN>
    </NODE>
    <NODE systemname="Scale (Transform Vector)" nodename="Scale (Transform Vector)" componentmode="Hidden" id="84">
@@ -345,9 +349,9 @@
    <LINK srcnodeid="71" srcpinname="Transform Out" dstnodeid="84" dstpinname="Transform In">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="86" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="3450" top="10620" width="285" height="255">
+   <BOUNDS type="Box" left="3330" top="10620" width="285" height="255">
    </BOUNDS>
-   <BOUNDS type="Node" left="3450" top="10620" width="0" height="0">
+   <BOUNDS type="Node" left="3330" top="10620" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -363,7 +367,7 @@
    <NODE systemname="SF3D-GBuffer (SF3D Layer)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\SF3D-GBuffer (SF3D Layer).v4p" nodename="SF3D-GBuffer (SF3D Layer)" componentmode="Hidden" id="19">
    <BOUNDS type="Node" left="1725" top="10200" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Window" left="1890" top="2250" width="21780" height="11505">
+   <BOUNDS type="Window" left="3825" top="1590" width="21780" height="11505">
    </BOUNDS>
    <PIN pinname="Layer Out" visible="1">
    </PIN>
@@ -407,21 +411,23 @@
    </PIN>
    <PIN pinname="Input" visible="1">
    </PIN>
+   <PIN pinname="eps" slicecount="1" values="0.0031">
+   </PIN>
    </NODE>
    <LINK srcnodeid="34" srcpinname="Texture Out" dstnodeid="19" dstpinname="Roughness Map">
    </LINK>
    <LINK srcnodeid="36" srcpinname="Texture Out" dstnodeid="19" dstpinname="Texture">
    </LINK>
    <LINK srcnodeid="19" srcpinname="Layer Out" dstnodeid="1" dstpinname="Layer In" linkstyle="Bezier">
-   <LINKPOINT x="1790" y="11248">
+   <LINKPOINT x="1785" y="11265">
    </LINKPOINT>
-   <LINKPOINT x="2785" y="11268">
+   <LINKPOINT x="2790" y="11265">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="19" srcpinname="ShadowLayer Out" dstnodeid="1" dstpinname="ShadowLayer In" linkstyle="Bezier">
-   <LINKPOINT x="2555" y="11255">
+   <LINKPOINT x="2895" y="11265">
    </LINKPOINT>
-   <LINKPOINT x="3055" y="11275">
+   <LINKPOINT x="3090" y="11265">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="81" srcpinname="Texture Out" dstnodeid="19" dstpinname="Metalic Map">
@@ -669,7 +675,7 @@
    </PIN>
    <PIN pinname="FOV" slicecount="1" values="80">
    </PIN>
-   <PIN pinname="Ambient" slicecount="1" values="|0.15088,0.14816,0.19648,1.00000|">
+   <PIN pinname="Ambient" slicecount="1" values="|0.15311,0.15095,0.20019,1.00000|">
    </PIN>
    <PIN pinname="Lookat" slicecount="3" values="0,0,0">
    </PIN>
@@ -708,4 +714,8 @@
    </LINK>
    <LINK srcnodeid="101" srcpinname="Transform Out" dstnodeid="1" dstpinname="View">
    </LINK>
+   <LINK srcnodeid="1" srcpinname="Shadow Depth" dstnodeid="4" dstpinname="Shadow Depth">
+   </LINK>
+   <PACK Name="Notuiv" Version="0.2.2.0">
+   </PACK>
    </PATCH>

@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta39.1.dtd" >
    <PATCH nodename="F:\vvvv\vvvv_beta_39.1_x64\packs\PBRRenderer\girlpower\SemanticsParameter.v4p" systemname="polytope" filename="C:\vvvv\work\4dpolytope\polytope.v4p">
-   <BOUNDS type="Window" left="0" top="0" width="10800" height="14130">
+   <BOUNDS type="Window" left="0" top="0" width="10965" height="14130">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
    </PACK>
@@ -80,18 +80,6 @@
    <PIN pinname="Initial Distance" slicecount="1" values="2.02">
    </PIN>
    </NODE>
-   <LINK srcnodeid="3" srcpinname="View" dstnodeid="1" dstpinname="View" linkstyle="Bezier">
-   <LINKPOINT x="4515" y="10425">
-   </LINKPOINT>
-   <LINKPOINT x="4005" y="10425">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="3" srcpinname="Projection" dstnodeid="1" dstpinname="Projection" linkstyle="Bezier">
-   <LINKPOINT x="4680" y="10433">
-   </LINKPOINT>
-   <LINKPOINT x="4275" y="10433">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="DefferdRendering (DX11.Layer)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\DefferdRendering (DX11.Layer).v4p" nodename="DefferdRendering (DX11.Layer)" componentmode="Hidden" id="4">
    <BOUNDS type="Node" left="2580" top="11670" width="3105" height="270">
    </BOUNDS>
@@ -181,7 +169,7 @@
    </PIN>
    <PIN pinname="Width" slicecount="1" values="0.26">
    </PIN>
-   <PIN pinname="Threshold Bias" slicecount="1" values="0">
+   <PIN pinname="Threshold Bias" slicecount="1" values="0.18">
    </PIN>
    <PIN pinname="Saturation" slicecount="1" values="0.09">
    </PIN>
@@ -225,7 +213,7 @@
    </PIN>
    <PIN pinname="Vignette Intensity" slicecount="1" values="0.19">
    </PIN>
-   <PIN pinname="intensity" slicecount="1" values="0.18">
+   <PIN pinname="intensity" slicecount="1" values="0.13">
    </PIN>
    <PIN pinname="AO Distance" slicecount="1" values="1.5">
    </PIN>
@@ -247,7 +235,7 @@
    </PIN>
    <PIN pinname="Noise FractAmp" slicecount="1" values="0.34">
    </PIN>
-   <PIN pinname="Noise FractFreq" slicecount="1" values="0.6">
+   <PIN pinname="Noise FractFreq" slicecount="1" values="0.7">
    </PIN>
    <PIN pinname="Noise PositionXYZ" slicecount="3" values="0.26,0.26,0.26">
    </PIN>
@@ -373,7 +361,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6360" top="9960" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0.23,0.17,0">
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0.23,0.16,0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -447,7 +435,7 @@
    </PIN>
    <PIN pinname="Texture" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Iteration" slicecount="1" values="40">
+   <PIN pinname="Iteration" slicecount="1" values="64">
    </PIN>
    <PIN pinname="mindist" slicecount="1" values="0.0005">
    </PIN>
@@ -489,7 +477,7 @@
    <LINK srcnodeid="19" srcpinname="Shader Valid" dstnodeid="86" dstpinname="Y Input Value">
    </LINK>
    <NODE id="8" systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" stayontop="0" border="1">
-   <BOUNDS type="Window" left="10665" top="0" width="18135" height="10455">
+   <BOUNDS type="Window" left="10815" top="0" width="18135" height="10455">
    </BOUNDS>
    <BOUNDS type="Node" left="2595" top="12405" width="100" height="100">
    </BOUNDS>
@@ -527,7 +515,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="7530" top="3915" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="1,0.76,0.25,0">
+   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="0.91,0.46,0.78,0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -884,32 +872,6 @@
    </LINK>
    <LINK srcnodeid="1" srcpinname="Shadow Depth" dstnodeid="4" dstpinname="Shadow Depth">
    </LINK>
-   <NODE systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden" id="-6">
-   <BOUNDS type="Node" left="750" top="1350" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Maximum Foreground FPS" visible="1">
-   </PIN>
-   <PIN pinname="Maximum Background FPS" visible="1" slicecount="1" values="24">
-   </PIN>
-   </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="144">
-   <BOUNDS type="Box" left="765" top="435" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="765" top="435" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="24">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Integer">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="144" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum Foreground FPS">
-   </LINK>
    <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="148">
    <BOUNDS type="Node" left="1515" top="10395" width="100" height="100">
    </BOUNDS>
@@ -925,8 +887,6 @@
    <LINK srcnodeid="148" srcpinname="Output" dstnodeid="4" dstpinname="Resolution">
    </LINK>
    <LINK srcnodeid="148" srcpinname="Output" dstnodeid="1" dstpinname="Texture SizeXY">
-   </LINK>
-   <LINK srcnodeid="144" srcpinname="Y Output Value" dstnodeid="-6" dstpinname="Maximum Background FPS">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="149">
    <BOUNDS type="Box" left="7920" top="10230" width="480" height="480">
@@ -949,5 +909,113 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="149" srcpinname="Y Output Value" dstnodeid="5" dstpinname="Use Volumetric">
+   </LINK>
+   <NODE systemname="FBM (VF3D.Operators)" filename="%VVVV%\packs\FieldTrip\nodes\modules\VF3D\Operators\FBM (VF3D.Operators).v4p" nodename="FBM (VF3D.Operators)" componentmode="Hidden" id="150">
+   <BOUNDS type="Node" left="8100" top="7575" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Function" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Lacunarity" slicecount="1" values="2.13">
+   </PIN>
+   </NODE>
+   <NODE systemname="DivergenceFreeNoise (VF3D.Sources)" filename="%VVVV%\packs\FieldTrip\nodes\modules\VF3D\Sources\DivergenceFreeNoise (VF3D.Sources).v4p" nodename="DivergenceFreeNoise (VF3D.Sources)" componentmode="Hidden" id="151">
+   <BOUNDS type="Node" left="8100" top="7155" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Domain Offset XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Amplitude XYZ" slicecount="3" values="5.08,5.08,5.08">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="151" srcpinname="Output" dstnodeid="150" dstpinname="Input Function">
+   </LINK>
+   <NODE systemname="FieldSample (VF3D.Usages 3D Buffer)" filename="%VVVV%\packs\FieldTrip\nodes\modules\VF3D\Usages\FieldSample (VF3D.Usages 3D Buffer).v4p" nodename="FieldSample (VF3D.Usages 3D Buffer)" componentmode="Hidden" id="152">
+   <BOUNDS type="Node" left="8115" top="7950" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="3D Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="150" srcpinname="Output" dstnodeid="152" dstpinname="Input">
+   </LINK>
+   <NODE systemname="ReadBack (DX11.Buffer 3d)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="ReadBack (DX11.Buffer 3d)" componentmode="Hidden" id="153">
+   <BOUNDS type="Node" left="8115" top="8280" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8115" top="8280" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="OutputXYZ" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="152" srcpinname="3D Buffer" dstnodeid="153" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Integrate (Differential)" nodename="Integrate (Differential)" componentmode="Hidden" id="155">
+   <BOUNDS type="Node" left="8790" top="5820" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   <PIN pinname="Position In" slicecount="1" values="0.03">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="155" srcpinname="Position Out" dstnodeid="151" dstpinname="Domain Offset XYZ">
+   </LINK>
+   <NODE systemname="LookAt (Transform Vector)" nodename="LookAt (Transform Vector)" componentmode="Hidden" id="156">
+   <BOUNDS type="Node" left="6390" top="8745" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Position XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="LookAt XYZ" visible="1" slicecount="3" values="0,0,0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="153" srcpinname="OutputXYZ" dstnodeid="156" dstpinname="Position XYZ">
+   </LINK>
+   <LINK srcnodeid="156" srcpinname="Transform Out" dstnodeid="1" dstpinname="View">
+   </LINK>
+   <NODE systemname="Perspective (Transform)" nodename="Perspective (Transform)" componentmode="Hidden" id="158">
+   <BOUNDS type="Node" left="6420" top="9570" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="FOV" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="158" srcpinname="Transform Out" dstnodeid="1" dstpinname="Projection">
+   </LINK>
+   <NODE systemname="Simplex (2d)" filename="%VVVV%\addonpack\lib\nodes\plugins\SimplexNoise.dll" nodename="Simplex (2d)" componentmode="Hidden" id="160">
+   <BOUNDS type="Node" left="9330" top="8865" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Position Input XY" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="155" srcpinname="Position Out" dstnodeid="160" dstpinname="Position Input XY">
+   </LINK>
+   <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="161">
+   <BOUNDS type="Node" left="9315" top="9375" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Source Minimum" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Destination Minimum" slicecount="1" values="0.16">
+   </PIN>
+   <PIN pinname="Destination Maximum" slicecount="1" values="0.31">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="160" srcpinname="Output" dstnodeid="161" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="161" srcpinname="Output" dstnodeid="158" dstpinname="FOV">
    </LINK>
    </PATCH>
