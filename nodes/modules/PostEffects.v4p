@@ -33,31 +33,31 @@
    </BOUNDS>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <PIN pinname="Amount" slicecount="1" visible="1" values="1.39999997615814">
+   <PIN pinname="Amount" slicecount="1" visible="1" values="1.5">
    </PIN>
-   <PIN pinname="minvel" visible="1" slicecount="1" values="0.100000001490116">
+   <PIN pinname="minvel" visible="1" slicecount="1" values="0.06">
    </PIN>
-   <PIN pinname="SampleFreq" visible="1" slicecount="1" values="5">
+   <PIN pinname="SampleFreq" visible="1" slicecount="1" values="3">
    </PIN>
-   <PIN pinname="MaxSamples" visible="1" slicecount="1" values="32">
+   <PIN pinname="MaxSamples" visible="1" slicecount="1" values="20">
    </PIN>
-   <PIN pinname="MinSamples" visible="1" slicecount="1" values="25">
+   <PIN pinname="MinSamples" visible="1" slicecount="1" values="16">
    </PIN>
-   <PIN pinname="MaxBlur" visible="1" slicecount="1" values="1.22000002861023">
+   <PIN pinname="MaxBlur" visible="1" slicecount="1" values="1.11">
    </PIN>
    <PIN pinname="Enabled" visible="1">
    </PIN>
    <PIN pinname="Texture In" visible="1">
    </PIN>
    </NODE>
-   <NODE id="2" systemname="Bloom (DX11.TextureFX)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\Bloom (DX11.TextureFX).v4p" nodename="Bloom (DX11.TextureFX)" componentmode="Hidden">
+   <NODE id="2" systemname="Bloom (DX11.TextureFX)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\Bloom (DX11.TextureFX).v4p" nodename="Bloom (DX11.TextureFX)" componentmode="Hidden" stayontop="1">
    <PIN pinname="Texture Out" visible="1" slicecount="1" values="||">
    </PIN>
    <BOUNDS type="Node" left="1578" top="8550" width="1935" height="270">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1">
    </PIN>
-   <PIN pinname="Width" slicecount="1" visible="1" values="0.550000011920929">
+   <PIN pinname="Width" slicecount="1" visible="1" values="0.36">
    </PIN>
    <PIN pinname="PreGamma" slicecount="1" values="1">
    </PIN>
@@ -67,15 +67,17 @@
    </PIN>
    <PIN pinname="Dirt Intensity" slicecount="1" values="0.43">
    </PIN>
-   <PIN pinname="bias" slicecount="1" visible="1" values="-0.119999997317791">
+   <PIN pinname="bias" slicecount="1" visible="1" values="-0.34">
    </PIN>
-   <PIN pinname="Intensity" slicecount="1" visible="1" values="0.0799999982118607">
+   <PIN pinname="Intensity" slicecount="1" visible="1" values="0.4">
    </PIN>
    <PIN pinname="Enabled" visible="1">
    </PIN>
-   <BOUNDS type="Window" left="1005" top="2400" width="10530" height="12585">
+   <BOUNDS type="Window" left="2970" top="2730" width="10530" height="12585">
    </BOUNDS>
    <PIN pinname="Bloom Tint Color" visible="1" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Soft" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="ColorGrading (DX11.Texture)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\ColorGrading (DX11.Texture).v4p" nodename="ColorGrading (DX11.Texture).v4p" componentmode="Hidden" id="3">
@@ -135,9 +137,9 @@
    </PIN>
    <PIN pinname="Projection" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Fstop" slicecount="1" visible="1" values="8">
+   <PIN pinname="Fstop" slicecount="1" visible="1" values="5">
    </PIN>
-   <PIN pinname="maxCoC" slicecount="1" visible="1" values="0.300000011920929">
+   <PIN pinname="maxCoC" slicecount="1" visible="1" values="0.31">
    </PIN>
    <PIN pinname="Enable" slicecount="1" visible="1" values="1">
    </PIN>
@@ -149,13 +151,13 @@
    </BOUNDS>
    <PIN pinname="World Scale" slicecount="1" visible="1" values="1000">
    </PIN>
-   <PIN pinname="Scatter" slicecount="1" visible="1" values="0">
+   <PIN pinname="Scatter" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="autofocus" slicecount="1" visible="1" values="1">
    </PIN>
-   <PIN pinname="Focus Depth" slicecount="1" visible="1" values="2">
+   <PIN pinname="Focus Depth" slicecount="1" visible="1" values="5">
    </PIN>
-   <PIN pinname="Bokeh Rotation" visible="1" slicecount="1" values="60">
+   <PIN pinname="Bokeh Rotation" visible="1" slicecount="1" values="62">
    </PIN>
    <PIN pinname="focusXY" visible="1" slicecount="2" values="0,0">
    </PIN>
@@ -227,7 +229,7 @@
    </PIN>
    </NODE>
    <NODE systemname="GetBloom (PBRRenderer)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\vl\VVVV.Value.RenderSetting.vl" nodename="GetBloom (PBRRenderer)" componentmode="Hidden" id="9">
-   <BOUNDS type="Node" left="2208" top="7845" width="100" height="100">
+   <BOUNDS type="Node" left="2133" top="7845" width="1110" height="270">
    </BOUNDS>
    <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
@@ -238,6 +240,8 @@
    <PIN pinname="Intensity" visible="1">
    </PIN>
    <PIN pinname="Bloom Timt" visible="1">
+   </PIN>
+   <PIN pinname="Soft" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="8" srcpinname="Amount" dstnodeid="1" dstpinname="Amount">
@@ -563,35 +567,35 @@
    </PIN>
    <PIN pinname="NB_STEPS" visible="1" slicecount="1" values="64">
    </PIN>
-   <PIN pinname="FogColor" visible="1" slicecount="1" values="|0.48475,0.58089,1.00000,1.00000|">
+   <PIN pinname="FogColor" visible="1" slicecount="1" values="|0.28561,0.28561,0.28561,0.00000|">
    </PIN>
    <PIN pinname="Texture In" visible="1">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <PIN pinname="Density" visible="1" slicecount="1" values="0.19">
+   <PIN pinname="Density" visible="1" slicecount="1" values="0.25">
    </PIN>
-   <PIN pinname="rayLength" visible="1" slicecount="1" values="12.53">
+   <PIN pinname="rayLength" visible="1" slicecount="1" values="10.68">
    </PIN>
    <PIN pinname="HalfRes" visible="1" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Factor" visible="1" slicecount="1" values="0.65">
+   <PIN pinname="Factor" visible="1" slicecount="1" values="4.01">
    </PIN>
-   <PIN pinname="evo" visible="1">
+   <PIN pinname="evo" visible="1" slicecount="1" values="0.1">
    </PIN>
-   <PIN pinname="amp" visible="1">
+   <PIN pinname="amp" visible="1" slicecount="1" values="0.92">
    </PIN>
-   <PIN pinname="Noise FractAmp" visible="1">
+   <PIN pinname="Noise FractAmp" visible="1" slicecount="1" values="0.8">
    </PIN>
-   <PIN pinname="Noise FractFreq" visible="1">
+   <PIN pinname="Noise FractFreq" visible="1" slicecount="1" values="0.32">
    </PIN>
-   <PIN pinname="Noise Frequency" visible="1">
+   <PIN pinname="Noise Frequency" visible="1" slicecount="1" values="11.06">
    </PIN>
-   <PIN pinname="Noise PositionXYZ" visible="1">
+   <PIN pinname="Noise PositionXYZ" visible="1" slicecount="3" values="0,2.95,0">
    </PIN>
-   <PIN pinname="Noise Octave" visible="1">
+   <PIN pinname="Noise Octave" visible="1" slicecount="1" values="3">
    </PIN>
-   <PIN pinname="useFogNoise" visible="1">
+   <PIN pinname="useFogNoise" visible="1" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Evaluate" visible="-1" pintype="Input" slicecount="1" values="1">
    </PIN>
@@ -725,5 +729,7 @@
    <PACK Name="Notuiv" Version="0.2.2.0">
    </PACK>
    <LINK srcnodeid="49" srcpinname="Output" dstnodeid="48" dstpinname="Enabled" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Soft" dstnodeid="2" dstpinname="Soft">
    </LINK>
    </PATCH>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="GB2VxUl5VdhM5rsl5IbjQg" LanguageVersion="2019.1.0-0959-g3a31ab0c51" Version="0.128">
+<Document xmlns:p="property" Id="GB2VxUl5VdhM5rsl5IbjQg" LanguageVersion="2019.1.0-1011-geedef76611" Version="0.128">
   <NugetDependency Id="RKFCmk1Lg5EP3I4IQegLTw" Location="VL.CoreLib" Version="0.35.21" />
   <NugetDependency Id="U2JwHqMJLyGLDs97lM6eZ6" Location="VL.CoreLib.VVVV" Version="0.35.21" />
   <Patch Id="Th8hpfHvBF4Lk6VOwDCc9D">
@@ -522,19 +522,24 @@
               <p:ValueBoxSettings />
             </Pad>
             <ControlPoint Id="SciQDDZzI9NNC81Hg6iR5U" Bounds="540,387" />
-            <Pad Id="Grh0u7qcl9NO5akNGTVsVu" SlotId="UcnkQvzEwBTPtR0DMVpZ5W" Bounds="651,532">
+            <Pad Id="Grh0u7qcl9NO5akNGTVsVu" SlotId="UcnkQvzEwBTPtR0DMVpZ5W" Bounds="787,528">
               <p:ValueBoxSettings />
             </Pad>
-            <ControlPoint Id="B0tAnmH4j58L9xC0sjA7Fs" Bounds="651,387" />
-            <Pad Id="NHIrf4hjfz7PVGFiFmHnPG" SlotId="DBAnlY0t8kOLQoH10QBVBV" Bounds="775,532">
+            <ControlPoint Id="B0tAnmH4j58L9xC0sjA7Fs" Bounds="787,383" />
+            <Pad Id="NHIrf4hjfz7PVGFiFmHnPG" SlotId="DBAnlY0t8kOLQoH10QBVBV" Bounds="911,528">
               <p:ValueBoxSettings />
             </Pad>
-            <ControlPoint Id="UBo0FRLJ1tBPTZm5e5Nrbk" Bounds="775,387" />
+            <ControlPoint Id="UBo0FRLJ1tBPTZm5e5Nrbk" Bounds="911,383" />
             <ControlPoint Id="Lt6pdiykMjcO1U2qcIuxB2" Bounds="292,609" />
             <ControlPoint Id="ExpgOzHL8dYQQTJlmGsOBa" Bounds="417,633" />
             <ControlPoint Id="SfxNwm1AEyIMo9iKV8ijMt" Bounds="547,620" />
-            <ControlPoint Id="OrT8pQ2E3xJMvb75G3P0wL" Bounds="660,630" />
-            <ControlPoint Id="C7SCvuAEDijPrT60wEIV3g" Bounds="780,617" />
+            <ControlPoint Id="OrT8pQ2E3xJMvb75G3P0wL" Bounds="796,626" />
+            <ControlPoint Id="C7SCvuAEDijPrT60wEIV3g" Bounds="916,613" />
+            <Pad Id="EZqF38Wmlb5QakKM8dvhx6" SlotId="LVnCi1EhERDQNmkZkWBqwg" Bounds="657,541">
+              <p:ValueBoxSettings />
+            </Pad>
+            <ControlPoint Id="H1ibrv2Eh6RN06idVrOm1K" Bounds="656,391" />
+            <ControlPoint Id="P9fH9pgEOGjOCQZdr3FGpL" Bounds="655,629" />
           </Canvas>
           <Patch Id="CzSmeJiW4niPyZYQXaubt6" Name="Create">
             <Pin Id="JdMZeNKmOykPeXtwVpeWTH" Name="Use Bloom" Kind="InputPin" DefaultValue="True">
@@ -560,6 +565,11 @@
             <Pin Id="LawnQAs8JDJPsmVeBnxGNj" Name="Bloom Timt" Kind="InputPin" DefaultValue="1, 1, 1, 1">
               <p:TypeAnnotation LastCategoryFullName="Color" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="RGBA" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="AOBN3Q10RljOGDhhi7EBCk" Name="Soft" Kind="InputPin">
+              <p:TypeAnnotation>
+                <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
             </Pin>
           </Patch>
@@ -598,7 +608,13 @@
             <Pin Id="JXNI3OOzbfLMdJBVMAaBRH" Name="Width" Kind="OutputPin" />
             <Pin Id="ErunD3PKjHPMjklRzEhVhb" Name="Intensity" Kind="OutputPin" />
             <Pin Id="VvgQhQDIBARLiR1zVPWhO3" Name="Bloom Timt" Kind="OutputPin" />
+            <Pin Id="N4eRRyuVq5YNdpGRaDE4pv" Name="Soft" Kind="OutputPin" />
           </Patch>
+          <Slot Id="LVnCi1EhERDQNmkZkWBqwg" Name="Soft" />
+          <Link Id="IFzfvhryrzELt8PRK64Tbf" Ids="H1ibrv2Eh6RN06idVrOm1K,EZqF38Wmlb5QakKM8dvhx6" />
+          <Link Id="P1lhRTgyadJPiWvE0KjNGG" Ids="AOBN3Q10RljOGDhhi7EBCk,H1ibrv2Eh6RN06idVrOm1K" IsHidden="true" />
+          <Link Id="AfZ5mPMIiAaOCKsbrCldUq" Ids="EZqF38Wmlb5QakKM8dvhx6,P9fH9pgEOGjOCQZdr3FGpL" />
+          <Link Id="PyvFVOkKUdEL87DmcaCUuZ" Ids="P9fH9pgEOGjOCQZdr3FGpL,N4eRRyuVq5YNdpGRaDE4pv" IsHidden="true" />
         </Patch>
       </Node>
       <!--
@@ -1819,12 +1835,13 @@
           <Node Bounds="634,1233,85,22" Id="QBaSGbwiKQwLxlj7XyvLM9">
             <p:NodeReference LastCategoryFullName="VVVV.PBRRenderer.Bloom" LastSymbolSource="VVVV.Value.RenderSetting.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-              <CategoryReference Kind="RecordType" Name="Bloom" />
               <Choice Kind="OperationCallFlag" Name="Create" />
+              <CategoryReference Kind="Category" Name="Bloom" />
             </p:NodeReference>
             <Pin Id="Mnt6OjfmxGoM0IGzEKMbcx" Name="Use Bloom" Kind="InputPin" />
             <Pin Id="LiI7TvSQ0rPMYbzhvMQiZF" Name="Bias" Kind="InputPin" />
             <Pin Id="E0loWBhzu0cQHReckZgwTS" Name="Width" Kind="InputPin" />
+            <Pin Id="RDGMwybDb34NexvYD5B7AZ" Name="Soft" Kind="InputPin" />
             <Pin Id="JlYXLrhivjqMUViHnds21j" Name="Intensity" Kind="InputPin" />
             <Pin Id="UZXmohfLspxM3kQuKuQMUO" Name="Bloom Timt" Kind="InputPin" />
             <Pin Id="FQwFfn6NZyuO6pxus7CAYj" Name="Output" Kind="StateOutputPin" />
@@ -1847,11 +1864,15 @@
           <ControlPoint Id="F6poH8pnYV3OKJcIxTxRT0" Bounds="627,1294" />
           <Link Id="DR1ScDLGFtqN3RhWJtcbkr" Ids="FQwFfn6NZyuO6pxus7CAYj,F6poH8pnYV3OKJcIxTxRT0" />
           <Link Id="VSw5Nnwu2tULDyVmWHZihQ" Ids="F6poH8pnYV3OKJcIxTxRT0,TFkB63nhpAeQYrtaijWuZo" IsHidden="true" />
+          <ControlPoint Id="Iu7UIL1lp9YNIZudftWbeo" Bounds="690,1155" />
+          <Link Id="QBgDX9SyULjN750VJd7Pi9" Ids="Iu7UIL1lp9YNIZudftWbeo,RDGMwybDb34NexvYD5B7AZ" />
+          <Link Id="PSuPC4lu3rmMjeLW5VPc65" Ids="PU6Ep2oTLn7Mueqh3P72S1,Iu7UIL1lp9YNIZudftWbeo" IsHidden="true" />
           <Pin Id="Kll78cl9AHuLcc8UIiTA54" Name="Use Bloom" Kind="InputPin" Bounds="592,1135" />
           <Pin Id="DDsMNw7l8fGNOWucSoZszC" Name="Bias" Kind="InputPin" Bounds="643,1179" />
           <Pin Id="HlKqQm5AbpfL5VcehDJvSv" Name="Width" Kind="InputPin" Bounds="692,1136" />
           <Pin Id="FVcw5vqrzLtQLhjYMGVm7l" Name="Intensity" Kind="InputPin" Bounds="736,1181" />
           <Pin Id="QJrMv2tJHGqOYXIJX80AHm" Name="Bloom Timt" Kind="InputPin" Bounds="787,1153" />
+          <Pin Id="PU6Ep2oTLn7Mueqh3P72S1" Name="Soft" Kind="InputPin" Bounds="691,1155" />
           <Pin Id="TFkB63nhpAeQYrtaijWuZo" Name="Output" Kind="OutputPin" Bounds="662,1301" />
         </Patch>
       </Node>
@@ -2421,12 +2442,14 @@
             <p:NodeReference LastCategoryFullName="VVVV.PBRRenderer.Bloom" LastSymbolSource="VVVV.Value.RenderSetting.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="OperationCallFlag" Name="GetBloom" />
-              <CategoryReference Kind="RecordType" Name="Bloom" NeedsToBeDirectParent="true" />
+              <CategoryReference Kind="Category" Name="Bloom" NeedsToBeDirectParent="true" />
             </p:NodeReference>
             <Pin Id="S8taoCmJm9UMeeaw4QfvDe" Name="Input" Kind="StateInputPin" />
+            <Pin Id="Tb3Lk79AINQK9aWgXESo4S" Name="Output" Kind="OutputPin" />
             <Pin Id="AVU7gYUqqp9LhXVepiZja0" Name="Use Bloom" Kind="OutputPin" />
             <Pin Id="NLCt0MoojnLM3R2mZ9Rkmk" Name="Bias" Kind="OutputPin" />
             <Pin Id="Bh7R0CwGq37LQ9EXGU0vdN" Name="Width" Kind="OutputPin" />
+            <Pin Id="CVehjKv0ZS7L5z2MFVEiiH" Name="Soft" Kind="OutputPin" />
             <Pin Id="Q6b7lOJ40XONSl7iAW33IG" Name="Intensity" Kind="OutputPin" />
             <Pin Id="NXZysamNsxANfaYRdlI3em" Name="Bloom Timt" Kind="OutputPin" />
           </Node>
@@ -2446,6 +2469,10 @@
           <Link Id="HxNdn2aEJNEPPfHs11fQZI" Ids="NXZysamNsxANfaYRdlI3em,HpEuf6hw9VvO72NPkeCMat" />
           <Pin Id="It2LAvclt7NMRABuLWzbMs" Name="Bloom Timt" Kind="OutputPin" Bounds="814,2442" />
           <Link Id="LpJOjJU5567Os9fbpRgIXO" Ids="HpEuf6hw9VvO72NPkeCMat,It2LAvclt7NMRABuLWzbMs" IsHidden="true" />
+          <ControlPoint Id="OUJjPM3VzlCMJ5iu5LOtIh" Bounds="2384,1253" />
+          <Link Id="HIxhTn5BjkZPP8BwdmZjOQ" Ids="CVehjKv0ZS7L5z2MFVEiiH,OUJjPM3VzlCMJ5iu5LOtIh" />
+          <Pin Id="OMqSOQgHWClN5rhfJ5Ki0K" Name="Soft" Kind="OutputPin" Bounds="2384,1253" />
+          <Link Id="TAAFhEdljDbPxkqHpcNMAh" Ids="OUJjPM3VzlCMJ5iu5LOtIh,OMqSOQgHWClN5rhfJ5Ki0K" IsHidden="true" />
         </Patch>
       </Node>
       <!--
@@ -2868,12 +2895,14 @@
             <p:NodeReference LastCategoryFullName="VVVV.PBRRenderer.Bloom" LastSymbolSource="VVVV.Value.RenderSetting.vl">
               <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
               <Choice Kind="OperationCallFlag" Name="GetBloom" />
-              <CategoryReference Kind="RecordType" Name="Bloom" NeedsToBeDirectParent="true" />
+              <CategoryReference Kind="Category" Name="Bloom" NeedsToBeDirectParent="true" />
             </p:NodeReference>
             <Pin Id="Sxxp1gGXmNkMSsY8Nlg24t" Name="Input" Kind="StateInputPin" />
+            <Pin Id="KV8rwbxOFnAODix8PkbSHC" Name="Output" Kind="OutputPin" />
             <Pin Id="O9H1ka2w5qWMsDk98mnsvH" Name="Use Bloom" Kind="OutputPin" />
             <Pin Id="DxIDgy4goclNkATzJC8FBG" Name="Bias" Kind="OutputPin" />
             <Pin Id="UvBw3rNOV2iMTQFFsBWj9I" Name="Width" Kind="OutputPin" />
+            <Pin Id="LSqkEZwrBkCNkijWQgMHRl" Name="Soft" Kind="OutputPin" />
             <Pin Id="ImsVLsndEICNyRSXKOj1rv" Name="Intensity" Kind="OutputPin" />
             <Pin Id="OEgtu4DKkHpOCcNtBpw0Pt" Name="Bloom Timt" Kind="OutputPin" />
           </Node>

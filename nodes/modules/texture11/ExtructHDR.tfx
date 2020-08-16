@@ -19,11 +19,22 @@ struct psInput
 };
 
 float bias;
+float softThreshold;
 float4 PS(psInput input) : SV_Target
 {
+	float threshold = 1 + bias;
 	float4 c = texture2d.Sample(linearSampler,input.uv);
-	c = lerp(0, c, step(1+bias, dot(c.xyz, float3(.299, .587, .114))));
-	return c;
+	
+	float l = dot(c.xyz, float3(.299, .587, .114));
+	
+	float knee = softThreshold * threshold;
+	float soft = pow(min(knee*2, max(0, l - threshold + knee)), 2);
+	float nom = 4 * knee * .00001;
+	
+	soft /= nom;
+	
+	float v = max(l - threshold, soft) / max(l, .00001);
+	return c * saturate(v);
 }
 
 technique10 Process
