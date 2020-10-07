@@ -6,6 +6,8 @@ float4x4 tPI;
 
 float2 focus;
 
+float damping;
+
 [numthreads(1,1,1)]
 void CS(uint3 dtid : SV_DispatchThreadID){
 	float2 uv = focus*0.5*float2(1,-1)+0.5;
@@ -13,7 +15,7 @@ void CS(uint3 dtid : SV_DispatchThreadID){
 	float4 pos = float4(focus, depth, 1);
 	pos = mul(pos, tPI);
 	depth = pos.z / pos.w;
-	focusDepth[0] = lerp(focusDepth[0], depth, .15);
+	focusDepth[0] = lerp(focusDepth[0], depth, damping);
 }
 
 technique11 cst { pass P0{SetComputeShader( CompileShader( cs_5_0, CS() ) );} }

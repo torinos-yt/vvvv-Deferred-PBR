@@ -5,9 +5,6 @@
 float EPS = 0.003;
 float mindist<float uistep = .0001;> = .0001;
 
-bool IsBump = true;
-float bumps<string uiname = "BumpMap Strength"; float uimin = 0.0; float uimax = 5.0;> = 1;
-
 float emit <string uiname = "Emission Stlength";> = 1.0;
 float stepLength<string uiname = "StepLength";> = 1.0;
 
@@ -84,9 +81,8 @@ PSout PS(vs2ps In){
 	float2 u = mul(float4(In.uv, 1, 1), texW).xy;
 	
 	float2 rayDir = (In.uv * 2 - 1) * float2(1, -1);
-	float4 rayDirVP = mul(float4(rayDir, 1, 1), tVPI);
 	
-	info.rayDir = normalize(rayDirVP.xyz / rayDirVP.w);
+	info.rayDir = normalize(mul(float4(mul(float4(rayDir, 0, 0), tPI).xy, 1, 0), tVI).xyz);
 	float3 ray = normalize(mul(info.rayDir, (float3x3)tWI));
 	
 	float3 rayPos = mul(float4(tVI[3].xyz, 1), tWI).xyz;
@@ -131,9 +127,15 @@ PSout PS(vs2ps In){
 	gbuffer.depth = lerp(maxdist, gbuffer.depth, hit);
 	
 	PostFunction(info, o);
+
+	float3 bNorm = normal;
+	if(IsBump){
+		float3 bumpy = o.BumpNormal;
+		bNorm = BumpsTNB(bNorm, bumpy, info.Pos, o.uv);
+	}
 	
 	gbuffer.color = float4((o.Albedo + o.Emission * emit) * hit, hit);
-	gbuffer.normal = float4(normal, o.Reflectance) * hit;
+	gbuffer.normal = float4(bNorm, o.Reflectance) * hit;
 	gbuffer.position = endPos * hit;
 
 	float4 prevPosVP = mul(float4(mul(float4(rayPos, 1), ptW).xyz, 1), ptVP);
@@ -144,30 +146,8 @@ PSout PS(vs2ps In){
 	velxy += .5;
 	
 	gbuffer.MRVel = float4(o.Metalness, o.Roughness, velxy) * hit;
+	gbuffer.normal = float4(bNorm, o.Reflectance);
 	
-	if(IsBump){
-		float3 p_dx = ddx(gbuffer.position);
-		float3 p_dy = ddy(gbuffer.position);
-
-		float2 tc_dx = ddx(o.uv);
-		float2 tc_dy = ddy(o.uv);
-
-		float3 t = normalize( tc_dy.y * p_dx - tc_dx.y * p_dy );
-		float3 b = normalize( tc_dy.x * p_dx - tc_dx.x * p_dy ); 
-
-		float3 n = normalize(normal);
-		float3 x = cross(n, t);
-		t = cross(x, n);
-		t = normalize(t);
-
-		x = cross(b, n);
-		b = cross(n, x);
-		b = normalize(b);
-		
-		float3 nmap = BumpTex.Sample(linearSampler, o.uv).xyz;
-		nmap = nmap * 2.0 - 1.0;
-		gbuffer.normal = float4(normalize(gbuffer.normal.xyz + (nmap.x * t + nmap.y * b) * bumps), o.Reflectance) * hit;
-	}
 	return gbuffer;
 }
 

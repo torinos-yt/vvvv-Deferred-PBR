@@ -100,7 +100,7 @@ float4 PS(psInput input) : SV_Target{
 	float3 c3 = InTex.Sample(linearSampler, uv + float2(.75, -.75) * tsize).rgb;
     float3 c4 = InTex.Sample(linearSampler, uv + float2(-.75, .75) * tsize).rgb;
     float3 center = (c1 + c2 + c3 + c4) * 0.25;
-    c0 += (c0 - center) * .7;
+    c0 += (c0 - center) * .01;
 	
 	float3 corner = 4.0 * (c1 + c2) - 2.0 * c0;
 	

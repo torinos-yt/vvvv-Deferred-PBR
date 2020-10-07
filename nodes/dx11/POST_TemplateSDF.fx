@@ -42,9 +42,6 @@
 //	float Metalness;
 //	float Roughness;
 //	float Reflectance;
-//	
-//	//If you want using Texturing, BumpMapping...
-//	//Calc and output good uv coordinate.
 //	float2 uv;
 //};
 

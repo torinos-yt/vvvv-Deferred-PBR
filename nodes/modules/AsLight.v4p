@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta39.dtd" >
-   <PATCH nodename="F:\vvvv\vvvv_beta_39_x64\packs\PBRRenderer\nodes\modules\AsLight.v4p" systemname="AsLight" filename="F:\vvvv\work\PBRRenderer\modules\AsLight.v4p">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta39.1.dtd" >
+   <PATCH nodename="F:\vvvv\vvvv_beta_39.1_x64\packs\PBRRenderer\nodes\modules\AsLight.v4p" systemname="AsLight" filename="F:\vvvv\work\PBRRenderer\modules\AsLight.v4p">
    <NODE systemname="DynamicBuffer (DX11.Buffer Custom)" filename="%VVVV%\packs\mp.dx\nodes\plugins\DX11Utils\x64\DX11Utils.dll" nodename="DynamicBuffer (DX11.Buffer Custom)" componentmode="Hidden" id="0">
    <BOUNDS type="Node" left="1800" top="2655" width="100" height="100">
    </BOUNDS>
@@ -33,7 +33,7 @@
    </PIN>
    </NODE>
    <NODE systemname="Count (Node)" nodename="Count (Node)" componentmode="Hidden" id="2">
-   <BOUNDS type="Node" left="2085" top="1500" width="100" height="100">
+   <BOUNDS type="Node" left="2250" top="1245" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
@@ -90,7 +90,7 @@
    </LINK>
    <LINK srcnodeid="3" srcpinname="Output" dstnodeid="4" dstpinname="Input">
    </LINK>
-   <BOUNDS type="Window" left="7740" top="5700" width="7335" height="5415">
+   <BOUNDS type="Window" left="6615" top="4215" width="9045" height="5850">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
    </PACK>
@@ -100,7 +100,7 @@
    </PACK>
    <PACK Name="ÎmagePack" Version="0.2.0">
    </PACK>
-   <PACK Name="addonpack" Version="39.0.0">
+   <PACK Name="addonpack" Version="39.1.0">
    </PACK>
    <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="8">
    <BOUNDS type="Node" left="2910" top="2145" width="100" height="100">
@@ -137,15 +137,19 @@
    <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="8" dstpinname="Input 2">
    </LINK>
    <NODE systemname="Unzip (Raw)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Unzip (Raw)" componentmode="Hidden" id="11">
-   <BOUNDS type="Node" left="1515" top="945" width="100" height="100">
+   <BOUNDS type="Node" left="1860" top="870" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="1515" top="945" width="3000" height="3000">
+   <BOUNDS type="Box" left="1860" top="870" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
    <PIN pinname="Output 1" visible="1">
    </PIN>
    <PIN pinname="Output 2" visible="1">
+   </PIN>
+   <PIN pinname="Output Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Output 3" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="5" srcpinname="Output Node" dstnodeid="11" dstpinname="Input">
@@ -179,13 +183,13 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3765" top="3240" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Descriptive Name" slicecount="1" values="InvVPBuffer">
+   <PIN pinname="Descriptive Name" slicecount="1" values="InvVBuffer">
    </PIN>
    </NODE>
    <LINK srcnodeid="12" srcpinname="Buffer" dstnodeid="13" dstpinname="Input Node">
    </LINK>
    <NODE systemname="+ (Raw Spectral)" nodename="+ (Raw Spectral)" componentmode="Hidden" id="14" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll">
-   <BOUNDS type="Node" left="3765" top="1515" width="100" height="100">
+   <BOUNDS type="Node" left="3705" top="1530" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -212,4 +216,64 @@
    </NODE>
    <LINK srcnodeid="15" srcpinname="Y Output Value" dstnodeid="12" dstpinname="Strides">
    </LINK>
+   <NODE systemname="DynamicBuffer (DX11.Buffer Custom)" filename="%VVVV%\packs\mp.dx\nodes\plugins\DX11Utils\x64\DX11Utils.dll" nodename="DynamicBuffer (DX11.Buffer Custom)" componentmode="Hidden" id="18">
+   <BOUNDS type="Node" left="5235" top="2610" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5235" top="2610" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Data" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Strides" slicecount="1" visible="1" values="64">
+   </PIN>
+   <PIN pinname="Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Apply" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Element Count" visible="1" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="17" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="5235" top="3195" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5235" top="3195" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="InvPBuffer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Buffer" dstnodeid="17" dstpinname="Input Node">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="16" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="5625" top="2250" width="285" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5625" top="2250" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="64">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Y Output Value" dstnodeid="18" dstpinname="Strides">
+   </LINK>
+   <NODE systemname="+ (Raw Spectral)" nodename="+ (Raw Spectral)" componentmode="Hidden" id="19" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll">
+   <BOUNDS type="Node" left="5205" top="1545" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="Output 3" dstnodeid="19" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="Output" dstnodeid="18" dstpinname="Data">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Output" dstnodeid="18" dstpinname="Apply">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Count" dstnodeid="18" dstpinname="Element Count">
+   </LINK>
+   <PACK Name="Notuiv" Version="0.2.2.0">
+   </PACK>
    </PATCH>

@@ -7,6 +7,9 @@ Texture2D brdfLUT;
 TextureCube EnvMap<string uiname = "Specular Environment Map";>;
 TextureCube EnvMapDiff<string uiname = "Diffuse Environment Map";>;
 
+
+TextureCube BGEnv<string uiname = "Background Environment Map";>;
+
 Texture2D aoTex;
 Texture2D bentnorm;
 Texture2D thickness;
@@ -196,7 +199,7 @@ float4 PS(psInput input) : SV_Target{
 	float3 env = 0;
 	if(sky){
 		float2 uvs = mul(float4((input.uv * 2 - 1) * float2(1,-1),0,0), tIP).xy;
-		env = max(EnvMap.SampleLevel(linearSampler, mul(mul(float3(uvs,1), (float3x3)tIV), (float3x3)tEmv), 1),0).xyz*iblint.z;	
+		env = max(BGEnv.SampleLevel(linearSampler, mul(mul(float3(uvs,1), (float3x3)tIV), (float3x3)tEmv), 1),0).xyz*iblint.z;	
 	}
 	
 	float3 F0 = .16 * Reflectance * Reflectance * (1.0 - Metalic) + albedo.rgb * Metalic;
@@ -239,7 +242,7 @@ float4 PS(psInput input) : SV_Target{
 	IBL = (kD * IBL * iblint.x + ApproximateSpecularIBL(F0, Roughness, N.xyz, V) * iblint.y * SO);
 	
 	lighting += IBL * lerp(albedo.xyz*.25, 1, ao);
-	lighting = min(lighting, 100) * albedo.a + emissive;
+	lighting = min(lighting, 2.5) * albedo.a + emissive;
 	
 	lighting = lerp(env.xyz, lighting, albedo.a);
 	

@@ -88,7 +88,7 @@
    </LINK>
    <LINK srcnodeid="2" srcpinname="Output Enum" dstnodeid="0" dstpinname="Target Format">
    </LINK>
-   <BOUNDS type="Window" left="1035" top="2310" width="18240" height="11385">
+   <BOUNDS type="Window" left="435" top="4365" width="18240" height="11385">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
    </PACK>
@@ -305,7 +305,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="9615" top="6180" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.15">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.28">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -515,9 +515,9 @@
    <LINK srcnodeid="62" srcpinname="Layer Out" dstnodeid="0" dstpinname="Layer">
    </LINK>
    <NODE systemname="RenderSemantic (DX11 StructuredBuffer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="RenderSemantic (DX11 StructuredBuffer)" componentmode="Hidden" id="64">
-   <BOUNDS type="Node" left="9165" top="3675" width="100" height="100">
+   <BOUNDS type="Node" left="9240" top="3240" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="9165" top="3675" width="3000" height="3000">
+   <BOUNDS type="Box" left="9240" top="3240" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -557,9 +557,11 @@
    </PIN>
    <PIN pinname="Force Update" slicecount="1" visible="1" values="0">
    </PIN>
-   <BOUNDS type="Window" left="7740" top="5700" width="7335" height="5415">
+   <BOUNDS type="Window" left="6615" top="4215" width="9045" height="5850">
    </BOUNDS>
    <PIN pinname="InvVPBuffer" visible="1">
+   </PIN>
+   <PIN pinname="InvPBuffer" visible="1">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="67" systemname="IOBox (Node)">
@@ -587,9 +589,9 @@
    <LINK srcnodeid="67" srcpinname="Output Node" dstnodeid="68" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="66" srcpinname="Buffer" dstnodeid="64" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="11485" y="2698">
+   <LINKPOINT x="11510" y="2553">
    </LINKPOINT>
-   <LINKPOINT x="9485" y="2703">
+   <LINKPOINT x="9535" y="2413">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Validator (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Validator (DX11.Layer)" componentmode="Hidden" id="71">
@@ -681,13 +683,13 @@
    </PIN>
    </NODE>
    <NODE systemname="RenderSemantic (DX11 StructuredBuffer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="RenderSemantic (DX11 StructuredBuffer)" componentmode="Hidden" id="82">
-   <BOUNDS type="Node" left="10605" top="3675" width="100" height="100">
+   <BOUNDS type="Node" left="10530" top="3525" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="10605" top="3675" width="3000" height="3000">
+   <BOUNDS type="Box" left="10530" top="3525" width="3000" height="3000">
    </BOUNDS>
    <PIN pinname="Input" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Semantic" slicecount="1" values="LIGHTVIEWPROJECTIONINVERSE">
+   <PIN pinname="Semantic" slicecount="1" values="LIGHTVIEWINVERSE">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -703,6 +705,10 @@
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
+   <PIN pinname="Input Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Input 3" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="64" srcpinname="Output" dstnodeid="83" dstpinname="Input 1">
    </LINK>
@@ -710,10 +716,10 @@
    </LINK>
    <LINK srcnodeid="83" srcpinname="Output" dstnodeid="65" dstpinname="Resource Semantics">
    </LINK>
-   <LINK srcnodeid="66" srcpinname="InvVPBuffer" dstnodeid="82" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="12510" y="2693">
+   <LINK srcnodeid="66" srcpinname="InvVBuffer" dstnodeid="82" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="12120" y="2625">
    </LINKPOINT>
-   <LINKPOINT x="10665" y="2693">
+   <LINKPOINT x="10590" y="2625">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="84">
@@ -785,9 +791,9 @@
    <LINK srcnodeid="87" srcpinname="Transform Out" dstnodeid="89" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="64" srcpinname="Output" dstnodeid="62" dstpinname="Resource Semantics" linkstyle="Bezier">
-   <LINKPOINT x="9165" y="5063">
+   <LINKPOINT x="9215" y="4773">
    </LINKPOINT>
-   <LINKPOINT x="4920" y="5063">
+   <LINKPOINT x="4945" y="4918">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="47" srcpinname="Output Node" dstnodeid="58" dstpinname="Projection">
@@ -956,4 +962,24 @@
    </LINK>
    <PACK Name="Notuiv" Version="0.2.2.0">
    </PACK>
+   <NODE systemname="RenderSemantic (DX11 StructuredBuffer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="RenderSemantic (DX11 StructuredBuffer)" componentmode="Hidden" id="105">
+   <BOUNDS type="Node" left="11535" top="3885" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="11535" top="3885" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Semantic" slicecount="1" values="LIGHTPROJECTIONINVERSE">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="105" srcpinname="Output" dstnodeid="83" dstpinname="Input 3">
+   </LINK>
+   <LINK srcnodeid="66" srcpinname="InvPBuffer" dstnodeid="105" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="12525" y="2813">
+   </LINKPOINT>
+   <LINKPOINT x="11565" y="2813">
+   </LINKPOINT>
+   </LINK>
    </PATCH>

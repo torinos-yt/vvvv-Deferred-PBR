@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta39.dtd" >
-   <PATCH nodename="F:\vvvv\vvvv_beta_39_x64\packs\PBRRenderer\nodes\modules\DepthofField (DX11.Texture).v4p" systemname="DepthofField (DX11.Texture)" filename="F:\vvvv\work\PBRRenderer\modules\DepthofField (DX11.Texture).v4p" scrollx="15" scrolly="-360">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta39.1.dtd" >
+   <PATCH nodename="F:\vvvv\vvvv_beta_39.1_x64\packs\PBRRenderer\nodes\modules\DepthofField (DX11.Texture).v4p" systemname="DepthofField (DX11.Texture)" filename="F:\vvvv\work\PBRRenderer\modules\DepthofField (DX11.Texture).v4p" scrollx="15" scrolly="-360">
    <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="4">
    <BOUNDS type="Node" left="2985" top="2235" width="100" height="100">
    </BOUNDS>
@@ -152,7 +152,7 @@
    </PACK>
    <PACK Name="ÎmagePack" Version="0.2.0">
    </PACK>
-   <PACK Name="addonpack" Version="39.0.0">
+   <PACK Name="addonpack" Version="39.1.0">
    </PACK>
    <NODE systemname="NullIndirect (DX11.Drawer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="NullIndirect (DX11.Drawer)" componentmode="Hidden" id="31">
    <BOUNDS type="Node" left="2610" top="10005" width="100" height="100">
@@ -556,6 +556,8 @@
    <PIN pinname="Evaluate" visible="-1" pintype="Input" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Buffers" visible="1">
+   </PIN>
+   <PIN pinname="damping" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="30" srcpinname="Output Node" dstnodeid="147" dstpinname="Depth">
@@ -1228,4 +1230,22 @@
    </LINK>
    <LINK srcnodeid="81" srcpinname="Whole Part" dstnodeid="80" dstpinname="Input">
    </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="212">
+   <BOUNDS type="Box" left="5490" top="1110" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5490" top="1110" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.15">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Damping">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="212" srcpinname="Y Output Value" dstnodeid="147" dstpinname="damping">
+   </LINK>
+   <PACK Name="Notuiv" Version="0.2.2.0">
+   </PACK>
    </PATCH>

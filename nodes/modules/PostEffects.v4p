@@ -77,7 +77,7 @@
    </BOUNDS>
    <PIN pinname="Bloom Tint Color" visible="1" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
    </PIN>
-   <PIN pinname="Soft" visible="1">
+   <PIN pinname="Soft" visible="1" slicecount="1" values="0">
    </PIN>
    </NODE>
    <NODE systemname="ColorGrading (DX11.Texture)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\ColorGrading (DX11.Texture).v4p" nodename="ColorGrading (DX11.Texture).v4p" componentmode="Hidden" id="3">
@@ -161,6 +161,8 @@
    </PIN>
    <PIN pinname="focusXY" visible="1" slicecount="2" values="0,0">
    </PIN>
+   <PIN pinname="Damping" visible="1">
+   </PIN>
    </NODE>
    <NODE systemname="GetTAA (PBRRenderer)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\vl\VVVV.Value.RenderSetting.vl" nodename="GetTAA (PBRRenderer)" componentmode="Hidden" id="5">
    <BOUNDS type="Node" left="1668" top="1440" width="100" height="100">
@@ -176,34 +178,10 @@
    <PIN pinname="Velocity Weight" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="GetDoF (PBRRenderer)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\vl\VVVV.Value.RenderSetting.vl" nodename="GetDoF (PBRRenderer)" componentmode="Hidden" id="6">
-   <BOUNDS type="Node" left="2043" top="5115" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="F-Stop" visible="1">
-   </PIN>
-   <PIN pinname="World Scale" visible="1">
-   </PIN>
-   <PIN pinname="maxCoC" visible="1">
-   </PIN>
-   <PIN pinname="Bokeh Rotation" visible="1">
-   </PIN>
-   <PIN pinname="Auto Focus" visible="1">
-   </PIN>
-   <PIN pinname="Focus XYXY" visible="1">
-   </PIN>
-   <PIN pinname="FocusDepth" visible="1">
-   </PIN>
-   <PIN pinname="Use Scatter" visible="1">
-   </PIN>
-   <PIN pinname="DoF Quality" visible="1">
-   </PIN>
-   </NODE>
    <NODE systemname="Ord2Enum (Enumerations Explicit)" nodename="Ord2Enum (Enumerations Explicit)" componentmode="Hidden" id="7">
-   <BOUNDS type="Node" left="3198" top="5505" width="100" height="100">
+   <BOUNDS type="Node" left="3303" top="5490" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Ord Value" visible="1" slicecount="1" values="0">
+   <PIN pinname="Ord Value" visible="1" slicecount="1" values="4">
    </PIN>
    <PIN pinname="Enumeration" slicecount="1" values="BlurKernel">
    </PIN>
@@ -332,20 +310,6 @@
    <LINKPOINT x="1880" y="3535">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="6" srcpinname="F-Stop" dstnodeid="4" dstpinname="Fstop">
-   </LINK>
-   <LINK srcnodeid="6" srcpinname="World Scale" dstnodeid="4" dstpinname="World Scale">
-   </LINK>
-   <LINK srcnodeid="6" srcpinname="maxCoC" dstnodeid="4" dstpinname="maxCoC">
-   </LINK>
-   <LINK srcnodeid="6" srcpinname="Bokeh Rotation" dstnodeid="4" dstpinname="Bokeh Rotation">
-   </LINK>
-   <LINK srcnodeid="6" srcpinname="Auto Focus" dstnodeid="4" dstpinname="autofocus">
-   </LINK>
-   <LINK srcnodeid="6" srcpinname="Focus XYXY" dstnodeid="4" dstpinname="focusXY">
-   </LINK>
-   <LINK srcnodeid="6" srcpinname="FocusDepth" dstnodeid="4" dstpinname="Focus Depth">
-   </LINK>
    <NODE id="18" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="Projection">
    </PIN>
@@ -359,8 +323,6 @@
    <LINK srcnodeid="18" srcpinname="Output Node" dstnodeid="4" dstpinname="Projection">
    </LINK>
    <LINK srcnodeid="7" srcpinname="Enum" dstnodeid="4" dstpinname="Blur Quality">
-   </LINK>
-   <LINK srcnodeid="6" srcpinname="Use Scatter" dstnodeid="4" dstpinname="Scatter">
    </LINK>
    <NODE id="20" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
    <PIN pinname="Descriptive Name" slicecount="1" values="|Texture In|">
@@ -397,10 +359,6 @@
    <LINK srcnodeid="14" srcpinname="Output Node" dstnodeid="8" dstpinname="Input" hiddenwhenlocked="1">
    </LINK>
    <LINK srcnodeid="14" srcpinname="Output Node" dstnodeid="5" dstpinname="Input" hiddenwhenlocked="1">
-   </LINK>
-   <LINK srcnodeid="14" srcpinname="Output Node" dstnodeid="6" dstpinname="Input" hiddenwhenlocked="1">
-   </LINK>
-   <LINK srcnodeid="6" srcpinname="DoF Quality" dstnodeid="7" dstpinname="Ord Value">
    </LINK>
    <BOUNDS type="Window" left="6735" top="885" width="12465" height="10965">
    </BOUNDS>
@@ -535,9 +493,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="34" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="8145" top="480" width="795" height="240">
+   <BOUNDS type="Box" left="8070" top="420" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="8145" top="480" width="0" height="0">
+   <BOUNDS type="Node" left="8070" top="420" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
    </PIN>
@@ -561,7 +519,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="0" top="1275" width="6730" height="6160">
    </BOUNDS>
-   <BOUNDS type="Window" left="7275" top="6495" width="13440" height="7710">
+   <BOUNDS type="Window" left="6870" top="5280" width="13440" height="7710">
    </BOUNDS>
    <PIN pinname="Enabled" visible="1" slicecount="1" values="1">
    </PIN>
@@ -731,5 +689,53 @@
    <LINK srcnodeid="49" srcpinname="Output" dstnodeid="48" dstpinname="Enabled" hiddenwhenlocked="1">
    </LINK>
    <LINK srcnodeid="9" srcpinname="Soft" dstnodeid="2" dstpinname="Soft">
+   </LINK>
+   <NODE systemname="GetDoF (PBRRenderer)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\vl\VVVV.Value.RenderSetting.vl" nodename="GetDoF (PBRRenderer)" componentmode="Hidden" id="6">
+   <BOUNDS type="Node" left="2043" top="5115" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="F-Stop" visible="1">
+   </PIN>
+   <PIN pinname="World Scale" visible="1">
+   </PIN>
+   <PIN pinname="maxCoC" visible="1">
+   </PIN>
+   <PIN pinname="Bokeh Rotation" visible="1">
+   </PIN>
+   <PIN pinname="Auto Focus" visible="1">
+   </PIN>
+   <PIN pinname="Focus XYXY" visible="1">
+   </PIN>
+   <PIN pinname="FocusDepth" visible="1">
+   </PIN>
+   <PIN pinname="Use Scatter" visible="1">
+   </PIN>
+   <PIN pinname="DoF Quality" visible="1">
+   </PIN>
+   <PIN pinname="Damping" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="F-Stop" dstnodeid="4" dstpinname="Fstop">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="World Scale" dstnodeid="4" dstpinname="World Scale">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="maxCoC" dstnodeid="4" dstpinname="maxCoC">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Bokeh Rotation" dstnodeid="4" dstpinname="Bokeh Rotation">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Auto Focus" dstnodeid="4" dstpinname="autofocus">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Focus XYXY" dstnodeid="4" dstpinname="focusXY">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="FocusDepth" dstnodeid="4" dstpinname="Focus Depth">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Use Scatter" dstnodeid="4" dstpinname="Scatter">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Output Node" dstnodeid="6" dstpinname="Input" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="DoF Quality" dstnodeid="7" dstpinname="Ord Value">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Damping" dstnodeid="4" dstpinname="Damping">
    </LINK>
    </PATCH>

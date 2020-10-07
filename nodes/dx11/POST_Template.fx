@@ -1,6 +1,11 @@
 #ifndef GBUFFERCOMMON
 	#include <packs\PBRRenderer\nodes\modules\fxh\GBuffer_Common.fxh>
 #endif
+
+#ifndef VERTEXFUNCTION
+#define VERTEXFUNCTION
+#endif
+
 //Available Uniform Parameters
 //
 //float Time
@@ -22,6 +27,12 @@
 //StructuredBuffer<Light> lights : Light List;
 
 //Input Data Struct
+//
+//struct VertexData{
+//  float3 Pos;
+//  float3 Normal;
+//};
+//
 //struct Info{
 //	float3 Pos;
 //  float2 posScreen;
@@ -33,17 +44,21 @@
 //};
 
 //Output Data Struct
+//
 //struct OutputData{
 //	float3 Albedo;
 //	float3 Emission;
 //	float Metalness;
 //	float Roughness;
+//  float3 BumpNormal;
 //	float Reflectance;
 //	
 //	float2 uv; : Already Set Model Texture Coordinate
 //};
 
+void VertexFunction(inout VertexData v){
 
+}
 
 void PostFunction(Info i, inout OutputData o){
 	//Write your own post function!!
@@ -52,6 +67,7 @@ void PostFunction(Info i, inout OutputData o){
 	o.Emission = emissionTex(i.uv);
 	o.Metalness = metalTex(i.uv);
 	o.Roughness = roughTex(i.uv);
+	o.BumpNormal = normalTex(i.uv);
 	o.Reflectance = Reflectance;
 }
 

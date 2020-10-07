@@ -42,6 +42,7 @@
 //	float3 Emission;
 //	float Metalness;
 //	float Roughness;
+//  float3 BumpNormal;
 //	float Reflectance;
 //	
 //	//If you want using Texturing, BumpMapping...

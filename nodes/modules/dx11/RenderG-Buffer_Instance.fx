@@ -2,6 +2,9 @@
 #define VertexFunction(v)
 #endif
 
+StructuredBuffer<float4x4> TransformBuffer;
+StructuredBuffer<float4x4> prevTransformBuffer;
+
 float emit <string uiname = "Emission Stlength";> = 1.0;
 
 SamplerState linearSampler : IMMUTABLE
@@ -34,6 +37,7 @@ struct VS_IN
 	float3 Norm : NORMAL;
 	float3 tangent : TANGENT;
 	uint vid : SV_VertexID;
+	uint iid : SV_InstanceID;
 	#if USECOLOR
 		float3 color : COLOR;
 	#endif
@@ -48,6 +52,7 @@ struct VS_INTNB
 	float4 TexCd : TEXCOORD0;
 	float3 Norm : NORMAL;
 	uint vid : SV_VertexID;
+	uint iid : SV_InstanceID;
 	#if USECOLOR
 		float3 color : COLOR;
 	#endif
@@ -64,6 +69,7 @@ struct vs2ps
 	float4 uv: TEXCOORD0;
 	float3 tangent : TEXCOORD3;
 	float3 NormW : NORMAL;
+	uint iid : TEXCOORD4;
 	#if USECOLOR
 		float3 color : COLOR;
 	#endif
@@ -76,6 +82,7 @@ struct vs2pstnb
 	float4 velocity : TEXCOORD2;
 	float4 uv: TEXCOORD0;
 	float3 NormW : NORMAL;
+	uint iid : TEXCOORD3;
 	#if USECOLOR
 		float3 color : COLOR;
 	#endif
@@ -92,20 +99,26 @@ vs2ps VS(VS_IN input)
 {
 	vs2ps output;
 
+	uint count, d;
+	TransformBuffer.GetDimensions(count, d);
+	float4x4 tWBuffer = TransformBuffer[input.iid % count];
+
 	VertexData v;
 	v.Pos = input.PosO.xyz;
 	v.Normal = input.Norm;
 	VertexFunction(v);
 
 	float4 modifiedPos = float4(v.Pos, 1);
-	output.PosWVP  = mul(modifiedPos,mul(tW,tVP));
-	float4 PosW = mul(modifiedPos, tW);
+	output.PosWVP  = mul(modifiedPos,mul(tWBuffer,tVP));
+	float4 PosW = mul(modifiedPos, tWBuffer);
 	
 	float4 velpos = modifiedPos;
 	#if USEVELOCITY
 		velpos -= float4(input.velocity, 0);
 	#endif
-	float4 velocity = mul(velpos, ptW);
+
+	float4x4 ptWBuffer = prevTransformBuffer[input.iid % count];
+	float4 velocity = mul(velpos, ptWBuffer);
 	output.PosW = PosW;
 	
 	float4 posV = mul(PosW, tVP);
@@ -115,6 +128,9 @@ vs2ps VS(VS_IN input)
 	output.uv = mul(input.TexCd, texW);;
 	output.NormW = normalize(mul(v.Normal, (float3x3)tWIT));
 	output.tangent = normalize(mul(input.tangent, (float3x3)tW).xyz);
+
+	output.iid = input.iid;
+
 	#if USECOLOR
 		output.color =  input.color;
 	#endif
@@ -125,20 +141,26 @@ vs2pstnb VS_TNB(VS_INTNB input)
 {
 	vs2pstnb output;
 
+	uint count, d;
+	TransformBuffer.GetDimensions(count, d);
+	float4x4 tWBuffer = TransformBuffer[input.iid % count];
+
 	VertexData v;
 	v.Pos = input.PosO.xyz;
 	v.Normal = input.Norm;
 	VertexFunction(v);
 
 	float4 modifiedPos = float4(v.Pos, 1);
-	output.PosWVP  = mul(modifiedPos,mul(tW,tVP));
-	float4 PosW = mul(modifiedPos, tW);
+	output.PosWVP  = mul(modifiedPos,mul(tWBuffer,tVP));
+	float4 PosW = mul(modifiedPos, tWBuffer);
 	
 	float4 velpos = modifiedPos;
 	#if USEVELOCITY
 		velpos -= float4(input.velocity, 0);
 	#endif
-	float4 velocity = mul(velpos, ptW);
+
+	float4x4 ptWBuffer = prevTransformBuffer[input.iid % count];
+	float4 velocity = mul(velpos, ptWBuffer);
 	output.PosW = PosW;
 	
 	float4 posV = mul(PosW, tVP);
@@ -147,6 +169,9 @@ vs2pstnb VS_TNB(VS_INTNB input)
 	
 	output.uv = mul(input.TexCd, texW);
 	output.NormW = normalize(mul(v.Normal, (float3x3)tWIT));
+
+	output.iid = input.iid;
+
 	#if USECOLOR
 		output.color =  input.color;
 	#endif
@@ -172,6 +197,7 @@ PSout PS(vs2ps In){
 	info.uv = o.uv = In.uv.xy;
 	info.Velocity = velxy * 2 - 1;
 	info.vertexColor = float3(1,1,1);
+	info.iid = In.iid;
 	#if USECOLOR
 		info.vertexColor = In.color;
 	#endif
@@ -214,6 +240,7 @@ PSout PS_TNB(vs2pstnb In){
 	info.uv = o.uv = In.uv.xy;
 	info.Velocity = velxy * 2 - 1;
 	info.vertexColor = float3(1,1,1);
+	info.iid = In.iid;
 	#if USECOLOR
 		info.vertexColor = In.color;
 	#endif
@@ -242,7 +269,7 @@ technique10 GBuffer
 {
 	pass P0
 	{
-		SetVertexShader( CompileShader( vs_4_0, VS() ) );
+		SetVertexShader( CompileShader( vs_5_0, VS() ) );
 		SetPixelShader( CompileShader( ps_4_0, PS() ) );
 	}
 }
@@ -251,7 +278,7 @@ technique10 GBufferNoTangent
 {
 	pass P0
 	{
-		SetVertexShader( CompileShader( vs_4_0, VS_TNB() ) );
+		SetVertexShader( CompileShader( vs_5_0, VS_TNB() ) );
 		SetPixelShader( CompileShader( ps_4_0, PS_TNB() ) );
 	}
 }

@@ -22,7 +22,8 @@ SamplerState linearSampler : IMMUTABLE
 	AddressV = Clamp;
 };
 
-StructuredBuffer<float4x4> tVPI : LIGHTVIEWPROJECTIONINVERSE;
+StructuredBuffer<float4x4> tVI : LIGHTVIEWINVERSE;
+StructuredBuffer<float4x4> tPI : LIGHTPROJECTIONINVERSE;
 int vpindex;
 bool Directional = false;
  
@@ -73,8 +74,8 @@ psShadow PS(vs2ps In)
 	float3 rayPos = mul(float4(lights[vpindex].pos, 1), tWI);
 	
 	float2 rayDir = (In.uv * 2 - 1) * float2(1, -1);
-	float4 rs =  mul(float4(rayDir, 1, 1), tVPI[vpindex]);
-	float3 ray = normalize(mul(normalize(rs.xyz / rs.w), (float3x3)tWI));
+	float3 rs =  normalize(mul(float4(mul(float4(rayDir, 0, 0), tPI[vpindex]).xy, 1, 0), tVI[vpindex]).xyz);
+	float3 ray = normalize(mul(rs, (float3x3)tWI));
 	
 	float maxdist = 50;
 	float3 normal = 0;

@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta38.1.dtd" >
-   <PATCH nodename="F:\vvvv\vvvv_50beta38.1_x64\packs\PBRRenderer\nodes\modules\focusDepth.v4p" systemname="focusDepth" filename="F:\vvvv\work\PBRRenderer\modules\focusDepth.v4p" scrollx="0" scrolly="15">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta39.1.dtd" >
+   <PATCH nodename="F:\vvvv\vvvv_beta_39.1_x64\packs\PBRRenderer\nodes\modules\focusDepth.v4p" systemname="focusDepth" filename="F:\vvvv\work\PBRRenderer\modules\focusDepth.v4p" scrollx="0" scrolly="15">
    <NODE id="16" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
    <PIN pinname="Descriptive Name" slicecount="1" values="|focus point|">
    </PIN>
@@ -40,7 +40,7 @@
    </PACK>
    <PACK Name="ÎmagePack" Version="0.2.0">
    </PACK>
-   <PACK Name="addonpack" Version="38.1.0">
+   <PACK Name="addonpack" Version="39.1.0">
    </PACK>
    <NODE systemname="FocusDepth (DX11.Effect)" filename="%VVVV%\packs\PBRRenderer\nodes\modules\dx11\FocusDepth.fx" nodename="FocusDepth (DX11.Effect)" componentmode="Hidden" id="24">
    <BOUNDS type="Node" left="1515" top="2670" width="100" height="100">
@@ -56,6 +56,8 @@
    <PIN pinname="focusXY" visible="1">
    </PIN>
    <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="damping" slicecount="1" visible="1" values="0.15">
    </PIN>
    </NODE>
    <NODE systemname="Dispatcher (DX11.Drawer)" filename="%VVVV%\packs\dx11\nodes\plugins\base\VVVV.DX11.Nodes.dll" nodename="Dispatcher (DX11.Drawer)" componentmode="Hidden" id="25">
@@ -100,4 +102,22 @@
    </NODE>
    <LINK srcnodeid="26" srcpinname="Buffers" dstnodeid="29" dstpinname="Input Node">
    </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="30">
+   <BOUNDS type="Box" left="3195" top="795" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3195" top="795" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.15">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="damping">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="30" srcpinname="Y Output Value" dstnodeid="24" dstpinname="damping">
+   </LINK>
+   <PACK Name="Notuiv" Version="0.2.2.0">
+   </PACK>
    </PATCH>

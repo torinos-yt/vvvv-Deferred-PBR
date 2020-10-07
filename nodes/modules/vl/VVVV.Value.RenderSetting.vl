@@ -339,32 +339,37 @@
               <p:ValueBoxSettings />
             </Pad>
             <ControlPoint Id="KgXQYLHjLVLOJNuhUY0tA0" Bounds="816,392" />
-            <Pad Id="KLf04cys36YM3dISsKE1mE" SlotId="CYEZdGDmdHdLJrzBpHwtII" Bounds="924,542">
+            <Pad Id="KLf04cys36YM3dISsKE1mE" SlotId="CYEZdGDmdHdLJrzBpHwtII" Bounds="1072,547">
               <p:ValueBoxSettings />
             </Pad>
-            <ControlPoint Id="VbCW41kkkZlLElN9pW9mmt" Bounds="924,392" />
-            <Pad Id="UX6T9SJU6H2QXeGCgc2iA2" SlotId="CZQYRv6o6TJNUWUR4t0O2U" Bounds="1200,553">
+            <ControlPoint Id="VbCW41kkkZlLElN9pW9mmt" Bounds="1072,397" />
+            <Pad Id="UX6T9SJU6H2QXeGCgc2iA2" SlotId="CZQYRv6o6TJNUWUR4t0O2U" Bounds="1315,563">
               <p:ValueBoxSettings />
             </Pad>
-            <ControlPoint Id="QQW9AGXHWQQNmaUu1JalpS" Bounds="1200,392" />
-            <Pad Id="MzMe3C5SFC9NjI2VjoXEiN" SlotId="GdSilwpvwZgQFCAdZYU5jD" Bounds="1329,542">
+            <ControlPoint Id="QQW9AGXHWQQNmaUu1JalpS" Bounds="1315,402" />
+            <Pad Id="MzMe3C5SFC9NjI2VjoXEiN" SlotId="GdSilwpvwZgQFCAdZYU5jD" Bounds="1444,552">
               <p:ValueBoxSettings />
             </Pad>
-            <ControlPoint Id="GAlH0Zl3S59Mv3kxfvuuN6" Bounds="1329,392" />
+            <ControlPoint Id="GAlH0Zl3S59Mv3kxfvuuN6" Bounds="1444,402" />
             <ControlPoint Id="M0iqHFEIC6YLjyxccQT6xf" Bounds="279,629" />
             <ControlPoint Id="QMEz02UdrCOMUttT7t1Sez" Bounds="387,629" />
             <ControlPoint Id="TzmlBHGEEheOiwF1HwRhBb" Bounds="495,629" />
             <ControlPoint Id="PYIFx1JSSUKNLS6vUCrcEw" Bounds="603,629" />
             <ControlPoint Id="GhgDTYzWBjKPn6JCl1b6ma" Bounds="711,629" />
             <ControlPoint Id="KwHthw5vwTXNabMjAq5G9L" Bounds="819,629" />
-            <ControlPoint Id="HOczHOm6QQVMwRI4066dmJ" Bounds="927,629" />
-            <ControlPoint Id="TT15bDMR6mOLC3nlWue4fd" Bounds="1200,627" />
-            <ControlPoint Id="Tv10r7GfYyANIURC6ifafw" Bounds="1332,629" />
-            <Pad Id="PQbW7IIWHK3Ofhfy6Ru6hQ" SlotId="LnkNiGW233iNWfoV6p1grf" Bounds="1062,540">
+            <ControlPoint Id="HOczHOm6QQVMwRI4066dmJ" Bounds="1075,634" />
+            <ControlPoint Id="TT15bDMR6mOLC3nlWue4fd" Bounds="1315,637" />
+            <ControlPoint Id="Tv10r7GfYyANIURC6ifafw" Bounds="1447,639" />
+            <Pad Id="PQbW7IIWHK3Ofhfy6Ru6hQ" SlotId="LnkNiGW233iNWfoV6p1grf" Bounds="1177,550">
               <p:ValueBoxSettings />
             </Pad>
-            <ControlPoint Id="EnK36tgtdw8OMO8NxvpX04" Bounds="1057,392" />
-            <ControlPoint Id="JPhZUK8H3bXLNygtMrv4na" Bounds="1066,643" />
+            <ControlPoint Id="EnK36tgtdw8OMO8NxvpX04" Bounds="1172,402" />
+            <ControlPoint Id="JPhZUK8H3bXLNygtMrv4na" Bounds="1181,653" />
+            <Pad Id="QFy6HNg6JkdOA07JLoSlcC" SlotId="OP9DpSI4CtVQDRla1OWwhO" Bounds="946,534">
+              <p:ValueBoxSettings />
+            </Pad>
+            <ControlPoint Id="EnzDSmEozVjNADQkuwK6ka" Bounds="949,396" />
+            <ControlPoint Id="SeZDe1EqIPuNWpyTmnXFfp" Bounds="945,629" />
           </Canvas>
           <Patch Id="SRZxIvSkHnXQZhPjP0oRHQ" Name="Create">
             <Pin Id="KeDXSQVBuVwOEXTdKq3ynA" Name="Use DoF" Kind="InputPin" DefaultValue="True">
@@ -415,6 +420,11 @@
             <Pin Id="VAgk68LCiIuLVNfkmLj5qG" Name="Use Scatter" Kind="InputPin" DefaultValue="True">
               <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
                 <Choice Kind="TypeFlag" Name="Boolean" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="Cgmt2DHWBQCO9rIeskHO09" Name="Damping" Kind="InputPin" Bounds="958,399" DefaultValue="0.15">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
             </Pin>
           </Patch>
@@ -481,6 +491,7 @@
             <Pin Id="Ibfwjyrx4oJQGqAmdNMeG5" Name="FocusDepth" Kind="OutputPin" Bounds="1088,614" />
             <Pin Id="VQlNRvWmQtYNJahbecWXKL" Name="DoF Quality" Kind="OutputPin" />
             <Pin Id="UoLtSMiLV8rOWioajzEkHd" Name="Use Scatter" Kind="OutputPin" />
+            <Pin Id="RGhKpUUybByOm4wd5jPOm9" Name="Damping" Kind="OutputPin" />
           </Patch>
           <Link Id="I1EhSJ749OhLqwtAkcMmjg" Ids="QQW9AGXHWQQNmaUu1JalpS,UX6T9SJU6H2QXeGCgc2iA2" />
           <Slot Id="LnkNiGW233iNWfoV6p1grf" Name="FocusDepth" />
@@ -488,6 +499,11 @@
           <Link Id="KJKMD4V4gKTOy8tPC9XYxN" Ids="CvRpARiUKRjOwrgigt3UmF,EnK36tgtdw8OMO8NxvpX04" IsHidden="true" />
           <Link Id="I4Bw4EIW0uAMgvLA29BgCN" Ids="PQbW7IIWHK3Ofhfy6Ru6hQ,JPhZUK8H3bXLNygtMrv4na" />
           <Link Id="HYdhHL8w3aBMOQrva8Gavr" Ids="JPhZUK8H3bXLNygtMrv4na,Ibfwjyrx4oJQGqAmdNMeG5" IsHidden="true" />
+          <Slot Id="OP9DpSI4CtVQDRla1OWwhO" Name="Damping" />
+          <Link Id="FnsfpQuSKU4PjPiEIBlXQT" Ids="EnzDSmEozVjNADQkuwK6ka,QFy6HNg6JkdOA07JLoSlcC" />
+          <Link Id="Tph4v4k6RcJQPmzgAMQhcs" Ids="Cgmt2DHWBQCO9rIeskHO09,EnzDSmEozVjNADQkuwK6ka" IsHidden="true" />
+          <Link Id="C0J0ESYE4urNqQlpQNUFv7" Ids="QFy6HNg6JkdOA07JLoSlcC,SeZDe1EqIPuNWpyTmnXFfp" />
+          <Link Id="MGr7OttvEWmMlAtWxR4RXk" Ids="SeZDe1EqIPuNWpyTmnXFfp,RGhKpUUybByOm4wd5jPOm9" IsHidden="true" />
         </Patch>
       </Node>
       <!--
@@ -1694,7 +1710,7 @@
     ************************ SetDoF ************************
 
 -->
-      <Node Name="SetDoF" Bounds="951,1006,589,270" Id="KYhMezCfuFUNeK6hTjMFK4">
+      <Node Name="SetDoF" Bounds="951,1004,591,270" Id="KYhMezCfuFUNeK6hTjMFK4">
         <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
           <Choice Kind="OperationDefinition" Name="Operation" />
         </p:NodeReference>
@@ -1711,6 +1727,7 @@
             <Pin Id="JD2f0Ml1guDNpjsNqk22Da" Name="maxCoC" Kind="InputPin" />
             <Pin Id="Qat3ZM0A0czQIMvn7tNRiH" Name="Bokeh Rotation" Kind="InputPin" />
             <Pin Id="IHrtkoJw0krPK30pVCmIuF" Name="Auto Focus" Kind="InputPin" />
+            <Pin Id="LWP7JuCzZu5PhllIEb3DPw" Name="Damping" Kind="InputPin" />
             <Pin Id="TKq5u3ecWLqM4KNHM94lRL" Name="Focus XY" Kind="InputPin" />
             <Pin Id="OmTOMvERrgBM69gJnhSQtS" Name="FocusDepth" Kind="InputPin" />
             <Pin Id="F8VZGU4SUGNOxSRXJ7uW3I" Name="DoF Quality" Kind="InputPin" />
@@ -1732,7 +1749,7 @@
           <ControlPoint Id="HCZdoGvysrROS792Klc64D" Bounds="1203,1045" />
           <Link Id="FsVNYMabNyoL0WOoZYRkFG" Ids="HCZdoGvysrROS792Klc64D,Qat3ZM0A0czQIMvn7tNRiH" />
           <Link Id="OVVyU7zpiqKOJegBmqUwlK" Ids="V4hu7EHsD1OPaPhNLWFpVS,HCZdoGvysrROS792Klc64D" IsHidden="true" />
-          <ControlPoint Id="EbevJpCj9bdMLH12zikr6H" Bounds="1229,1097" />
+          <ControlPoint Id="EbevJpCj9bdMLH12zikr6H" Bounds="1217,1087" />
           <Link Id="IAMMogarUj1P6jFnn3LF31" Ids="EbevJpCj9bdMLH12zikr6H,IHrtkoJw0krPK30pVCmIuF" />
           <Link Id="E2kUpFTtwlpLzp9yqjQAt7" Ids="OyicBVINLFwMBEmYy6jqro,EbevJpCj9bdMLH12zikr6H" IsHidden="true" />
           <ControlPoint Id="IWm2J3qBzzxPI27byciUO7" Bounds="1307,1038" />
@@ -1750,6 +1767,9 @@
           <ControlPoint Id="AqXc8P8MvY1OdifiVTUB4R" Bounds="1341,1057" />
           <Link Id="Fb9mfb7OqEHMmZeYdxK9J4" Ids="AqXc8P8MvY1OdifiVTUB4R,OmTOMvERrgBM69gJnhSQtS" />
           <Link Id="H1M2UklVmGUOg8Ef8KqK6Z" Ids="PcQzLPjWvXVLesUd1Wy1Fw,AqXc8P8MvY1OdifiVTUB4R" IsHidden="true" />
+          <ControlPoint Id="R0XNr66NizrPdexQIHCbg3" Bounds="1248,1065" />
+          <Link Id="GFTNrdpTGCdLgj9617wUoE" Ids="R0XNr66NizrPdexQIHCbg3,LWP7JuCzZu5PhllIEb3DPw" />
+          <Link Id="BLMXAVrdKvROzPSQaKBeYF" Ids="RiOTCKjh0OmPz3xa0XCpd4,R0XNr66NizrPdexQIHCbg3" IsHidden="true" />
           <Pin Id="QcTY0zR04BeONUqinWRH5x" Name="Use DoF" Kind="InputPin" Bounds="801,1222" />
           <Pin Id="Qt817zoeAcLMzzXk4KZCOU" Name="F-Stop" Kind="InputPin" Bounds="870,1229" />
           <Pin Id="Ra0y9A1W3a4PYBi8Wkb8LQ" Name="World Scale" Kind="InputPin" Bounds="944,1247" />
@@ -1760,6 +1780,7 @@
           <Pin Id="PcQzLPjWvXVLesUd1Wy1Fw" Name="FocusDepth" Kind="InputPin" Bounds="1340,1058" />
           <Pin Id="OK4vc4fj0ZKPWRt1vbSzhJ" Name="DoF Quality" Kind="InputPin" Bounds="1266,1278" />
           <Pin Id="HVePiarNKlcQA6SwXMt5UD" Name="Use Scatter" Kind="InputPin" Bounds="1377,1261" />
+          <Pin Id="RiOTCKjh0OmPz3xa0XCpd4" Name="Damping" Kind="InputPin" Bounds="1248,1065" />
           <Pin Id="DxkLqOPSaqMLwwDqAPqdMm" Name="Output" Kind="OutputPin" Bounds="876,1441" />
         </Patch>
       </Node>
@@ -2242,7 +2263,7 @@
     ************************ GetDoF ************************
 
 -->
-      <Node Name="GetDoF" Bounds="2895,604,434,289" Id="UBMkRZUUqUKLxsljgBeoUZ">
+      <Node Name="GetDoF" Bounds="2895,602,436,289" Id="UBMkRZUUqUKLxsljgBeoUZ">
         <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="Builtin">
           <Choice Kind="OperationDefinition" Name="Operation" />
         </p:NodeReference>
@@ -2284,6 +2305,7 @@
             <Pin Id="AklAEW6yQbwLtJvR7L47y7" Name="maxCoC" Kind="OutputPin" />
             <Pin Id="SNALpbu0M7wNuAPGnvoaBV" Name="Bokeh Rotation" Kind="OutputPin" />
             <Pin Id="LsAV4mFt6G8NP1a15I3Il3" Name="Auto Focus" Kind="OutputPin" />
+            <Pin Id="NkUFISJPu2iMFzNxsk1VyH" Name="Damping" Kind="OutputPin" />
             <Pin Id="OO34XpFt6P3LNZHs6KbDYd" Name="Focus XY" Kind="OutputPin" />
             <Pin Id="GuGqd5YfPmoN9DUzO31Tvi" Name="FocusDepth" Kind="OutputPin" />
             <Pin Id="BV5wm4nkWIrPliLrShXJKU" Name="DoF Quality" Kind="OutputPin" />
@@ -2304,7 +2326,7 @@
           <ControlPoint Id="QSVGlDOokmHMSWcIKLpjHH" Bounds="3032,770" />
           <Link Id="QiRl12kmRpNPb14jKT8ht8" Ids="LsAV4mFt6G8NP1a15I3Il3,QSVGlDOokmHMSWcIKLpjHH" />
           <Link Id="FSn8NzoQeQXN2KrGqfR2na" Ids="QSVGlDOokmHMSWcIKLpjHH,Eq8IIAPrVNwMJlSUTlLOmo" IsHidden="true" />
-          <ControlPoint Id="P5uEGnIGSIiMmPogqqQbiy" Bounds="3064,833" />
+          <ControlPoint Id="P5uEGnIGSIiMmPogqqQbiy" Bounds="3081,841" />
           <Link Id="SWOa1fqfEdxPcu2gshYMI2" Ids="OO34XpFt6P3LNZHs6KbDYd,P5uEGnIGSIiMmPogqqQbiy" />
           <Link Id="AvHyAWPldcHMugJAuL2hRA" Ids="P5uEGnIGSIiMmPogqqQbiy,SWQBiJIWfAbPFJfAzxCGsb" IsHidden="true" />
           <ControlPoint Id="CdeYya0TWlLNiFvT9LOSdB" Bounds="3153,818" />
@@ -2326,6 +2348,10 @@
           <Pin Id="ArEZ8vQxunGPhlGh6zqAQ3" Name="FocusDepth" Kind="OutputPin" Bounds="3112,855" />
           <Pin Id="QDSkoOGNyVrQHOTIz7SThL" Name="DoF Quality" Kind="OutputPin" Bounds="1420,2053" />
           <Pin Id="QG8hOAjn6FsLF8NOGzMIo4" Name="Use Scatter" Kind="OutputPin" Bounds="1487,2100" />
+          <ControlPoint Id="SnHMXy2jl1aOut8YVZTeCa" Bounds="3052,823" />
+          <Link Id="Ej2GUN5i3SzMT8aD1GI4b3" Ids="NkUFISJPu2iMFzNxsk1VyH,SnHMXy2jl1aOut8YVZTeCa" />
+          <Pin Id="D7jc4XKZxjTO6aoLEszvsG" Name="Damping" Kind="OutputPin" Bounds="3043,828" />
+          <Link Id="Q5bBS3m1H7GNUZkv6MQx9e" Ids="SnHMXy2jl1aOut8YVZTeCa,D7jc4XKZxjTO6aoLEszvsG" IsHidden="true" />
         </Patch>
       </Node>
       <!--
@@ -2863,6 +2889,7 @@
             <Pin Id="SlMwMYEK4WmM3CO35k4U3G" Name="maxCoC" Kind="OutputPin" />
             <Pin Id="QT7AiOTfsXMMU7kP1gFvoe" Name="Bokeh Rotation" Kind="OutputPin" />
             <Pin Id="SIOxtpArW4RP7pjdU3O1XG" Name="Auto Focus" Kind="OutputPin" />
+            <Pin Id="H2Dwn88XtFTL5ycRsznYvv" Name="Damping" Kind="OutputPin" />
             <Pin Id="QnQM2RICUl0P7A3zUO0v54" Name="Focus XY" Kind="OutputPin" />
             <Pin Id="SFlFLmJ4wZuMzqwF29IYMH" Name="FocusDepth" Kind="OutputPin" />
             <Pin Id="Eb0QsHzqwSyMHboVOi1eA6" Name="DoF Quality" Kind="OutputPin" />

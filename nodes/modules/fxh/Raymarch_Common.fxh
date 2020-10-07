@@ -5,6 +5,9 @@
 float Time<bool visible = false;> = 0;
 float DeltaTime<bool visible = false;> = 0;
 
+bool IsBump = true;
+float bumps<string uiname = "BumpMap Strength"; float uimin = 0.0; float uimax = 5.0;> = 1;
+
 Texture2D ColorTex <string uiname="Texture"; bool visible = false;>;
 Texture2D BumpTex <string uiname="Bump Texture"; bool visible = false;>;
 Texture2D MetalnessTex <string uiname = "Metalness Map"; bool visible = false;>;
@@ -36,6 +39,33 @@ float3 emissionTex(float2 uv){
     return EmissionTex.Sample(tSampler, uv).rgb;
 }
 
+float3 normalTex(float2 uv){
+    return  BumpTex.Sample(tSampler, uv).xyz;
+}
+
+float3 BumpsTNB(float3 worldNormal, float3 bumpsNormal, float3 worldPos, float2 uv){    
+    float3 p_dx = ddx(worldPos);
+    float3 p_dy = ddy(worldPos);
+
+    float2 tc_dx = ddx(uv);
+    float2 tc_dy = ddy(uv);
+
+    float3 t = normalize( tc_dy.y * p_dx - tc_dx.y * p_dy );
+    float3 b = normalize( tc_dy.x * p_dx - tc_dx.x * p_dy ); 
+
+    float3 n = normalize(worldNormal);
+    float3 x = cross(n, t);
+    t = cross(x, n);
+    t = normalize(t);
+
+    x = cross(b, n);
+    b = cross(n, x);
+    b = normalize(b);
+    
+    bumpsNormal = bumpsNormal * 2.0 - 1.0;
+    return normalize(worldNormal + (bumpsNormal.x * t + bumpsNormal.y * b) * bumps);
+}
+
 float4x4 texW<bool visible = false;>;
 
 struct Info{
@@ -55,6 +85,7 @@ struct OutputData{
 	float3 Emission;
 	float Metalness;
 	float Roughness;
+    float3 BumpNormal;
 	float Reflectance;
 	float2 uv;
 };

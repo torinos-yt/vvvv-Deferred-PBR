@@ -85,10 +85,10 @@
    </BOUNDS>
    <PIN pinname="Color Output" visible="1">
    </PIN>
-   <PIN pinname="Color Input" slicecount="1" values="|1.00000,0.18301,0.08156,1.00000|">
+   <PIN pinname="Color Input" slicecount="1" values="|0.91474,0.97050,1.00000,1.00000|">
    </PIN>
    </NODE>
-   <BOUNDS type="Window" left="6090" top="3900" width="8730" height="10335">
+   <BOUNDS type="Window" left="2325" top="2970" width="9195" height="8925">
    </BOUNDS>
    <PACK Name="dx11" Version="1.3.1">
    </PACK>
@@ -101,7 +101,7 @@
    <PACK Name="addonpack" Version="39.1.0">
    </PACK>
    <NODE systemname="Count (3d)" filename="%VVVV%\lib\nodes\modules\3D\Count (3D).v4p" nodename="Count (3d)" componentmode="Hidden" id="15">
-   <BOUNDS type="Node" left="4725" top="5775" width="100" height="100">
+   <BOUNDS type="Node" left="5400" top="5760" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -111,9 +111,9 @@
    <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="15" dstpinname="Input" hiddenwhenlocked="1">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="16" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5265" top="7680" width="780" height="240">
+   <BOUNDS type="Box" left="5940" top="7665" width="780" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="5265" top="7680" width="0" height="0">
+   <BOUNDS type="Node" left="5940" top="7665" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -127,7 +127,7 @@
    </PIN>
    </NODE>
    <NODE systemname="Count (3d)" filename="%VVVV%\lib\nodes\modules\3D\Count (3D).v4p" nodename="Count (3d)" componentmode="Hidden" id="31">
-   <BOUNDS type="Node" left="6375" top="5805" width="100" height="100">
+   <BOUNDS type="Node" left="7050" top="5790" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1" slicecount="1" values="0">
    </PIN>
@@ -135,7 +135,7 @@
    </PIN>
    </NODE>
    <NODE systemname="Max (Value)" nodename="Max (Value)" componentmode="Hidden" id="32">
-   <BOUNDS type="Node" left="5250" top="6450" width="100" height="100">
+   <BOUNDS type="Node" left="5925" top="6435" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input Count" slicecount="1" values="5">
    </PIN>
@@ -195,7 +195,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="70">
+   <PIN pinname="Y Input Value" slicecount="1" values="35">
    </PIN>
    </NODE>
    <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="37">
@@ -223,7 +223,7 @@
    </PIN>
    </NODE>
    <NODE systemname="Multiply (Transform)" nodename="Multiply (Transform)" componentmode="Hidden" id="38">
-   <BOUNDS type="Node" left="3105" top="4365" width="100" height="100">
+   <BOUNDS type="Node" left="3180" top="4380" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Transform In 1" visible="1">
    </PIN>
@@ -241,7 +241,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6630" top="480" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="4">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="10">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -413,7 +413,7 @@
    <LINK srcnodeid="37" srcpinname="Output" dstnodeid="35" dstpinname="FOV">
    </LINK>
    <NODE systemname="Count (Value)" nodename="Count (Value)" componentmode="Hidden" id="67">
-   <BOUNDS type="Node" left="7275" top="5790" width="100" height="100">
+   <BOUNDS type="Node" left="7950" top="5775" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -423,7 +423,7 @@
    <LINK srcnodeid="43" srcpinname="Y Output Value" dstnodeid="67" dstpinname="Input" hiddenwhenlocked="1">
    </LINK>
    <NODE systemname="Count (Value)" nodename="Count (Value)" componentmode="Hidden" id="68">
-   <BOUNDS type="Node" left="5670" top="5775" width="100" height="100">
+   <BOUNDS type="Node" left="6345" top="5760" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1" slicecount="1" values="0">
    </PIN>
@@ -433,7 +433,7 @@
    <LINK srcnodeid="36" srcpinname="Y Output Value" dstnodeid="68" dstpinname="Input" hiddenwhenlocked="1">
    </LINK>
    <NODE systemname="Count (3d)" filename="%VVVV%\lib\nodes\modules\3D\Count (3D).v4p" nodename="Count (3d)" componentmode="Hidden" id="69">
-   <BOUNDS type="Node" left="3810" top="5820" width="100" height="100">
+   <BOUNDS type="Node" left="4485" top="5805" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1" slicecount="1" values="0">
    </PIN>
@@ -509,6 +509,10 @@
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
+   <PIN pinname="Input Count" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Input 3" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="8" srcpinname="Output" dstnodeid="76" dstpinname="Input 1">
    </LINK>
@@ -527,8 +531,6 @@
    <LINK srcnodeid="71" srcpinname="Transform Out" dstnodeid="77" dstpinname="Source">
    </LINK>
    <LINK srcnodeid="77" srcpinname="Transform Out" dstnodeid="73" dstpinname="Transform">
-   </LINK>
-   <LINK srcnodeid="38" srcpinname="Transform Out" dstnodeid="71" dstpinname="Source">
    </LINK>
    <NODE systemname="Ortho (Transform)" nodename="Ortho (Transform)" componentmode="Hidden" id="78">
    <BOUNDS type="Node" left="4785" top="3480" width="100" height="100">
@@ -565,7 +567,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3105" top="510" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -608,4 +610,54 @@
    </LINK>
    <PACK Name="Notuiv" Version="0.2.2.0">
    </PACK>
+   <NODE systemname="Inverse (Transform)" nodename="Inverse (Transform)" componentmode="Hidden" id="85">
+   <BOUNDS type="Node" left="3720" top="5940" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Source" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="34" srcpinname="Transform Out" dstnodeid="71" dstpinname="Source">
+   </LINK>
+   <LINK srcnodeid="79" srcpinname="Output" dstnodeid="85" dstpinname="Source">
+   </LINK>
+   <NODE systemname="Transpose (Transform)" nodename="Transpose (Transform)" componentmode="Hidden" id="86">
+   <BOUNDS type="Node" left="3315" top="6360" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Source" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="85" srcpinname="Transform Out" dstnodeid="86" dstpinname="Source">
+   </LINK>
+   <NODE systemname="GetMatrix (Transform)" nodename="GetMatrix (Transform)" componentmode="Hidden" id="87">
+   <BOUNDS type="Node" left="3300" top="6780" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Matrix Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="86" srcpinname="Transform Out" dstnodeid="87" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="AsRaw (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="AsRaw (Value)" componentmode="Hidden" id="88">
+   <BOUNDS type="Node" left="3300" top="7215" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3300" top="7215" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Input Bin Size" slicecount="1" values="16">
+   </PIN>
+   <PIN pinname="Format" slicecount="1" values="Single">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="87" srcpinname="Matrix Out" dstnodeid="88" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="88" srcpinname="Output" dstnodeid="76" dstpinname="Input 3">
+   </LINK>
    </PATCH>
